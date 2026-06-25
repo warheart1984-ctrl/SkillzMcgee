@@ -2,6 +2,8 @@
 
 A portable, browser-native **lawful AI slice** for Skills. NovaSlice routes every prompt through a **Law Kernel**, records **governance receipts**, and validates integrity with a **CTS** (Compliance Test Suite).
 
+**Repository:** https://github.com/warheart1984-ctrl/SkillzMcgee
+
 ## Architecture
 
 ```
