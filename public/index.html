@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillsStack + NovaSlice</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --surface: #121820;
+        --border: #1e2a38;
+        --text: #e8edf4;
+        --muted: #8b9cb3;
+        --accent: #3d9eff;
+        --success: #2dd4a0;
+        --warn: #f5b942;
+        --error: #f56565;
+        --radius: 10px;
+        --font: "Segoe UI", system-ui, sans-serif;
+        --mono: "Cascadia Code", "Fira Code", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font);
+        background: radial-gradient(ellipse at top, #142030 0%, var(--bg) 55%);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      header {
+        padding: 2rem 1.5rem 1rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      header h1 {
+        margin: 0 0 0.25rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+      }
+
+      .card h2 {
+        margin: 0 0 0.75rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        font-size: 1rem;
+        resize: vertical;
+      }
+
+      textarea:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      button {
+        padding: 0.55rem 1.1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.15s, transform 0.1s;
+      }
+
+      button:hover:not(:disabled) {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      #run-btn {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      #receipts-btn,
+      #cts-btn {
+        background: var(--border);
+        color: var(--text);
+      }
+
+      #status {
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      #status[data-type="success"] {
+        color: var(--success);
+      }
+
+      #status[data-type="warn"] {
+        color: var(--warn);
+      }
+
+      #status[data-type="error"] {
+        color: var(--error);
+      }
+
+      #output {
+        margin: 0;
+        padding: 1rem;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        white-space: pre-wrap;
+        min-height: 4rem;
+        color: var(--text);
+      }
+
+      #receipts-panel,
+      #cts-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .empty {
+        color: var(--muted);
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .receipt {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .receipt.allowed {
+        border-left: 3px solid var(--success);
+      }
+
+      .receipt.rejected {
+        border-left: 3px solid var(--error);
+      }
+
+      .receipt header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .receipt time {
+        color: var(--muted);
+        font-size: 0.75rem;
+      }
+
+      .receipt .label {
+        color: var(--muted);
+      }
+
+      .receipt pre {
+        margin: 0.5rem 0 0;
+        padding: 0.75rem;
+        background: var(--bg);
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 0.75rem;
+      }
+
+      .cts-rule {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.75rem;
+        align-items: center;
+        padding: 0.6rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        font-size: 0.85rem;
+      }
+
+      .cts-rule.pass {
+        border-left: 3px solid var(--success);
+      }
+
+      .cts-rule.fail {
+        border-left: 3px solid var(--error);
+      }
+
+      .cts-id {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      .cts-badge {
+        font-weight: 600;
+        font-size: 0.75rem;
+      }
+
+      .cts-rule.pass .cts-badge {
+        color: var(--success);
+      }
+
+      .cts-rule.fail .cts-badge {
+        color: var(--error);
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>SkillsStack + NovaSlice</h1>
+      <p>Lawful, governed AI slice — Law Kernel, receipts, and CTS compliance in the browser.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Prompt</h2>
+        <textarea
+          id="prompt"
+          placeholder="Ask NovaSlice something… (Ctrl+Enter to run)"
+        ></textarea>
+        <div class="actions">
+          <button type="button" id="run-btn">Run NovaSlice</button>
+          <button type="button" id="receipts-btn">View Receipts</button>
+          <button type="button" id="cts-btn">Run CTS</button>
+        </div>
+        <p id="status">Loading…</p>
+      </section>
+
+      <section class="card">
+        <h2>Output</h2>
+        <pre id="output">—</pre>
+      </section>
+
+      <section class="card">
+        <h2>Receipts</h2>
+        <div id="receipts-panel">
+          <p class="empty">Click “View Receipts” to load governance receipts.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>CTS — Compliance Test Suite</h2>
+        <div id="cts-panel">
+          <p class="empty">Click “Run CTS” to validate receipt integrity.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>SkillsStack NovaSlice · Law Kernel v1 · Browser-native governance</footer>
+
+    <script type="module">
+      import { initDashboard } from "../src/ui/dashboard.js";
+      initDashboard();
+    </script>
+  </body>
+</html>
