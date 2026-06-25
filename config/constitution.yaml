@@ -1,0 +1,36 @@
+constitution:
+  invariants:
+    - "K0: Every receipt must be valid"
+    - "K1: Ledger must be append-only"
+    - "K2: Merkle hashes must match"
+    - "K3: State must be derivable from ledger"
+    - "K4: Deterministic slices must not vary"
+    - "K5: LLM outputs must not contradict state"
+    - "K6: No contradictory state transitions"
+    - "K7: All slices must declare schemas"
+
+  llm:
+    require_state_context: true
+    require_history_context: true
+    forbid_contradictions: true
+    log_all_outputs: true
+    deterministic_mode: false
+
+  slices:
+    slice_math:
+      deterministic: true
+      schema:
+        last_output: str
+        last_status: str
+
+    slice_research:
+      deterministic: false
+      schema:
+        last_output: str
+        citations: list
+
+    slice_system:
+      deterministic: true
+      schema:
+        health: str
+        last_run: str

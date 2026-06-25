@@ -1,0 +1,22 @@
+{
+  "name": "skillzmcgee",
+  "version": "1.1.0",
+  "description": "Constitutional cognitive runtime with AS-Ω singularity fold",
+  "type": "module",
+  "main": "src/singularity/index.js",
+  "scripts": {
+    "test": "node --test tests/singularity.test.js",
+    "test:py": "python tests/test_skillzmcgee.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "constitutional-runtime",
+    "receipts",
+    "merkle",
+    "governance",
+    "crk-1"
+  ],
+  "license": "MIT"
+}

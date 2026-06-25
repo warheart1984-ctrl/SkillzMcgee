@@ -1,0 +1,7 @@
+ledger_path: skillz_ledger.json
+memory_path: skillz_memory.json
+node_id: skillz-local-001
+
+llm:
+  provider: stub
+  model: local
