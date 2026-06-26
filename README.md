@@ -2,6 +2,8 @@
 
 Constitutional cognitive runtime with Merkle-linked receipts, deterministic reducers, and governed LLM execution.
 
+**Architecture docs:** [BLUEPRINT.md](./BLUEPRINT.md) · [REALITY_STACK.md](./REALITY_STACK.md)
+
 ## Quick start
 
 ```bash
