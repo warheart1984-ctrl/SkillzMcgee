@@ -83,5 +83,8 @@ Everything is evidence-driven.
 - [ORC-1.0](../../conformance/certification/ORC-1.0.md) — operational readiness
 - [RCD-1.0](../../conformance/certification/RCD-1.0.md) — release criteria
 - [GLS-1.0](../../governance/governance-ledger/GLS-1.0.md) — governance ledger
-- [v1.0 Launch Narrative](./v1.0-launch-narrative.md) — public overview
+- [v1.0 Launch Narrative](./v1.0-launch-narrative.md)
+- [Public FAQ v1.0](./faq-v1.0.md)
+- [Architecture Overview](./architecture-overview-v1.0.txt)
+- [Press Kit](../launch-kit/press-kit-v1.0.md) — public overview
 - [SGDF-1.0](../../conformance/certification/SGDF-1.0.md) — steward governance framework

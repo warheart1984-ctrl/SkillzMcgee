@@ -61,7 +61,8 @@ Stewards must:
 | Approval | ⅔ supermajority |
 | Abstentions | Allowed; not counted toward approval denominator |
 
-Procedure: [SCVP-1.0](../../conformance/certification/SCVP-1.0.md)
+Procedure: [SCVP-1.0](../../conformance/certification/SCVP-1.0.md)  
+Onboarding: [steward-onboarding-v1.0.md](./steward-onboarding-v1.0.md)
 
 ## G. Transparency
 

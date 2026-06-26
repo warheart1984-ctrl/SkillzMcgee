@@ -26,12 +26,16 @@ Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-on
 | Launch video script (2–3 min) | [launch-video-script.md](./launch-video-script.md) |
 | Launch deck (20 slides) | [LAUNCH_DECK.md](./LAUNCH_DECK.md) |
 | Press release | [press-release-v1.0.md](./press-release-v1.0.md) |
+| **Press kit (v1.0)** | [press-kit-v1.0.md](./press-kit-v1.0.md) |
+| **Public FAQ (v1.0)** | [../public/faq-v1.0.md](../public/faq-v1.0.md) |
+| **Architecture diagram (v1.0)** | [../public/architecture-overview-v1.0.txt](../public/architecture-overview-v1.0.txt) |
+| Launch narrative | [../public/v1.0-launch-narrative.md](../public/v1.0-launch-narrative.md) |
 | Interactive tutorial | [../tutorials/constitutional-loop-tutorial.html](../tutorials/constitutional-loop-tutorial.html) |
 | Whitepaper | [../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md](../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md) |
 
 ## Public FAQ (summary)
 
-See [FAQ.md](./FAQ.md) for the full extended FAQ.
+See [FAQ.md](./FAQ.md) (extended) or [../public/faq-v1.0.md](../public/faq-v1.0.md) (v1.0 public site).
 
 **Is Continuity OS an agent?** No — governed substrate for agents.
 

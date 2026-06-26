@@ -1,0 +1,76 @@
+Continuity OS v1.0 — Architecture Overview
+==========================================
+
+                         ┌───────────────────────────────────────┐
+                         │           CANONICAL LAYER             │
+                         │     (Defines Constitutional Truth)    │
+                         ├───────────────────────────────────────┤
+                         │ Authorities                           │
+                         │ Specifications                        │
+                         │ Normative Requirements                │
+                         │ Transformation Contracts              │
+                         │ Implementations                       │
+                         │ Transformation Records                │
+                         │ Evidence                              │
+                         │ Receipts                              │
+                         │ Provenance                            │
+                         │ Governance Ledger (GLS-1.0)           │
+                         └───────────────────────────────────────┘
+                                        │
+                                        ▼
+                         ┌───────────────────────────────────────┐
+                         │            DERIVED LAYER              │
+                         │     (Computes Constitutional State)   │
+                         ├───────────────────────────────────────┤
+                         │ Proof-Graph Index                     │
+                         │ Claim Status Registry (CSR-1.0)       │
+                         │ Constitutional Observability Report   │
+                         │   (COR-1.0)                           │
+                         │ Dependency-Risk Analyzer (DRA-1.0)    │
+                         │ Counterfactual Engine                 │
+                         │ Coverage Reports                      │
+                         │ Release Manifests                     │
+                         │ Dashboards & Visualizers              │
+                         └───────────────────────────────────────┘
+                                        │
+                                        ▼
+                         ┌───────────────────────────────────────┐
+                         │          OPERATIONAL LAYER            │
+                         │     (Exposes & Explains State)        │
+                         ├───────────────────────────────────────┤
+                         │ Query API (REST/CLI)                  │
+                         │ Explain-This-Node Engine              │
+                         │ Auditor Protocols                     │
+                         │ Steward Council Workflows             │
+                         │ Public Documentation                  │
+                         └───────────────────────────────────────┘
+                                        │
+                                        ▼
+                         ┌───────────────────────────────────────┐
+                         │           GOVERNANCE LAYER            │
+                         │     (Evaluates Constitutional State)  │
+                         ├───────────────────────────────────────┤
+                         │ Steward Council (SCC-1.0)           │
+                         │ Governance Ledger (decisions)         │
+                         │ Release Decisions (SCVP-1.0)          │
+                         │ Policy Updates                        │
+                         └───────────────────────────────────────┘
+
+INVARIANTS
+----------
+  Canonical defines truth.
+  Derived computes state from canonical (DARP-1.0).
+  Operational exposes and explains that state.
+  Governance evaluates measured state — it does not override it.
+
+  On disagreement: canonical wins.
+
+REGENERATE DERIVED STATE
+------------------------
+  npm run spec:rebuild
+
+SEE ALSO
+--------
+  conformance/proof-graph/canonical-derived-registry.json
+  conformance/proof-graph/operational-architecture.txt (3-layer view)
+  docs/public/architecture-vs-evidence.md

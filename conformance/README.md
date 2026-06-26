@@ -63,6 +63,9 @@ node tools/crk.mjs rcd evaluate
 
 - [Architecture vs Evidence](../docs/public/architecture-vs-evidence.md)
 - [v1.0 Launch Narrative](../docs/public/v1.0-launch-narrative.md)
+- [Public FAQ v1.0](../docs/public/faq-v1.0.md)
+- [Press Kit](../docs/launch-kit/press-kit-v1.0.md)
+- [Architecture Overview](../docs/public/architecture-overview-v1.0.txt)
 - [Don't Trust the Repository — Query It](../docs/public/dont-trust-query-it.md)
 
 ## Regenerate requirement files

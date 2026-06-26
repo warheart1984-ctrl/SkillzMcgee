@@ -45,3 +45,5 @@ INVARIANT:
 On disagreement: canonical wins.
 
 See: conformance/proof-graph/canonical-derived-registry.json
+     docs/public/architecture-overview-v1.0.txt (4-layer public diagram)
+     docs/public/architecture-vs-evidence.md
