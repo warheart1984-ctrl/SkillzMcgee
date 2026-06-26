@@ -29,7 +29,9 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [evidence-requirements/](./evidence-requirements/) | Evidence schema |
 | [evidence-ledger/](./evidence-ledger/) | EL-1.0 artifact index |
 | [merkle-spine/](./merkle-spine/) | Cryptographic anchoring |
-| [provenance-ledger/](./provenance-ledger/) | PL-1.0 historical truth |
+| [proof-graph/](./proof-graph/) | Proof-graph index, explain engine, counterfactual engine, canonical/derived registry |
+| [observability/](./observability/) | **COR-1.0** health report + **CSR-1.0** claim registry |
+| [provenance-ledger/](./provenance-ledger/) | PL-1.1 historical truth |
 
 ## Implementation pointers (this repo)
 

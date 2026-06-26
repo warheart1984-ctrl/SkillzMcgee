@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "canonical": {
+    "authorities": [
+      "steward-council/v1.0",
+      "CA-1.0/one-artifact-per-stage",
+      "CA-1.1/four-layer-provenance"
+    ],
+    "specifications": [
+      "T01/decision-to-outcome/v1.0",
+      "T02/outcome-to-evidence/v1.0",
+      "T03/evidence-to-interpretation/v1.0",
+      "T04/interpretation-to-policy-eval/v1.0",
+      "T05/policy-eval-to-policy-outcome/v1.0",
+      "T06/policy-outcome-to-governance-decision/v1.0",
+      "T07/governance-decision-to-execution-plan/v1.0",
+      "T08/execution-plan-to-state-transition/v1.0",
+      "T09/state-transition-to-receipt/v1.0",
+      "T10/receipt-to-provenance/v1.0",
+      "T11/provenance-to-lineage/v1.0",
+      "T12/lineage-to-drift-update/v1.0"
+    ],
+    "requirements": "specification/normative-requirements/catalog.json",
+    "contracts": "specification/transformation-contracts/",
+    "implementations": [
+      "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "governance/constitution/",
+      "governance/continuity_ledger.py",
+      "src/crk1/",
+      "nova-studio/server/runtime/"
+    ],
+    "transformations": "conformance/proof-graph/transformation-records/",
+    "evidence": "conformance/evidence-ledger/",
+    "receipts": ".runtime/nova-studio/ledger.jsonl",
+    "provenance": "conformance/provenance-ledger/"
+  },
+  "derived": {
+    "proof_graph_index": "conformance/proof-graph/index.json",
+    "proof_graph_index_mirror": "meta/proof-graph-index.json",
+    "cor_report": "meta/COR-1.0.json",
+    "csr_registry": "conformance/observability/CSR-1.0/registry.json",
+    "traceability_matrix": "conformance/traceability-matrix.json",
+    "coverage_report": "meta/coverage-report.json",
+    "release_manifest": "meta/RELEASE_MANIFEST_v1.0.md",
+    "dashboard_views": "tools/dashboard/",
+    "visualizations": "docs/public-diagrams/"
+  },
+  "rules": {
+    "derived_non_authoritative": true,
+    "must_be_regenerable": true,
+    "disagreement_resolution": "canonical_wins"
+  },
+  "regeneration": {
+    "proof_graph_index": "node tools/generators/proof-graph-index.mjs",
+    "csr": "node tools/generators/csr-registry.mjs",
+    "cor": "node tools/generators/cor-generate.mjs --out meta/COR-1.0.json",
+    "all": "npm run spec:cor"
+  }
+}

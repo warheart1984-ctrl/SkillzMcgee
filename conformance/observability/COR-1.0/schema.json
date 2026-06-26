@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://continuity-os.dev/schemas/cor/1.0",
+  "title": "Constitutional Observability Report (COR-1.0)",
+  "type": "object",
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "commit": { "type": "string" },
+    "version": { "type": "string" },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": { "type": "string" },
+          "authority_status": { "type": "string", "enum": ["present", "missing"] },
+          "specification_status": { "type": "string", "enum": ["present", "missing"] },
+          "implementation_status": { "type": "string", "enum": ["complete", "partial", "missing"] },
+          "verification_status": { "type": "string", "enum": ["complete", "partial", "missing"] },
+          "evidence_status": { "type": "string", "enum": ["complete", "partial", "missing"] },
+          "receipt_status": { "type": "string", "enum": ["complete", "missing"] },
+          "provenance_status": { "type": "string", "enum": ["anchored", "unanchored", "missing"] },
+          "reproduction_status": { "type": "string", "enum": ["reproduced", "pending", "missing"] },
+          "claim_status": {
+            "type": "string",
+            "enum": ["normative", "implemented", "verified", "reproduced", "research"]
+          },
+          "exceptions": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": [
+          "requirement_id",
+          "authority_status",
+          "specification_status",
+          "implementation_status",
+          "verification_status",
+          "evidence_status",
+          "receipt_status",
+          "provenance_status",
+          "reproduction_status",
+          "claim_status"
+        ]
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "orphaned_requirements": { "type": "integer" },
+        "orphaned_specs": { "type": "integer" },
+        "orphaned_implementations": { "type": "integer" },
+        "missing_evidence": { "type": "integer" },
+        "missing_receipts": { "type": "integer" },
+        "unanchored_receipts": { "type": "integer" },
+        "broken_provenance": { "type": "integer" },
+        "unreproduced_claims": { "type": "integer" },
+        "unresolved_assumptions": { "type": "integer" },
+        "proof_closure": { "type": "string", "enum": ["pass", "fail"] }
+      },
+      "required": [
+        "orphaned_requirements",
+        "orphaned_specs",
+        "orphaned_implementations",
+        "missing_evidence",
+        "missing_receipts",
+        "unanchored_receipts",
+        "broken_provenance",
+        "unreproduced_claims",
+        "unresolved_assumptions",
+        "proof_closure"
+      ]
+    }
+  },
+  "required": ["generated_at", "commit", "version", "requirements", "summary"]
+}

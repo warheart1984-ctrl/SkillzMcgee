@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://continuity-os.dev/schemas/proof-graph-index/1.0",
+  "title": "ProofGraphIndex",
+  "type": "object",
+  "required": ["version", "generated_at", "commit", "requirements", "specifications", "implementations", "authorities"],
+  "properties": {
+    "version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "commit": { "type": "string" },
+    "authorities": { "type": "object", "additionalProperties": { "$ref": "#/$defs/AuthorityNode" } },
+    "specifications": { "type": "object", "additionalProperties": { "$ref": "#/$defs/SpecNode" } },
+    "implementations": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ImplNode" } },
+    "requirements": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ReqNode" } },
+    "verifications": { "type": "object", "additionalProperties": { "$ref": "#/$defs/VerificationNode" } },
+    "transformations": { "type": "object", "additionalProperties": { "$ref": "#/$defs/TransformationNode" } },
+    "provenance": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ProvenanceNode" } }
+  },
+  "$defs": {
+    "AuthorityNode": {
+      "type": "object",
+      "properties": {
+        "authority_id": { "type": "string" },
+        "type": { "type": "string" },
+        "authorizes_specs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "SpecNode": {
+      "type": "object",
+      "properties": {
+        "spec_id": { "type": "string" },
+        "authorized_by": { "type": "string" },
+        "implements": { "type": "array", "items": { "type": "string" } },
+        "requirements": { "type": "array", "items": { "type": "string" } },
+        "transformations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ImplNode": {
+      "type": "object",
+      "properties": {
+        "implementation_id": { "type": "string" },
+        "claims_conformance_to": { "type": "string" },
+        "executions": { "type": "array", "items": { "type": "string" } },
+        "requirements": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ReqNode": {
+      "type": "object",
+      "properties": {
+        "requirement_id": { "type": "string" },
+        "authority": { "type": "array", "items": { "type": "string" } },
+        "specifications": { "type": "array", "items": { "type": "string" } },
+        "implementations": { "type": "array", "items": { "type": "string" } },
+        "verification_methods": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "receipts": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "VerificationNode": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "requirements": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "TransformationNode": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "spec": { "type": "string" },
+        "authority": { "type": "string" },
+        "implementation": { "type": "string" },
+        "input": { "type": "string" },
+        "output": { "type": "string" },
+        "receipt": { "type": "string" },
+        "provenance": { "type": "string" }
+      }
+    },
+    "ProvenanceNode": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "parent": { "type": ["string", "null"] },
+        "transformation": { "type": "string" },
+        "requirement": { "type": "string" }
+      }
+    }
+  }
+}

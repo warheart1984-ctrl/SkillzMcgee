@@ -1,0 +1,47 @@
+CONTINUITY OS / CRK-1 — v1.0 OPERATIONAL ARCHITECTURE
+======================================================
+
+                 CANONICAL LAYER (Source of Truth)
+                 ┌────────────────────────────────┐
+                 │  Authorities                   │
+                 │  Specifications                │
+                 │  Normative Requirements        │
+                 │  Contracts (T01–T12)           │
+                 │  Implementations (MRI, runtime)│
+                 │  Transformation Records        │
+                 │  Evidence                      │
+                 │  Receipts                      │
+                 │  Provenance                    │
+                 └────────────────────────────────┘
+                                  │
+                                  ▼
+                 DERIVED LAYER (Computed State)
+                 ┌────────────────────────────────┐
+                 │  Proof-Graph Index             │
+                 │  COR-1.0                       │
+                 │  Claim Status Registry (CSR)   │
+                 │  Coverage Reports              │
+                 │  Release Manifests             │
+                 │  Dashboards & Visualizers      │
+                 │  Introspection Engine Outputs  │
+                 │  Counterfactual Analyses       │
+                 └────────────────────────────────┘
+                                  │
+                                  ▼
+                 OPERATIONAL LAYER (Interfaces)
+                 ┌────────────────────────────────┐
+                 │  Query API (REST/CLI)          │
+                 │  Explain-This-Node Engine      │
+                 │  Counterfactual Engine         │
+                 │  Auditor Protocols             │
+                 │  Steward & Release Workflows   │
+                 └────────────────────────────────┘
+
+INVARIANT:
+  Canonical defines truth.
+  Derived computes state from canonical.
+  Operational exposes and explains that state.
+
+On disagreement: canonical wins.
+
+See: conformance/proof-graph/canonical-derived-registry.json

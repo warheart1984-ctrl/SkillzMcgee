@@ -428,5 +428,15 @@
     "verification": "CTS G3, CTS S3, provenance inspector",
     "evidence": "PL-1.1 ProvenanceEntry with full binding fields",
     "traceability": "R043 → CA-1.1 → four-layer-provenance-model.md → PL-1.1"
+  },
+  {
+    "id": "CRK1-R044",
+    "series": "H",
+    "invariant": "PI-1",
+    "title": "Claim Classification",
+    "rationale": "Every constitutional claim must be explicitly normative, implemented, verified, reproduced, or research.",
+    "verification": "COR-1.0, CSR-1.0, CTS S5",
+    "evidence": "CSR-1.0 registry, COR-1.0 report",
+    "traceability": "R044 → CSR-1.0 → COR-1.0 → proof-closure gate"
   }
 ]

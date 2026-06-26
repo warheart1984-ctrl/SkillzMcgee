@@ -1,0 +1,2145 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-26T19:57:32.810Z",
+  "commit": "7a3f7cedf9c2b36188ccc22162c728d3e484c73c",
+  "authorities": {
+    "steward-council/v1.0": {
+      "authority_id": "steward-council/v1.0",
+      "type": "StewardCouncilDecision",
+      "authorizes_specs": [
+        "T01/decision-to-outcome/v1.0",
+        "T02/outcome-to-evidence/v1.0",
+        "T03/evidence-to-interpretation/v1.0",
+        "T04/interpretation-to-policy-eval/v1.0",
+        "T05/policy-eval-to-policy-outcome/v1.0",
+        "T06/policy-outcome-to-governance-decision/v1.0",
+        "T07/governance-decision-to-execution-plan/v1.0",
+        "T08/execution-plan-to-state-transition/v1.0",
+        "T09/state-transition-to-receipt/v1.0",
+        "T10/receipt-to-provenance/v1.0",
+        "T11/provenance-to-lineage/v1.0",
+        "T12/lineage-to-drift-update/v1.0"
+      ]
+    }
+  },
+  "specifications": {
+    "T01/decision-to-outcome/v1.0": {
+      "spec_id": "T01/decision-to-outcome/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [
+        "CRK1-R001",
+        "CRK1-R004",
+        "CRK1-R005",
+        "CRK1-R006",
+        "CRK1-R007",
+        "CRK1-R008",
+        "CRK1-R009",
+        "CRK1-R010",
+        "CRK1-R011",
+        "CRK1-R012",
+        "CRK1-R013",
+        "CRK1-R014",
+        "CRK1-R015",
+        "CRK1-R016",
+        "CRK1-R017",
+        "CRK1-R018",
+        "CRK1-R019",
+        "CRK1-R020",
+        "CRK1-R021",
+        "CRK1-R022",
+        "CRK1-R023",
+        "CRK1-R024",
+        "CRK1-R025",
+        "CRK1-R026",
+        "CRK1-R027",
+        "CRK1-R028",
+        "CRK1-R029",
+        "CRK1-R030",
+        "CRK1-R031",
+        "CRK1-R032",
+        "CRK1-R033",
+        "CRK1-R034",
+        "CRK1-R035",
+        "CRK1-R036",
+        "CRK1-R037",
+        "CRK1-R038",
+        "CRK1-R039",
+        "CRK1-R040",
+        "CRK1-R041",
+        "CRK1-R042",
+        "CRK1-R043"
+      ],
+      "transformations": [
+        "TR-T01"
+      ]
+    },
+    "T02/outcome-to-evidence/v1.0": {
+      "spec_id": "T02/outcome-to-evidence/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [
+        "CRK1-R002"
+      ],
+      "transformations": [
+        "TR-T02"
+      ]
+    },
+    "T03/evidence-to-interpretation/v1.0": {
+      "spec_id": "T03/evidence-to-interpretation/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [
+        "CRK1-R003"
+      ],
+      "transformations": [
+        "TR-T03"
+      ]
+    },
+    "T04/interpretation-to-policy-eval/v1.0": {
+      "spec_id": "T04/interpretation-to-policy-eval/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T04"
+      ]
+    },
+    "T05/policy-eval-to-policy-outcome/v1.0": {
+      "spec_id": "T05/policy-eval-to-policy-outcome/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T05"
+      ]
+    },
+    "T06/policy-outcome-to-governance-decision/v1.0": {
+      "spec_id": "T06/policy-outcome-to-governance-decision/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T06"
+      ]
+    },
+    "T07/governance-decision-to-execution-plan/v1.0": {
+      "spec_id": "T07/governance-decision-to-execution-plan/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T07"
+      ]
+    },
+    "T08/execution-plan-to-state-transition/v1.0": {
+      "spec_id": "T08/execution-plan-to-state-transition/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T08"
+      ]
+    },
+    "T09/state-transition-to-receipt/v1.0": {
+      "spec_id": "T09/state-transition-to-receipt/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T09"
+      ]
+    },
+    "T10/receipt-to-provenance/v1.0": {
+      "spec_id": "T10/receipt-to-provenance/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T10"
+      ]
+    },
+    "T11/provenance-to-lineage/v1.0": {
+      "spec_id": "T11/provenance-to-lineage/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T11"
+      ]
+    },
+    "T12/lineage-to-drift-update/v1.0": {
+      "spec_id": "T12/lineage-to-drift-update/v1.0",
+      "authorized_by": "steward-council/v1.0",
+      "implements": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "requirements": [],
+      "transformations": [
+        "TR-T12"
+      ]
+    }
+  },
+  "implementations": {
+    "MRI-1.0/nova-studio-pipeline/1.0.0": {
+      "implementation_id": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "claims_conformance_to": "T01/decision-to-outcome/v1.0",
+      "executions": [
+        "TR-T01",
+        "TR-T02",
+        "TR-T03",
+        "TR-T04",
+        "TR-T05",
+        "TR-T06",
+        "TR-T07",
+        "TR-T08",
+        "TR-T09",
+        "TR-T10",
+        "TR-T11",
+        "TR-T12"
+      ],
+      "requirements": [
+        "CRK1-R001",
+        "CRK1-R002",
+        "CRK1-R003",
+        "CRK1-R004",
+        "CRK1-R005",
+        "CRK1-R006",
+        "CRK1-R007",
+        "CRK1-R008",
+        "CRK1-R009",
+        "CRK1-R010",
+        "CRK1-R011",
+        "CRK1-R012",
+        "CRK1-R013",
+        "CRK1-R014",
+        "CRK1-R015",
+        "CRK1-R016",
+        "CRK1-R017",
+        "CRK1-R018",
+        "CRK1-R019",
+        "CRK1-R020",
+        "CRK1-R021",
+        "CRK1-R022",
+        "CRK1-R023",
+        "CRK1-R024",
+        "CRK1-R025",
+        "CRK1-R026",
+        "CRK1-R027",
+        "CRK1-R028",
+        "CRK1-R029",
+        "CRK1-R030",
+        "CRK1-R031",
+        "CRK1-R032",
+        "CRK1-R033",
+        "CRK1-R034",
+        "CRK1-R035",
+        "CRK1-R036",
+        "CRK1-R037",
+        "CRK1-R038",
+        "CRK1-R039",
+        "CRK1-R040",
+        "CRK1-R041",
+        "CRK1-R042",
+        "CRK1-R043"
+      ]
+    }
+  },
+  "requirements": {
+    "CRK1-R001": {
+      "requirement_id": "CRK1-R001",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M1"
+      ],
+      "evidence": [
+        "EVID-R001"
+      ],
+      "receipts": [
+        "REC-R001"
+      ],
+      "provenance": [
+        "PROV-R001"
+      ]
+    },
+    "CRK1-R002": {
+      "requirement_id": "CRK1-R002",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T02/outcome-to-evidence/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M2"
+      ],
+      "evidence": [
+        "EVID-R002"
+      ],
+      "receipts": [
+        "REC-R002"
+      ],
+      "provenance": [
+        "PROV-R002"
+      ]
+    },
+    "CRK1-R003": {
+      "requirement_id": "CRK1-R003",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T03/evidence-to-interpretation/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M3"
+      ],
+      "evidence": [
+        "EVID-R003"
+      ],
+      "receipts": [
+        "REC-R003"
+      ],
+      "provenance": [
+        "PROV-R003"
+      ]
+    },
+    "CRK1-R004": {
+      "requirement_id": "CRK1-R004",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M4"
+      ],
+      "evidence": [
+        "EVID-R004"
+      ],
+      "receipts": [],
+      "provenance": [
+        "PROV-R004"
+      ]
+    },
+    "CRK1-R005": {
+      "requirement_id": "CRK1-R005",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M1"
+      ],
+      "evidence": [
+        "EVID-R005"
+      ],
+      "receipts": [
+        "REC-R005"
+      ],
+      "provenance": [
+        "PROV-R005"
+      ]
+    },
+    "CRK1-R006": {
+      "requirement_id": "CRK1-R006",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M2"
+      ],
+      "evidence": [
+        "EVID-R006"
+      ],
+      "receipts": [
+        "REC-R006"
+      ],
+      "provenance": [
+        "PROV-R006"
+      ]
+    },
+    "CRK1-R007": {
+      "requirement_id": "CRK1-R007",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M3"
+      ],
+      "evidence": [
+        "EVID-R007"
+      ],
+      "receipts": [
+        "REC-R007"
+      ],
+      "provenance": [
+        "PROV-R007"
+      ]
+    },
+    "CRK1-R008": {
+      "requirement_id": "CRK1-R008",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M5"
+      ],
+      "evidence": [
+        "EVID-R008"
+      ],
+      "receipts": [
+        "REC-R008"
+      ],
+      "provenance": [
+        "PROV-R008"
+      ]
+    },
+    "CRK1-R009": {
+      "requirement_id": "CRK1-R009",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M1"
+      ],
+      "evidence": [
+        "EVID-R009"
+      ],
+      "receipts": [
+        "REC-R009"
+      ],
+      "provenance": [
+        "PROV-R009"
+      ]
+    },
+    "CRK1-R010": {
+      "requirement_id": "CRK1-R010",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "evidence": [
+        "EVID-R010"
+      ],
+      "receipts": [
+        "REC-R010"
+      ],
+      "provenance": [
+        "PROV-R010"
+      ]
+    },
+    "CRK1-R011": {
+      "requirement_id": "CRK1-R011",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S2",
+        "CTS-G2"
+      ],
+      "evidence": [
+        "EVID-R011"
+      ],
+      "receipts": [
+        "REC-R011"
+      ],
+      "provenance": [
+        "PROV-R011"
+      ]
+    },
+    "CRK1-R012": {
+      "requirement_id": "CRK1-R012",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S5"
+      ],
+      "evidence": [
+        "EVID-R012"
+      ],
+      "receipts": [
+        "REC-R012"
+      ],
+      "provenance": [
+        "PROV-R012"
+      ]
+    },
+    "CRK1-R013": {
+      "requirement_id": "CRK1-R013",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1"
+      ],
+      "evidence": [
+        "EVID-R013"
+      ],
+      "receipts": [
+        "REC-R013"
+      ],
+      "provenance": [
+        "PROV-R013"
+      ]
+    },
+    "CRK1-R014": {
+      "requirement_id": "CRK1-R014",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1"
+      ],
+      "evidence": [
+        "EVID-R014"
+      ],
+      "receipts": [
+        "REC-R014"
+      ],
+      "provenance": [
+        "PROV-R014"
+      ]
+    },
+    "CRK1-R015": {
+      "requirement_id": "CRK1-R015",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1"
+      ],
+      "evidence": [
+        "EVID-R015"
+      ],
+      "receipts": [
+        "REC-R015"
+      ],
+      "provenance": [
+        "PROV-R015"
+      ]
+    },
+    "CRK1-R016": {
+      "requirement_id": "CRK1-R016",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1"
+      ],
+      "evidence": [
+        "EVID-R016"
+      ],
+      "receipts": [
+        "REC-R016"
+      ],
+      "provenance": [
+        "PROV-R016"
+      ]
+    },
+    "CRK1-R017": {
+      "requirement_id": "CRK1-R017",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S1"
+      ],
+      "evidence": [
+        "EVID-R017"
+      ],
+      "receipts": [
+        "REC-R017"
+      ],
+      "provenance": [
+        "PROV-R017"
+      ]
+    },
+    "CRK1-R018": {
+      "requirement_id": "CRK1-R018",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M2",
+        "CTS-S2"
+      ],
+      "evidence": [
+        "EVID-R018"
+      ],
+      "receipts": [
+        "REC-R018"
+      ],
+      "provenance": [
+        "PROV-R018"
+      ]
+    },
+    "CRK1-R019": {
+      "requirement_id": "CRK1-R019",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S2"
+      ],
+      "evidence": [
+        "EVID-R019"
+      ],
+      "receipts": [
+        "REC-R019"
+      ],
+      "provenance": [
+        "PROV-R019"
+      ]
+    },
+    "CRK1-R020": {
+      "requirement_id": "CRK1-R020",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E1"
+      ],
+      "evidence": [
+        "EVID-R020"
+      ],
+      "receipts": [
+        "REC-R020"
+      ],
+      "provenance": [
+        "PROV-R020"
+      ]
+    },
+    "CRK1-R021": {
+      "requirement_id": "CRK1-R021",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E2"
+      ],
+      "evidence": [
+        "EVID-R021"
+      ],
+      "receipts": [],
+      "provenance": [
+        "PROV-R021"
+      ]
+    },
+    "CRK1-R022": {
+      "requirement_id": "CRK1-R022",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "evidence": [
+        "EVID-R022"
+      ],
+      "receipts": [
+        "REC-R022"
+      ],
+      "provenance": [
+        "PROV-R022"
+      ]
+    },
+    "CRK1-R023": {
+      "requirement_id": "CRK1-R023",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E4"
+      ],
+      "evidence": [
+        "EVID-R023"
+      ],
+      "receipts": [
+        "REC-R023"
+      ],
+      "provenance": [
+        "PROV-R023"
+      ]
+    },
+    "CRK1-R024": {
+      "requirement_id": "CRK1-R024",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E5"
+      ],
+      "evidence": [
+        "EVID-R024"
+      ],
+      "receipts": [
+        "REC-R024"
+      ],
+      "provenance": [
+        "PROV-R024"
+      ]
+    },
+    "CRK1-R025": {
+      "requirement_id": "CRK1-R025",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "evidence": [
+        "EVID-R025"
+      ],
+      "receipts": [
+        "REC-R025"
+      ],
+      "provenance": [
+        "PROV-R025"
+      ]
+    },
+    "CRK1-R026": {
+      "requirement_id": "CRK1-R026",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E3"
+      ],
+      "evidence": [
+        "EVID-R026"
+      ],
+      "receipts": [
+        "REC-R026"
+      ],
+      "provenance": [
+        "PROV-R026"
+      ]
+    },
+    "CRK1-R027": {
+      "requirement_id": "CRK1-R027",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S2"
+      ],
+      "evidence": [
+        "EVID-R027"
+      ],
+      "receipts": [
+        "REC-R027"
+      ],
+      "provenance": [
+        "PROV-R027"
+      ]
+    },
+    "CRK1-R028": {
+      "requirement_id": "CRK1-R028",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E3"
+      ],
+      "evidence": [
+        "EVID-R028"
+      ],
+      "receipts": [
+        "REC-R028"
+      ],
+      "provenance": [
+        "PROV-R028"
+      ]
+    },
+    "CRK1-R029": {
+      "requirement_id": "CRK1-R029",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-E1"
+      ],
+      "evidence": [
+        "EVID-R029"
+      ],
+      "receipts": [
+        "REC-R029"
+      ],
+      "provenance": [
+        "PROV-R029"
+      ]
+    },
+    "CRK1-R030": {
+      "requirement_id": "CRK1-R030",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G3"
+      ],
+      "evidence": [
+        "EVID-R030"
+      ],
+      "receipts": [
+        "REC-R030"
+      ],
+      "provenance": [
+        "PROV-R030"
+      ]
+    },
+    "CRK1-R031": {
+      "requirement_id": "CRK1-R031",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [],
+      "evidence": [
+        "EVID-R031"
+      ],
+      "receipts": [],
+      "provenance": [
+        "PROV-R031"
+      ]
+    },
+    "CRK1-R032": {
+      "requirement_id": "CRK1-R032",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G4"
+      ],
+      "evidence": [
+        "EVID-R032"
+      ],
+      "receipts": [
+        "REC-R032"
+      ],
+      "provenance": [
+        "PROV-R032"
+      ]
+    },
+    "CRK1-R033": {
+      "requirement_id": "CRK1-R033",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G2"
+      ],
+      "evidence": [
+        "EVID-R033"
+      ],
+      "receipts": [
+        "REC-R033"
+      ],
+      "provenance": [
+        "PROV-R033"
+      ]
+    },
+    "CRK1-R034": {
+      "requirement_id": "CRK1-R034",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G3"
+      ],
+      "evidence": [
+        "EVID-R034"
+      ],
+      "receipts": [
+        "REC-R034"
+      ],
+      "provenance": [
+        "PROV-R034"
+      ]
+    },
+    "CRK1-R035": {
+      "requirement_id": "CRK1-R035",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G1"
+      ],
+      "evidence": [
+        "EVID-R035"
+      ],
+      "receipts": [
+        "REC-R035"
+      ],
+      "provenance": [
+        "PROV-R035"
+      ]
+    },
+    "CRK1-R036": {
+      "requirement_id": "CRK1-R036",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S5"
+      ],
+      "evidence": [
+        "EVID-R036"
+      ],
+      "receipts": [
+        "REC-R036"
+      ],
+      "provenance": [
+        "PROV-R036"
+      ]
+    },
+    "CRK1-R037": {
+      "requirement_id": "CRK1-R037",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-S5"
+      ],
+      "evidence": [
+        "EVID-R037"
+      ],
+      "receipts": [
+        "REC-R037"
+      ],
+      "provenance": [
+        "PROV-R037"
+      ]
+    },
+    "CRK1-R038": {
+      "requirement_id": "CRK1-R038",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [],
+      "evidence": [
+        "EVID-R038"
+      ],
+      "receipts": [
+        "REC-R038"
+      ],
+      "provenance": [
+        "PROV-R038"
+      ]
+    },
+    "CRK1-R039": {
+      "requirement_id": "CRK1-R039",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G4"
+      ],
+      "evidence": [
+        "EVID-R039"
+      ],
+      "receipts": [
+        "REC-R039"
+      ],
+      "provenance": [
+        "PROV-R039"
+      ]
+    },
+    "CRK1-R040": {
+      "requirement_id": "CRK1-R040",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-M1"
+      ],
+      "evidence": [
+        "EVID-R040"
+      ],
+      "receipts": [
+        "REC-R040"
+      ],
+      "provenance": [
+        "PROV-R040"
+      ]
+    },
+    "CRK1-R041": {
+      "requirement_id": "CRK1-R041",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "evidence": [
+        "EVID-R041"
+      ],
+      "receipts": [
+        "REC-R041"
+      ],
+      "provenance": [
+        "PROV-R041"
+      ]
+    },
+    "CRK1-R042": {
+      "requirement_id": "CRK1-R042",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [
+        "CTS-G1"
+      ],
+      "evidence": [
+        "EVID-R042"
+      ],
+      "receipts": [
+        "REC-R042"
+      ],
+      "provenance": [
+        "PROV-R042"
+      ]
+    },
+    "CRK1-R043": {
+      "requirement_id": "CRK1-R043",
+      "authority": [
+        "steward-council/v1.0"
+      ],
+      "specifications": [
+        "T01/decision-to-outcome/v1.0"
+      ],
+      "implementations": [
+        "MRI-1.0/nova-studio-pipeline/1.0.0"
+      ],
+      "verification_methods": [],
+      "evidence": [
+        "EVID-R043"
+      ],
+      "receipts": [
+        "REC-R043"
+      ],
+      "provenance": [
+        "PROV-R043"
+      ]
+    }
+  },
+  "verifications": {
+    "CTS-M1": {
+      "id": "CTS-M1",
+      "requirements": [
+        "CRK1-R001",
+        "CRK1-R005",
+        "CRK1-R009",
+        "CRK1-R040"
+      ]
+    },
+    "CTS-M2": {
+      "id": "CTS-M2",
+      "requirements": [
+        "CRK1-R002",
+        "CRK1-R006",
+        "CRK1-R018"
+      ]
+    },
+    "CTS-M3": {
+      "id": "CTS-M3",
+      "requirements": [
+        "CRK1-R003",
+        "CRK1-R007"
+      ]
+    },
+    "CTS-M4": {
+      "id": "CTS-M4",
+      "requirements": [
+        "CRK1-R004",
+        "CRK1-R025"
+      ]
+    },
+    "CTS-M5": {
+      "id": "CTS-M5",
+      "requirements": [
+        "CRK1-R008"
+      ]
+    },
+    "CTS-S1": {
+      "id": "CTS-S1",
+      "requirements": [
+        "CRK1-R010",
+        "CRK1-R013",
+        "CRK1-R014",
+        "CRK1-R015",
+        "CRK1-R016",
+        "CRK1-R017"
+      ]
+    },
+    "CTS-S3": {
+      "id": "CTS-S3",
+      "requirements": [
+        "CRK1-R010"
+      ]
+    },
+    "CTS-S2": {
+      "id": "CTS-S2",
+      "requirements": [
+        "CRK1-R011",
+        "CRK1-R018",
+        "CRK1-R019",
+        "CRK1-R027"
+      ]
+    },
+    "CTS-G2": {
+      "id": "CTS-G2",
+      "requirements": [
+        "CRK1-R011",
+        "CRK1-R033"
+      ]
+    },
+    "CTS-S5": {
+      "id": "CTS-S5",
+      "requirements": [
+        "CRK1-R012",
+        "CRK1-R036",
+        "CRK1-R037"
+      ]
+    },
+    "CTS-E1": {
+      "id": "CTS-E1",
+      "requirements": [
+        "CRK1-R020",
+        "CRK1-R029"
+      ]
+    },
+    "CTS-E2": {
+      "id": "CTS-E2",
+      "requirements": [
+        "CRK1-R021",
+        "CRK1-R025"
+      ]
+    },
+    "CTS-E3": {
+      "id": "CTS-E3",
+      "requirements": [
+        "CRK1-R022",
+        "CRK1-R026",
+        "CRK1-R028"
+      ]
+    },
+    "CTS-D3": {
+      "id": "CTS-D3",
+      "requirements": [
+        "CRK1-R022",
+        "CRK1-R041"
+      ]
+    },
+    "CTS-E4": {
+      "id": "CTS-E4",
+      "requirements": [
+        "CRK1-R023"
+      ]
+    },
+    "CTS-E5": {
+      "id": "CTS-E5",
+      "requirements": [
+        "CRK1-R024"
+      ]
+    },
+    "CTS-G3": {
+      "id": "CTS-G3",
+      "requirements": [
+        "CRK1-R030",
+        "CRK1-R034"
+      ]
+    },
+    "CTS-G4": {
+      "id": "CTS-G4",
+      "requirements": [
+        "CRK1-R032",
+        "CRK1-R039"
+      ]
+    },
+    "CTS-G1": {
+      "id": "CTS-G1",
+      "requirements": [
+        "CRK1-R035",
+        "CRK1-R042"
+      ]
+    },
+    "CTS-D1": {
+      "id": "CTS-D1",
+      "requirements": [
+        "CRK1-R041"
+      ]
+    },
+    "CTS-D2": {
+      "id": "CTS-D2",
+      "requirements": [
+        "CRK1-R041"
+      ]
+    }
+  },
+  "transformations": {
+    "TR-T01": {
+      "id": "TR-T01",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R001-in",
+      "output": "ART-R001-out",
+      "receipt": "REC-R001",
+      "provenance": "PROV-R001"
+    },
+    "TR-T02": {
+      "id": "TR-T02",
+      "spec": "T02/outcome-to-evidence/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R002-in",
+      "output": "ART-R002-out",
+      "receipt": "REC-R002",
+      "provenance": "PROV-R002"
+    },
+    "TR-T03": {
+      "id": "TR-T03",
+      "spec": "T03/evidence-to-interpretation/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R003-in",
+      "output": "ART-R003-out",
+      "receipt": "REC-R003",
+      "provenance": "PROV-R003"
+    },
+    "TR-CRK1-R004": {
+      "id": "TR-CRK1-R004",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R004-in",
+      "output": "ART-R004-out",
+      "receipt": null,
+      "provenance": "PROV-R004"
+    },
+    "TR-CRK1-R005": {
+      "id": "TR-CRK1-R005",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R005-in",
+      "output": "ART-R005-out",
+      "receipt": "REC-R005",
+      "provenance": "PROV-R005"
+    },
+    "TR-CRK1-R006": {
+      "id": "TR-CRK1-R006",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R006-in",
+      "output": "ART-R006-out",
+      "receipt": "REC-R006",
+      "provenance": "PROV-R006"
+    },
+    "TR-CRK1-R007": {
+      "id": "TR-CRK1-R007",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R007-in",
+      "output": "ART-R007-out",
+      "receipt": "REC-R007",
+      "provenance": "PROV-R007"
+    },
+    "TR-CRK1-R008": {
+      "id": "TR-CRK1-R008",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R008-in",
+      "output": "ART-R008-out",
+      "receipt": "REC-R008",
+      "provenance": "PROV-R008"
+    },
+    "TR-CRK1-R009": {
+      "id": "TR-CRK1-R009",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R009-in",
+      "output": "ART-R009-out",
+      "receipt": "REC-R009",
+      "provenance": "PROV-R009"
+    },
+    "TR-CRK1-R010": {
+      "id": "TR-CRK1-R010",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R010-in",
+      "output": "ART-R010-out",
+      "receipt": "REC-R010",
+      "provenance": "PROV-R010"
+    },
+    "TR-CRK1-R011": {
+      "id": "TR-CRK1-R011",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R011-in",
+      "output": "ART-R011-out",
+      "receipt": "REC-R011",
+      "provenance": "PROV-R011"
+    },
+    "TR-CRK1-R012": {
+      "id": "TR-CRK1-R012",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R012-in",
+      "output": "ART-R012-out",
+      "receipt": "REC-R012",
+      "provenance": "PROV-R012"
+    },
+    "TR-CRK1-R013": {
+      "id": "TR-CRK1-R013",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R013-in",
+      "output": "ART-R013-out",
+      "receipt": "REC-R013",
+      "provenance": "PROV-R013"
+    },
+    "TR-CRK1-R014": {
+      "id": "TR-CRK1-R014",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R014-in",
+      "output": "ART-R014-out",
+      "receipt": "REC-R014",
+      "provenance": "PROV-R014"
+    },
+    "TR-CRK1-R015": {
+      "id": "TR-CRK1-R015",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R015-in",
+      "output": "ART-R015-out",
+      "receipt": "REC-R015",
+      "provenance": "PROV-R015"
+    },
+    "TR-CRK1-R016": {
+      "id": "TR-CRK1-R016",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R016-in",
+      "output": "ART-R016-out",
+      "receipt": "REC-R016",
+      "provenance": "PROV-R016"
+    },
+    "TR-CRK1-R017": {
+      "id": "TR-CRK1-R017",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R017-in",
+      "output": "ART-R017-out",
+      "receipt": "REC-R017",
+      "provenance": "PROV-R017"
+    },
+    "TR-CRK1-R018": {
+      "id": "TR-CRK1-R018",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R018-in",
+      "output": "ART-R018-out",
+      "receipt": "REC-R018",
+      "provenance": "PROV-R018"
+    },
+    "TR-CRK1-R019": {
+      "id": "TR-CRK1-R019",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R019-in",
+      "output": "ART-R019-out",
+      "receipt": "REC-R019",
+      "provenance": "PROV-R019"
+    },
+    "TR-CRK1-R020": {
+      "id": "TR-CRK1-R020",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R020-in",
+      "output": "ART-R020-out",
+      "receipt": "REC-R020",
+      "provenance": "PROV-R020"
+    },
+    "TR-CRK1-R021": {
+      "id": "TR-CRK1-R021",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R021-in",
+      "output": "ART-R021-out",
+      "receipt": null,
+      "provenance": "PROV-R021"
+    },
+    "TR-CRK1-R022": {
+      "id": "TR-CRK1-R022",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R022-in",
+      "output": "ART-R022-out",
+      "receipt": "REC-R022",
+      "provenance": "PROV-R022"
+    },
+    "TR-CRK1-R023": {
+      "id": "TR-CRK1-R023",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R023-in",
+      "output": "ART-R023-out",
+      "receipt": "REC-R023",
+      "provenance": "PROV-R023"
+    },
+    "TR-CRK1-R024": {
+      "id": "TR-CRK1-R024",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R024-in",
+      "output": "ART-R024-out",
+      "receipt": "REC-R024",
+      "provenance": "PROV-R024"
+    },
+    "TR-CRK1-R025": {
+      "id": "TR-CRK1-R025",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R025-in",
+      "output": "ART-R025-out",
+      "receipt": "REC-R025",
+      "provenance": "PROV-R025"
+    },
+    "TR-CRK1-R026": {
+      "id": "TR-CRK1-R026",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R026-in",
+      "output": "ART-R026-out",
+      "receipt": "REC-R026",
+      "provenance": "PROV-R026"
+    },
+    "TR-CRK1-R027": {
+      "id": "TR-CRK1-R027",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R027-in",
+      "output": "ART-R027-out",
+      "receipt": "REC-R027",
+      "provenance": "PROV-R027"
+    },
+    "TR-CRK1-R028": {
+      "id": "TR-CRK1-R028",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R028-in",
+      "output": "ART-R028-out",
+      "receipt": "REC-R028",
+      "provenance": "PROV-R028"
+    },
+    "TR-CRK1-R029": {
+      "id": "TR-CRK1-R029",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R029-in",
+      "output": "ART-R029-out",
+      "receipt": "REC-R029",
+      "provenance": "PROV-R029"
+    },
+    "TR-CRK1-R030": {
+      "id": "TR-CRK1-R030",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R030-in",
+      "output": "ART-R030-out",
+      "receipt": "REC-R030",
+      "provenance": "PROV-R030"
+    },
+    "TR-CRK1-R031": {
+      "id": "TR-CRK1-R031",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R031-in",
+      "output": "ART-R031-out",
+      "receipt": null,
+      "provenance": "PROV-R031"
+    },
+    "TR-CRK1-R032": {
+      "id": "TR-CRK1-R032",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R032-in",
+      "output": "ART-R032-out",
+      "receipt": "REC-R032",
+      "provenance": "PROV-R032"
+    },
+    "TR-CRK1-R033": {
+      "id": "TR-CRK1-R033",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R033-in",
+      "output": "ART-R033-out",
+      "receipt": "REC-R033",
+      "provenance": "PROV-R033"
+    },
+    "TR-CRK1-R034": {
+      "id": "TR-CRK1-R034",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R034-in",
+      "output": "ART-R034-out",
+      "receipt": "REC-R034",
+      "provenance": "PROV-R034"
+    },
+    "TR-CRK1-R035": {
+      "id": "TR-CRK1-R035",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R035-in",
+      "output": "ART-R035-out",
+      "receipt": "REC-R035",
+      "provenance": "PROV-R035"
+    },
+    "TR-CRK1-R036": {
+      "id": "TR-CRK1-R036",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R036-in",
+      "output": "ART-R036-out",
+      "receipt": "REC-R036",
+      "provenance": "PROV-R036"
+    },
+    "TR-CRK1-R037": {
+      "id": "TR-CRK1-R037",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R037-in",
+      "output": "ART-R037-out",
+      "receipt": "REC-R037",
+      "provenance": "PROV-R037"
+    },
+    "TR-CRK1-R038": {
+      "id": "TR-CRK1-R038",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R038-in",
+      "output": "ART-R038-out",
+      "receipt": "REC-R038",
+      "provenance": "PROV-R038"
+    },
+    "TR-CRK1-R039": {
+      "id": "TR-CRK1-R039",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R039-in",
+      "output": "ART-R039-out",
+      "receipt": "REC-R039",
+      "provenance": "PROV-R039"
+    },
+    "TR-CRK1-R040": {
+      "id": "TR-CRK1-R040",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R040-in",
+      "output": "ART-R040-out",
+      "receipt": "REC-R040",
+      "provenance": "PROV-R040"
+    },
+    "TR-CRK1-R041": {
+      "id": "TR-CRK1-R041",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R041-in",
+      "output": "ART-R041-out",
+      "receipt": "REC-R041",
+      "provenance": "PROV-R041"
+    },
+    "TR-CRK1-R042": {
+      "id": "TR-CRK1-R042",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R042-in",
+      "output": "ART-R042-out",
+      "receipt": "REC-R042",
+      "provenance": "PROV-R042"
+    },
+    "TR-CRK1-R043": {
+      "id": "TR-CRK1-R043",
+      "spec": "T01/decision-to-outcome/v1.0",
+      "authority": "steward-council/v1.0",
+      "implementation": "MRI-1.0/nova-studio-pipeline/1.0.0",
+      "input": "ART-R043-in",
+      "output": "ART-R043-out",
+      "receipt": "REC-R043",
+      "provenance": "PROV-R043"
+    }
+  },
+  "provenance": {
+    "PROV-R001": {
+      "id": "PROV-R001",
+      "parent": null,
+      "transformation": "TR-T01",
+      "requirement": "CRK1-R001"
+    },
+    "PROV-R002": {
+      "id": "PROV-R002",
+      "parent": null,
+      "transformation": "TR-T02",
+      "requirement": "CRK1-R002"
+    },
+    "PROV-R003": {
+      "id": "PROV-R003",
+      "parent": null,
+      "transformation": "TR-T03",
+      "requirement": "CRK1-R003"
+    },
+    "PROV-R004": {
+      "id": "PROV-R004",
+      "parent": null,
+      "transformation": "TR-CRK1-R004",
+      "requirement": "CRK1-R004"
+    },
+    "PROV-R005": {
+      "id": "PROV-R005",
+      "parent": null,
+      "transformation": "TR-CRK1-R005",
+      "requirement": "CRK1-R005"
+    },
+    "PROV-R006": {
+      "id": "PROV-R006",
+      "parent": null,
+      "transformation": "TR-CRK1-R006",
+      "requirement": "CRK1-R006"
+    },
+    "PROV-R007": {
+      "id": "PROV-R007",
+      "parent": null,
+      "transformation": "TR-CRK1-R007",
+      "requirement": "CRK1-R007"
+    },
+    "PROV-R008": {
+      "id": "PROV-R008",
+      "parent": null,
+      "transformation": "TR-CRK1-R008",
+      "requirement": "CRK1-R008"
+    },
+    "PROV-R009": {
+      "id": "PROV-R009",
+      "parent": null,
+      "transformation": "TR-CRK1-R009",
+      "requirement": "CRK1-R009"
+    },
+    "PROV-R010": {
+      "id": "PROV-R010",
+      "parent": null,
+      "transformation": "TR-CRK1-R010",
+      "requirement": "CRK1-R010"
+    },
+    "PROV-R011": {
+      "id": "PROV-R011",
+      "parent": null,
+      "transformation": "TR-CRK1-R011",
+      "requirement": "CRK1-R011"
+    },
+    "PROV-R012": {
+      "id": "PROV-R012",
+      "parent": null,
+      "transformation": "TR-CRK1-R012",
+      "requirement": "CRK1-R012"
+    },
+    "PROV-R013": {
+      "id": "PROV-R013",
+      "parent": null,
+      "transformation": "TR-CRK1-R013",
+      "requirement": "CRK1-R013"
+    },
+    "PROV-R014": {
+      "id": "PROV-R014",
+      "parent": null,
+      "transformation": "TR-CRK1-R014",
+      "requirement": "CRK1-R014"
+    },
+    "PROV-R015": {
+      "id": "PROV-R015",
+      "parent": null,
+      "transformation": "TR-CRK1-R015",
+      "requirement": "CRK1-R015"
+    },
+    "PROV-R016": {
+      "id": "PROV-R016",
+      "parent": null,
+      "transformation": "TR-CRK1-R016",
+      "requirement": "CRK1-R016"
+    },
+    "PROV-R017": {
+      "id": "PROV-R017",
+      "parent": null,
+      "transformation": "TR-CRK1-R017",
+      "requirement": "CRK1-R017"
+    },
+    "PROV-R018": {
+      "id": "PROV-R018",
+      "parent": null,
+      "transformation": "TR-CRK1-R018",
+      "requirement": "CRK1-R018"
+    },
+    "PROV-R019": {
+      "id": "PROV-R019",
+      "parent": null,
+      "transformation": "TR-CRK1-R019",
+      "requirement": "CRK1-R019"
+    },
+    "PROV-R020": {
+      "id": "PROV-R020",
+      "parent": null,
+      "transformation": "TR-CRK1-R020",
+      "requirement": "CRK1-R020"
+    },
+    "PROV-R021": {
+      "id": "PROV-R021",
+      "parent": null,
+      "transformation": "TR-CRK1-R021",
+      "requirement": "CRK1-R021"
+    },
+    "PROV-R022": {
+      "id": "PROV-R022",
+      "parent": null,
+      "transformation": "TR-CRK1-R022",
+      "requirement": "CRK1-R022"
+    },
+    "PROV-R023": {
+      "id": "PROV-R023",
+      "parent": null,
+      "transformation": "TR-CRK1-R023",
+      "requirement": "CRK1-R023"
+    },
+    "PROV-R024": {
+      "id": "PROV-R024",
+      "parent": null,
+      "transformation": "TR-CRK1-R024",
+      "requirement": "CRK1-R024"
+    },
+    "PROV-R025": {
+      "id": "PROV-R025",
+      "parent": null,
+      "transformation": "TR-CRK1-R025",
+      "requirement": "CRK1-R025"
+    },
+    "PROV-R026": {
+      "id": "PROV-R026",
+      "parent": null,
+      "transformation": "TR-CRK1-R026",
+      "requirement": "CRK1-R026"
+    },
+    "PROV-R027": {
+      "id": "PROV-R027",
+      "parent": null,
+      "transformation": "TR-CRK1-R027",
+      "requirement": "CRK1-R027"
+    },
+    "PROV-R028": {
+      "id": "PROV-R028",
+      "parent": null,
+      "transformation": "TR-CRK1-R028",
+      "requirement": "CRK1-R028"
+    },
+    "PROV-R029": {
+      "id": "PROV-R029",
+      "parent": null,
+      "transformation": "TR-CRK1-R029",
+      "requirement": "CRK1-R029"
+    },
+    "PROV-R030": {
+      "id": "PROV-R030",
+      "parent": null,
+      "transformation": "TR-CRK1-R030",
+      "requirement": "CRK1-R030"
+    },
+    "PROV-R031": {
+      "id": "PROV-R031",
+      "parent": null,
+      "transformation": "TR-CRK1-R031",
+      "requirement": "CRK1-R031"
+    },
+    "PROV-R032": {
+      "id": "PROV-R032",
+      "parent": null,
+      "transformation": "TR-CRK1-R032",
+      "requirement": "CRK1-R032"
+    },
+    "PROV-R033": {
+      "id": "PROV-R033",
+      "parent": null,
+      "transformation": "TR-CRK1-R033",
+      "requirement": "CRK1-R033"
+    },
+    "PROV-R034": {
+      "id": "PROV-R034",
+      "parent": null,
+      "transformation": "TR-CRK1-R034",
+      "requirement": "CRK1-R034"
+    },
+    "PROV-R035": {
+      "id": "PROV-R035",
+      "parent": null,
+      "transformation": "TR-CRK1-R035",
+      "requirement": "CRK1-R035"
+    },
+    "PROV-R036": {
+      "id": "PROV-R036",
+      "parent": null,
+      "transformation": "TR-CRK1-R036",
+      "requirement": "CRK1-R036"
+    },
+    "PROV-R037": {
+      "id": "PROV-R037",
+      "parent": null,
+      "transformation": "TR-CRK1-R037",
+      "requirement": "CRK1-R037"
+    },
+    "PROV-R038": {
+      "id": "PROV-R038",
+      "parent": null,
+      "transformation": "TR-CRK1-R038",
+      "requirement": "CRK1-R038"
+    },
+    "PROV-R039": {
+      "id": "PROV-R039",
+      "parent": null,
+      "transformation": "TR-CRK1-R039",
+      "requirement": "CRK1-R039"
+    },
+    "PROV-R040": {
+      "id": "PROV-R040",
+      "parent": null,
+      "transformation": "TR-CRK1-R040",
+      "requirement": "CRK1-R040"
+    },
+    "PROV-R041": {
+      "id": "PROV-R041",
+      "parent": null,
+      "transformation": "TR-CRK1-R041",
+      "requirement": "CRK1-R041"
+    },
+    "PROV-R042": {
+      "id": "PROV-R042",
+      "parent": null,
+      "transformation": "TR-CRK1-R042",
+      "requirement": "CRK1-R042"
+    },
+    "PROV-R043": {
+      "id": "PROV-R043",
+      "parent": null,
+      "transformation": "TR-CRK1-R043",
+      "requirement": "CRK1-R043"
+    }
+  }
+}

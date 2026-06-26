@@ -35,7 +35,11 @@
     "nova-studio:build": "npm run build --prefix nova-studio",
     "nova-studio:build:react": "npm run build:react --prefix nova-studio",
     "test:nova-studio": "node --test tests/nova_studio.test.js",
-    "spec:requirements": "node tools/generators/requirements-catalog.mjs"
+    "spec:requirements": "node tools/generators/requirements-catalog.mjs",
+    "spec:csr": "node tools/generators/csr-registry.mjs",
+    "spec:graph": "node tools/generators/proof-graph-index.mjs",
+    "spec:cor": "node tools/generators/csr-registry.mjs && node tools/generators/proof-graph-index.mjs && node tools/generators/cor-generate.mjs --out meta/COR-1.0.json",
+    "crk": "node tools/crk.mjs"
   },
   "engines": {
     "node": ">=18"

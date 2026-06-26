@@ -1,0 +1,648 @@
+{
+  "generated_at": "2026-06-26T19:57:37.582Z",
+  "commit": "7a3f7cedf9c2b36188ccc22162c728d3e484c73c",
+  "version": "COR-1.0",
+  "requirements": [
+    {
+      "requirement_id": "CRK1-R001",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R002",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R003",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R004",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "missing",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "research",
+      "exceptions": [
+        "classified as research — outside v1.0 guarantee boundary"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R005",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R006",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R007",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R008",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "normative",
+      "exceptions": [
+        "implementation partial but claim remains normative"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R009",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "normative",
+      "exceptions": [
+        "implementation partial but claim remains normative"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R010",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R011",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R012",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R013",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R014",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R015",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R016",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R017",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R018",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R019",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "normative",
+      "exceptions": [
+        "implementation partial but claim remains normative"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R020",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R021",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "missing",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R022",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R023",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R024",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R025",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R026",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R027",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R028",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R029",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R030",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R031",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "missing",
+      "evidence_status": "partial",
+      "receipt_status": "missing",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "research",
+      "exceptions": [
+        "classified as research — outside v1.0 guarantee boundary"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R032",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R033",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R034",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R035",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "research",
+      "exceptions": [
+        "classified as research — outside v1.0 guarantee boundary"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R036",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R037",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "anchored",
+      "reproduction_status": "pending",
+      "claim_status": "verified",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R038",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "missing",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "research",
+      "exceptions": [
+        "classified as research — outside v1.0 guarantee boundary"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R039",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "research",
+      "exceptions": [
+        "classified as research — outside v1.0 guarantee boundary"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R040",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R041",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "partial",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": [
+        "no automated repo tests mapped"
+      ]
+    },
+    {
+      "requirement_id": "CRK1-R042",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "complete",
+      "verification_status": "complete",
+      "evidence_status": "complete",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "pending",
+      "claim_status": "implemented",
+      "exceptions": []
+    },
+    {
+      "requirement_id": "CRK1-R043",
+      "authority_status": "present",
+      "specification_status": "present",
+      "implementation_status": "partial",
+      "verification_status": "missing",
+      "evidence_status": "partial",
+      "receipt_status": "complete",
+      "provenance_status": "unanchored",
+      "reproduction_status": "missing",
+      "claim_status": "normative",
+      "exceptions": [
+        "implementation partial but claim remains normative"
+      ]
+    }
+  ],
+  "summary": {
+    "orphaned_requirements": 38,
+    "orphaned_specs": 0,
+    "orphaned_implementations": 0,
+    "missing_evidence": 0,
+    "missing_receipts": 3,
+    "unanchored_receipts": 37,
+    "broken_provenance": 0,
+    "unreproduced_claims": 6,
+    "unresolved_assumptions": 0,
+    "proof_closure": "fail"
+  }
+}
