@@ -16,12 +16,36 @@ python main.py
 
 ### Nova Studio (unified IDE)
 
-```bash
-npm run nova-studio
-# → http://localhost:8787
+**You must run from the repo root** (`E:\skillzmcgee` or your clone path — not your home directory).
+
+```powershell
+cd E:\skillzmcgee
+npm run nova-studio:check    # optional — verify ports and cwd
+npm run nova-studio          # API + built React UI → http://localhost:8787
 ```
 
-See [nova-studio/NOVA_STUDIO.md](./nova-studio/NOVA_STUDIO.md).
+Optional hot-reload dev UI (second terminal):
+
+```powershell
+cd E:\skillzmcgee
+npm run nova-studio:react      # → http://localhost:5174
+```
+
+Or launch from anywhere:
+
+```powershell
+E:\skillzmcgee\scripts\Start-NovaStudio.ps1
+E:\skillzmcgee\scripts\Start-NovaStudio-React.ps1
+```
+
+Build the React UI for port 8787:
+
+```powershell
+npm run nova-studio:build:react
+npm run nova-studio
+```
+
+See [nova-studio/NOVA_STUDIO.md](./nova-studio/NOVA_STUDIO.md) and [docs/dev-quickstart-windows.md](./docs/dev-quickstart-windows.md).
 
 ## Architecture
 

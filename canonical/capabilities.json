@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "capabilities": [
+    {
+      "id": "read_file",
+      "name": "read_file",
+      "description": "Read a file from the governed workspace",
+      "kind": "read",
+      "inputs": [
+        { "name": "path", "description": "Relative workspace path", "type": "string" }
+      ]
+    },
+    {
+      "id": "write_file",
+      "name": "write_file",
+      "description": "Write content to a workspace file",
+      "kind": "write",
+      "inputs": [
+        { "name": "path", "description": "Relative workspace path", "type": "string" },
+        { "name": "content", "description": "File content", "type": "string" }
+      ]
+    },
+    {
+      "id": "list_dir",
+      "name": "list_dir",
+      "description": "List directory entries in the workspace",
+      "kind": "list_dir",
+      "inputs": [
+        { "name": "path", "description": "Directory path (optional)", "type": "string" }
+      ]
+    },
+    {
+      "id": "slice_math",
+      "name": "slice_math",
+      "description": "Deterministic governed slice (value + 1)",
+      "kind": "compute",
+      "inputs": [
+        { "name": "value", "description": "Numeric input", "type": "number" }
+      ]
+    }
+  ]
+}

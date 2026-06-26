@@ -1,0 +1,22 @@
+{
+  "name": "governance-stance-strip",
+  "version": "1.0.0",
+  "description": "Adds the Governance Stance Strip to SkillzMcGee CLI and cockpit.",
+  "entry": "src/plugins/stance_strip.js",
+  "capabilities": [
+    "ui:ascii",
+    "ui:html",
+    "governance:posture",
+    "continuity:receipts"
+  ],
+  "commands": {
+    "stance": "Render ASCII stance strip",
+    "cockpit": "Write cockpit.html",
+    "escalate": "Cycle S0–S3 and emit receipt"
+  },
+  "requires": {
+    "runtime": "aaes-os >= 1.0.0",
+    "adapter": "nova-aais-http >= 0.3.0"
+  },
+  "author": "jon"
+}

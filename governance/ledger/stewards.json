@@ -1,0 +1,29 @@
+{
+  "sc:council-genesis": {
+    "name": "Council Genesis Steward",
+    "publicKey": "ed25519:ZGV2LWtleS1mb3Itc2M6Y291bmNpbC1nZW5lc2lz",
+    "privateKeyDev": "ed25519:dev-private-sc-council-genesis",
+    "online": true
+  },
+  "sc:chair": {
+    "name": "Council Chair",
+    "publicKey": "ed25519:ZGV2LWtleS1mb3Itc2M6Y2hhaXI=",
+    "privateKeyDev": "ed25519:dev-private-sc-chair",
+    "online": true
+  },
+  "sc:auditor": {
+    "name": "Council Auditor",
+    "publicKey": "ed25519:ZGV2LWtleS1mb3Itc2M6YXVkaXRvcg==",
+    "online": true
+  },
+  "sc:operator": {
+    "name": "Council Operator",
+    "publicKey": "ed25519:ZGV2LWtleS1mb3Itc2M6b3BlcmF0b3I=",
+    "online": true
+  },
+  "sc:archivist": {
+    "name": "Council Archivist",
+    "publicKey": "ed25519:ZGV2LWtleS1mb3Itc2M6YXJjaGl2aXN0",
+    "online": true
+  }
+}

@@ -5,8 +5,21 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { clearContinuityState } from "../../../substrate/continuity-substrate.mjs";
+import { clearDriftState } from "../../../substrate/drift-engine.mjs";
+import { clearSession } from "./sessionRecorder.mjs";
 import { foldSingularity } from "../../../src/singularity/absoluteSingularity.js";
 import { GOVERNANCE_OBJECTIVES } from "../../../src/governance/objectives.js";
+import { computeFoldSummary } from "../../../runtime/fold.mjs";
+import { reduceStance } from "../../../runtime/stance.mjs";
+import { reduceWaves } from "../../../runtime/wave.mjs";
+import {
+  NOVA_RUNTIME_ID,
+  NOVA_SESSION_ID,
+  replaceState,
+  updateState,
+} from "../../../runtime/state-store.mjs";
+import { getSubstratePayload } from "./substrateState.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const STUDIO_ROOT = path.resolve(__dirname, "../..");
@@ -20,6 +33,7 @@ let ledger = [];
 /** @type {import("./types.js").StudioEvent[]} */
 let events = [];
 let lastFingerprint = null;
+const eventSubscribers = new Set();
 
 function ensureDirs() {
   fs.mkdirSync(RUNTIME_DIR, { recursive: true });
@@ -51,6 +65,7 @@ function persistLedger() {
 
 export function bootStudioRuntime() {
   loadLedger();
+  replaceState(createNovaRuntimeState(computeLiveMetrics()));
   return { ledger, events };
 }
 
@@ -67,7 +82,27 @@ export function logEvent(type, payload = {}) {
   };
   events.unshift(entry);
   if (events.length > 200) events.length = 200;
+  for (const subscriber of eventSubscribers) {
+    subscriber(entry);
+  }
+  updateState({
+    type: "event",
+    runtime_id: NOVA_RUNTIME_ID,
+    session_id: NOVA_SESSION_ID,
+    timestamp: entry.timestamp,
+    payload: {
+      event_id: entry.id,
+      event_type: entry.type,
+      receipt_id: entry.receiptId ?? null,
+      phase: entry.phase ?? null,
+    },
+  });
   return entry;
+}
+
+export function subscribeStudioEvents(subscriber) {
+  eventSubscribers.add(subscriber);
+  return () => eventSubscribers.delete(subscriber);
 }
 
 /**
@@ -75,6 +110,7 @@ export function logEvent(type, payload = {}) {
  */
 export function appendReceipt(draft) {
   const receipt = {
+    ...draft,
     id: draft.id ?? `REC-STUDIO-${crypto.randomUUID()}`,
     timestamp: new Date().toISOString(),
     actor: draft.actor ?? "nova-studio",
@@ -86,6 +122,8 @@ export function appendReceipt(draft) {
     parentId: draft.parentId ?? (ledger.at(-1)?.id ?? null),
     capability: draft.capability ?? null,
     phase: draft.phase ?? null,
+    inputHash: draft.inputHash ?? null,
+    outputHash: draft.outputHash ?? null,
   };
 
   if (!receipt.laws || typeof receipt.laws.allowed !== "boolean") {
@@ -96,11 +134,24 @@ export function appendReceipt(draft) {
   ledger.push(receipt);
   persistLedger();
   logEvent("receipt_appended", { receiptId: receipt.id, phase: receipt.phase });
+  replaceState(createNovaRuntimeState(computeLiveMetrics()), { broadcast: true });
   return receipt;
 }
 
 export function getLedger() {
   return [...ledger];
+}
+
+/**
+ * @param {string} id
+ * @param {Record<string, unknown>} fields
+ */
+export function patchReceipt(id, fields) {
+  const idx = ledger.findIndex((r) => r.id === id);
+  if (idx === -1) return null;
+  ledger[idx] = { ...ledger[idx], ...fields };
+  persistLedger();
+  return ledger[idx];
 }
 
 export function getEvents() {
@@ -112,6 +163,10 @@ export function clearLedger() {
   events = [];
   lastFingerprint = null;
   persistLedger();
+  clearContinuityState();
+  clearDriftState();
+  clearSession();
+  replaceState(createNovaRuntimeState(computeLiveMetrics()));
 }
 
 /**
@@ -179,11 +234,71 @@ export function getGovernancePanel() {
 }
 
 export function getStudioState() {
+  const metrics = computeLiveMetrics();
+  const substrate = getSubstratePayload();
   return {
+    ...substrate,
     ledger: getLedger(),
     events: getEvents(),
-    metrics: computeLiveMetrics(),
+    metrics,
+    nova: createNovaRuntimeState(metrics),
+    stanceStrip: createStanceStrip(metrics),
+    wave: metrics.fold?.wave ?? null,
+    darz: metrics.fold?.darz ?? null,
+    lineage: metrics.fold?.lineages ?? {},
+    replayCheckpoints: ledger.map((receipt, index) => ({
+      id: `checkpoint:${receipt.id}`,
+      receiptId: receipt.id,
+      index,
+      timestamp: receipt.timestamp,
+      status: receipt.status,
+      phase: receipt.phase ?? null,
+      merkleRoot: metrics.fold?.merkle?.globalRoot ?? null,
+    })),
     governance: getGovernancePanel(),
     workspace: WORKSPACE_DIR,
   };
+}
+
+function createStanceStrip(metrics) {
+  const novaState = createNovaRuntimeState(metrics);
+  return {
+    ledger: metrics.receiptCount > 0 ? "live" : "empty",
+    operatorId: novaState.stance.operator_id,
+    stance: novaState.stance.stance,
+    focusCapabilityId: novaState.stance.focus_capability_id,
+    lastEventAt: novaState.stance.last_event_at,
+    receiptCount: metrics.receiptCount,
+    coherence: metrics.coherence,
+    drift: metrics.drift,
+    lawfulness: metrics.lawfulness,
+    waveAlignment: metrics.waveAlignment,
+    merkleRoot: metrics.merkleRoot ?? null,
+    fingerprint: metrics.fingerprint ?? null,
+  };
+}
+
+export function getNovaRuntimeState() {
+  return replaceState(createNovaRuntimeState(computeLiveMetrics()));
+}
+
+export function createNovaRuntimeState(metrics = computeLiveMetrics()) {
+  return {
+    runtime_id: NOVA_RUNTIME_ID,
+    stance: createNovaStance(metrics),
+    waves: createNovaWaves(metrics),
+    folds: createFoldSummaries(metrics),
+  };
+}
+
+function createNovaStance(metrics) {
+  return reduceStance(metrics, ledger, events);
+}
+
+function createNovaWaves(metrics) {
+  return reduceWaves(metrics, ledger);
+}
+
+function createFoldSummaries(metrics) {
+  return computeFoldSummary(metrics, ledger);
 }

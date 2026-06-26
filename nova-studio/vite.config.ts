@@ -24,11 +24,34 @@ export default defineConfig({
         target: "http://localhost:8787",
         changeOrigin: true,
       },
+      "/canonical": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+      },
+      "/runtime": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+      },
+      "/conformance": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+      },
+      "/skillzmcgee": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+      },
     },
   },
   resolve: {
     alias: {
       "@nova-studio": path.join(repoRoot, "src/nova-studio"),
+      react: path.join(__dirname, "node_modules/react"),
+      "react/jsx-runtime": path.join(__dirname, "node_modules/react/jsx-runtime.js"),
+      "react/jsx-dev-runtime": path.join(__dirname, "node_modules/react/jsx-dev-runtime.js"),
+      "react-dom": path.join(__dirname, "node_modules/react-dom"),
+      "react-dom/client": path.join(__dirname, "node_modules/react-dom/client.js"),
+      "react-router-dom": path.join(__dirname, "node_modules/react-router-dom/dist/index.mjs"),
+      d3: path.join(__dirname, "node_modules/d3/src/index.js"),
     },
   },
 });

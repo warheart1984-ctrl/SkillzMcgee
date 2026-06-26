@@ -1,0 +1,1 @@
+export { NovaStudioShell } from "../NovaStudioShell";

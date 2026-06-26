@@ -42,6 +42,7 @@
  * @property {ClusterId} cluster
  * @property {string} purpose
  * @property {boolean} enabled
+ * @property {import('./contracts.js').SubstrationContract} [contract]
  * @property {(ctx: SubstrationContext) => any} [analyze]
  * @property {(ctx: SubstrationContext, analysis: any) => SubstrationNeed[]} [deriveNeeds]
  * @property {(ctx: SubstrationContext, needs: SubstrationNeed[]) => SubstrationTask[]} [planTasks]

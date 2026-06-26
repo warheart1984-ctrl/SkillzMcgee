@@ -127,6 +127,28 @@ if (cmd === "gls" && sub === "append") {
   run(path.join(GENERATORS, "gls-append.mjs"), rest);
 }
 
+if (cmd === "cor" && sub === "diff" && rest[0] && rest[1]) {
+  run(path.join(GENERATORS, "cor-diff.mjs"), rest);
+}
+
+if (cmd === "cor" && sub === "explain" && rest[0]) {
+  run(path.join(GENERATORS, "cor-generate.mjs"), ["--explain", rest[0]]);
+}
+
+if (cmd === "csr" && sub === "explain" && rest[0]) {
+  run(path.join(GENERATORS, "csr-explain.mjs"), [rest[0]]);
+}
+
+if (cmd === "ledger" && sub === "verify") {
+  run(path.join(GENERATORS, "glv-verify.mjs"), rest);
+}
+
+if (cmd === "pgql" && rest[0]) {
+  const { runPgqlQuery } = await import(path.join(ROOT, "tools/pgql/evaluator.mjs"));
+  console.log(JSON.stringify(runPgqlQuery(rest.join(" ")), null, 2));
+  process.exit(0);
+}
+
 console.log(`CRK Conformance CLI
 
 Commands:

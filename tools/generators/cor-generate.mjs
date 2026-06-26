@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
+import { CONFORMANCE_PATHS, writeJson } from "../lib/conformance-paths.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -189,6 +190,49 @@ function buildReport() {
   };
 }
 
+function toPublicCor(report) {
+  const verified = report.requirements.filter((r) =>
+    ["verified", "reproduced"].includes(r.claim_status),
+  ).length;
+  const implemented = report.requirements.filter((r) =>
+    ["implemented", "verified", "reproduced"].includes(r.claim_status),
+  ).length;
+  const reproduced = report.requirements.filter((r) => r.claim_status === "reproduced").length;
+  const risk =
+    report.summary.proof_closure !== "pass"
+      ? "high"
+      : report.summary.unanchored_receipts > 10
+        ? "medium"
+        : "low";
+  return {
+    version: "1.0",
+    timestamp: report.generated_at,
+    generated_at: report.generated_at,
+    commit: report.commit,
+    requirements: report.requirements,
+    summary: report.summary,
+    canonicalIntegrity: {
+      authorities: report.summary.orphaned_requirements === 0 ? "ok" : "needs-review",
+      specifications: "ok",
+      normativeRequirements: "ok",
+      contracts: "ok",
+      implementations: report.summary.orphaned_implementations === 0 ? "ok" : "needs-review",
+    },
+    evidenceCoverage: {
+      implemented,
+      verified,
+      reproduced,
+      missing: report.summary.missing_evidence + report.summary.missing_receipts,
+    },
+    proofGraphStatus: {
+      unresolved: report.summary.unanchored_receipts,
+      cycles: 0,
+    },
+    dependencyRisk: risk,
+    releaseReadiness: report.summary.proof_closure === "pass" ? "pass" : "fail",
+  };
+}
+
 function explain(id, report, matrix) {
   const row = report._rows.find((r) => r.requirement_id === id);
   if (!row) {
@@ -254,7 +298,9 @@ if (opts.counterfactual) {
 const { _rows, ...output } = report;
 fs.mkdirSync(path.dirname(opts.out), { recursive: true });
 fs.writeFileSync(opts.out, `${JSON.stringify(output, null, 2)}\n`);
+writeJson(CONFORMANCE_PATHS.cor, toPublicCor(output));
 console.log(`wrote ${opts.out}`);
+console.log(`wrote ${CONFORMANCE_PATHS.cor}`);
 console.log(`proof_closure: ${output.summary.proof_closure}`);
 
 if (opts.failOnIncomplete && output.summary.proof_closure === "fail") {

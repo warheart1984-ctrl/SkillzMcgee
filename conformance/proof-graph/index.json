@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-26T20:12:24.732Z",
-  "commit": "3d0a9d420cfba240a44d7d4738e63f051d87423c",
+  "generated_at": "2026-06-26T21:18:04.507Z",
+  "commit": "054da336d04a7e6815c7a5f4b6525b7b1cd8a607",
   "authorities": {
     "steward-council/v1.0": {
       "authority_id": "steward-council/v1.0",

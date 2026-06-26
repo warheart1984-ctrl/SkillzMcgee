@@ -73,8 +73,25 @@ class GovernanceUI:
             print(f"  - {r['id'][:16]}... ({r['slice']})")
 
         self.render_cosmic_timeline()
+        self.render_governance_stance_strip()
 
         self._prev_state = dict(state)
+
+    def render_governance_stance_strip(self, repo_root: str | Path | None = None) -> None:
+        """Governance stance strip — law / mission / tension / escalation HUD."""
+        root = Path(repo_root) if repo_root else Path(__file__).resolve().parent.parent
+        script = root / "scripts" / "print_stance_strip.mjs"
+        if not script.exists():
+            return
+        result = subprocess.run(
+            ["node", str(script)],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            print(result.stdout)
 
     def render_cosmic_timeline(self) -> None:
         """Cosmic timeline panel — read-model from federation tick output."""

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GL-1.0 Governance Decision",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "steward",
+    "decision",
+    "subject",
+    "evidence",
+    "rationale",
+    "continuityCheckpoint",
+    "parentDecisionId",
+    "signature",
+    "publicKey"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^sha256:" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "steward": { "type": "string", "pattern": "^sc:" },
+    "decision": { "enum": ["approve", "reject", "defer"] },
+    "subject": { "type": "string" },
+    "evidence": {
+      "type": "object",
+      "required": ["cor", "csr", "dra"],
+      "properties": {
+        "cor": { "type": "string" },
+        "csr": { "type": "string" },
+        "dra": { "type": "string" },
+        "proofGraphHash": { "type": "string" }
+      }
+    },
+    "rationale": { "type": "string", "minLength": 1 },
+    "continuityCheckpoint": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "parentDecisionId": { "type": "string" },
+    "signature": { "type": "string", "pattern": "^ed25519:" },
+    "publicKey": { "type": "string", "pattern": "^ed25519:" }
+  },
+  "additionalProperties": false
+}

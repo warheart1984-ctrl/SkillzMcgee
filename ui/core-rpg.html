@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Negotiant Core — RPG Face Cockpit</title>
+  <style>
+    :root {
+      --navy: #0a0e1a;
+      --navy-grid: #12182b;
+      --cyan: #22d3ee;
+      --violet: #8b5cf6;
+      --gold: #d4a853;
+      --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--navy);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: #e2e8f0;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .core-rpg-panel { padding: 1rem 1.25rem 2rem; }
+    .cockpit-header { text-align: center; margin-bottom: 1rem; letter-spacing: 0.12em; }
+    .cockpit-header h1 { margin: 0; font-size: 14px; font-weight: 600; }
+    .cockpit-sub { opacity: 0.55; font-size: 10px; }
+    .stance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .stance-grid { grid-template-columns: 1fr; }
+    }
+    .stance-cell {
+      background: var(--navy-grid);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 0.75rem;
+    }
+    .stance-cell h2 {
+      margin: 0 0 0.5rem;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+    .bar-row { margin-bottom: 0.5rem; }
+    .bar-label { display: flex; justify-content: space-between; margin-bottom: 0.2rem; }
+    .bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #334155, #475569);
+      transition: width 0.25s ease;
+    }
+    .bar-fill.dominant {
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+    }
+    .mode-badge {
+      border: 1px solid rgba(34,211,238,0.35);
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .mode-label {
+      display: block;
+      font-size: 10px;
+      opacity: 0.65;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    #mode-value {
+      display: block;
+      font-size: 18px;
+      margin-top: 0.25rem;
+      color: var(--cyan);
+    }
+    #archetype-value {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--gold);
+    }
+    #backlash-meter { width: 100%; margin: 0.35rem 0; }
+    .controls { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+    .controls button {
+      font-family: inherit;
+      font-size: 11px;
+      padding: 0.35rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(34,211,238,0.4);
+      background: rgba(34,211,238,0.12);
+      color: #e2e8f0;
+      cursor: pointer;
+    }
+    #reset {
+      border-color: rgba(255,255,255,0.15);
+      background: transparent;
+    }
+    #cycle-list {
+      list-style: none;
+      margin: 0 0 0.75rem;
+      padding: 0;
+    }
+    #cycle-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    #narrative-hook {
+      margin: 0;
+      padding: 0.5rem;
+      background: rgba(139,92,246,0.12);
+      border-radius: 4px;
+      border-left: 3px solid var(--violet);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <section class="core-rpg-panel">
+    <header class="cockpit-header">
+      <h1>NEGOTIANT CORE ⟴ — RPG FACE</h1>
+      <span class="cockpit-sub">core-live · validated interpretive view</span>
+    </header>
+
+    <div class="stance-grid">
+      <article class="stance-cell">
+        <h2>Core State</h2>
+        <div id="tension-bars"></div>
+      </article>
+
+      <article class="stance-cell">
+        <h2>Mode &amp; Backlash</h2>
+        <div class="mode-badge">
+          <span class="mode-label">Mode</span>
+          <strong id="mode-value">—</strong>
+          <span id="archetype-value"></span>
+        </div>
+        <div>
+          <span class="mode-label">Backlash</span>
+          <meter id="backlash-meter" min="0" max="10" value="0"></meter>
+          <div>
+            <strong id="backlash-value">0</strong>
+            <span id="backlash-band" style="opacity:0.7;margin-left:0.5rem"></span>
+          </div>
+        </div>
+        <div class="controls">
+          <button type="button" id="spin-1">Spin +1</button>
+          <button type="button" id="spin-5">Spin +5</button>
+          <button type="button" id="reset">Reset</button>
+        </div>
+      </article>
+
+      <article class="stance-cell">
+        <h2>Cycle &amp; Narrative</h2>
+        <ol id="cycle-list"></ol>
+        <p id="narrative-hook"></p>
+      </article>
+    </div>
+  </section>
+
+  <script type="module" src="/src/ui/cockpit/browser/app.js"></script>
+</body>
+</html>

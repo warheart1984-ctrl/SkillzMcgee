@@ -8,7 +8,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
-import { bootStudioRuntime, getStudioState, clearLedger } from "./runtime/studioRuntime.mjs";
+import {
+  bootStudioRuntime,
+  getNovaRuntimeState,
+  getStudioState,
+  clearLedger,
+} from "./runtime/studioRuntime.mjs";
+import { getNovaStateData } from "../../api/state/nova.mjs";
 import { runGovernedPipeline } from "./runtime/governedPipeline.mjs";
 import { executeCapability } from "./runtime/capabilities.mjs";
 import {
@@ -23,13 +29,103 @@ import {
   exchangeWithPeer,
   broadcastConstellation,
 } from "./runtime/constellation.mjs";
+import { handleStudioEventsUpgrade } from "./runtime/events.mjs";
+import {
+  getContinuityTimeline,
+  getDriftPoints,
+  getGovernanceReceipts,
+  getSliceCapabilities,
+  getSubstratePayload,
+  readSkillzMcGeeLedgerText,
+} from "./runtime/substrateState.mjs";
+import { runSlice } from "../../substrate/runSlice.mjs";
+import { loadContinuityState } from "../../services/continuityService.mjs";
+import { getAuditState, getStewardState } from "./runtime/constitutionalData.mjs";
+import { executePgql } from "./runtime/pgql.mjs";
+import {
+  regenerateDerivedLayer,
+  runCAIC,
+  runGLV,
+  runRPH,
+} from "./runtime/constitutionalEngines.mjs";
+import { submitGovernanceVote } from "./runtime/governanceVote.mjs";
+import { getProofGraphVisual } from "./runtime/proofGraphData.mjs";
+import {
+  generateCanonicalManifest,
+  validateCanonicalManifest,
+} from "./runtime/canonicalManifest.mjs";
+import { evaluateReleaseReadiness } from "./runtime/releaseReadiness.mjs";
+import { runAuditorCertification } from "./runtime/auditorCertification.mjs";
+import { computeQuorumState, loadStewards } from "./runtime/quorum.mjs";
+import {
+  buildReceiptLineage,
+  computeDriftAnomalies,
+  computeDriftHistory,
+  computeGovernanceImpact,
+  computeImpact,
+  diffReceipts,
+  investigateDecision,
+  investigateReceipt,
+  replayContinuityFromCheckpoint,
+  replaySlice,
+  replaySlices,
+} from "./runtime/forensics.mjs";
+import { loadSession, recordSessionEvent } from "./runtime/sessionRecorder.mjs";
+import { getLedger } from "./runtime/studioRuntime.mjs";
+import {
+  executeGovernedSlice,
+  runGovernedCapability,
+} from "./runtime/runGovernedCapability.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const STUDIO_DIR = path.resolve(__dirname, "..");
 const REPO_ROOT = path.resolve(STUDIO_DIR, "..");
 const PORT = Number(process.env.NOVA_STUDIO_PORT ?? 8787);
+const DIST_REACT_DIR = path.join(STUDIO_DIR, "dist-react");
+const DIST_REACT_NESTED = path.join(DIST_REACT_DIR, "nova-studio");
 const DIST_DIR = path.join(STUDIO_DIR, "dist");
 const PUBLIC_DIR = path.join(STUDIO_DIR, "public");
+
+function getStaticLayout() {
+  const reactIndex = path.join(DIST_REACT_NESTED, "index.react.html");
+  if (fs.existsSync(reactIndex)) {
+    return { kind: "react", root: DIST_REACT_DIR, index: reactIndex };
+  }
+  if (fs.existsSync(path.join(DIST_DIR, "index.html"))) {
+    return { kind: "legacy", root: DIST_DIR, index: path.join(DIST_DIR, "index.html") };
+  }
+  return { kind: "public", root: PUBLIC_DIR, index: path.join(PUBLIC_DIR, "index.html") };
+}
+
+function resolveStaticFile(pathname) {
+  const layout = getStaticLayout();
+  const safePath = pathname === "/" ? "/" : pathname;
+
+  if (layout.kind === "react") {
+    if (safePath === "/" || safePath === "/index.html" || safePath === "/index.react.html") {
+      return layout.index;
+    }
+    const relative = safePath.replace(/^\//, "");
+    const candidate = path.join(layout.root, relative);
+    if (candidate.startsWith(layout.root) && fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+      return candidate;
+    }
+    return layout.index;
+  }
+
+  let filePath = path.join(layout.root, safePath === "/" ? "index.html" : relativePathFromUrl(safePath));
+  if (!filePath.startsWith(layout.root)) {
+    return null;
+  }
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, "index.html");
+  }
+  return filePath;
+}
+
+function relativePathFromUrl(pathname) {
+  return pathname.replace(/^\//, "");
+}
 
 bootStudioRuntime();
 
@@ -112,7 +208,25 @@ const server = http.createServer(async (req, res) => {
 
   try {
     if (url.pathname === "/api/state" && req.method === "GET") {
-      return json(res, 200, getStudioState());
+      return json(res, 200, await getSubstratePayload());
+    }
+    if (url.pathname === "/api/capabilities" && req.method === "GET") {
+      return json(res, 200, await getSliceCapabilities());
+    }
+    if (url.pathname === "/api/continuity" && req.method === "GET") {
+      return json(res, 200, await getContinuityTimeline());
+    }
+    if (url.pathname === "/api/drift" && req.method === "GET") {
+      return json(res, 200, await getDriftPoints());
+    }
+    if (url.pathname === "/skillzmcgee/ledger" && req.method === "GET") {
+      res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end(await readSkillzMcGeeLedgerText());
+      return;
+    }
+    if (url.pathname === "/api/state/nova" && req.method === "GET") {
+      getNovaRuntimeState();
+      return json(res, 200, getNovaStateData());
     }
     if (url.pathname === "/api/governed-run" && req.method === "POST") {
       const body = await readBody(req);
@@ -122,6 +236,18 @@ const server = http.createServer(async (req, res) => {
     if (url.pathname === "/api/capability" && req.method === "POST") {
       const body = await readBody(req);
       const result = await executeCapability(body.name, body.args ?? {});
+      return json(res, 200, result);
+    }
+    const runMatch = url.pathname.match(/^\/api\/run\/([^/]+)$/);
+    if (runMatch && req.method === "POST") {
+      const body = await readBody(req);
+      const continuityState = await loadContinuityState();
+      const result = await runSlice({
+        operator: req.headers["x-operator"] ?? body.operator ?? body.actor ?? "operator:local",
+        capabilityId: decodeURIComponent(runMatch[1]),
+        input: body.input ?? body,
+        continuityState,
+      });
       return json(res, 200, result);
     }
     if (url.pathname === "/api/python" && req.method === "POST") {
@@ -162,14 +288,249 @@ const server = http.createServer(async (req, res) => {
       clearLedger();
       return json(res, 200, { cleared: true });
     }
-
-    const staticRoot = fs.existsSync(DIST_DIR) ? DIST_DIR : PUBLIC_DIR;
-    let filePath = path.join(staticRoot, url.pathname === "/" ? "index.html" : url.pathname);
-    if (!filePath.startsWith(staticRoot)) {
-      return json(res, 403, { error: "Forbidden" });
+    if (url.pathname === "/api/audit/state" && req.method === "GET") {
+      return json(res, 200, getAuditState());
     }
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-      filePath = path.join(filePath, "index.html");
+    if (url.pathname === "/api/steward/state" && req.method === "GET") {
+      return json(res, 200, getStewardState());
+    }
+    if (url.pathname === "/api/pgql" && req.method === "POST") {
+      const body = await readBody(req);
+      const result = executePgql(String(body.query ?? ""));
+      return json(res, 200, result);
+    }
+    if (url.pathname === "/api/governance/vote" && req.method === "POST") {
+      const body = await readBody(req);
+      const result = submitGovernanceVote(body);
+      return json(res, 200, result);
+    }
+    if (url.pathname === "/api/glv/validate" && req.method === "GET") {
+      return json(res, 200, runGLV());
+    }
+    if (url.pathname === "/api/governance/ledger/validate" && req.method === "GET") {
+      return json(res, 200, runGLV());
+    }
+    if (url.pathname === "/api/caic/validate" && req.method === "GET") {
+      return json(res, 200, runCAIC());
+    }
+    if (url.pathname === "/api/rph/reproduce" && req.method === "POST") {
+      const body = await readBody(req);
+      return json(res, 200, runRPH(body));
+    }
+    if (url.pathname === "/api/derived/regenerate" && req.method === "POST") {
+      const body = await readBody(req);
+      return json(res, 200, regenerateDerivedLayer(body));
+    }
+    if (url.pathname === "/api/proof-graph/visual" && req.method === "GET") {
+      return json(res, 200, getProofGraphVisual());
+    }
+    if (url.pathname === "/api/runtime/status" && req.method === "GET") {
+      const payload = await getSubstratePayload();
+      const lastReceipt = payload.receipts?.at(-1) ?? null;
+      const lastViolation =
+        payload.receipts
+          ?.slice()
+          .reverse()
+          .find((r) => (r.laws?.violations ?? []).length > 0) ?? null;
+      return json(res, 200, {
+        online: true,
+        operator: "operator:local",
+        capabilities: payload.capabilities?.length ?? 0,
+        receipts: payload.receipts?.length ?? 0,
+        continuity_events: payload.continuity?.length ?? 0,
+        drift_points: payload.drift?.length ?? 0,
+        lastReceipt,
+        lastViolation: lastViolation
+          ? {
+              id: lastViolation.id,
+              violations: lastViolation.laws?.violations ?? [],
+            }
+          : null,
+      });
+    }
+    if (url.pathname === "/api/quorum/state" && req.method === "GET") {
+      const ledger = getStewardState().ledger;
+      const lastRelease = [...ledger].reverse().find((e) => e.decision_type === "release_vote");
+      return json(
+        res,
+        200,
+        computeQuorumState({ stewards: loadStewards(), votes: lastRelease?.steward_votes ?? [] }),
+      );
+    }
+    if (url.pathname === "/api/canonical/manifest" && req.method === "GET") {
+      return json(res, 200, validateCanonicalManifest());
+    }
+    if (url.pathname === "/api/canonical/manifest/generate" && req.method === "POST") {
+      const manifest = generateCanonicalManifest({ write: true });
+      return json(res, 200, { ok: true, manifest });
+    }
+    if (url.pathname === "/api/release/readiness" && req.method === "GET") {
+      const release = url.searchParams.get("release") ?? "v1.0";
+      const requireCert = url.searchParams.get("require_certification") === "true";
+      return json(res, 200, evaluateReleaseReadiness({ release, require_certification: requireCert }));
+    }
+    if (url.pathname === "/api/audit/certify" && req.method === "POST") {
+      const body = await readBody(req);
+      const result = runAuditorCertification(body);
+      return json(res, 200, result);
+    }
+
+    if (url.pathname === "/api/capability/run" && req.method === "POST") {
+      try {
+        const body = await readBody(req);
+        const { capabilityId, inputs, operator } = body;
+        const result = await runGovernedCapability(
+          capabilityId,
+          inputs ?? {},
+          operator ?? "operator:local",
+        );
+        return json(res, 200, {
+          ok: result.ok,
+          receipt: result.receipt,
+          verdict: result.verdict,
+          provenance: result.provenance,
+          drift: result.drift,
+          continuity: result.continuity,
+          violations: result.violations,
+        });
+      } catch (err) {
+        return json(res, 200, {
+          ok: false,
+          error: err instanceof Error ? err.message : String(err),
+        });
+      }
+    }
+
+    if (url.pathname === "/api/slice/execute" && req.method === "POST") {
+      try {
+        const body = await readBody(req);
+        const { sliceId, payload, operator } = body;
+        const result = await executeGovernedSlice(
+          sliceId ?? "nova-slice-1",
+          payload ?? {},
+          operator ?? "operator:local",
+        );
+        return json(res, 200, {
+          ok: result.ok,
+          receipt: result.receipt,
+          verdict: result.verdict,
+          provenance: result.provenance,
+          drift: result.drift,
+          continuity: result.continuity,
+          violations: result.violations,
+        });
+      } catch (err) {
+        return json(res, 200, {
+          ok: false,
+          error: err instanceof Error ? err.message : String(err),
+        });
+      }
+    }
+
+    if (url.pathname === "/api/receipts/index" && req.method === "GET") {
+      const ledger = getLedger();
+      const receipts = ledger.slice(-50).reverse().map((r) => ({
+        id: r.id,
+        sliceId: r.slice ?? r.capability,
+        capability: r.capability ?? r.slice,
+        timestamp: r.timestamp,
+        status: r.status,
+      }));
+      return json(res, 200, receipts);
+    }
+
+    if (url.pathname === "/api/continuity/replay" && req.method === "POST") {
+      const body = await readBody(req);
+      const result = replayContinuityFromCheckpoint(body.checkpoint);
+      recordSessionEvent({ kind: "continuity_replay", checkpoint: body.checkpoint });
+      return json(res, 200, { ok: true, ...result });
+    }
+
+    if (url.pathname === "/api/slice/replay" && req.method === "POST") {
+      const body = await readBody(req);
+      const result = await replaySlice(body.receiptId);
+      return json(res, 200, { ok: true, ...result });
+    }
+
+    if (url.pathname === "/api/slice/replay-multi" && req.method === "POST") {
+      const body = await readBody(req);
+      const results = await replaySlices(body.receiptIds ?? []);
+      return json(res, 200, { ok: true, results });
+    }
+
+    if (url.pathname === "/api/receipt/diff" && req.method === "POST") {
+      const body = await readBody(req);
+      const diff = diffReceipts(body.a, body.b);
+      return json(res, 200, { ok: true, diff });
+    }
+
+    const lineageMatch = url.pathname.match(/^\/api\/receipt\/lineage\/([^/]+)$/);
+    if (lineageMatch && req.method === "GET") {
+      const tree = buildReceiptLineage(decodeURIComponent(lineageMatch[1]));
+      return json(res, 200, { ok: true, tree });
+    }
+
+    if (url.pathname === "/api/drift/history" && req.method === "GET") {
+      return json(res, 200, { ok: true, history: computeDriftHistory() });
+    }
+
+    if (url.pathname === "/api/drift/anomalies" && req.method === "GET") {
+      return json(res, 200, { ok: true, anomalies: computeDriftAnomalies() });
+    }
+
+    if (url.pathname === "/api/impact" && req.method === "POST") {
+      const body = await readBody(req);
+      const receipt = getLedger().find((r) => r.id === body.receiptId);
+      if (!receipt) return json(res, 404, { ok: false, error: "Receipt not found" });
+      const impact = await computeImpact(receipt);
+      return json(res, 200, { ok: true, impact });
+    }
+
+    if (url.pathname === "/api/governance/impact" && req.method === "POST") {
+      try {
+        const body = await readBody(req);
+        const impact = await computeGovernanceImpact(body.decisionId);
+        return json(res, 200, { ok: true, impact });
+      } catch (err) {
+        return json(res, 200, { ok: false, error: err instanceof Error ? err.message : String(err) });
+      }
+    }
+
+    if (url.pathname === "/api/session/replay" && req.method === "GET") {
+      return json(res, 200, { ok: true, log: loadSession() });
+    }
+
+    const investigateReceiptMatch = url.pathname.match(/^\/api\/investigation\/receipt\/([^/]+)$/);
+    if (investigateReceiptMatch && req.method === "GET") {
+      try {
+        const data = await investigateReceipt(decodeURIComponent(investigateReceiptMatch[1]));
+        return json(res, 200, data);
+      } catch (err) {
+        return json(res, 404, { ok: false, error: err instanceof Error ? err.message : String(err) });
+      }
+    }
+
+    const investigateDecisionMatch = url.pathname.match(/^\/api\/investigation\/decision\/([^/]+)$/);
+    if (investigateDecisionMatch && req.method === "GET") {
+      try {
+        const data = await investigateDecision(decodeURIComponent(investigateDecisionMatch[1]));
+        return json(res, 200, data);
+      } catch (err) {
+        return json(res, 404, { ok: false, error: err instanceof Error ? err.message : String(err) });
+      }
+    }
+
+    const repoStaticPrefixes = ["/canonical/", "/runtime/", "/conformance/"];
+    if (repoStaticPrefixes.some((p) => url.pathname.startsWith(p))) {
+      const repoFile = path.join(REPO_ROOT, url.pathname.replace(/^\//, ""));
+      if (fs.existsSync(repoFile) && fs.statSync(repoFile).isFile()) {
+        return serveStatic(res, repoFile);
+      }
+    }
+
+    const filePath = resolveStaticFile(url.pathname);
+    if (!filePath) {
+      return json(res, 403, { error: "Forbidden" });
     }
     return serveStatic(res, filePath);
   } catch (err) {
@@ -179,6 +540,17 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+server.on("upgrade", (req, socket, head) => {
+  const url = new URL(req.url ?? "/", `http://localhost:${PORT}`);
+  if (url.pathname === "/events") {
+    handleStudioEventsUpgrade(req, socket, head);
+    return;
+  }
+  socket.destroy();
+});
+
 server.listen(PORT, () => {
+  const layout = getStaticLayout();
   console.log(`Nova Studio API → http://localhost:${PORT}`);
+  console.log(`Static UI: ${layout.kind} (${layout.root})`);
 });

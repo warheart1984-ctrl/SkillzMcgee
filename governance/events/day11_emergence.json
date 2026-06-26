@@ -1,0 +1,41 @@
+{
+  "receipt_id": "crk-evt-11day-emergence",
+  "timestamp": "2026-06-26T08:08:00-04:00",
+  "epoch": 1,
+  "event_type": "constitutional_runtime_emergence",
+  "summary": "AAES-OS unified, stance strip activated, continuity substrate online.",
+  "details": {
+    "workspace": "aaes-os canonicalized",
+    "governance": {
+      "charter": "CKCE-1",
+      "theta_pack": "restored",
+      "onboarding_docs": "restored"
+    },
+    "runtime": {
+      "ledger_store": "SQLiteRunLedgerStore",
+      "trace_sink": "JSONL spans",
+      "continuity": "active"
+    },
+    "skillzmcgee": {
+      "adapter": "Nova/AAIS HTTP",
+      "cli": "ask",
+      "ui": "governance stance strip"
+    },
+    "tests": {
+      "cts": "36 passed",
+      "packages": "passed",
+      "python": "11 passed, 1 skipped",
+      "skillzmcgee": "10 passed"
+    }
+  },
+  "stance": {
+    "law_context": "CKCE-1 / AAES-OS",
+    "mission_thread": "Runtime unification + cockpit activation",
+    "tension_index": 0.12,
+    "governance_mode": "S1"
+  },
+  "signatures": {
+    "runtime": "AAES-OS",
+    "operator": "jon"
+  }
+}

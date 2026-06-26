@@ -31,10 +31,14 @@
     "seed:governance-gate": "node scripts/seed_governance_gate.mjs",
     "test:governance-gate": "node scripts/seed_governance_gate.mjs && python -m pytest tests/skillzmcgee/ -v",
     "nova-studio": "node nova-studio/server/studio-api.mjs",
+    "nova-studio:check": "node scripts/nova-studio-check.mjs",
     "nova-studio:react": "npm run dev:react --prefix nova-studio",
     "nova-studio:build": "npm run build --prefix nova-studio",
     "nova-studio:build:react": "npm run build:react --prefix nova-studio",
+    "test:v1": "node --test --test-concurrency=1 tests/forensics.test.js tests/nova_studio.test.js tests/constitutional_audit.test.js",
     "test:nova-studio": "node --test tests/nova_studio.test.js",
+    "test:forensics": "node --test tests/forensics.test.js",
+    "test:constitutional": "node --test tests/constitutional_audit.test.js",
     "spec:requirements": "node tools/generators/requirements-catalog.mjs",
     "spec:csr": "node tools/generators/csr-registry.mjs",
     "spec:graph": "node tools/generators/proof-graph-index.mjs",
@@ -44,7 +48,15 @@
     "spec:orc": "node tools/generators/orc-evaluate.mjs --out meta/ORC-1.0.json",
     "spec:rcd": "node tools/generators/rcd-evaluate.mjs --out meta/RCD-1.0.json",
     "spec:gls": "node tools/generators/gls-validate.mjs",
-    "crk": "node tools/crk.mjs"
+    "spec:manifest": "node tools/generators/canonical-manifest.mjs",
+    "canonical:bootstrap": "node node_modules/tsx/dist/cli.mjs src/cli/canonical.ts bootstrap",
+    "canonical:generate": "node node_modules/tsx/dist/cli.mjs src/cli/canonical.ts generate",
+    "canonical:verify": "node node_modules/tsx/dist/cli.mjs src/cli/canonical.ts verify",
+    "test:canonical": "node --test tests/canonical_manifest.test.js",
+    "governance:verify": "node node_modules/tsx/dist/cli.mjs src/cli/governance.ts verify",
+    "test:governance-ledger": "node --test tests/governance_ledger.test.js",
+    "crk": "node tools/crk.mjs",
+    "audit": "node tools/audit.mjs"
   },
   "engines": {
     "node": ">=18"
@@ -56,5 +68,9 @@
     "governance",
     "crk-1"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
 }

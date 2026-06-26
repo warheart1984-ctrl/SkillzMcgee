@@ -1,0 +1,22 @@
+{
+  "name": "operator-macros",
+  "version": "0.1.0",
+  "description": "Adds programmable operator macros to SkillzMcGee.",
+  "entry": "src/plugins/operator_macros.js",
+  "capabilities": [
+    "ui:ascii",
+    "governance:posture",
+    "continuity:receipts",
+    "runtime:macros"
+  ],
+  "commands": {
+    "macro:new": "Create a new operator macro",
+    "macro:list": "List defined macros",
+    "macro:run": "Execute a macro by name"
+  },
+  "requires": {
+    "runtime": "aaes-os >= 1.0.0",
+    "adapter": "nova-aais-http >= 0.3.0"
+  },
+  "author": "jon"
+}

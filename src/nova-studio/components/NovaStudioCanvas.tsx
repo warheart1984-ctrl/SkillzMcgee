@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useOperatorContext } from "../state/operatorContext";
 import { CapabilityTable } from "./CapabilityTable";
 import { ReceiptFeed } from "./ReceiptFeed";
 import { DriftVisualizer } from "./DriftVisualizer";
 import { ControlTower } from "./ControlTower";
 import { ReplayPanel } from "./ReplayPanel";
+import { RunCapabilityPanel } from "./RunCapabilityPanel";
+import { useSubstrateEvents } from "../hooks/useSubstrateEvents";
 import "../styles/novaStudio.css";
 
 const MODE_LINKS = [
@@ -17,13 +19,23 @@ const MODE_LINKS = [
 
 export const NovaStudioCanvas: React.FC = () => {
   const { mode, operatorId } = useOperatorContext();
+  const { drift } = useSubstrateEvents();
 
   return (
     <div className="novaStudio-root">
-      <header className="novaStudio-header">
+      <header className="ns-header">
         <span>Nova Studio</span>
-        <span className="novaStudio-operator">{operatorId}</span>
+        <span className="ns-operator">{operatorId}</span>
         <nav className="novaStudio-nav">
+          <NavLink to="/nova/studio/proof-graph" className="novaStudio-nav-link">
+            Proof Graph
+          </NavLink>
+          <NavLink to="audit" className="novaStudio-nav-link">
+            Audit
+          </NavLink>
+          <NavLink to="steward" className="novaStudio-nav-link">
+            Steward
+          </NavLink>
           {MODE_LINKS.map((link) => (
             <NavLink
               key={link.to}
@@ -37,20 +49,16 @@ export const NovaStudioCanvas: React.FC = () => {
           ))}
         </nav>
       </header>
+
       <div className="novaStudio-grid">
-        <section className="novaStudio-main">
-          <CapabilityTable />
-          <Outlet />
-        </section>
-        <aside className="novaStudio-side">
-          <ReceiptFeed />
-        </aside>
+        <CapabilityTable />
+        <ReceiptFeed />
       </div>
-      <div className="novaStudio-modes">
-        {mode === "drift" && <DriftVisualizer />}
-        {mode === "control" && <ControlTower />}
-        {mode === "replay" && <ReplayPanel />}
-      </div>
+
+      {mode === "coding-agent" && <RunCapabilityPanel />}
+      {mode === "drift" && <DriftVisualizer points={drift} />}
+      {mode === "control" && <ControlTower />}
+      {mode === "replay" && <ReplayPanel />}
     </div>
   );
 };

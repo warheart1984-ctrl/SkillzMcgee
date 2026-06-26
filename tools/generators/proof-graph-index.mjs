@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
+import { CONFORMANCE_PATHS, writeJson } from "../lib/conformance-paths.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const MATRIX = path.join(ROOT, "conformance/traceability-matrix.json");
@@ -157,5 +158,7 @@ for (const out of [INDEX_OUT, META_OUT]) {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, `${JSON.stringify(index, null, 2)}\n`);
 }
+writeJson(CONFORMANCE_PATHS.graph, index);
 console.log(`wrote ${INDEX_OUT}`);
 console.log(`wrote ${META_OUT}`);
+console.log(`wrote ${CONFORMANCE_PATHS.graph}`);

@@ -1,34 +1,49 @@
 import React, { useState } from "react";
-
-interface ReplayEvent {
-  id: string;
-  timestamp: string;
-  kind: "EVENT" | "DECISION" | "ARTIFACT";
-}
+import { useSubstrateEvents } from "../hooks/useSubstrateEvents";
 
 export const ReplayPanel: React.FC = () => {
-  const [events] = useState<ReplayEvent[]>([]);
+  const { continuity } = useSubstrateEvents();
   const [index, setIndex] = useState(0);
-
-  const current = events[index];
+  const current = continuity[index];
 
   return (
-    <div className="novaStudio-replay">
-      <h3>Continuity Replay</h3>
-      <div className="novaStudio-replay-controls">
-        <button type="button" disabled={index <= 0} onClick={() => setIndex(index - 1)}>
-          Prev
+    <div className="ns-panel ns-replay">
+      <div className="ns-panel-title">Continuity Timeline</div>
+      <div className="ns-replay-list">
+        {continuity.length === 0 && (
+          <div className="ns-replay-empty">No continuity events</div>
+        )}
+        {continuity.map((e, i) => (
+          <button
+            key={e.id}
+            type="button"
+            className={`ns-replay-item ${i === index ? "ns-replay-active" : ""}`}
+            onClick={() => setIndex(i)}
+          >
+            <span className="ns-replay-time">{e.timestamp}</span>
+            <span className="ns-replay-kind">{e.kind}</span>
+            <span className="ns-replay-label">{e.label}</span>
+          </button>
+        ))}
+      </div>
+      <div className="ns-replay-controls">
+        <button
+          type="button"
+          disabled={index <= 0}
+          onClick={() => setIndex((i) => i - 1)}
+        >
+          ← Prev
         </button>
         <button
           type="button"
-          disabled={index >= events.length - 1}
-          onClick={() => setIndex(index + 1)}
+          disabled={index >= continuity.length - 1}
+          onClick={() => setIndex((i) => i + 1)}
         >
-          Next
+          Next →
         </button>
       </div>
-      <pre className="novaStudio-replay-event">
-        {current ? JSON.stringify(current, null, 2) : "No events loaded"}
+      <pre className="ns-replay-detail">
+        {current ? JSON.stringify(current, null, 2) : "No events"}
       </pre>
     </div>
   );

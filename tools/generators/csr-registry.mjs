@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
+import { CONFORMANCE_PATHS, writeJson } from "../lib/conformance-paths.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const MATRIX = path.join(ROOT, "conformance/traceability-matrix.json");
@@ -83,3 +84,16 @@ const registry = {
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, `${JSON.stringify(registry, null, 2)}\n`);
 console.log(`wrote ${OUT} (${Object.keys(claims).length} claims)`);
+
+const canonicalCsr = {
+  version: "1.0",
+  timestamp: registry.metadata.generated_at,
+  claims: Object.entries(claims).map(([id, status]) => ({
+    id,
+    type: id.match(/^CRK/) ? "normative-requirement" : "claim",
+    status: status.charAt(0).toUpperCase() + status.slice(1),
+    evidence: [],
+  })),
+};
+writeJson(CONFORMANCE_PATHS.csr, canonicalCsr);
+console.log(`wrote ${CONFORMANCE_PATHS.csr}`);

@@ -1,0 +1,20 @@
+# operator_macros.yaml — SkillzMcGee Operator Macro Library starter pack
+
+macros:
+  stance-and-snapshot:
+    description: Render stance strip and capture cosmic snapshot.
+    steps:
+      - run: "skillz stance"
+      - run: "skillz ask \"describe current continuity state\""
+
+  escalate-and-log:
+    description: Cycle posture and log receipt.
+    steps:
+      - run: "skillz escalate"
+      - run: "skillz ask \"summarize latest escalation receipt\""
+
+  freezer-export:
+    description: Export current waveform and law spine to lab freezer.
+    steps:
+      - run: "skillz ask \"emit waveform snapshot\""
+      - run: "skillz ask \"emit law spine profile\""

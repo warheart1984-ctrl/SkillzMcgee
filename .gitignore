@@ -15,3 +15,5 @@ node_modules/
 .DS_Store
 *.log
 .runtime/
+nova-studio/dist/
+nova-studio/dist-react/

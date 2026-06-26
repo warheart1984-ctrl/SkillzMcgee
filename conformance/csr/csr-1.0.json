@@ -1,0 +1,264 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-06-26T21:17:54.397Z",
+  "claims": [
+    {
+      "id": "CRK1-R001",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R002",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R003",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R004",
+      "type": "normative-requirement",
+      "status": "Research",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R005",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R006",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R007",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R008",
+      "type": "normative-requirement",
+      "status": "Normative",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R009",
+      "type": "normative-requirement",
+      "status": "Normative",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R010",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R011",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R012",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R013",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R014",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R015",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R016",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R017",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R018",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R019",
+      "type": "normative-requirement",
+      "status": "Normative",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R020",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R021",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R022",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R023",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R024",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R025",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R026",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R027",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R028",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R029",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R030",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R031",
+      "type": "normative-requirement",
+      "status": "Research",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R032",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R033",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R034",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R035",
+      "type": "normative-requirement",
+      "status": "Research",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R036",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R037",
+      "type": "normative-requirement",
+      "status": "Verified",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R038",
+      "type": "normative-requirement",
+      "status": "Research",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R039",
+      "type": "normative-requirement",
+      "status": "Research",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R040",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R041",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R042",
+      "type": "normative-requirement",
+      "status": "Implemented",
+      "evidence": []
+    },
+    {
+      "id": "CRK1-R043",
+      "type": "normative-requirement",
+      "status": "Normative",
+      "evidence": []
+    }
+  ]
+}

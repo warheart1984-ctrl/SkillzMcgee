@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
+import { CONFORMANCE_PATHS, writeJson } from "../lib/conformance-paths.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const COR_PATH = path.join(ROOT, "meta/COR-1.0.json");
@@ -132,11 +133,27 @@ function buildAnalysis(cor, graph, csr) {
   }
   assumptions.sort((a, b) => b.impact_score - a.impact_score);
 
+  const unverified = topBlockers.length;
+  const riskLevel =
+    unverified >= 20 || cor.summary?.proof_closure === "fail"
+      ? "high"
+      : unverified >= 10
+        ? "medium"
+        : "low";
+
   return {
     version: "DRA-1.0",
     generated_at: new Date().toISOString(),
     commit: gitCommit(),
     non_authoritative: true,
+    riskLevel,
+    unverifiedDependencies: unverified,
+    singlePointsOfFailure: topBlockers.slice(0, 5).map((b) => b.artifact_id),
+    deepChains: topBlockers.slice(0, 5).map((b) => ({
+      path: b.blocked_requirements?.slice(0, 3) ?? [b.artifact_id],
+      depth: b.blocked_requirements?.length ?? 1,
+    })),
+    missingEvidence: topBlockers.slice(0, 10).map((b) => b.artifact_id),
     top_blockers: topBlockers.slice(0, 20),
     top_unresolved_assumptions: assumptions.slice(0, 10),
     summary: {
@@ -210,4 +227,6 @@ if (args[0] === "what-unblocks" && args[1]) {
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, `${JSON.stringify(analysis, null, 2)}\n`);
+writeJson(CONFORMANCE_PATHS.dra, analysis);
 console.log(`wrote ${outPath}`);
+console.log(`wrote ${CONFORMANCE_PATHS.dra}`);

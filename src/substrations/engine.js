@@ -1,12 +1,15 @@
 /**
- * SubstrationEngine — runs 30 substrations against federation state
+ * SubstrationEngine — orchestral executor under law (not a source of law).
  *
- * Tick pipeline:
- * 1. analyze (per substration)
- * 2. deriveNeeds (aggregate)
- * 3. planTasks (aggregate)
- * 4. act (executors receive full task list)
+ * Governance Objective → Contract (runtime + governance) → Implementation
+ *   → Observation → Need → Task → Execution → Evidence
+ *   → Policy Evaluation → Policy Outcome → Governance Decision → State Transition
  */
+
+import { contractFor } from "./contracts.js";
+import { runConstitutionalExecution } from "./constitutional_flow.js";
+import { runSubstrationPlan } from "./lifecycle.js";
+import { executeContinuityAction } from "./actions.js";
 
 /** Substrations that execute on the aggregated task list */
 const TASK_EXECUTORS = new Set([
@@ -26,7 +29,12 @@ const TICK_ONLY = new Set([
  */
 export class SubstrationEngine {
   constructor(substrations) {
-    this.substrations = substrations;
+    this.substrations = substrations.map((s) => ({
+      ...s,
+      contract: s.contract ?? contractFor(s),
+    }));
+    /** @type {Map<string, import('./contracts.js').SubstrationContract>} */
+    this.contracts = new Map(this.substrations.map((s) => [s.id, s.contract]));
   }
 
   /**
@@ -35,38 +43,32 @@ export class SubstrationEngine {
    * @returns {Promise<{ needs: import('./types.js').SubstrationNeed[]; tasks: import('./types.js').SubstrationTask[] }>}
    */
   async plan(ctx) {
-    /** @type {Map<string, any>} */
-    const analyses = new Map();
     /** @type {import('./types.js').SubstrationNeed[]} */
     const allNeeds = [];
     /** @type {import('./types.js').SubstrationTask[]} */
     const allTasks = [];
 
     for (const s of this.substrations) {
-      if (!s.enabled || !s.analyze) continue;
-      analyses.set(s.id, s.analyze(ctx));
-    }
+      if (!s.enabled) continue;
+      const contract = this.contracts.get(s.id);
+      if (!contract) continue;
 
-    for (const s of this.substrations) {
-      if (!s.enabled || !s.deriveNeeds) continue;
-      const analysis = analyses.get(s.id) ?? null;
-      const needs = s.deriveNeeds(ctx, analysis).map((n) => ({
-        ...n,
-        sourceSubstration: s.id,
-      }));
-      for (const need of needs) {
-        ctx.ledger.log("CONTINUITY_NEED", { need, substration: s.id });
-        allNeeds.push(need);
-      }
+      const partial = await runSubstrationPlan(ctx, s, contract, { skipTaskPlanning: true });
+      if (!partial.admitted) continue;
+      allNeeds.push(...partial.needs);
     }
 
     for (const s of this.substrations) {
       if (!s.enabled || !s.planTasks) continue;
-      const tasks = s.planTasks(ctx, allNeeds).map((t) => ({
-        ...t,
-        sourceSubstration: s.id,
-      }));
-      allTasks.push(...tasks);
+      const contract = this.contracts.get(s.id);
+      if (!contract) continue;
+
+      const partial = await runSubstrationPlan(ctx, s, contract, {
+        skipObservation: true,
+        skipNeeds: true,
+        needsForTaskPlanning: allNeeds,
+      });
+      allTasks.push(...partial.tasks);
     }
 
     return { needs: allNeeds, tasks: allTasks };
@@ -85,6 +87,8 @@ export class SubstrationEngine {
 
     for (const s of this.substrations) {
       if (!s.enabled || !s.act) continue;
+      const contract = this.contracts.get(s.id);
+      if (!contract) continue;
 
       if (TICK_ONLY.has(s.id)) {
         await s.act(ctx, []);
@@ -93,7 +97,13 @@ export class SubstrationEngine {
       }
 
       if (TASK_EXECUTORS.has(s.id) && allTasks.length > 0) {
-        await s.act(ctx, allTasks);
+        if (s.id === "continuity_tasks_engine") {
+          for (const task of allTasks) {
+            await runConstitutionalExecution(ctx, task, contract, executeContinuityAction);
+          }
+        } else {
+          await s.act(ctx, allTasks);
+        }
         actedBy.push(s.id);
       }
     }
@@ -122,6 +132,13 @@ export class SubstrationEngine {
       name: s.name,
       cluster: s.cluster,
       enabled: s.enabled,
+      governanceObjectiveId: s.contract?.governance?.governanceObjectiveId,
+      admissionStatus: s.contract?.governance?.admissionStatus,
+      uniqueContribution: s.contract?.governance?.uniqueContribution,
     }));
+  }
+
+  getContract(substrationId) {
+    return this.contracts.get(substrationId);
   }
 }

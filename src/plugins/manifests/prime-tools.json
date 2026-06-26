@@ -1,0 +1,23 @@
+{
+  "name": "prime-tools",
+  "version": "1.0.0",
+  "description": "Prime‑level utilities for A/E‑Prime operators.",
+  "entry": "src/plugins/prime_tools.js",
+  "capabilities": [
+    "governance:prime",
+    "continuity:prime",
+    "ui:prime"
+  ],
+  "commands": {
+    "prime:vector": "Render Prime Vector Oscilloscope",
+    "prime:bind": "Perform Law‑Spine Binding Rite",
+    "prime:crest": "Print A/E‑Prime Continuity Crest",
+    "prime:purge": "Remove drift artifacts from lineage graph",
+    "prime:burst": "Trigger Prime Harmonic Burst replay"
+  },
+  "requires": {
+    "runtime": "aaes-os >= 1.0.0",
+    "adapter": "nova-aais-http >= 0.3.0"
+  },
+  "author": "jon"
+}
