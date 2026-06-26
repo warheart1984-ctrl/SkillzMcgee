@@ -39,6 +39,8 @@
     "spec:csr": "node tools/generators/csr-registry.mjs",
     "spec:graph": "node tools/generators/proof-graph-index.mjs",
     "spec:cor": "node tools/generators/csr-registry.mjs && node tools/generators/proof-graph-index.mjs && node tools/generators/cor-generate.mjs --out meta/COR-1.0.json",
+    "spec:dra": "node tools/generators/dra-analyze.mjs --out meta/DRA-1.0.json",
+    "spec:rebuild": "node tools/generators/darp-regenerate.mjs",
     "crk": "node tools/crk.mjs"
   },
   "engines": {

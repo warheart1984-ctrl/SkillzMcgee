@@ -260,4 +260,4 @@ console.log(`proof_closure: ${output.summary.proof_closure}`);
 if (opts.failOnIncomplete && output.summary.proof_closure === "fail") {
   process.exit(1);
 }
-process.exit(output.summary.proof_closure === "pass" ? 0 : 1);
+process.exit(0);

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * CRK conformance CLI — cor, query, explain, counterfactual, validate.
+ * CRK conformance CLI — cor, csr, graph, dra, cav, regenerate, query, explain, counterfactual, validate.
  * Usage: node tools/crk.mjs <command> [options]
  */
 import { spawnSync } from "node:child_process";
@@ -9,7 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const GENERATORS = path.join(ROOT, "generators");
+const GENERATORS = path.join(ROOT, "tools/generators");
 
 function run(script, args) {
   const r = spawnSync(process.execPath, [script, ...args], { stdio: "inherit", cwd: ROOT });
@@ -17,7 +17,7 @@ function run(script, args) {
 }
 
 function loadCor() {
-  const p = path.join(ROOT, "../meta/COR-1.0.json");
+  const p = path.join(ROOT, "meta/COR-1.0.json");
   if (!fs.existsSync(p)) {
     console.error("COR not found. Run: node tools/crk.mjs cor generate --out meta/COR-1.0.json");
     process.exit(3);
@@ -31,16 +31,28 @@ if (cmd === "cor" && sub === "generate") {
   run(path.join(GENERATORS, "cor-generate.mjs"), rest);
 }
 
+if (cmd === "csr" && sub === "refresh") {
+  run(path.join(GENERATORS, "csr-registry.mjs"), rest);
+}
+
+if (cmd === "graph" && sub === "refresh") {
+  run(path.join(GENERATORS, "proof-graph-index.mjs"), rest);
+}
+
+if (cmd === "dra") {
+  run(path.join(GENERATORS, "dra-analyze.mjs"), [sub, ...rest].filter(Boolean));
+}
+
+if (cmd === "regenerate" && (sub === "all" || !sub)) {
+  run(path.join(GENERATORS, "darp-regenerate.mjs"), rest);
+}
+
 if (cmd === "explain" && sub === "NODE" && rest[0]) {
   run(path.join(GENERATORS, "explain-node.mjs"), [rest[0]]);
 }
 
 if (cmd === "counterfactual") {
   run(path.join(GENERATORS, "counterfactual.mjs"), [sub, ...rest].filter(Boolean));
-}
-
-if (cmd === "graph" && sub === "refresh") {
-  run(path.join(GENERATORS, "proof-graph-index.mjs"), rest);
 }
 
 if (cmd === "query") {
@@ -78,27 +90,29 @@ if (cmd === "query") {
 }
 
 if (cmd === "validate" && sub === "closure") {
-  run(path.join(GENERATORS, "cor-generate.mjs"), ["--out", path.join(ROOT, "../meta/COR-1.0.json"), "--fail-on-incomplete"]);
+  run(path.join(GENERATORS, "cor-generate.mjs"), ["--out", "meta/COR-1.0.json", "--fail-on-incomplete"]);
 }
 
-if (cmd === "csr" && sub === "refresh") {
-  run(path.join(GENERATORS, "csr-registry.mjs"), rest);
+if (cmd === "validate" && sub === "canonical") {
+  const args = rest.includes("--fail-on-error") ? ["--fail-on-error"] : [];
+  run(path.join(GENERATORS, "cav-validate.mjs"), args);
 }
 
 console.log(`CRK Conformance CLI
 
 Commands:
-  cor generate [--out meta/COR-1.0.json] [--fail-on-incomplete] [--explain ID] [--counterfactual ID]
+  cor generate [--out meta/COR-1.0.json] [--fail-on-incomplete]
   csr refresh                              Regenerate CSR-1.0 registry
   graph refresh                            Regenerate proof-graph index
-  explain NODE <NODE_ID>                   Explain-This-Node engine
-  counterfactual remove NODE <ID>
-  counterfactual downgrade CLAIM <REQ> <FROM> <TO>
-  counterfactual remove EVIDENCE <EVID_ID>
+  dra top-blockers | unresolved-assumptions | impact-of <ID> | what-unblocks <REQ>
+  regenerate all [--skip-cav] [--fail-on-cav]   DARP-1.0 full rebuild
+  explain NODE <NODE_ID>
+  counterfactual remove NODE <ID> | downgrade CLAIM <REQ> <FROM> <TO> | remove EVIDENCE <ID>
   query requirements --incomplete|--verified|--implemented
   query coverage [--requirement CRK1-R###]
   validate closure                         Fail if proof_closure != pass
+  validate canonical [--fail-on-error]     CAV-1.0 lint
 
-See conformance/proof-graph/ and docs/public/dont-trust-query-it.md
+See conformance/observability/ and conformance/certification/SGDF-1.0.md
 `);
 process.exit(0);

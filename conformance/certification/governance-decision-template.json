@@ -1,0 +1,18 @@
+{
+  "framework": "SGDF-1.0",
+  "decision": "defer",
+  "rationale": [
+    "COR-1.0 reports proof_closure: fail",
+    "DRA identifies PL-1.1 runtime binding as top blocker",
+    "Research claims R004, R031 explicitly deferred"
+  ],
+  "timestamp": "",
+  "stewards": [],
+  "inputs": {
+    "cor_proof_closure": "fail",
+    "cav_status": "pass",
+    "csr_research_count": 5,
+    "dra_top_blocker": "PL-1.1 runtime binding"
+  },
+  "release_tag": "v1.0.0-spec"
+}

@@ -30,7 +30,9 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [evidence-ledger/](./evidence-ledger/) | EL-1.0 artifact index |
 | [merkle-spine/](./merkle-spine/) | Cryptographic anchoring |
 | [proof-graph/](./proof-graph/) | Proof-graph index, explain engine, counterfactual engine, canonical/derived registry |
-| [observability/](./observability/) | **COR-1.0** health report + **CSR-1.0** claim registry |
+| [observability/](./observability/) | **COR-1.0**, **CSR-1.0**, **DRA-1.0**, **DARP-1.0** |
+| [validation/](./validation/) | **CAV-1.0** canonical artifact validator |
+| [certification/SGDF-1.0.md](./certification/SGDF-1.0.md) | Steward governance decision framework |
 | [provenance-ledger/](./provenance-ledger/) | PL-1.1 historical truth |
 
 ## Implementation pointers (this repo)
@@ -42,6 +44,16 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | Merkle | `governance/merkle.py`, `src/governance/receipts.js` |
 | Provenance | `governance/continuity_ledger.py`, `.runtime/nova-studio/ledger.jsonl` |
 | Receipts | REC-HDR mapping in `conformance/evidence-requirements/` |
+
+## Regenerate derived artifacts (DARP-1.0)
+
+```bash
+npm run spec:rebuild
+# or
+node tools/crk.mjs regenerate all
+node tools/crk.mjs validate canonical
+node tools/crk.mjs dra top-blockers
+```
 
 ## Regenerate requirement files
 

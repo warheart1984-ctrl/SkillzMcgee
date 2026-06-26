@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DRA-1.0 Dependency-Risk Report",
+  "type": "object",
+  "required": ["version", "generated_at", "top_blockers", "top_unresolved_assumptions", "non_authoritative"],
+  "properties": {
+    "version": { "const": "DRA-1.0" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "commit": { "type": "string" },
+    "non_authoritative": { "const": true },
+    "top_blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "impact_score"],
+        "properties": {
+          "artifact_id": { "type": "string" },
+          "impact_score": { "type": "integer", "minimum": 0 },
+          "blocked_requirements": { "type": "array", "items": { "type": "string" } },
+          "blocked_verifications": { "type": "array", "items": { "type": "string" } },
+          "blocked_provenance": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "top_unresolved_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["assumption", "impact_score"],
+        "properties": {
+          "assumption": { "type": "string" },
+          "impact_score": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

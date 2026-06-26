@@ -1,0 +1,13 @@
+{
+  "version": "DARP-1.0",
+  "regenerated_at": "2026-06-26T20:12:39.467Z",
+  "commit": "3d0a9d420cfba240a44d7d4738e63f051d87423c",
+  "outputs": [
+    "conformance/proof-graph/index.json",
+    "meta/proof-graph-index.json",
+    "conformance/observability/CSR-1.0/registry.json",
+    "meta/COR-1.0.json",
+    "meta/DRA-1.0.json"
+  ],
+  "invariant": "derived artifacts MUST NOT be manually edited"
+}

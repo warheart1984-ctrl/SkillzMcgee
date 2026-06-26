@@ -1,0 +1,306 @@
+{
+  "version": "DRA-1.0",
+  "generated_at": "2026-06-26T20:12:38.001Z",
+  "commit": "3d0a9d420cfba240a44d7d4738e63f051d87423c",
+  "non_authoritative": true,
+  "top_blockers": [
+    {
+      "artifact_id": "EVID-041",
+      "impact_score": 5,
+      "blocked_requirements": [
+        "CRK1-R041"
+      ],
+      "blocked_verifications": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-041"
+      ]
+    },
+    {
+      "artifact_id": "PROV-041",
+      "impact_score": 5,
+      "blocked_requirements": [
+        "CRK1-R041"
+      ],
+      "blocked_verifications": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-041"
+      ]
+    },
+    {
+      "artifact_id": "VERIF-041",
+      "impact_score": 5,
+      "blocked_requirements": [
+        "CRK1-R041"
+      ],
+      "blocked_verifications": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-041"
+      ]
+    },
+    {
+      "artifact_id": "IMPL-041",
+      "impact_score": 5,
+      "blocked_requirements": [
+        "CRK1-R041"
+      ],
+      "blocked_verifications": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-041"
+      ]
+    },
+    {
+      "artifact_id": "EVID-010",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R010"
+      ],
+      "blocked_verifications": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "blocked_provenance": [
+        "PROV-010"
+      ]
+    },
+    {
+      "artifact_id": "PROV-010",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R010"
+      ],
+      "blocked_verifications": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "blocked_provenance": [
+        "PROV-010"
+      ]
+    },
+    {
+      "artifact_id": "VERIF-010",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R010"
+      ],
+      "blocked_verifications": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "blocked_provenance": [
+        "PROV-010"
+      ]
+    },
+    {
+      "artifact_id": "IMPL-010",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R010"
+      ],
+      "blocked_verifications": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "blocked_provenance": [
+        "PROV-010"
+      ]
+    },
+    {
+      "artifact_id": "EVID-022",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R022"
+      ],
+      "blocked_verifications": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-022"
+      ]
+    },
+    {
+      "artifact_id": "PROV-022",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R022"
+      ],
+      "blocked_verifications": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-022"
+      ]
+    },
+    {
+      "artifact_id": "VERIF-022",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R022"
+      ],
+      "blocked_verifications": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-022"
+      ]
+    },
+    {
+      "artifact_id": "IMPL-022",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R022"
+      ],
+      "blocked_verifications": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "blocked_provenance": [
+        "PROV-022"
+      ]
+    },
+    {
+      "artifact_id": "EVID-025",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R025"
+      ],
+      "blocked_verifications": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "blocked_provenance": [
+        "PROV-025"
+      ]
+    },
+    {
+      "artifact_id": "PROV-025",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R025"
+      ],
+      "blocked_verifications": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "blocked_provenance": [
+        "PROV-025"
+      ]
+    },
+    {
+      "artifact_id": "VERIF-025",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R025"
+      ],
+      "blocked_verifications": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "blocked_provenance": [
+        "PROV-025"
+      ]
+    },
+    {
+      "artifact_id": "IMPL-025",
+      "impact_score": 4,
+      "blocked_requirements": [
+        "CRK1-R025"
+      ],
+      "blocked_verifications": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "blocked_provenance": [
+        "PROV-025"
+      ]
+    },
+    {
+      "artifact_id": "EVID-001",
+      "impact_score": 3,
+      "blocked_requirements": [
+        "CRK1-R001"
+      ],
+      "blocked_verifications": [
+        "CTS-M1"
+      ],
+      "blocked_provenance": [
+        "PROV-001"
+      ]
+    },
+    {
+      "artifact_id": "PROV-001",
+      "impact_score": 3,
+      "blocked_requirements": [
+        "CRK1-R001"
+      ],
+      "blocked_verifications": [
+        "CTS-M1"
+      ],
+      "blocked_provenance": [
+        "PROV-001"
+      ]
+    },
+    {
+      "artifact_id": "VERIF-001",
+      "impact_score": 3,
+      "blocked_requirements": [
+        "CRK1-R001"
+      ],
+      "blocked_verifications": [
+        "CTS-M1"
+      ],
+      "blocked_provenance": [
+        "PROV-001"
+      ]
+    },
+    {
+      "artifact_id": "IMPL-001",
+      "impact_score": 3,
+      "blocked_requirements": [
+        "CRK1-R001"
+      ],
+      "blocked_verifications": [
+        "CTS-M1"
+      ],
+      "blocked_provenance": [
+        "PROV-001"
+      ]
+    }
+  ],
+  "top_unresolved_assumptions": [
+    {
+      "assumption": "PL-1.1 runtime provenance binding",
+      "impact_score": 37
+    },
+    {
+      "assumption": "proof_closure incomplete",
+      "impact_score": 37
+    },
+    {
+      "assumption": "research claims deferred (CRK1-R004, CRK1-R031, CRK1-R035, CRK1-R038, CRK1-R039)",
+      "impact_score": 5
+    }
+  ],
+  "summary": {
+    "total_blockers": 142,
+    "max_impact": 5
+  }
+}

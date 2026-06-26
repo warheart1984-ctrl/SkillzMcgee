@@ -45,8 +45,8 @@
     "CRK1-R043": "normative"
   },
   "metadata": {
-    "generated_at": "2026-06-26T19:57:29.035Z",
-    "commit": "7a3f7cedf9c2b36188ccc22162c728d3e484c73c",
+    "generated_at": "2026-06-26T20:12:29.468Z",
+    "commit": "3d0a9d420cfba240a44d7d4738e63f051d87423c",
     "version": "CSR-1.0",
     "note": "Honest derived registry. Verified/reproduced require explicit evidence — not aspirational."
   }
