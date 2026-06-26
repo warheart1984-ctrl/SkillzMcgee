@@ -7,6 +7,8 @@ venv/
 .env.local
 skillz_ledger.json
 skillz_memory.json
+skillz_cosmic.json
+tests/fixtures/sample_cosmic_out.json
 node_identity.json
 node_id.json
 node_modules/
