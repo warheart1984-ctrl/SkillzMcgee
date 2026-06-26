@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "id": "receipt-001",
+      "slice": "slice_custom",
+      "status": "ok",
+      "timestamp": 1700000000000,
+      "actor": "skillz"
+    }
+  ]
+}

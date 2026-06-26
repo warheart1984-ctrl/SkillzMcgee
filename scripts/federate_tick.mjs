@@ -35,6 +35,9 @@ function main() {
     runtime: node.runtime,
   }).then((result) => {
     const stream = node.baseLedger.cosmicStream ?? [];
+    const tick = result.tickResult ?? {};
+    const tickOk = tick.ok !== false;
+
     fs.writeFileSync(
       cosmicOut,
       JSON.stringify(
@@ -42,9 +45,12 @@ function main() {
           timeline: result.timeline,
           cosmicStream: stream,
           tickResult: {
-            needCount: result.tickResult.needs.length,
-            taskCount: result.tickResult.tasks.length,
-            needs: result.tickResult.needs.map((n) => ({ type: n.type, severity: n.severity })),
+            ok: tickOk,
+            needCount: tick.needs?.length ?? 0,
+            taskCount: tick.tasks?.length ?? 0,
+            error: tick.error ?? null,
+            failedPhase: tick.failedPhase ?? null,
+            needs: (tick.needs ?? []).map((n) => ({ type: n.type, severity: n.severity })),
           },
           fold: {
             fingerprint: result.fold.asOmega?.fingerprint,
@@ -56,7 +62,20 @@ function main() {
         2,
       ),
     );
-    console.log(JSON.stringify({ ok: true, cosmicOut, needCount: result.tickResult.needs.length }));
+
+    if (!tickOk) {
+      console.error(
+        JSON.stringify({
+          ok: false,
+          cosmicOut,
+          error: tick.error ?? "federation tick aborted",
+          failedPhase: tick.failedPhase ?? null,
+        }),
+      );
+      process.exit(1);
+    }
+
+    console.log(JSON.stringify({ ok: true, cosmicOut, needCount: tick.needs?.length ?? 0 }));
   }).catch((err) => {
     console.error(JSON.stringify({ ok: false, error: String(err) }));
     process.exit(1);

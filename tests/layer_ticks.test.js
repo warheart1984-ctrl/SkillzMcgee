@@ -186,4 +186,22 @@ describe("Layer tick fail-safe (WOLF-1)", () => {
     assert.equal(result.governance.skipped, false);
     assert.ok(streamTypes(runtime.ledger).includes("GOVERNANCE_TICK"));
   });
+
+  it("captureTickState restores baseLedger.entries on abort", async () => {
+    const baseLedger = {
+      entries: [{ id: "r0", slice: "seed", status: "ok" }],
+      cosmicStream: [],
+    };
+    const runtime = createRuntime(baseLedger, {}, { continuity: conflictContinuity() });
+    const snapshot = captureTickState(runtime);
+
+    runtime.baseLedger.entries.push({ id: "r1", slice: "cosmic", status: "ok" });
+    runtime.baseLedger.cosmicStream.push({ type: "BEHAVIOR_GOAL_PROPOSED", payload: {} });
+
+    restoreTickState(runtime, snapshot);
+
+    assert.equal(runtime.baseLedger.entries.length, 1);
+    assert.equal(runtime.baseLedger.entries[0].id, "r0");
+    assert.equal(runtime.baseLedger.cosmicStream.length, 0);
+  });
 });

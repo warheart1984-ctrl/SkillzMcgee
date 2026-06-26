@@ -80,5 +80,6 @@ describe("Federated node loop", () => {
     assert.equal(results.length, 1);
     assert.ok(results[0].fold.asOmega.fingerprint);
     assert.ok(Array.isArray(results[0].timeline));
+    assert.equal(results[0].tickResult.ok, true);
   });
 });

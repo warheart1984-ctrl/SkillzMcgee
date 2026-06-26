@@ -197,6 +197,11 @@ export function restoreTickState(runtime, snapshot) {
     stream.length = 0;
     stream.push(...snapshot.cosmicStream.map((e) => ({ ...e })));
   }
+  const entries = runtime.baseLedger?.entries;
+  if (entries && snapshot.entries) {
+    entries.length = 0;
+    entries.push(...snapshot.entries.map((e) => ({ ...e })));
+  }
   if (snapshot.continuity != null && runtime.setContinuity) {
     runtime.setContinuity(JSON.parse(JSON.stringify(snapshot.continuity)));
   }
@@ -208,12 +213,14 @@ export function restoreTickState(runtime, snapshot) {
  */
 export function captureTickState(runtime) {
   const stream = runtime.baseLedger?.cosmicStream ?? [];
+  const entries = runtime.baseLedger?.entries ?? [];
   const continuity = runtime.getContinuity?.() ?? runtime.continuity ?? null;
   return {
     cosmicStream: stream.map((e) => ({
       ...e,
       payload: e.payload && typeof e.payload === "object" ? { ...e.payload } : e.payload,
     })),
+    entries: entries.map((e) => ({ ...e })),
     continuity: continuity ? JSON.parse(JSON.stringify(continuity)) : null,
   };
 }

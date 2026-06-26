@@ -87,6 +87,15 @@ class SkillzRuntime:
             tick = run_federation_tick(self.ledger.path, cosmic_path=self.ui.cosmic_path)
             if not tick.get("ok"):
                 receipt["federation_tick"] = {"ok": False, "error": tick.get("error")}
+            else:
+                cosmic = tick.get("cosmic") or {}
+                tick_meta = cosmic.get("tickResult") or {}
+                if tick_meta.get("ok") is False:
+                    receipt["federation_tick"] = {
+                        "ok": False,
+                        "error": tick_meta.get("error") or "federation tick aborted",
+                        "failed_phase": tick_meta.get("failedPhase"),
+                    }
 
         return receipt
 

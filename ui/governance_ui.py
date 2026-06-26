@@ -92,7 +92,10 @@ class GovernanceUI:
 
         print("\n=== COSMIC TIMELINE ===")
         if tick:
-            print(f"Needs: {tick.get('needCount', 0)} | Tasks: {tick.get('taskCount', 0)}")
+            tick_ok = tick.get("ok", True)
+            print(f"Needs: {tick.get('needCount', 0)} | Tasks: {tick.get('taskCount', 0)} | Tick OK: {tick_ok}")
+            if not tick_ok:
+                print(f"  ⚠ Federation tick aborted: {tick.get('error', 'unknown')}")
             fold = cosmic.get("fold") or {}
             if fold.get("fingerprint"):
                 print(f"AS-Ω fingerprint: {fold['fingerprint'][:24]}...")
