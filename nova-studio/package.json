@@ -1,0 +1,13 @@
+{
+  "name": "nova-studio",
+  "version": "1.0.0",
+  "description": "Nova Studio — unified governed IDE shell for SkillzMcGee",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node server/studio-api.mjs",
+    "build": "node -e \"const fs=require('fs');const p=require('path');const d=p.join('dist');fs.mkdirSync(d,{recursive:true});for(const f of ['index.html','app.js','styles.css']){fs.copyFileSync(p.join('public',f),p.join('dist',f));}console.log('built dist/');\"",
+    "start": "node server/studio-api.mjs",
+    "test": "node --test ../tests/nova_studio.test.js"
+  }
+}

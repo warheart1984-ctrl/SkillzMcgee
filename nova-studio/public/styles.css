@@ -1,0 +1,160 @@
+:root {
+  --bg: #0a0e14;
+  --surface: #121820;
+  --border: #1e2a38;
+  --text: #e8edf4;
+  --muted: #8b9cb3;
+  --accent: #3d9eff;
+  --gold: #d4a853;
+  --indigo: #6366f1;
+  --success: #2dd4a0;
+  --warn: #f5b942;
+  --error: #f56565;
+  --mono: "Cascadia Code", "Consolas", monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.top-bar {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.top-bar h1 { margin: 0; font-size: 1.1rem; }
+.subtitle { color: var(--muted); font-size: 0.85rem; }
+.constellation-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-left: auto; }
+.peer-chip {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+.peer-chip.online { border-color: var(--success); color: var(--success); }
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 300px;
+  min-height: calc(100vh - 52px);
+}
+.pane {
+  padding: 0.75rem;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+.center-pane { border-right: 1px solid var(--border); }
+.pane h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.pane h3 { margin: 0.75rem 0 0.4rem; font-size: 0.75rem; color: var(--muted); }
+
+.timeline, .receipt-list, .gov-list, .specimen-list { margin: 0; padding-left: 1rem; font-size: 0.8rem; }
+.timeline li { margin-bottom: 0.25rem; color: var(--muted); }
+.timeline li strong { color: var(--accent); }
+
+.metrics { display: grid; gap: 0.35rem; }
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0.5rem;
+  background: var(--surface);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.metric-val { font-family: var(--mono); color: var(--success); }
+
+.event-log, .output, .federation-log {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  max-height: 120px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.prompt-row { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.prompt-row input {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+}
+button {
+  padding: 0.45rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+button:hover { opacity: 0.9; }
+
+.corridor {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+.corridor-step {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+.corridor-step.active { border-color: var(--accent); color: var(--accent); }
+
+.editor-label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.25rem; }
+.code-editor {
+  width: 100%;
+  min-height: 180px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  background: #0d1117;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  resize: vertical;
+}
+
+.cap-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin: 0.5rem 0; }
+.cap-table th, .cap-table td { border: 1px solid var(--border); padding: 0.35rem 0.5rem; text-align: left; }
+.cap-table th { background: var(--surface); color: var(--muted); }
+
+.gov-list li.pass { color: var(--success); }
+.gov-list li.fail { color: var(--error); }
+
+.lineage { font-family: var(--mono); font-size: 0.7rem; color: var(--indigo); }
+
+.specimen-actions { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; }
+.specimen-actions button { background: var(--border); }
+
+#wave-canvas { width: 100%; background: var(--surface); border-radius: 4px; }
+
+@media (max-width: 1100px) {
+  .studio-grid { grid-template-columns: 1fr; }
+  .pane { border-right: none; border-bottom: 1px solid var(--border); }
+}

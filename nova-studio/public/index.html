@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <h1>Nova Studio</h1>
+      <span class="subtitle">Governed Cognitive Organism — unified shell</span>
+      <div class="constellation-bar" id="constellation-bar"></div>
+    </header>
+
+    <div class="studio-grid">
+      <!-- LEFT: Continuity Context -->
+      <aside class="pane left-pane">
+        <h2>Continuity Context</h2>
+        <section>
+          <h3>Thread Timeline</h3>
+          <ul id="thread-timeline" class="timeline"></ul>
+        </section>
+        <section>
+          <h3>Lineage (DAR-Z)</h3>
+          <div id="lineage-graph" class="lineage"></div>
+        </section>
+        <section>
+          <h3>Continuity Metrics</h3>
+          <div id="metrics-panel" class="metrics"></div>
+        </section>
+        <section>
+          <h3>Event Log</h3>
+          <pre id="event-log" class="event-log"></pre>
+        </section>
+      </aside>
+
+      <!-- CENTER: Governed Workspace -->
+      <main class="pane center-pane">
+        <h2>Governed Workspace</h2>
+        <div class="prompt-row">
+          <input id="intent-prompt" type="text" placeholder="Intent — e.g. read organism.py and explain governed_action" />
+          <button id="run-btn" type="button">Run Governed Pipeline</button>
+        </div>
+        <div id="reasoning-corridor" class="corridor"></div>
+        <label class="editor-label">organism.py</label>
+        <textarea id="code-editor" class="code-editor" spellcheck="false"></textarea>
+        <section>
+          <h3>Capability Calls</h3>
+          <table class="cap-table">
+            <thead>
+              <tr><th>Capability</th><th>Target</th><th>Status</th><th>Receipt ID</th></tr>
+            </thead>
+            <tbody id="cap-table-body"></tbody>
+          </table>
+        </section>
+        <pre id="output" class="output">—</pre>
+      </main>
+
+      <!-- RIGHT: Governance & Continuity -->
+      <aside class="pane right-pane">
+        <h2>Governance &amp; Continuity</h2>
+        <section>
+          <h3>CKCE-1 / WOLF-1 Invariants</h3>
+          <ul id="governance-list" class="gov-list"></ul>
+        </section>
+        <section>
+          <h3>Wave Signature</h3>
+          <canvas id="wave-canvas" width="280" height="60"></canvas>
+        </section>
+        <section>
+          <h3>Continuity Receipts</h3>
+          <ul id="receipt-list" class="receipt-list"></ul>
+        </section>
+        <section>
+          <h3>Specimen Export / Lab Freezer</h3>
+          <div class="specimen-actions">
+            <button id="specimen-export" type="button">Export</button>
+            <button id="specimen-replay" type="button">Replay</button>
+            <button id="specimen-verify" type="button">Verify</button>
+          </div>
+          <ul id="specimen-list" class="specimen-list"></ul>
+        </section>
+        <section>
+          <h3>Federation Constellation</h3>
+          <button id="federation-broadcast" type="button">Broadcast Exchange</button>
+          <pre id="federation-log" class="federation-log"></pre>
+        </section>
+      </aside>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

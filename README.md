@@ -12,6 +12,15 @@ pip install -r requirements.txt
 python main.py
 ```
 
+### Nova Studio (unified IDE)
+
+```bash
+npm run nova-studio
+# → http://localhost:8787
+```
+
+See [nova-studio/NOVA_STUDIO.md](./nova-studio/NOVA_STUDIO.md).
+
 ## Architecture
 
 | Layer | Module | Purpose |
