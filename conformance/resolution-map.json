@@ -1,0 +1,67 @@
+{
+  "$schema": "./resolution-map.schema.json",
+  "version": "1.0",
+  "invariant": "R-infinity",
+  "description": "Conformance resolution map — every verification artifact resolves to normative requirements",
+  "cts": {
+    "CTS-M1": ["CRK1-R001", "CRK1-R005", "CRK1-R009", "CRK1-R040"],
+    "CTS-M2": ["CRK1-R002", "CRK1-R006", "CRK1-R018"],
+    "CTS-M3": ["CRK1-R003", "CRK1-R007"],
+    "CTS-M4": ["CRK1-R004", "CRK1-R025"],
+    "CTS-M5": ["CRK1-R008"],
+    "CTS-S1": ["CRK1-R010", "CRK1-R013", "CRK1-R014", "CRK1-R015", "CRK1-R016", "CRK1-R017"],
+    "CTS-S2": ["CRK1-R011", "CRK1-R018", "CRK1-R019", "CRK1-R027"],
+    "CTS-S3": ["CRK1-R010"],
+    "CTS-S5": ["CRK1-R012", "CRK1-R036", "CRK1-R037"],
+    "CTS-E1": ["CRK1-R020", "CRK1-R029"],
+    "CTS-E2": ["CRK1-R021", "CRK1-R025"],
+    "CTS-E3": ["CRK1-R022", "CRK1-R026", "CRK1-R028"],
+    "CTS-E4": ["CRK1-R023"],
+    "CTS-E5": ["CRK1-R024"],
+    "CTS-G1": ["CRK1-R035", "CRK1-R042"],
+    "CTS-G2": ["CRK1-R011", "CRK1-R033"],
+    "CTS-G3": ["CRK1-R030", "CRK1-R034"],
+    "CTS-G4": ["CRK1-R032", "CRK1-R039"],
+    "CTS-D1": ["CRK1-R041"],
+    "CTS-D2": ["CRK1-R041"],
+    "CTS-D3": ["CRK1-R041", "CRK1-R022"]
+  },
+  "mri": {
+    "MRI-Decision": ["CRK1-R001", "CRK1-R014"],
+    "MRI-Outcome": ["CRK1-R002", "CRK1-R005", "CRK1-R015"],
+    "MRI-Evidence": ["CRK1-R003", "CRK1-R006", "CRK1-R016", "CRK1-R018"],
+    "MRI-Interpretation": ["CRK1-R003", "CRK1-R007", "CRK1-R017", "CRK1-R020", "CRK1-R021", "CRK1-R022"],
+    "MRI-Loop": ["CRK1-R009", "CRK1-R019", "CRK1-R040"],
+    "MRI-Drift": ["CRK1-R041"],
+    "MRI-Receipt": ["CRK1-R033", "CRK1-R034", "CRK1-R042"]
+  },
+  "receipts": {
+    "invariant_block": ["CRK1-R001", "CRK1-R002", "CRK1-R003", "CRK1-R004", "CRK1-R010", "CRK1-R011", "CRK1-R012", "CRK1-R020", "CRK1-R021", "CRK1-R022", "CRK1-R030", "CRK1-R031", "CRK1-R032"],
+    "traceability_block": ["CRK1-R012", "CRK1-R036", "CRK1-R037"],
+    "merkle_root": ["CRK1-R030", "CRK1-R034"],
+    "evidence_block": ["CRK1-R002", "CRK1-R018"]
+  },
+  "fia": {
+    "FIA-Documentation": ["CRK1-R031", "CRK1-R038"],
+    "FIA-Code": ["CRK1-R004", "CRK1-R008", "CRK1-R010"],
+    "FIA-Semantics": ["CRK1-R020", "CRK1-R021", "CRK1-R022", "CRK1-R025"],
+    "FIA-Provenance": ["CRK1-R030", "CRK1-R035"]
+  },
+  "badges": {
+    "C0": [],
+    "C1": ["CRK1-R010", "CRK1-R011", "CRK1-R012", "CRK1-R013", "CRK1-R014", "CRK1-R015", "CRK1-R016", "CRK1-R017"],
+    "C2": ["CRK1-R011", "CRK1-R018", "CRK1-R019", "CRK1-R027"],
+    "C3": ["CRK1-R030", "CRK1-R033", "CRK1-R034", "CRK1-R042"],
+    "C4": ["CRK1-R020", "CRK1-R021", "CRK1-R022", "CRK1-R023", "CRK1-R024", "CRK1-R025"],
+    "C5": ["CRK1-R041"],
+    "C6": ["CRK1-R001", "CRK1-R002", "CRK1-R003", "CRK1-R004", "CRK1-R005", "CRK1-R006", "CRK1-R007", "CRK1-R008", "CRK1-R009", "CRK1-R010", "CRK1-R011", "CRK1-R012", "CRK1-R013", "CRK1-R014", "CRK1-R015", "CRK1-R016", "CRK1-R017", "CRK1-R018", "CRK1-R019", "CRK1-R020", "CRK1-R021", "CRK1-R022", "CRK1-R023", "CRK1-R024", "CRK1-R025", "CRK1-R026", "CRK1-R027", "CRK1-R028", "CRK1-R029", "CRK1-R030", "CRK1-R031", "CRK1-R032", "CRK1-R033", "CRK1-R034", "CRK1-R035", "CRK1-R036", "CRK1-R037", "CRK1-R038", "CRK1-R039", "CRK1-R040", "CRK1-R041", "CRK1-R042"]
+  },
+  "repo_tests": {
+    "tests/skillzmcgee/test_traceability.py": ["CRK1-R012", "CRK1-R036", "CRK1-R037"],
+    "tests/skillzmcgee/test_dependencies.py": ["CRK1-R011", "CRK1-R032"],
+    "tests/skillzmcgee/test_fitness.py": ["CRK1-R042", "CRK1-R002"],
+    "tests/governance.test.js": ["CRK1-R011", "CRK1-R042"],
+    "tests/nova_studio.test.js": ["CRK1-R004", "CRK1-R040", "CRK1-R042"],
+    "tests/invariant_evaluator.test.js": ["CRK1-R011", "CRK1-R032"]
+  }
+}

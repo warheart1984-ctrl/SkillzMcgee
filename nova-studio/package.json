@@ -6,8 +6,22 @@
   "private": true,
   "scripts": {
     "dev": "node server/studio-api.mjs",
+    "dev:react": "vite --config vite.config.ts",
     "build": "node -e \"const fs=require('fs');const p=require('path');const d=p.join('dist');fs.mkdirSync(d,{recursive:true});for(const f of ['index.html','app.js','styles.css']){fs.copyFileSync(p.join('public',f),p.join('dist',f));}console.log('built dist/');\"",
+    "build:react": "vite build --config vite.config.ts",
     "start": "node server/studio-api.mjs",
     "test": "node --test ../tests/nova_studio.test.js"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   }
 }

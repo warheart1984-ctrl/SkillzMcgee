@@ -4,6 +4,8 @@ Constitutional cognitive runtime with Merkle-linked receipts, deterministic redu
 
 **Architecture docs:** [BLUEPRINT.md](./BLUEPRINT.md) · [REALITY_STACK.md](./REALITY_STACK.md) · [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md) · [SUBSTRATION_ENGINE_BLUEPRINT.md](./SUBSTRATION_ENGINE_BLUEPRINT.md)
 
+**CRK-1 two-plane architecture:** [specification/README.md](./specification/README.md) (WHAT) · [conformance/README.md](./conformance/README.md) (HOW) · [R001–R042 catalog](./specification/normative-requirements/)
+
 ## Quick start
 
 ```bash

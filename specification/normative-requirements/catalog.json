@@ -1,0 +1,422 @@
+[
+  {
+    "id": "CRK1-R001",
+    "series": "M",
+    "invariant": "K0",
+    "title": "Consequence Continuity",
+    "rationale": "A decision without consequence is ungovernable.",
+    "verification": "CTS M1, governance receipts",
+    "evidence": "OutcomeObject, receipt",
+    "traceability": "R001 → ADR-01 → MRI → CTS-M1"
+  },
+  {
+    "id": "CRK1-R002",
+    "series": "M",
+    "invariant": "K1",
+    "title": "Evidence Completeness",
+    "rationale": "Outcomes must be verifiable.",
+    "verification": "CTS M2",
+    "evidence": "EvidenceObject",
+    "traceability": "R002 → ADR-02 → MRI → CTS-M2"
+  },
+  {
+    "id": "CRK1-R003",
+    "series": "M",
+    "invariant": "K2",
+    "title": "Interpretive Exposure",
+    "rationale": "Evidence must be interpretable.",
+    "verification": "CTS M3, SRE replay",
+    "evidence": "InterpretationObject",
+    "traceability": "R003 → ADR-03 → MRI → CTS-M3"
+  },
+  {
+    "id": "CRK1-R004",
+    "series": "M",
+    "invariant": "K3",
+    "title": "Replayability",
+    "rationale": "Hidden state breaks reproducibility.",
+    "verification": "CTS M4, R1-0 reproduction",
+    "evidence": "Replay logs",
+    "traceability": "R004 → ADR-04 → MRI → CTS-M4"
+  },
+  {
+    "id": "CRK1-R005",
+    "series": "M",
+    "invariant": "K0",
+    "title": "No Dropped Outcomes",
+    "rationale": "Mechanical insulation via outcome suppression is forbidden.",
+    "verification": "CTS M1, red-team B1",
+    "evidence": "OutcomeObject chain, receipt",
+    "traceability": "R005 → ADR-05 → MRI-Outcome → CTS-M1"
+  },
+  {
+    "id": "CRK1-R006",
+    "series": "M",
+    "invariant": "K1",
+    "title": "No Suppressed Evidence",
+    "rationale": "Evidence suppression breaks verifiability.",
+    "verification": "CTS M2, red-team B1",
+    "evidence": "EvidenceObject, audit log",
+    "traceability": "R006 → ADR-06 → MRI-Evidence → CTS-M2"
+  },
+  {
+    "id": "CRK1-R007",
+    "series": "M",
+    "invariant": "K2",
+    "title": "No Blocked Interpretation",
+    "rationale": "Interpretation blocking creates semantic insulation.",
+    "verification": "CTS M3, SRE-1.0",
+    "evidence": "InterpretationObject, frame log",
+    "traceability": "R007 → ADR-07 → MRI-Interpretation → CTS-M3"
+  },
+  {
+    "id": "CRK1-R008",
+    "series": "M",
+    "invariant": "K3",
+    "title": "No Hidden State",
+    "rationale": "Transient or undisclosed state breaks replay.",
+    "verification": "CTS M5, FIA-Code",
+    "evidence": "State dump, replay diff",
+    "traceability": "R008 → ADR-08 → MRI → CTS-M5"
+  },
+  {
+    "id": "CRK1-R009",
+    "series": "M",
+    "invariant": "K0-K3",
+    "title": "Consequence Loop Totality",
+    "rationale": "The mechanical loop must be total — no skipped steps.",
+    "verification": "CTS M1-M3, RuntimeContract",
+    "evidence": "Loop trace, receipts",
+    "traceability": "R009 → ADR-09 → MRI-Loop → CTS-M1"
+  },
+  {
+    "id": "CRK1-R010",
+    "series": "S",
+    "invariant": "K4",
+    "title": "Structural Transparency",
+    "rationale": "If you cannot inspect it, you cannot trust it.",
+    "verification": "CTS S1, S3",
+    "evidence": "Object schema validation report",
+    "traceability": "R010 → ADR-10 → COM-1.0 → CTS-S1"
+  },
+  {
+    "id": "CRK1-R011",
+    "series": "S",
+    "invariant": "K5",
+    "title": "Contractual Binding",
+    "rationale": "Objects must satisfy executable contracts.",
+    "verification": "CTS S2, CTS G2",
+    "evidence": "Contract validation receipt",
+    "traceability": "R011 → ADR-11 → contracts.md → CTS-S2"
+  },
+  {
+    "id": "CRK1-R012",
+    "series": "S",
+    "invariant": "K6",
+    "title": "Traceability Preservation",
+    "rationale": "Broken traceability chains are unconstitutional.",
+    "verification": "CTS S5, traceability validator",
+    "evidence": "traceability_block in receipt",
+    "traceability": "R012 → ADR-12 → URIT-MAP → CTS-S5"
+  },
+  {
+    "id": "CRK1-R013",
+    "series": "S",
+    "invariant": "K4",
+    "title": "IdentityObject Schema",
+    "rationale": "Actors must be structurally transparent.",
+    "verification": "CTS S1",
+    "evidence": "IdentityObject instance",
+    "traceability": "R013 → COM-1.0 → MRI → CTS-S1"
+  },
+  {
+    "id": "CRK1-R014",
+    "series": "S",
+    "invariant": "K4,K0",
+    "title": "DecisionObject Schema",
+    "rationale": "Decisions must be fully exposed and consequence-bound.",
+    "verification": "CTS S1",
+    "evidence": "DecisionObject instance",
+    "traceability": "R014 → COM-1.0 → MRI-Decision → CTS-S1"
+  },
+  {
+    "id": "CRK1-R015",
+    "series": "S",
+    "invariant": "K4,K1",
+    "title": "OutcomeObject Schema",
+    "rationale": "Outcomes must be structurally complete.",
+    "verification": "CTS S1",
+    "evidence": "OutcomeObject instance",
+    "traceability": "R015 → COM-1.0 → MRI-Outcome → CTS-S1"
+  },
+  {
+    "id": "CRK1-R016",
+    "series": "S",
+    "invariant": "K4,K2",
+    "title": "EvidenceObject Schema",
+    "rationale": "Evidence must expose all verifiable fields.",
+    "verification": "CTS S1",
+    "evidence": "EvidenceObject instance",
+    "traceability": "R016 → COM-1.0 → MRI-Evidence → CTS-S1"
+  },
+  {
+    "id": "CRK1-R017",
+    "series": "S",
+    "invariant": "K4,K7",
+    "title": "InterpretationObject Schema",
+    "rationale": "Interpretations must declare frames used.",
+    "verification": "CTS S1",
+    "evidence": "InterpretationObject instance",
+    "traceability": "R017 → COM-1.0 → MRI-Interpretation → CTS-S1"
+  },
+  {
+    "id": "CRK1-R018",
+    "series": "S",
+    "invariant": "K5",
+    "title": "EvidenceContract Enforcement",
+    "rationale": "Evidence rules are executable law.",
+    "verification": "CTS S2, M2",
+    "evidence": "Contract check receipt",
+    "traceability": "R018 → contracts.md → MRI → CTS-S2"
+  },
+  {
+    "id": "CRK1-R019",
+    "series": "S",
+    "invariant": "K5",
+    "title": "RuntimeContract Enforcement",
+    "rationale": "The constitutional loop cannot be short-circuited.",
+    "verification": "CTS S2, M-series",
+    "evidence": "Loop validation receipt",
+    "traceability": "R019 → contracts.md → MRI-Loop → CTS-S2"
+  },
+  {
+    "id": "CRK1-R020",
+    "series": "E",
+    "invariant": "K7",
+    "title": "Semantic Multiplicity",
+    "rationale": "No single interpretive frame may dominate.",
+    "verification": "CTS E1",
+    "evidence": "frames_used array, |F|>1",
+    "traceability": "R020 → ADR-20 → SRE-1.0 → CTS-E1"
+  },
+  {
+    "id": "CRK1-R021",
+    "series": "E",
+    "invariant": "K8",
+    "title": "Semantic Reproducibility",
+    "rationale": "Interpretations must not rely on founder knowledge.",
+    "verification": "CTS E2, R1-0",
+    "evidence": "Replay diff, SRE output",
+    "traceability": "R021 → ADR-21 → SRE-1.0 → CTS-E2"
+  },
+  {
+    "id": "CRK1-R022",
+    "series": "E",
+    "invariant": "K9",
+    "title": "Semantic Drift Visibility",
+    "rationale": "Silent semantic collapse is forbidden.",
+    "verification": "CTS E3, D-series",
+    "evidence": "Drift report, SE delta",
+    "traceability": "R022 → ADR-22 → SRE-1.0 → CTS-E3"
+  },
+  {
+    "id": "CRK1-R023",
+    "series": "E",
+    "invariant": "K7",
+    "title": "No Dominant Frame",
+    "rationale": "Interpretive capture via frame monopoly is blocked.",
+    "verification": "CTS E4, red-team B3",
+    "evidence": "Frame diversity metrics",
+    "traceability": "R023 → ADR-23 → SRE → CTS-E4"
+  },
+  {
+    "id": "CRK1-R024",
+    "series": "E",
+    "invariant": "K8",
+    "title": "No Unfalsifiable Interpretations",
+    "rationale": "Interpretations must be testable against evidence.",
+    "verification": "CTS E5",
+    "evidence": "Falsification test log",
+    "traceability": "R024 → ADR-24 → SRE → CTS-E5"
+  },
+  {
+    "id": "CRK1-R025",
+    "series": "E",
+    "invariant": "K3,K8",
+    "title": "Semantic Replay Determinism",
+    "rationale": "SRE outputs must be deterministic from evidence.",
+    "verification": "CTS E2, SRE-1.0",
+    "evidence": "Dual replay comparison",
+    "traceability": "R025 → SRE-1.0 → R1-0 → CTS-E2"
+  },
+  {
+    "id": "CRK1-R026",
+    "series": "E",
+    "invariant": "K7,K9",
+    "title": "Frame Evolution Auditability",
+    "rationale": "Frame set changes must be logged and measurable.",
+    "verification": "CTS E3",
+    "evidence": "Frame evolution log",
+    "traceability": "R026 → semantics.md Rule 8 → CTS-E3"
+  },
+  {
+    "id": "CRK1-R027",
+    "series": "E",
+    "invariant": "K5",
+    "title": "SemanticContract Enforcement",
+    "rationale": "Semantic integrity rules are binding.",
+    "verification": "CTS S2, E-series",
+    "evidence": "Semantic contract receipt",
+    "traceability": "R027 → contracts.md → CTS-E1"
+  },
+  {
+    "id": "CRK1-R028",
+    "series": "E",
+    "invariant": "K9",
+    "title": "Semantic Drift Auditor",
+    "rationale": "SRE must flag drift above threshold.",
+    "verification": "CTS E3, SRE drift auditor",
+    "evidence": "Drift audit report",
+    "traceability": "R028 → SRE-1.0 → CTS-E3"
+  },
+  {
+    "id": "CRK1-R029",
+    "series": "E",
+    "invariant": "K7",
+    "title": "Interpretive Lineage Tree",
+    "rationale": "Interpretation ancestry must be preserved.",
+    "verification": "CTS E1, provenance",
+    "evidence": "Lineage tree export",
+    "traceability": "R029 → SRE-1.0 → PL-1.0"
+  },
+  {
+    "id": "CRK1-R030",
+    "series": "H",
+    "invariant": "K10",
+    "title": "Provenance Immutability",
+    "rationale": "History must not be rewritten.",
+    "verification": "CTS G3, PL-1.0 verify_chain",
+    "evidence": "Provenance ledger, hash chain",
+    "traceability": "R030 → ADR-30 → PL-1.0 → CTS-G3"
+  },
+  {
+    "id": "CRK1-R031",
+    "series": "H",
+    "invariant": "K11",
+    "title": "Founder Independence",
+    "rationale": "Strangers must reproduce the runtime.",
+    "verification": "FIA, R1-0",
+    "evidence": "Reproduction report, D-3 seal",
+    "traceability": "R031 → ADR-31 → R1-0 → FIA"
+  },
+  {
+    "id": "CRK1-R032",
+    "series": "H",
+    "invariant": "K12",
+    "title": "Constitutional Supremacy",
+    "rationale": "No subsystem may override the kernel.",
+    "verification": "CTS G4, red-team B4",
+    "evidence": "Bypass attempt logs",
+    "traceability": "R032 → ADR-32 → GEL-1 → CTS-G4"
+  },
+  {
+    "id": "CRK1-R033",
+    "series": "H",
+    "invariant": "K10",
+    "title": "Governance Receipt Header Compliance",
+    "rationale": "Receipts must follow REC-HDR-1.0.",
+    "verification": "CTS G2",
+    "evidence": "Receipt JSON, schema validation",
+    "traceability": "R033 → REC-HDR-1.0 → CTS-G2"
+  },
+  {
+    "id": "CRK1-R034",
+    "series": "H",
+    "invariant": "K10",
+    "title": "Merkle Spine Anchoring",
+    "rationale": "Receipts must anchor to Merkle root.",
+    "verification": "CTS G3, merkle verify",
+    "evidence": "merkle_root field, spine proof",
+    "traceability": "R034 → merkle-spine/spec.md → CTS-G3"
+  },
+  {
+    "id": "CRK1-R035",
+    "series": "H",
+    "invariant": "K10",
+    "title": "Receipt-Anchored Provenance",
+    "rationale": "Every ledger entry references a valid receipt.",
+    "verification": "PL-1.0, CTS G1",
+    "evidence": "receipt_ref in ledger entry",
+    "traceability": "R035 → PL-1.0 → CTS-G1"
+  },
+  {
+    "id": "CRK1-R036",
+    "series": "H",
+    "invariant": "K6",
+    "title": "Requirement-to-ADR Traceability",
+    "rationale": "Every requirement links to an ADR.",
+    "verification": "Traceability validator",
+    "evidence": "traceability_block.requirement, adr",
+    "traceability": "R036 → URIT-MAP → governance-gate"
+  },
+  {
+    "id": "CRK1-R037",
+    "series": "H",
+    "invariant": "K6",
+    "title": "Implementation-to-CTS Traceability",
+    "rationale": "Every implementation links to CTS tests.",
+    "verification": "Traceability validator, CI",
+    "evidence": "traceability_block.implementation, cts",
+    "traceability": "R037 → URIT-MAP → tests/"
+  },
+  {
+    "id": "CRK1-R038",
+    "series": "H",
+    "invariant": "K11",
+    "title": "Documentation Completeness",
+    "rationale": "No implicit assumptions in docs.",
+    "verification": "FIA-Documentation",
+    "evidence": "FIA audit report",
+    "traceability": "R038 → FIA → R031"
+  },
+  {
+    "id": "CRK1-R039",
+    "series": "H",
+    "invariant": "K12",
+    "title": "Governance Bypass Prohibition",
+    "rationale": "Shadow governance paths are forbidden.",
+    "verification": "CTS G4, red-team B2",
+    "evidence": "GEL audit log",
+    "traceability": "R039 → GEL-1 → CTS-G4"
+  },
+  {
+    "id": "CRK1-R040",
+    "series": "B",
+    "invariant": "K0-K3",
+    "title": "Constitutional Loop Completeness",
+    "rationale": "The full loop must execute for every action.",
+    "verification": "CTS M-series, RuntimeContract",
+    "evidence": "Phase receipts, loop trace",
+    "traceability": "R040 → required-behaviors.md → MRI-Loop"
+  },
+  {
+    "id": "CRK1-R041",
+    "series": "B",
+    "invariant": "K9,K10",
+    "title": "Drift Monotonicity",
+    "rationale": "CE and SE must never regress.",
+    "verification": "CTS D1-D3",
+    "evidence": "CE/SE deltas, drift receipt",
+    "traceability": "R041 → drift-envelopes.md → CTS-D1"
+  },
+  {
+    "id": "CRK1-R042",
+    "series": "B",
+    "invariant": "K5,K10",
+    "title": "Governance Visibility",
+    "rationale": "All actions must produce visible governance artifacts.",
+    "verification": "CTS G1",
+    "evidence": "Governance receipt per action",
+    "traceability": "R042 → GEL-1 → CTS-G1"
+  }
+]

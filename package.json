@@ -31,8 +31,11 @@
     "seed:governance-gate": "node scripts/seed_governance_gate.mjs",
     "test:governance-gate": "node scripts/seed_governance_gate.mjs && python -m pytest tests/skillzmcgee/ -v",
     "nova-studio": "node nova-studio/server/studio-api.mjs",
+    "nova-studio:react": "npm run dev:react --prefix nova-studio",
     "nova-studio:build": "npm run build --prefix nova-studio",
-    "test:nova-studio": "node --test tests/nova_studio.test.js"
+    "nova-studio:build:react": "npm run build:react --prefix nova-studio",
+    "test:nova-studio": "node --test tests/nova_studio.test.js",
+    "spec:requirements": "node tools/generators/requirements-catalog.mjs"
   },
   "engines": {
     "node": ">=18"
