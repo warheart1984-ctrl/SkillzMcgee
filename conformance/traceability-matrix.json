@@ -1,0 +1,710 @@
+{
+  "version": "1.0",
+  "authority": "CRK-1 Specification v1.0",
+  "description": "Master traceability matrix — Requirement → CTS → MRI → Evidence → Receipt → Provenance",
+  "invariant": "R-infinity",
+  "generated_from": [
+    "specification/normative-requirements/catalog.json",
+    "conformance/resolution-map.json"
+  ],
+  "rows": [
+    {
+      "requirement_id": "CRK1-R001",
+      "requirement_num": "R001",
+      "title": "Consequence Continuity",
+      "series": "M-Series",
+      "invariant": "K0",
+      "cts_tests": [
+        "CTS-M1"
+      ],
+      "repo_tests": [],
+      "mri_component": "decision→outcome",
+      "evidence": "OutcomeObject",
+      "receipts": "invariant_block",
+      "provenance": "entry:decision/outcome",
+      "traceability_chain": "CRK1-R001 → ADR-001 → Implementation → CTS-M1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R002",
+      "requirement_num": "R002",
+      "title": "Evidence Completeness",
+      "series": "M-Series",
+      "invariant": "K1",
+      "cts_tests": [
+        "CTS-M2"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_fitness.py"
+      ],
+      "mri_component": "outcome→evidence",
+      "evidence": "EvidenceObject",
+      "receipts": "evidence_block",
+      "provenance": "entry:evidence",
+      "traceability_chain": "CRK1-R002 → ADR-002 → Implementation → CTS-M2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R003",
+      "requirement_num": "R003",
+      "title": "Interpretive Exposure",
+      "series": "M-Series",
+      "invariant": "K2",
+      "cts_tests": [
+        "CTS-M3"
+      ],
+      "repo_tests": [],
+      "mri_component": "evidence→interpretation",
+      "evidence": "InterpretationObject",
+      "receipts": "traceability_block",
+      "provenance": "entry:interpretation",
+      "traceability_chain": "CRK1-R003 → ADR-003 → Implementation → CTS-M3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R004",
+      "requirement_num": "R004",
+      "title": "Replayability",
+      "series": "M-Series",
+      "invariant": "K3",
+      "cts_tests": [
+        "CTS-M4"
+      ],
+      "repo_tests": [
+        "tests/nova_studio.test.js"
+      ],
+      "mri_component": "replay engine",
+      "evidence": "Replay logs",
+      "receipts": "N/A",
+      "provenance": "entry:replay",
+      "traceability_chain": "CRK1-R004 → ADR-004 → Implementation → CTS-M4 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R005",
+      "requirement_num": "R005",
+      "title": "No Dropped Outcomes",
+      "series": "M-Series",
+      "invariant": "K0",
+      "cts_tests": [
+        "CTS-M1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Outcome",
+      "evidence": "OutcomeObject chain, receipt",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R005 → ADR-005 → Implementation → CTS-M1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R006",
+      "requirement_num": "R006",
+      "title": "No Suppressed Evidence",
+      "series": "M-Series",
+      "invariant": "K1",
+      "cts_tests": [
+        "CTS-M2"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Evidence",
+      "evidence": "EvidenceObject, audit log",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R006 → ADR-006 → Implementation → CTS-M2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R007",
+      "requirement_num": "R007",
+      "title": "No Blocked Interpretation",
+      "series": "M-Series",
+      "invariant": "K2",
+      "cts_tests": [
+        "CTS-M3"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Interpretation",
+      "evidence": "InterpretationObject, frame log",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R007 → ADR-007 → Implementation → CTS-M3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R008",
+      "requirement_num": "R008",
+      "title": "No Hidden State",
+      "series": "M-Series",
+      "invariant": "K3",
+      "cts_tests": [
+        "CTS-M5"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Loop",
+      "evidence": "State dump, replay diff",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R008 → ADR-008 → Implementation → CTS-M5 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R009",
+      "requirement_num": "R009",
+      "title": "Consequence Loop Totality",
+      "series": "M-Series",
+      "invariant": "K0-K3",
+      "cts_tests": [
+        "CTS-M1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Loop",
+      "evidence": "Loop trace, receipts",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R009 → ADR-009 → Implementation → CTS-M1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R010",
+      "requirement_num": "R010",
+      "title": "Structural Transparency",
+      "series": "S-Series",
+      "invariant": "K4",
+      "cts_tests": [
+        "CTS-S1",
+        "CTS-S3"
+      ],
+      "repo_tests": [],
+      "mri_component": "object schemas",
+      "evidence": "Object dumps",
+      "receipts": "invariant_block",
+      "provenance": "entry:object",
+      "traceability_chain": "CRK1-R010 → ADR-010 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R011",
+      "requirement_num": "R011",
+      "title": "Contractual Binding",
+      "series": "S-Series",
+      "invariant": "K5",
+      "cts_tests": [
+        "CTS-S2",
+        "CTS-G2"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_dependencies.py",
+        "tests/governance.test.js",
+        "tests/invariant_evaluator.test.js"
+      ],
+      "mri_component": "contract enforcement",
+      "evidence": "Contract logs",
+      "receipts": "invariant_block",
+      "provenance": "entry:contract",
+      "traceability_chain": "CRK1-R011 → ADR-011 → Implementation → CTS-S2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R012",
+      "requirement_num": "R012",
+      "title": "Traceability Preservation",
+      "series": "S-Series",
+      "invariant": "K6",
+      "cts_tests": [
+        "CTS-S5"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_traceability.py"
+      ],
+      "mri_component": "traceability builder",
+      "evidence": "TraceabilityBlock",
+      "receipts": "traceability_block",
+      "provenance": "entry:trace",
+      "traceability_chain": "CRK1-R012 → ADR-012 → Implementation → CTS-S5 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R013",
+      "requirement_num": "R013",
+      "title": "IdentityObject Schema",
+      "series": "S-Series",
+      "invariant": "K4",
+      "cts_tests": [
+        "CTS-S1"
+      ],
+      "repo_tests": [],
+      "mri_component": "object schemas",
+      "evidence": "IdentityObject instance",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R013 → ADR-013 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R014",
+      "requirement_num": "R014",
+      "title": "DecisionObject Schema",
+      "series": "S-Series",
+      "invariant": "K4,K0",
+      "cts_tests": [
+        "CTS-S1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Decision",
+      "evidence": "DecisionObject instance",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R014 → ADR-014 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R015",
+      "requirement_num": "R015",
+      "title": "OutcomeObject Schema",
+      "series": "S-Series",
+      "invariant": "K4,K1",
+      "cts_tests": [
+        "CTS-S1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Outcome",
+      "evidence": "OutcomeObject instance",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R015 → ADR-015 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R016",
+      "requirement_num": "R016",
+      "title": "EvidenceObject Schema",
+      "series": "S-Series",
+      "invariant": "K4,K2",
+      "cts_tests": [
+        "CTS-S1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Evidence",
+      "evidence": "EvidenceObject instance",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R016 → ADR-016 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R017",
+      "requirement_num": "R017",
+      "title": "InterpretationObject Schema",
+      "series": "S-Series",
+      "invariant": "K4,K7",
+      "cts_tests": [
+        "CTS-S1"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Interpretation",
+      "evidence": "InterpretationObject instance",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R017 → ADR-017 → Implementation → CTS-S1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R018",
+      "requirement_num": "R018",
+      "title": "EvidenceContract Enforcement",
+      "series": "S-Series",
+      "invariant": "K5",
+      "cts_tests": [
+        "CTS-M2",
+        "CTS-S2"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Evidence",
+      "evidence": "Contract check receipt",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R018 → ADR-018 → Implementation → CTS-M2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R019",
+      "requirement_num": "R019",
+      "title": "RuntimeContract Enforcement",
+      "series": "S-Series",
+      "invariant": "K5",
+      "cts_tests": [
+        "CTS-S2"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Loop",
+      "evidence": "Loop validation receipt",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R019 → ADR-019 → Implementation → CTS-S2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R020",
+      "requirement_num": "R020",
+      "title": "Semantic Multiplicity",
+      "series": "E-Series",
+      "invariant": "K7",
+      "cts_tests": [
+        "CTS-E1"
+      ],
+      "repo_tests": [],
+      "mri_component": "frame set",
+      "evidence": "Frame list",
+      "receipts": "invariant_block",
+      "provenance": "entry:frames",
+      "traceability_chain": "CRK1-R020 → ADR-020 → Implementation → CTS-E1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R021",
+      "requirement_num": "R021",
+      "title": "Semantic Reproducibility",
+      "series": "E-Series",
+      "invariant": "K8",
+      "cts_tests": [
+        "CTS-E2"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Replay logs",
+      "receipts": "N/A",
+      "provenance": "entry:replay",
+      "traceability_chain": "CRK1-R021 → ADR-021 → Implementation → CTS-E2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R022",
+      "requirement_num": "R022",
+      "title": "Semantic Drift Visibility",
+      "series": "E-Series",
+      "invariant": "K9",
+      "cts_tests": [
+        "CTS-E3",
+        "CTS-D3"
+      ],
+      "repo_tests": [],
+      "mri_component": "drift calculator",
+      "evidence": "Drift deltas",
+      "receipts": "drift_update",
+      "provenance": "entry:drift",
+      "traceability_chain": "CRK1-R022 → ADR-022 → Implementation → CTS-E3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R023",
+      "requirement_num": "R023",
+      "title": "No Dominant Frame",
+      "series": "E-Series",
+      "invariant": "K7",
+      "cts_tests": [
+        "CTS-E4"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Frame diversity metrics",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R023 → ADR-023 → Implementation → CTS-E4 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R024",
+      "requirement_num": "R024",
+      "title": "No Unfalsifiable Interpretations",
+      "series": "E-Series",
+      "invariant": "K8",
+      "cts_tests": [
+        "CTS-E5"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Falsification test log",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R024 → ADR-024 → Implementation → CTS-E5 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R025",
+      "requirement_num": "R025",
+      "title": "Semantic Replay Determinism",
+      "series": "E-Series",
+      "invariant": "K3,K8",
+      "cts_tests": [
+        "CTS-M4",
+        "CTS-E2"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Dual replay comparison",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R025 → ADR-025 → Implementation → CTS-M4 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R026",
+      "requirement_num": "R026",
+      "title": "Frame Evolution Auditability",
+      "series": "E-Series",
+      "invariant": "K7,K9",
+      "cts_tests": [
+        "CTS-E3"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Frame evolution log",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R026 → ADR-026 → Implementation → CTS-E3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R027",
+      "requirement_num": "R027",
+      "title": "SemanticContract Enforcement",
+      "series": "E-Series",
+      "invariant": "K5",
+      "cts_tests": [
+        "CTS-S2"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Semantic contract receipt",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R027 → ADR-027 → Implementation → CTS-S2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R028",
+      "requirement_num": "R028",
+      "title": "Semantic Drift Auditor",
+      "series": "E-Series",
+      "invariant": "K9",
+      "cts_tests": [
+        "CTS-E3"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Drift audit report",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R028 → ADR-028 → Implementation → CTS-E3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R029",
+      "requirement_num": "R029",
+      "title": "Interpretive Lineage Tree",
+      "series": "E-Series",
+      "invariant": "K7",
+      "cts_tests": [
+        "CTS-E1"
+      ],
+      "repo_tests": [],
+      "mri_component": "SRE",
+      "evidence": "Lineage tree export",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R029 → ADR-029 → Implementation → CTS-E1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R030",
+      "requirement_num": "R030",
+      "title": "Provenance Immutability",
+      "series": "H-Series",
+      "invariant": "K10",
+      "cts_tests": [
+        "CTS-G3"
+      ],
+      "repo_tests": [],
+      "mri_component": "ledger",
+      "evidence": "Ledger hashes",
+      "receipts": "merkle_root",
+      "provenance": "entry:hash",
+      "traceability_chain": "CRK1-R030 → ADR-030 → Implementation → CTS-G3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R031",
+      "requirement_num": "R031",
+      "title": "Founder Independence",
+      "series": "H-Series",
+      "invariant": "K11",
+      "cts_tests": [],
+      "repo_tests": [],
+      "mri_component": "MRI, SRE",
+      "evidence": "FIA report",
+      "receipts": "N/A",
+      "provenance": "entry:audit",
+      "traceability_chain": "CRK1-R031 → ADR-031 → Implementation → CTS → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R032",
+      "requirement_num": "R032",
+      "title": "Constitutional Supremacy",
+      "series": "H-Series",
+      "invariant": "K12",
+      "cts_tests": [
+        "CTS-G4"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_dependencies.py",
+        "tests/invariant_evaluator.test.js"
+      ],
+      "mri_component": "all",
+      "evidence": "All",
+      "receipts": "invariant_block",
+      "provenance": "entry:all",
+      "traceability_chain": "CRK1-R032 → ADR-032 → Implementation → CTS-G4 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R033",
+      "requirement_num": "R033",
+      "title": "Governance Receipt Header Compliance",
+      "series": "H-Series",
+      "invariant": "K10",
+      "cts_tests": [
+        "CTS-G2"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Receipt",
+      "evidence": "Receipt JSON, schema validation",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R033 → ADR-033 → Implementation → CTS-G2 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R034",
+      "requirement_num": "R034",
+      "title": "Merkle Spine Anchoring",
+      "series": "H-Series",
+      "invariant": "K10",
+      "cts_tests": [
+        "CTS-G3"
+      ],
+      "repo_tests": [],
+      "mri_component": "MRI-Receipt",
+      "evidence": "merkle_root field, spine proof",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R034 → ADR-034 → Implementation → CTS-G3 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R035",
+      "requirement_num": "R035",
+      "title": "Receipt-Anchored Provenance",
+      "series": "H-Series",
+      "invariant": "K10",
+      "cts_tests": [
+        "CTS-G1"
+      ],
+      "repo_tests": [],
+      "mri_component": "ledger",
+      "evidence": "receipt_ref in ledger entry",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R035 → ADR-035 → Implementation → CTS-G1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R036",
+      "requirement_num": "R036",
+      "title": "Requirement-to-ADR Traceability",
+      "series": "H-Series",
+      "invariant": "K6",
+      "cts_tests": [
+        "CTS-S5"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_traceability.py"
+      ],
+      "mri_component": "ledger",
+      "evidence": "traceability_block.requirement, adr",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R036 → ADR-036 → Implementation → CTS-S5 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R037",
+      "requirement_num": "R037",
+      "title": "Implementation-to-CTS Traceability",
+      "series": "H-Series",
+      "invariant": "K6",
+      "cts_tests": [
+        "CTS-S5"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_traceability.py"
+      ],
+      "mri_component": "ledger",
+      "evidence": "traceability_block.implementation, cts",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R037 → ADR-037 → Implementation → CTS-S5 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R038",
+      "requirement_num": "R038",
+      "title": "Documentation Completeness",
+      "series": "H-Series",
+      "invariant": "K11",
+      "cts_tests": [],
+      "repo_tests": [],
+      "mri_component": "ledger",
+      "evidence": "FIA audit report",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R038 → ADR-038 → Implementation → CTS → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R039",
+      "requirement_num": "R039",
+      "title": "Governance Bypass Prohibition",
+      "series": "H-Series",
+      "invariant": "K12",
+      "cts_tests": [
+        "CTS-G4"
+      ],
+      "repo_tests": [],
+      "mri_component": "ledger",
+      "evidence": "GEL audit log",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R039 → ADR-039 → Implementation → CTS-G4 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R040",
+      "requirement_num": "R040",
+      "title": "Constitutional Loop Completeness",
+      "series": "B-Series",
+      "invariant": "K0-K3",
+      "cts_tests": [
+        "CTS-M1"
+      ],
+      "repo_tests": [
+        "tests/nova_studio.test.js"
+      ],
+      "mri_component": "loop engine",
+      "evidence": "All objects",
+      "receipts": "invariant_block",
+      "provenance": "entry:loop",
+      "traceability_chain": "CRK1-R040 → ADR-040 → Implementation → CTS-M1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R041",
+      "requirement_num": "R041",
+      "title": "Drift Monotonicity",
+      "series": "B-Series",
+      "invariant": "K9,K10",
+      "cts_tests": [
+        "CTS-D1",
+        "CTS-D2",
+        "CTS-D3"
+      ],
+      "repo_tests": [],
+      "mri_component": "drift engine",
+      "evidence": "Drift deltas",
+      "receipts": "drift_update",
+      "provenance": "entry:drift",
+      "traceability_chain": "CRK1-R041 → ADR-041 → Implementation → CTS-D1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R042",
+      "requirement_num": "R042",
+      "title": "Governance Visibility",
+      "series": "B-Series",
+      "invariant": "K5,K10",
+      "cts_tests": [
+        "CTS-G1"
+      ],
+      "repo_tests": [
+        "tests/skillzmcgee/test_fitness.py",
+        "tests/governance.test.js",
+        "tests/nova_studio.test.js"
+      ],
+      "mri_component": "GEL-1",
+      "evidence": "Receipts",
+      "receipts": "receipt",
+      "provenance": "entry:receipt",
+      "traceability_chain": "CRK1-R042 → ADR-042 → Implementation → CTS-G1 → Evidence → Receipt → Provenance"
+    }
+  ]
+}

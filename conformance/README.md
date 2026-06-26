@@ -15,6 +15,8 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 
 | Path | Purpose |
 |------|---------|
+| [traceability-matrix.md](./traceability-matrix.md) | **Master audit matrix** (Req → CTS → MRI → Evidence) |
+| [traceability-matrix.json](./traceability-matrix.json) | Machine-readable traceability matrix |
 | [resolution-map.json](./resolution-map.json) | Machine-readable proof graph |
 | [resolution-map.md](./resolution-map.md) | Human-readable conformance map |
 | [CTS-1.0/](./CTS-1.0/) | Constitutional test suite |

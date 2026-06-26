@@ -2,6 +2,9 @@
 
 | Document | Purpose |
 |----------|---------|
+| [adr-template.md](./adr-template.md) | ADR template with requirement linkage |
+| [adrs/](./adrs/) | Architecture decision records |
+| [RELEASE_NOTES_v1.0.md](./RELEASE_NOTES_v1.0.md) | Formal v1.0 release notes |
 | [version-history.md](./version-history.md) | Release lineage |
 | [governance.md](./governance.md) | How spec changes are governed |
 
