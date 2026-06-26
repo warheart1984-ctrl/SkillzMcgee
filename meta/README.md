@@ -5,6 +5,7 @@
 | [adr-template.md](./adr-template.md) | ADR template with requirement linkage |
 | [adrs/](./adrs/) | Architecture decision records |
 | [stewardship-charter.md](./stewardship-charter.md) | Multi-steward governance |
+| [steward-council-governance-process.md](./steward-council-governance-process.md) | Council proposal lifecycle |
 | [steward-oath.md](./steward-oath.md) | Steward oath |
 | [LONG_TERM_STABILITY_PLAN_v1.0.md](./LONG_TERM_STABILITY_PLAN_v1.0.md) | 10-year stability roadmap |
 | [RELEASE_NOTES_v1.0.md](./RELEASE_NOTES_v1.0.md) | Formal v1.0 release notes |

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRK-1 Constitutional Loop — Interactive Tutorial</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0f1419;
+        --card: #1a2332;
+        --border: #2d3a4f;
+        --fg: #e7ecf3;
+        --muted: #8b9cb3;
+        --accent: #3b82f6;
+        --ok: #22c55e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        margin: 0;
+        padding: 1.5rem;
+        line-height: 1.5;
+      }
+      h1 { font-size: 1.4rem; margin: 0 0 0.25rem; }
+      .sub { color: var(--muted); margin-bottom: 1.5rem; }
+      .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 960px; }
+      @media (max-width: 700px) { .layout { grid-template-columns: 1fr; } }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+      .stages { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 1rem 0; }
+      .stage {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        background: var(--border);
+        color: var(--muted);
+      }
+      .stage.done { background: #14532d; color: #bbf7d0; }
+      .stage.active { background: var(--accent); color: #fff; }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 0.25rem 0.25rem 0.25rem 0;
+        font-size: 0.9rem;
+      }
+      button:disabled { opacity: 0.4; cursor: not-allowed; }
+      button.secondary { background: var(--border); }
+      pre {
+        background: #0a0e14;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        overflow: auto;
+        max-height: 280px;
+      }
+      .frames label { display: block; margin: 0.35rem 0; font-size: 0.9rem; }
+      .explain { color: var(--muted); font-size: 0.95rem; min-height: 3rem; }
+      .badge { font-size: 0.75rem; color: var(--ok); }
+    </style>
+  </head>
+  <body>
+    <h1>CRK-1 Constitutional Loop</h1>
+    <p class="sub">Interactive tutorial — one artifact per stage (CA-1.0)</p>
+
+    <div class="stages" id="stages"></div>
+
+    <div class="layout">
+      <div class="panel">
+        <h2 id="module-title">Module 1 — Introduction</h2>
+        <p class="explain" id="explain">Click Next to walk through all twelve stages of the constitutional loop.</p>
+        <div id="controls"></div>
+        <div class="frames" id="frames" hidden>
+          <strong>Choose frames:</strong>
+          <label><input type="checkbox" value="safety" checked /> Safety</label>
+          <label><input type="checkbox" value="ethics" checked /> Ethics</label>
+          <label><input type="checkbox" value="performance" /> Performance</label>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Artifact</h2>
+        <pre id="artifact">{}</pre>
+        <p class="badge" id="status"></p>
+      </div>
+    </div>
+
+    <script>
+      const STAGES = [
+        { id: 0, name: "Intro", type: null, explain: "The constitutional loop ensures governed, traceable, reproducible actions." },
+        { id: 1, name: "Decision", type: "DecisionObject", explain: "Every action begins with a decision." },
+        { id: 2, name: "Outcome", type: "OutcomeObject", explain: "Decisions must produce outcomes — no silent actions." },
+        { id: 3, name: "Evidence", type: "EvidenceObject", explain: "Outcomes must be evidenced." },
+        { id: 4, name: "Interpretation", type: "InterpretationObject", explain: "Interpretations must be multi-frame." },
+        { id: 5, name: "Policy Eval", type: "PolicyEvaluationObject", explain: "Interpretations are evaluated against policy." },
+        { id: 6, name: "Policy Outcome", type: "PolicyOutcomeObject", explain: "Policy evaluation yields an explicit outcome." },
+        { id: 7, name: "Governance", type: "GovernanceDecisionObject", explain: "Governance issues a formal decision." },
+        { id: 8, name: "Exec Plan", type: "ExecutionPlanObject", explain: "Governance decisions become execution plans." },
+        { id: 9, name: "Transition", type: "RuntimeStateTransitionObject", explain: "Plans produce explicit state transitions." },
+        { id: 10, name: "Receipt", type: "GovernanceReceipt", explain: "Every transition produces a governance receipt." },
+        { id: 11, name: "Provenance", type: "ProvenanceEntry", explain: "Receipts enter immutable provenance." },
+        { id: 12, name: "Lineage+Drift", type: "DriftEnvelopeUpdate", explain: "Lineage updates; drift envelopes stay monotonic." },
+        { id: 13, name: "Replay", type: "Replay", explain: "The full chain is reproducible from the ledger." },
+      ];
+
+      let step = 0;
+      const chain = {};
+      const uid = () => Math.random().toString(36).slice(2, 10);
+
+      function renderStages() {
+        const el = document.getElementById("stages");
+        el.innerHTML = STAGES.slice(1, 13).map((s, i) => {
+          const n = i + 1;
+          let cls = "stage";
+          if (n < step) cls += " done";
+          if (n === step) cls += " active";
+          return `<span class="${cls}">${n}. ${s.name}</span>`;
+        }).join("");
+      }
+
+      function getFrames() {
+        return [...document.querySelectorAll("#frames input:checked")].map((c) => c.value);
+      }
+
+      function buildArtifact(s) {
+        const t = new Date().toISOString();
+        switch (s.type) {
+          case "DecisionObject":
+            return (chain.decision = { id: uid(), actor: "tutorial-user", payload: { action: "demo" }, timestamp: t });
+          case "OutcomeObject":
+            return (chain.outcome = { id: uid(), decision_id: chain.decision.id, result: { status: "ok" }, timestamp: t });
+          case "EvidenceObject":
+            return (chain.evidence = { id: uid(), outcome_id: chain.outcome.id, data: { log: "evidence" }, timestamp: t });
+          case "InterpretationObject":
+            return (chain.interpretation = { id: uid(), evidence_id: chain.evidence.id, interpretation: { summary: "multi-frame" }, frames_used: getFrames(), timestamp: t });
+          case "PolicyEvaluationObject":
+            return (chain.policyEval = { id: uid(), interpretation_id: chain.interpretation.id, evaluation: { pass: true }, timestamp: t });
+          case "PolicyOutcomeObject":
+            return (chain.policyOutcome = { id: uid(), policy_evaluation_id: chain.policyEval.id, outcome: "approve", timestamp: t });
+          case "GovernanceDecisionObject":
+            return (chain.govDecision = { id: uid(), policy_outcome_id: chain.policyOutcome.id, decision: "execute", timestamp: t });
+          case "ExecutionPlanObject":
+            return (chain.plan = { id: uid(), governance_decision_id: chain.govDecision.id, plan: { steps: ["apply"] }, timestamp: t });
+          case "RuntimeStateTransitionObject":
+            return (chain.transition = { id: uid(), execution_plan_id: chain.plan.id, transition: { before: "S0", after: "S1" }, timestamp: t });
+          case "GovernanceReceipt":
+            return (chain.receipt = { id: uid(), transition_id: chain.transition.id, invariant_block: ["K0", "K1"], evidence_block: [chain.evidence.id], traceability_block: { requirements: ["R001", "R040"] }, merkle_root: uid(), timestamp: t });
+          case "ProvenanceEntry":
+            chain.lineage = { id: uid(), provenance_entry_id: null, lineage_hash: uid(), timestamp: t };
+            return (chain.provenance = { id: uid(), receipt_id: chain.receipt.id, parent_hash: "genesis", entry_hash: uid(), timestamp: t });
+          case "DriftEnvelopeUpdate":
+            chain.lineage.provenance_entry_id = chain.provenance.id;
+            return (chain.drift = { id: uid(), lineage_node_id: chain.lineage.id, CE_delta: 0.01, SE_delta: 0.02, timestamp: t });
+          case "Replay":
+            return { replay: true, chain: { ...chain }, ok: true };
+          default:
+            return { message: "Click Next to begin the loop." };
+        }
+      }
+
+      function updateUI() {
+        const s = STAGES[step];
+        document.getElementById("module-title").textContent = `Module — ${s.name}`;
+        document.getElementById("explain").textContent = s.explain;
+        document.getElementById("frames").hidden = s.type !== "InterpretationObject";
+        document.getElementById("artifact").textContent = JSON.stringify(buildArtifact(s), null, 2);
+        document.getElementById("status").textContent = step >= 13 ? "Tutorial complete ✓" : `Step ${step} / 13`;
+        renderStages();
+        const controls = document.getElementById("controls");
+        controls.innerHTML = "";
+        if (step > 0) {
+          const back = document.createElement("button");
+          back.className = "secondary";
+          back.textContent = "Back";
+          back.onclick = () => { step = Math.max(0, step - 1); updateUI(); };
+          controls.appendChild(back);
+        }
+        if (step < 13) {
+          const next = document.createElement("button");
+          next.textContent = step === 0 ? "Start" : "Next";
+          next.onclick = () => { step++; updateUI(); };
+          controls.appendChild(next);
+        } else {
+          const replay = document.createElement("button");
+          replay.textContent = "Replay Loop";
+          replay.onclick = () => { step = 1; updateUI(); };
+          controls.appendChild(replay);
+        }
+      }
+
+      updateUI();
+    </script>
+  </body>
+</html>

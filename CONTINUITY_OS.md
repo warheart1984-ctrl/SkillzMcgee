@@ -38,7 +38,8 @@ Version 1.0 is the first **specification-stable**, founder-independent release o
 | Path | Contents |
 |------|----------|
 | [docs/public-diagrams/](./docs/public-diagrams/) | Continuity OS diagram set |
-| [docs/launch-kit/](./docs/launch-kit/) | Public launch materials, [FAQ](./docs/launch-kit/FAQ.md), [animation script](./docs/launch-kit/constitutional-loop-animation-script.md) |
+| [docs/tutorials/](./docs/tutorials/) | Interactive constitutional loop tutorial |
+| [docs/launch-kit/](./docs/launch-kit/) | Launch deck, press release, FAQ, video scripts |
 | [docs/K-infinity-axioms/](./docs/K-infinity-axioms/) | K-∞ axiom set |
 | [meta/adr-template.md](./meta/adr-template.md) | ADR template with requirement linkage |
 | [meta/stewardship-charter.md](./meta/stewardship-charter.md) | Multi-steward governance |

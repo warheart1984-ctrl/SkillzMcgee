@@ -26,10 +26,12 @@ Stewards must:
 A **Steward Council** is formed with:
 
 - equal voting rights among seated stewards
-- rotating chairship (term length set by council bylaws)
+- rotating chairship (6-month term)
 - transparent deliberation
 - public minutes
 - recorded provenance for all council decisions (`entry:council_decision`)
+
+**Operational process:** [steward-council-governance-process.md](./steward-council-governance-process.md)
 
 ## 4. Decision-making model
 

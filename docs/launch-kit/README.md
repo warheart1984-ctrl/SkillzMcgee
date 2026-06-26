@@ -24,6 +24,9 @@ Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-on
 | Loop poster | [../public-diagrams/constitutional-loop-poster.md](../public-diagrams/constitutional-loop-poster.md) |
 | Animation script (60s) | [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md) |
 | Launch video script (2–3 min) | [launch-video-script.md](./launch-video-script.md) |
+| Launch deck (20 slides) | [LAUNCH_DECK.md](./LAUNCH_DECK.md) |
+| Press release | [press-release-v1.0.md](./press-release-v1.0.md) |
+| Interactive tutorial | [../tutorials/constitutional-loop-tutorial.html](../tutorials/constitutional-loop-tutorial.html) |
 | Whitepaper | [../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md](../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md) |
 
 ## Public FAQ (summary)
@@ -43,8 +46,9 @@ See [FAQ.md](./FAQ.md) for the full extended FAQ.
 - [x] Conformance plane — `conformance/`
 - [x] Public website copy — [website.html](./website.html)
 - [x] Extended FAQ — [FAQ.md](./FAQ.md)
-- [x] Launch video script — [launch-video-script.md](./launch-video-script.md)
-- [x] Loop poster — [../public-diagrams/constitutional-loop-poster.md](../public-diagrams/constitutional-loop-poster.md)
+- [x] Launch deck — [LAUNCH_DECK.md](./LAUNCH_DECK.md)
+- [x] Press release — [press-release-v1.0.md](./press-release-v1.0.md)
+- [x] Interactive tutorial — [../tutorials/](../tutorials/)
 - [x] Academic paper pointer — `docs/academic-paper/`
 
 ## Get started
