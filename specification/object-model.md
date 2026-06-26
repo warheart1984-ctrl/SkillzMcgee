@@ -3,7 +3,9 @@
 **Authority:** CRK-1 Specification v1.0  
 **Status:** Normative
 
-Version 1.0 recognizes **exactly five** canonical objects. Everything else is userland.
+Version 1.0 recognizes **exactly five** canonical objects in COM-1.0. The **12-stage constitutional loop** adds eight governance and continuity artifact types (PolicyEvaluation through DriftEnvelopeUpdate). See [semantic-artifact-types.md](./semantic-artifact-types.md).
+
+Everything else is userland.
 
 ## IdentityObject
 

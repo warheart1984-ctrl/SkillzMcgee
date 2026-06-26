@@ -5,14 +5,18 @@
 
 ## Constitutional Loop
 
-Every governed action must complete one artifact per stage (CA-1.0):
+Every governed action must complete the **12-stage constitutional loop** (CA-1.0):
 
 ```
-DecisionObject → OutcomeObject → EvidenceObject → InterpretationObject → GovernanceReceipt → Provenance
+DecisionObject → OutcomeObject → EvidenceObject → InterpretationObject
+  → PolicyEvaluationObject → PolicyOutcomeObject → GovernanceDecisionObject
+  → ExecutionPlanObject → RuntimeStateTransitionObject → GovernanceReceipt
+  → ProvenanceEntry → LineageNode → DriftEnvelopeUpdate
 ```
 
-Each stage is declared in a [Transformation Contract](./transformation-contracts/). Each step is mandatory, governed, and replayable. No in-place mutation. No multi-output stages.
+Each stage is declared in a [Transformation Contract](./transformation-contracts/INDEX.md). Each step is mandatory, governed, and replayable. No in-place mutation. No multi-output stages.
 
+**Diagram:** [constitutional-loop-v1.0.md](./constitutional-loop-v1.0.md)  
 **Amendment:** [CA-1.0](./constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
 **Requirement:** CRK1-R040
 

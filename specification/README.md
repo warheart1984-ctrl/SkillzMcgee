@@ -47,8 +47,11 @@ This directory contains **only normative content** — what must be true. No tes
 | [drift-envelopes.md](./drift-envelopes.md) | CE(S), SE(S) monotonicity |
 | [semantics.md](./semantics.md) | Operational transition rules |
 | [normative-requirements/](./normative-requirements/) | R001–R042 catalog with metadata blocks |
+| [constitutional-loop-v1.0.md](./constitutional-loop-v1.0.md) | 12-stage loop diagram |
+| [semantic-artifact-types.md](./semantic-artifact-types.md) | Formal artifact type system |
+| [constitutional-proof.md](./constitutional-proof.md) | End-to-end correctness argument |
 | [constitutional-amendments/](./constitutional-amendments/) | Immutable amendments (CA-1.0) |
-| [transformation-contracts/](./transformation-contracts/) | One-artifact-per-stage contracts |
+| [transformation-contracts/](./transformation-contracts/) | T01–T12 transformation contracts |
 | [requirement-graph/](./requirement-graph/) | Requirement DAG and dependencies |
 
 ## Repository Invariant R-∞

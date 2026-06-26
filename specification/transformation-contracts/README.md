@@ -4,39 +4,35 @@
 **Status:** Normative  
 **Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)
 
-Every stage of the constitutional loop is declared as a **Transformation Contract**: exactly one input artifact, exactly one output artifact.
+Twelve constitutionally recognized transformations. Each consumes exactly one semantic artifact and produces exactly one new semantic artifact.
 
 ## Template
 
 [template.md](./template.md) — canonical Version 1.0 template.
 
-## Declared Contracts (v1.0)
+## Index (T01–T12)
 
-| Contract | Stage | Requirements |
-|----------|-------|--------------|
-| [decision-to-outcome](./decision-to-outcome.md) | Execute decision | R001, R040 |
-| [outcome-to-evidence](./outcome-to-evidence.md) | Materialize evidence | R002, R018 |
-| [evidence-to-interpretation](./evidence-to-interpretation.md) | Semantic exposure | R003, R020 |
-| [interpretation-to-policy-eval](./interpretation-to-policy-eval.md) | Governance evaluation | R042, R033 |
+See [INDEX.md](./INDEX.md) for the full contract table.
 
-## Constitutional loop (artifact chain)
+## Constitutional loop
 
 ```
-DecisionObject
-  → OutcomeObject
-  → EvidenceObject
-  → InterpretationObject
-  → GovernanceReceipt (REC-HDR-1.0)
-  → ProvenanceEntry (PL-1.0)
+DecisionObject → OutcomeObject → EvidenceObject → InterpretationObject
+  → PolicyEvaluationObject → PolicyOutcomeObject → GovernanceDecisionObject
+  → ExecutionPlanObject → RuntimeStateTransitionObject → GovernanceReceipt
+  → ProvenanceEntry → LineageNode → DriftEnvelopeUpdate
 ```
 
-Drift updates and Merkle anchoring are **recorded** on receipt and ledger stages; they do not violate CA-1.0 because they are provenance annotations, not additional semantic artifacts per stage.
+Diagram: [../constitutional-loop-v1.0.md](../constitutional-loop-v1.0.md)  
+Types: [../semantic-artifact-types.md](../semantic-artifact-types.md)  
+Proof: [../constitutional-proof.md](../constitutional-proof.md)
 
 ## Implementation pointers
 
-| Contract | Code (preview) |
-|----------|----------------|
-| decision-to-outcome | `nova-studio/server/runtime/pipeline.mjs` |
-| outcome-to-evidence | `governance/constitution/`, `src/crk1/` |
-| evidence-to-interpretation | `src/crk1/`, SRE hooks |
-| interpretation-to-policy-eval | `governance/validator.py`, `src/governance/receipts.js` |
+| Stages | Code (preview) |
+|--------|----------------|
+| T01–T03 | `nova-studio/server/runtime/pipeline.mjs`, `src/crk1/` |
+| T04–T07 | `governance/validator.py`, `src/crk1/governance_evaluator.js` |
+| T08–T09 | `nova-studio/server/runtime/`, `src/governance/receipts.js` |
+| T10–T11 | `governance/continuity_ledger.py`, `src/singularity/lineage.js` |
+| T12 | drift engine, `specification/drift-envelopes.md` |

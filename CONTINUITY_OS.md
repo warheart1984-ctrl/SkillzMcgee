@@ -18,7 +18,8 @@ Version 1.0 is the first **specification-stable**, founder-independent release o
 | [specification/normative-requirements/](./specification/normative-requirements/) | **R001–R042** with metadata blocks |
 | [specification/constitutional-amendments/](./specification/constitutional-amendments/) | **CA-1.0** One-Artifact-Per-Stage |
 | [specification/transformation-contracts/](./specification/transformation-contracts/) | Semantic stage contracts |
-| [specification/UV1-DECL-1.0.md](./specification/UV1-DECL-1.0.md) | Unified Version 1.0 declaration |
+| [specification/constitutional-proof.md](./specification/constitutional-proof.md) | End-to-end correctness proof |
+| [docs/whitepaper/](./docs/whitepaper/) | Public whitepaper |
 | [meta/REPOSITORY_STRUCTURE_v1.0.md](./meta/REPOSITORY_STRUCTURE_v1.0.md) | Canonical repo layout |
 
 ### 2. Conformance ecosystem (HOW we prove it is true)

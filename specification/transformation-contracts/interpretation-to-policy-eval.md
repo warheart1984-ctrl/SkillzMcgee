@@ -21,81 +21,64 @@ CRK-1 Specification v1.0
 
 ## 3. Output Artifact
 
-**Type:** GovernanceReceipt (REC-HDR-1.0)  
-**Identifier:** `receipt.id` (new)  
+**Type:** PolicyEvaluationObject  
+**Identifier:** `policy_evaluation.id` (new)  
 **Guaranteed Properties:**
 
-- `header` (REC-HDR-1.0 schema version)
-- `invariant_block` (constitutional checks)
-- `evidence_block` (evidence anchors)
-- `traceability_block` (requirement and object links)
+- `id` (unique)
 - `interpretation_id` (references input)
-- `merkle_anchor` (when Merkle spine enabled)
+- `evaluation` (deterministic policy assessment)
 - `timestamp` (ISO8601)
 
 ## 4. Preconditions
 
 - Input InterpretationObject validates against COM-1.0 schema (R017).
-- GovernanceContract enforcement enabled.
-- Invariant evaluator and contract checks available.
-- Constitutional supremacy checks pass (K12).
+- Interpretation is valid and replayable (R021).
+- SemanticContract satisfied.
 
 ## 5. Postconditions
 
-- Exactly one GovernanceReceipt per interpretation at this stage (R042).
-- Receipt conforms to REC-HDR-1.0 (R033).
-- Policy evaluation outcome encoded in `invariant_block` (pass | refuse).
+- Exactly one PolicyEvaluationObject per interpretation (R040).
+- Policy evaluation is deterministic on `(interpretation, constitution_version)`.
 - No in-place mutation of InterpretationObject (CA-1.0).
-- Receipt is Merkle-anchored when spine is active.
 
 ## 6. Transformation Function
 
 **Formal Definition:**
 
 ```
-f_interpretation_receipt(InterpretationObject i) → GovernanceReceipt r
-  where r.interpretation_id = i.id
-    and r.invariant_block = evaluate_invariants(i)
-    and r.evidence_block = anchor_evidence_chain(i.evidence_id)
-    and r.traceability_block = build_traceability(i)
+f_interpretation_policy_eval(InterpretationObject i) → PolicyEvaluationObject pe
+  where pe.interpretation_id = i.id
+    and pe.evaluation = evaluate_policy(i)
 ```
 
-**Constraints:**
-
-- Deterministic on `(i, constitution_version)`
-- Total on valid interpretations
-- Replayable from interpretation + constitution snapshot
-- Traceable via `interpretation_id` and traceability_block
+**Constraints:** Deterministic, total on valid inputs, replayable, traceable.
 
 ## 7. Verification Method
 
-**CTS Tests:** CTS-G1, CTS-G2, CTS-G4  
-**Audits:** FIA-Governance  
-**Receipts:** full REC-HDR-1.0 envelope  
-**Ledger:** Merkle root update, provenance append
+**CTS Tests:** CTS-G1  
+**Receipts:** policy evaluation logs (pre-receipt)  
+**Ledger:** interpretation anchor
 
 ## 8. Evidence Produced
 
-- GovernanceReceipt (REC-HDR-1.0)
-- Provenance entry: `entry:receipt`
-- Drift deltas (if governance envelope exceeded)
-- Refusal receipt (on invariant failure — still one artifact)
+- PolicyEvaluationObject
+- Policy evaluation logs
+- Provenance entry: `entry:policy_eval`
 
 ## 9. Traceability Links
 
 ```
-CRK1-R042 → ADR-001 → governance/validator → CTS-G1 → GovernanceReceipt → receipt → entry:receipt
+CRK1-R040 → governance/validator → CTS-G1 → PolicyEvaluationObject → entry:policy_eval
 ```
 
 | Link | Reference |
 |------|-----------|
-| Requirement | CRK1-R042 |
-| ADR | [ADR-001](../../meta/adrs/ADR-001-nova-studio-unified-shell.md) |
-| Implementation | `governance/validator.py`, `src/governance/receipts.js` |
-| CTS | CTS-G1, CTS-G2 |
-| Evidence | GovernanceReceipt |
-| Receipt | REC-HDR-1.0 (self-describing) |
-| Provenance | PL-1.0 `entry:receipt` |
+| Requirement | CRK1-R040, CRK1-R042 |
+| Implementation | `governance/validator.py`, `src/crk1/governance_evaluator.js` |
+| CTS | CTS-G1 |
+| Evidence | PolicyEvaluationObject |
+| Provenance | PL-1.0 `entry:policy_eval` |
 
 ## 10. Version
 
