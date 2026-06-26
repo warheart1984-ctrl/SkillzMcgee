@@ -2,84 +2,117 @@
 
 ## 1. Authority
 
-CRK-1 Specification v1.0  
-**Constitutional Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
-**Normative Requirements:** CRK1-R033, CRK1-R042, CRK1-R011, CRK1-R032, CRK1-R040  
-**Constitutional Invariants:** K10, K12
+**Authority ID:** `steward-council/v1.0`  
+**Authority Type:** `StewardCouncilDecision`  
+**Authority Version:** `v1.0`  
+**Description:** Steward Council authorization under CRK-1 v1.0 and CA-1.1 four-layer provenance.
 
-## 2. Input Artifact
+## 2. Transformation Specification
+
+**Specification ID:** `T04/interpretation-to-policy-eval/v1.0`  
+**Specification Name:** `Interpretation to Policy Evaluation`  
+**Specification Version:** `v1.0`  
+**Normative Requirements:** CRK1-R033, CRK1-R042, CRK1-R011, CRK1-R032, CRK1-R040, CRK1-R043  
+**Invariants:** K10, K12, P-1
+
+## 3. Implementation
+
+**Implementation ID:** `MRI-1.0/nova-studio-pipeline/1.0.0`  
+**Implementation Name:** `Nova Studio Governed Pipeline`  
+**Implementation Version:** `1.0.0`  
+**Claims Conformance To:** `T04/interpretation-to-policy-eval/v1.0@v1.0`  
+**Runtime Context:** `nova-studio / MRI-1.0 preview`
+
+## 4. Assumptions & Policy Versions
+
+**Assumptions:**
+
+- COM-1.0 artifact schemas satisfied
+- Constitution v1.0 active
+- One artifact per stage (CA-1.0)
+
+**Active Policy Versions:**
+
+- `continuity-policy@v1.0`
+- `governance-policy@v1.0`
+
+**Evaluation Mode:** `strict`
+
+## 5. Input Artifact
 
 **Type:** InterpretationObject  
 **Identifier:** `interpretation.id`  
 **Required Properties:**
 
 - `id` (unique)
-- `evidence_id` (parent evidence)
-- `interpretation` (semantic output)
-- `frames_used` (frame audit trail)
+- `evidence_id`
+- `interpretation`
+- `frames_used`
 - `timestamp` (ISO8601)
 
-## 3. Output Artifact
+## 6. Output Artifact
 
 **Type:** PolicyEvaluationObject  
-**Identifier:** `policy_evaluation.id` (new)  
+**Identifier:** `policy_evaluation.id` (new, distinct)  
 **Guaranteed Properties:**
 
 - `id` (unique)
-- `interpretation_id` (references input)
+- `interpretation_id`
 - `evaluation` (deterministic policy assessment)
-- `timestamp` (ISO8601)
+- `timestamp`
 
-## 4. Preconditions
+## 7. Preconditions
 
-- Input InterpretationObject validates against COM-1.0 schema (R017).
-- Interpretation is valid and replayable (R021).
+- InterpretationObject validates (R017).
+- Interpretation replayable (R021).
 - SemanticContract satisfied.
 
-## 5. Postconditions
+## 8. Postconditions
 
 - Exactly one PolicyEvaluationObject per interpretation (R040).
-- Policy evaluation is deterministic on `(interpretation, constitution_version)`.
-- No in-place mutation of InterpretationObject (CA-1.0).
+- Deterministic on `(interpretation, constitution_version, assumptions)`.
+- No in-place mutation (CA-1.0).
+- PL-1.1 provenance entry (R043).
 
-## 6. Transformation Function
+## 9. Transformation Function
 
 **Formal Definition:**
 
 ```
-f_interpretation_policy_eval(InterpretationObject i) → PolicyEvaluationObject pe
+f_interpretation_policy_eval(InterpretationObject i, assumptions, policy_versions) → PolicyEvaluationObject pe
   where pe.interpretation_id = i.id
-    and pe.evaluation = evaluate_policy(i)
+    and pe.evaluation = evaluate_policy(i, policy_versions, assumptions)
 ```
 
-**Constraints:** Deterministic, total on valid inputs, replayable, traceable.
+**Constraints:** Deterministic · Total on valid inputs · Replayable · Traceable
 
-## 7. Verification Method
+## 10. Verification Method
 
 **CTS Tests:** CTS-G1  
-**Receipts:** policy evaluation logs (pre-receipt)  
-**Ledger:** interpretation anchor
+**Audits:** FIA-Governance  
+**Receipts:** `policy_eval_log`  
+**Ledger:** hash continuity checks (PL-1.1)
 
-## 8. Evidence Produced
+## 11. Evidence Produced
 
 - PolicyEvaluationObject
 - Policy evaluation logs
-- Provenance entry: `entry:policy_eval`
+- PL-1.1 provenance entry
 
-## 9. Traceability Links
+## 12. Traceability Links
 
 ```
-CRK1-R040 → governance/validator → CTS-G1 → PolicyEvaluationObject → entry:policy_eval
+CRK1-R040 → ADR-003/004 → governance/validator → CTS-G1 → PolicyEvaluationObject → PL-1.1
 ```
 
 | Link | Reference |
 |------|-----------|
-| Requirement | CRK1-R040, CRK1-R042 |
-| Implementation | `governance/validator.py`, `src/crk1/governance_evaluator.js` |
+| ADR | [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md) |
+| Requirement | CRK1-R033 |
+| Implementation | `governance/validator.py, src/crk1/governance_evaluator.js` |
 | CTS | CTS-G1 |
-| Evidence | PolicyEvaluationObject |
-| Provenance | PL-1.0 `entry:policy_eval` |
+| Provenance | PL-1.1 |
 
-## 10. Version
+## 13. Version
 
-1.0
+**Contract Version:** v1.0 (four-layer binding per CA-1.1)

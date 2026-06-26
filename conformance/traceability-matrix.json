@@ -705,6 +705,20 @@
       "receipts": "receipt",
       "provenance": "entry:receipt",
       "traceability_chain": "CRK1-R042 → ADR-042 → Implementation → CTS-G1 → Evidence → Receipt → Provenance"
+    },
+    {
+      "requirement_id": "CRK1-R043",
+      "requirement_num": "R043",
+      "title": "Transformation Provenance Completeness",
+      "series": "H-Series",
+      "invariant": "P-1,K10,K6",
+      "cts_tests": [],
+      "repo_tests": [],
+      "mri_component": "ledger",
+      "evidence": "PL-1.1 ProvenanceEntry with full binding fields",
+      "receipts": "invariant_block",
+      "provenance": "entry:governance",
+      "traceability_chain": "CRK1-R043 → ADR-043 → Implementation → CTS → Evidence → Receipt → Provenance"
     }
   ]
 }

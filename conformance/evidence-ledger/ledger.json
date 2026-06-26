@@ -2,49 +2,65 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://continuity-os.dev/schemas/evidence-ledger/v1.1",
   "title": "CRK-1 Evidence Ledger (EL-1.1)",
-  "description": "Four-layer provenance index. Extends EL-1.0 with authority, spec, and implementation binding (CA-1.1, R043).",
+  "description": "Evidence index aligned with PL-1.1 provenance ledger (CA-1.1, ADR-003, ADR-004, R043).",
   "version": "1.1",
   "entries": [],
   "entrySchema": {
     "type": "object",
     "required": [
-      "id",
+      "entry_id",
+      "timestamp",
       "input_artifact_id",
       "output_artifact_id",
-      "transformation_spec_id",
-      "implementation_id",
       "authority_id",
+      "authority_version",
+      "spec_id",
+      "spec_version",
+      "implementation_id",
+      "implementation_version",
       "assumptions",
       "receipt_id",
-      "hash",
-      "timestamp"
+      "provenance_hash",
+      "status"
     ],
     "properties": {
-      "id": { "type": "string" },
+      "entry_id": { "type": "string" },
+      "timestamp": { "type": "string", "format": "date-time" },
       "input_artifact_id": { "type": "string" },
       "output_artifact_id": { "type": "string" },
-      "transformation_spec_id": { "type": "string" },
-      "implementation_id": { "type": "string" },
       "authority_id": { "type": "string" },
+      "authority_version": { "type": "string" },
+      "spec_id": { "type": "string" },
+      "spec_version": { "type": "string" },
+      "implementation_id": { "type": "string" },
+      "implementation_version": { "type": "string" },
       "assumptions": {
         "type": "object",
-        "required": ["policy_version", "evaluation_mode", "constitution_version"],
+        "required": ["items", "policy_versions", "evaluation_mode"],
         "properties": {
-          "policy_version": { "type": "string" },
-          "evaluation_mode": { "type": "string", "enum": ["strict", "audit", "replay"] },
+          "items": { "type": "array", "items": { "type": "string" } },
+          "policy_versions": { "type": "array", "items": { "type": "string" } },
+          "evaluation_mode": {
+            "type": "string",
+            "enum": ["strict", "permissive", "experimental"]
+          },
           "constitution_version": { "type": "string" },
           "frame_set_version": { "type": "string" }
         }
       },
+      "verification_method": { "type": "string" },
+      "evidence_type": { "type": "string" },
+      "evidence_ref": { "type": "string" },
       "artifact_type": {
         "enum": ["DecisionObject", "OutcomeObject", "EvidenceObject", "InterpretationObject", "GovernanceReceipt"]
       },
       "receipt_id": { "type": "string" },
       "requirement_ids": { "type": "array", "items": { "type": "string" } },
-      "hash": { "type": "string" },
-      "parent_hash": { "type": "string" },
-      "timestamp": { "type": "string", "format": "date-time" }
+      "provenance_hash": { "type": "string" },
+      "parent_hash": { "type": ["string", "null"] },
+      "status": { "type": "string", "enum": ["pass", "fail"] },
+      "notes": { "type": "string" }
     }
   },
-  "notes": "PL-1.1 / CA-1.1 binding. Runtime ledger transition: .runtime/nova-studio/ledger.jsonl"
+  "notes": "Aligned with conformance/provenance-ledger/schema.json. Runtime transition: .runtime/nova-studio/ledger.jsonl"
 }

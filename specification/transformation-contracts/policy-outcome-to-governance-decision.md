@@ -1,53 +1,115 @@
-# Transformation Contract T06: Policy Outcome → Governance Decision
+# Transformation Contract: Policy Outcome to Governance Decision
 
 ## 1. Authority
 
-CRK-1 Specification v1.0 · [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
-**Normative Requirements:** CRK1-R042  
-**Constitutional Invariants:** K12
+**Authority ID:** `steward-council/v1.0`  
+**Authority Type:** `StewardCouncilDecision`  
+**Authority Version:** `v1.0`  
+**Description:** Steward Council authorization under CRK-1 v1.0 and CA-1.1 four-layer provenance.
 
-## 2. Input Artifact
+## 2. Transformation Specification
+
+**Specification ID:** `T06/policy-outcome-to-governance-decision/v1.0`  
+**Specification Name:** `Policy Outcome to Governance Decision`  
+**Specification Version:** `v1.0`  
+**Normative Requirements:** CRK1-R042, CRK1-R043  
+**Invariants:** K12, P-1
+
+## 3. Implementation
+
+**Implementation ID:** `MRI-1.0/nova-studio-pipeline/1.0.0`  
+**Implementation Name:** `Nova Studio Governed Pipeline`  
+**Implementation Version:** `1.0.0`  
+**Claims Conformance To:** `T06/policy-outcome-to-governance-decision/v1.0@v1.0`  
+**Runtime Context:** `nova-studio / MRI-1.0 preview`
+
+## 4. Assumptions & Policy Versions
+
+**Assumptions:**
+
+- COM-1.0 artifact schemas satisfied
+- Constitution v1.0 active
+- One artifact per stage (CA-1.0)
+
+**Active Policy Versions:**
+
+- `continuity-policy@v1.0`
+- `governance-policy@v1.0`
+
+**Evaluation Mode:** `strict`
+
+## 5. Input Artifact
 
 **Type:** PolicyOutcomeObject  
-**Required Properties:** `id`, `policy_evaluation_id`, `outcome`, `timestamp`
+**Identifier:** `policy_outcome.id`  
+**Required Properties:**
 
-## 3. Output Artifact
+- `id`
+- `policy_evaluation_id`
+- `outcome`
+- `timestamp`
+
+## 6. Output Artifact
 
 **Type:** GovernanceDecisionObject  
-**Guaranteed Properties:** `id`, `policy_outcome_id`, `decision`, `timestamp`
+**Identifier:** `governance_decision.id` (new, distinct)  
+**Guaranteed Properties:**
 
-## 4. Preconditions
+- `id`
+- `policy_outcome_id`
+- `decision` (pass | refuse | defer)
+- `timestamp`
+
+## 7. Preconditions
 
 - Policy outcome valid.
 - Constitutional supremacy checks available (K12).
 
-## 5. Postconditions
+## 8. Postconditions
 
-- Governance decision explicit (pass | refuse | defer).
-- No in-place mutation of PolicyOutcomeObject.
+- Governance decision explicit.
+- No in-place mutation.
+- PL-1.1 provenance entry (R043).
 
-## 6. Transformation Function
+## 9. Transformation Function
+
+**Formal Definition:**
 
 ```
-f_governance_decision(PolicyOutcomeObject po) → GovernanceDecisionObject gd
+f_governance_decision(PolicyOutcomeObject po, assumptions, policy_versions) → GovernanceDecisionObject gd
   where gd.policy_outcome_id = po.id
-    and gd.decision = govern(po.outcome)
+    and gd.decision = govern(po.outcome, assumptions)
 ```
 
-**Constraints:** Deterministic, total, replayable, traceable.
+**Constraints:** Deterministic · Total · Replayable · Traceable
 
-## 7. Verification Method
+## 10. Verification Method
 
-CTS-G1 · governance decision logs · `entry:governance_decision`
+**CTS Tests:** CTS-G1  
+**Audits:** FIA-Governance  
+**Receipts:** `governance_decision_log`  
+**Ledger:** hash continuity checks (PL-1.1)
 
-## 8. Evidence Produced
+## 11. Evidence Produced
 
-GovernanceDecisionObject, governance decision logs
+- GovernanceDecisionObject
+- Governance decision logs
+- PL-1.1 provenance entry
 
-## 9. Traceability Links
+## 12. Traceability Links
 
-CRK1-R042 → `src/crk1/governance_evaluator.js` → CTS-G1 → GovernanceDecisionObject
+```
+CRK1-R042 → ADR-003/004 → governance_evaluator → CTS-G1 → GovernanceDecisionObject → PL-1.1
+```
 
-## 10. Version
+| Link | Reference |
+|------|-----------|
+| ADR | [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md) |
+| Requirement | CRK1-R042 |
+| Implementation | `src/crk1/governance_evaluator.js` |
+| CTS | CTS-G1 |
+| Provenance | PL-1.1 |
 
-1.0
+## 13. Version
+
+**Contract Version:** v1.0 (four-layer binding per CA-1.1)

@@ -1,8 +1,7 @@
 # Transformation Contract Index (T01–T12)
 
-**Authority:** CRK-1 Specification v1.0  
-**Template:** [template.md](./template.md)  
-**Loop:** [../constitutional-loop-v1.0.md](../constitutional-loop-v1.0.md)
+**Amendments:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md), [CA-1.1](../constitutional-amendments/CA-1.1-four-layer-provenance.md)  
+**ADRs:** [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md)
 
 | ID | Contract | Input → Output | Requirements | CTS |
 |----|----------|----------------|--------------|-----|
@@ -19,4 +18,6 @@
 | T11 | [provenance-to-lineage](./provenance-to-lineage.md) | ProvenanceEntry → LineageNode | R012, R030 | G3 |
 | T12 | [lineage-to-drift-update](./lineage-to-drift-update.md) | LineageNode → DriftEnvelopeUpdate | R041, K9 | D1–D3 |
 
-Each transformation: one input artifact, one output artifact, deterministic, replayable, traceable (CA-1.0).
+Each transformation: one input artifact, one output artifact, four-layer binding (sections 1–4), deterministic, replayable, traceable (CA-1.0, CA-1.1, R043).
+
+**Template:** [template.md](./template.md) · **Loop:** [../constitutional-loop-v1.0.md](../constitutional-loop-v1.0.md)

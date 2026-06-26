@@ -1,53 +1,114 @@
-# Transformation Contract T05: Policy Evaluation → Policy Outcome
+# Transformation Contract: Policy Evaluation to Policy Outcome
 
 ## 1. Authority
 
-CRK-1 Specification v1.0 · [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
-**Normative Requirements:** CRK1-R040  
-**Constitutional Invariants:** K12
+**Authority ID:** `steward-council/v1.0`  
+**Authority Type:** `StewardCouncilDecision`  
+**Authority Version:** `v1.0`  
+**Description:** Steward Council authorization under CRK-1 v1.0 and CA-1.1 four-layer provenance.
 
-## 2. Input Artifact
+## 2. Transformation Specification
+
+**Specification ID:** `T05/policy-eval-to-policy-outcome/v1.0`  
+**Specification Name:** `Policy Evaluation to Policy Outcome`  
+**Specification Version:** `v1.0`  
+**Normative Requirements:** CRK1-R040, CRK1-R043  
+**Invariants:** K12, P-1
+
+## 3. Implementation
+
+**Implementation ID:** `MRI-1.0/nova-studio-pipeline/1.0.0`  
+**Implementation Name:** `Nova Studio Governed Pipeline`  
+**Implementation Version:** `1.0.0`  
+**Claims Conformance To:** `T05/policy-eval-to-policy-outcome/v1.0@v1.0`  
+**Runtime Context:** `nova-studio / MRI-1.0 preview`
+
+## 4. Assumptions & Policy Versions
+
+**Assumptions:**
+
+- COM-1.0 artifact schemas satisfied
+- Constitution v1.0 active
+- One artifact per stage (CA-1.0)
+
+**Active Policy Versions:**
+
+- `continuity-policy@v1.0`
+- `governance-policy@v1.0`
+
+**Evaluation Mode:** `strict`
+
+## 5. Input Artifact
 
 **Type:** PolicyEvaluationObject  
-**Required Properties:** `id`, `interpretation_id`, `evaluation`, `timestamp`
+**Identifier:** `policy_evaluation.id`  
+**Required Properties:**
 
-## 3. Output Artifact
+- `id`
+- `interpretation_id`
+- `evaluation`
+- `timestamp`
+
+## 6. Output Artifact
 
 **Type:** PolicyOutcomeObject  
-**Guaranteed Properties:** `id`, `policy_evaluation_id`, `outcome`, `timestamp`
+**Identifier:** `policy_outcome.id` (new, distinct)  
+**Guaranteed Properties:**
 
-## 4. Preconditions
+- `id`
+- `policy_evaluation_id`
+- `outcome`
+- `timestamp`
+
+## 7. Preconditions
 
 - Policy evaluation complete and valid.
-- Evaluation is deterministic and replayable.
+- Evaluation deterministic and replayable.
 
-## 5. Postconditions
+## 8. Postconditions
 
 - Policy outcome explicit and singular (CA-1.0).
-- No in-place mutation of PolicyEvaluationObject.
+- No in-place mutation.
+- PL-1.1 provenance entry (R043).
 
-## 6. Transformation Function
+## 9. Transformation Function
+
+**Formal Definition:**
 
 ```
-f_policy_outcome(PolicyEvaluationObject pe) → PolicyOutcomeObject po
+f_policy_outcome(PolicyEvaluationObject pe, assumptions, policy_versions) → PolicyOutcomeObject po
   where po.policy_evaluation_id = pe.id
-    and po.outcome = materialize_outcome(pe.evaluation)
+    and po.outcome = materialize_outcome(pe.evaluation, assumptions)
 ```
 
-**Constraints:** Deterministic, total, replayable, traceable.
+**Constraints:** Deterministic · Total · Replayable · Traceable
 
-## 7. Verification Method
+## 10. Verification Method
 
-CTS-G1 · policy evaluation logs · `entry:policy_outcome`
+**CTS Tests:** CTS-G1  
+**Audits:** FIA-Governance  
+**Receipts:** `policy_outcome_log`  
+**Ledger:** hash continuity checks (PL-1.1)
 
-## 8. Evidence Produced
+## 11. Evidence Produced
 
-PolicyOutcomeObject, provenance entry
+- PolicyOutcomeObject
+- PL-1.1 provenance entry
 
-## 9. Traceability Links
+## 12. Traceability Links
 
-CRK1-R040 → `governance/validator.py` → CTS-G1 → PolicyOutcomeObject → PL-1.0
+```
+CRK1-R040 → ADR-003/004 → governance/validator → CTS-G1 → PolicyOutcomeObject → PL-1.1
+```
 
-## 10. Version
+| Link | Reference |
+|------|-----------|
+| ADR | [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md) |
+| Requirement | CRK1-R040 |
+| Implementation | `governance/validator.py` |
+| CTS | CTS-G1 |
+| Provenance | PL-1.1 |
 
-1.0
+## 13. Version
+
+**Contract Version:** v1.0 (four-layer binding per CA-1.1)

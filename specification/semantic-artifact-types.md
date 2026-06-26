@@ -133,61 +133,45 @@ GovernanceReceipt = {
 }
 ```
 
+### Layer identity types (non-loop artifacts)
+
+See [layer-object-model.md](./layer-object-model.md).
+
 ### 11. ProvenanceEntry (PL-1.1)
 
-**Supersedes PL-1.0** for new conformance claims. PL-1.0 entries remain valid for legacy ledgers.
+**Supersedes PL-1.0** for new conformance claims. Schema: [conformance/provenance-ledger/schema.json](../conformance/provenance-ledger/schema.json).
 
 ```typescript
 ProvenanceEntry = {
-  id: ID,
+  entry_id: ID,
+  timestamp: Timestamp,
   input_artifact_id: ID,
   output_artifact_id: ID,
-  transformation_spec_id: ID,   // SpecificationID
-  implementation_id: ID,        // ImplementationID
-  authority_id: ID,             // AuthorizedBy
+  authority_id: ID,
+  authority_version: string,
+  spec_id: ID,
+  spec_version: string,
+  implementation_id: ID,
+  implementation_version: string,
   assumptions: {
-    policy_version: string,
-    evaluation_mode: string,    // strict | audit | replay
-    constitution_version: string,
+    items: string[],
+    policy_versions: string[],
+    evaluation_mode: "strict" | "permissive" | "experimental",
+    constitution_version?: string,
     frame_set_version?: string
   },
+  verification_method: string,
+  evidence_type: string,
+  evidence_ref: string,
   receipt_id: ID,
-  parent_hash: Hash,
-  entry_hash: Hash,
-  timestamp: Timestamp
+  provenance_hash: Hash,
+  parent_hash: Hash | null,
+  status: "pass" | "fail",
+  notes?: string
 }
 ```
 
-**Invariant P-1 (R043):** All binding fields required for transformation provenance.
-
-### Layer identity types (non-loop artifacts)
-
-```typescript
-AuthorityRecord = {
-  id: ID,                        // authority_id
-  charter_version: string,
-  council_term: string,
-  active_policy_version: string,
-  timestamp: Timestamp
-}
-
-SpecificationRecord = {
-  id: ID,                        // transformation_spec_id
-  contract_path: string,
-  contract_version: string,
-  requirements: string[],         // CRK1-R###
-  timestamp: Timestamp
-}
-
-ImplementationRecord = {
-  id: ID,                        // implementation_id
-  spec_id: ID,
-  module_path: string,
-  semver: string,
-  conformance_profile: string,    // C0–C6
-  timestamp: Timestamp
-}
-```
+**Invariant P-1 (R043, ADR-004):** All binding fields required for transformation provenance.
 
 ### 12. LineageNode
 

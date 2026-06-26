@@ -2,12 +2,44 @@
 
 ## 1. Authority
 
-CRK-1 Specification v1.0  
-**Constitutional Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
-**Normative Requirements:** CRK1-R003, CRK1-R007, CRK1-R017, CRK1-R020, CRK1-R027, CRK1-R040  
-**Constitutional Invariants:** K7, K8, K9
+**Authority ID:** `steward-council/v1.0`  
+**Authority Type:** `StewardCouncilDecision`  
+**Authority Version:** `v1.0`  
+**Description:** Steward Council authorization under CRK-1 v1.0 and CA-1.1 four-layer provenance.
 
-## 2. Input Artifact
+## 2. Transformation Specification
+
+**Specification ID:** `T03/evidence-to-interpretation/v1.0`  
+**Specification Name:** `Evidence to Interpretation`  
+**Specification Version:** `v1.0`  
+**Normative Requirements:** CRK1-R003, CRK1-R007, CRK1-R017, CRK1-R020, CRK1-R027, CRK1-R040, CRK1-R043  
+**Invariants:** K7, K8, K9, P-1
+
+## 3. Implementation
+
+**Implementation ID:** `MRI-1.0/nova-studio-pipeline/1.0.0`  
+**Implementation Name:** `Nova Studio Governed Pipeline`  
+**Implementation Version:** `1.0.0`  
+**Claims Conformance To:** `T03/evidence-to-interpretation/v1.0@v1.0`  
+**Runtime Context:** `nova-studio / MRI-1.0 preview`
+
+## 4. Assumptions & Policy Versions
+
+**Assumptions:**
+
+- COM-1.0 artifact schemas satisfied
+- Constitution v1.0 active
+- One artifact per stage (CA-1.0)
+- Frame set version pinned in assumptions
+
+**Active Policy Versions:**
+
+- `semantic-policy@v1.0`
+- `continuity-policy@v1.0`
+
+**Evaluation Mode:** `strict`
+
+## 5. Input Artifact
 
 **Type:** EvidenceObject  
 **Identifier:** `evidence.id`  
@@ -18,80 +50,74 @@ CRK-1 Specification v1.0
 - `data` (evidentiary payload)
 - `timestamp` (ISO8601)
 
-## 3. Output Artifact
+## 6. Output Artifact
 
 **Type:** InterpretationObject  
-**Identifier:** `interpretation.id` (new)  
+**Identifier:** `interpretation.id` (new, distinct)  
 **Guaranteed Properties:**
 
 - `id` (unique)
 - `evidence_id` (references input)
 - `interpretation` (semantic frame output)
-- `frames_used` (non-empty string array — semantic multiplicity)
+- `frames_used` (non-empty array)
 - `timestamp` (ISO8601, ≥ evidence timestamp)
 
-## 4. Preconditions
+## 7. Preconditions
 
-- Input EvidenceObject validates against COM-1.0 schema (R016).
-- Frame set is available and versioned.
+- Input EvidenceObject validates (R016).
+- Frame set available and versioned.
 - SemanticContract enforcement enabled.
-- No blocked or suppressed interpretation paths (R007).
+- No blocked interpretation paths (R007).
 
-## 5. Postconditions
+## 8. Postconditions
 
-- Exactly one InterpretationObject per EvidenceObject for this stage (R003).
-- `frames_used` documents all frames applied (R020).
-- Interpretation is reproducible from `(evidence, frames, frame_version)` (R021).
-- No in-place mutation of EvidenceObject (CA-1.0).
+- Exactly one InterpretationObject per EvidenceObject (R003).
+- `frames_used` documents all frames (R020).
+- Reproducible from `(evidence, frames, frame_version)` (R021).
+- No in-place mutation (CA-1.0).
+- PL-1.1 provenance entry (R043).
 
-## 6. Transformation Function
+## 9. Transformation Function
 
 **Formal Definition:**
 
 ```
-f_evidence_interpretation(EvidenceObject e, FrameSet F) → InterpretationObject i
+f_evidence_interpretation(EvidenceObject e, FrameSet F, assumptions, policy_versions) → InterpretationObject i
   where i.evidence_id = e.id
-    and i.interpretation = interpret(e.data, F)
+    and i.interpretation = interpret(e.data, F, assumptions)
     and i.frames_used = F.applied_ids
 ```
 
-**Constraints:**
+**Constraints:** Deterministic on `(e, F, frame_version, assumptions)` · Total on valid evidence · Replayable (Semantic Replay Engine) · Traceable via `evidence_id` and `frames_used`
 
-- Deterministic on `(e, F, frame_version)`
-- Total on valid evidence
-- Replayable (Semantic Replay Engine)
-- Traceable via `evidence_id` and `frames_used`
-
-## 7. Verification Method
+## 10. Verification Method
 
 **CTS Tests:** CTS-M3, CTS-E1, CTS-E2  
 **Audits:** FIA-Semantic  
 **Receipts:** `traceability_block`  
-**Ledger:** frame lineage hash continuity
+**Ledger:** hash continuity checks (PL-1.1)
 
-## 8. Evidence Produced
+## 11. Evidence Produced
 
-- InterpretationObject instance
+- InterpretationObject
 - Frame list snapshot
-- Provenance entry: `entry:interpretation`
+- PL-1.1 provenance entry
 - Drift deltas (if semantic envelope exceeded)
 
-## 9. Traceability Links
+## 12. Traceability Links
 
 ```
-CRK1-R003 → ADR-001 → src/crk1/ SRE → CTS-M3 → InterpretationObject → traceability_block → entry:interpretation
+CRK1-R003 → ADR-003/004 → src/crk1/ SRE → CTS-M3 → InterpretationObject → traceability_block → PL-1.1
 ```
 
 | Link | Reference |
 |------|-----------|
+| ADR | [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md) |
 | Requirement | CRK1-R003 |
-| ADR | [ADR-001](../../meta/adrs/ADR-001-nova-studio-unified-shell.md) |
-| Implementation | `src/crk1/`, semantic replay hooks |
-| CTS | CTS-M3, CTS-E1 |
-| Evidence | InterpretationObject, frame list |
-| Receipt | REC-HDR-1.0 `traceability_block` |
-| Provenance | PL-1.0 `entry:interpretation` |
+| Implementation | `src/crk1/, semantic replay hooks` |
+| CTS | CTS-M3 |
+| Provenance | PL-1.1 |
 
-## 10. Version
+## 13. Version
 
-1.0
+**Contract Version:** v1.0 (four-layer binding per CA-1.1)

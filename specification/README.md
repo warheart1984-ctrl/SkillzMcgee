@@ -52,6 +52,7 @@ This directory contains **only normative content** — what must be true. No tes
 | [semantic-artifact-types.md](./semantic-artifact-types.md) | Formal artifact type system |
 | [constitutional-proof.md](./constitutional-proof.md) | End-to-end correctness argument |
 | [four-layer-provenance-model.md](./four-layer-provenance-model.md) | Authority → Spec → Implementation → Execution |
+| [layer-object-model.md](./layer-object-model.md) | AuthorityObject, SpecificationObject, ImplementationObject |
 | [constitutional-amendments/](./constitutional-amendments/) | CA-1.0, CA-1.1 |
 | [transformation-contracts/](./transformation-contracts/) | T01–T12 transformation contracts |
 | [requirement-graph/](./requirement-graph/) | Requirement DAG and dependencies |

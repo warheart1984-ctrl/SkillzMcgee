@@ -2,29 +2,43 @@
 
 ## 1. Authority
 
-CRK-1 Specification v1.0  
-**Constitutional Amendments:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md), [CA-1.1](../constitutional-amendments/CA-1.1-four-layer-provenance.md)  
-**Normative Requirements:** CRK1-R001, CRK1-R005, CRK1-R014, CRK1-R015, CRK1-R040, **CRK1-R043**  
-**Constitutional Invariants:** K0, K1, K4, K5, **P-1**
+**Authority ID:** `steward-council/v1.0`  
+**Authority Type:** `StewardCouncilDecision`  
+**Authority Version:** `v1.0`  
+**Description:** Steward Council authorization under CRK-1 v1.0 and CA-1.1 four-layer provenance.
 
-### Four-layer binding
+## 2. Transformation Specification
 
-| Field | Value |
-|-------|-------|
-| **AuthorizedBy** | `steward-council/v1.0` |
-| **SpecificationID** | `T01/decision-to-outcome/v1.0` |
-| **ImplementationID** | `MRI-1.0/nova-studio-pipeline/1.0.0` |
+**Specification ID:** `T01/decision-to-outcome/v1.0`  
+**Specification Name:** `Decision to Outcome`  
+**Specification Version:** `v1.0`  
+**Normative Requirements:** CRK1-R001, CRK1-R005, CRK1-R014, CRK1-R015, CRK1-R040, CRK1-R043  
+**Invariants:** K0, K1, K4, K5, P-1
 
-### Assumptions
+## 3. Implementation
 
-```yaml
-assumptions:
-  policy_version: "1.0"
-  evaluation_mode: "strict"
-  constitution_version: "1.0"
-```
+**Implementation ID:** `MRI-1.0/nova-studio-pipeline/1.0.0`  
+**Implementation Name:** `Nova Studio Governed Pipeline`  
+**Implementation Version:** `1.0.0`  
+**Claims Conformance To:** `T01/decision-to-outcome/v1.0@v1.0`  
+**Runtime Context:** `nova-studio / MRI-1.0 preview`
 
-## 2. Input Artifact
+## 4. Assumptions & Policy Versions
+
+**Assumptions:**
+
+- COM-1.0 artifact schemas satisfied
+- Constitution v1.0 active
+- One artifact per stage (CA-1.0)
+
+**Active Policy Versions:**
+
+- `continuity-policy@v1.0`
+- `governance-policy@v1.0`
+
+**Evaluation Mode:** `strict`
+
+## 5. Input Artifact
 
 **Type:** DecisionObject  
 **Identifier:** `decision.id`  
@@ -35,10 +49,10 @@ assumptions:
 - `payload` (action intent)
 - `timestamp` (ISO8601)
 
-## 3. Output Artifact
+## 6. Output Artifact
 
 **Type:** OutcomeObject  
-**Identifier:** `outcome.id` (new)  
+**Identifier:** `outcome.id` (new, distinct)  
 **Guaranteed Properties:**
 
 - `id` (unique, distinct from decision)
@@ -46,67 +60,61 @@ assumptions:
 - `result` (consequence payload)
 - `timestamp` (ISO8601, ≥ decision timestamp)
 
-## 4. Preconditions
+## 7. Preconditions
 
 - Input DecisionObject validates against COM-1.0 schema (R014).
 - Actor identity is resolvable.
 - Runtime is not in halt state.
 - RuntimeContract permits execution.
 
-## 5. Postconditions
+## 8. Postconditions
 
 - Exactly one OutcomeObject exists for this decision (R001).
 - `outcome.decision_id === decision.id`.
 - No in-place mutation of DecisionObject (CA-1.0).
 - Outcome is eligible for evidence transformation.
-- PL-1.1 provenance entry records `input_artifact_id`, `output_artifact_id`, binding fields (R043).
+- PL-1.1 provenance entry records full transformation context (R043).
 
-## 6. Transformation Function
+## 9. Transformation Function
 
 **Formal Definition:**
 
 ```
-f_decision_outcome(DecisionObject d) → OutcomeObject o
+f_decision_outcome(DecisionObject d, assumptions, policy_versions) → OutcomeObject o
   where o.decision_id = d.id
-    and o.result = execute(d.payload, d.actor)
+    and o.result = execute(d.payload, d.actor, assumptions, policy_versions)
 ```
 
-**Constraints:**
+**Constraints:** Deterministic on `(d, runtime_state_at_decision, assumptions)` · Total on valid decisions · Replayable from ledger + decision snapshot · Traceable via `decision_id` link
 
-- Deterministic on `(d, runtime_state_at_decision)`
-- Total on valid decisions
-- Replayable from ledger + decision snapshot
-- Traceable via `decision_id` link
-
-## 7. Verification Method
+## 10. Verification Method
 
 **CTS Tests:** CTS-M1  
 **Audits:** FIA-Mechanical  
-**Receipts:** `invariant_block` (consequence continuity)  
-**Ledger:** parent hash links decision entry → outcome entry
+**Receipts:** `invariant_block`  
+**Ledger:** hash continuity checks (PL-1.1)
 
-## 8. Evidence Produced
+## 11. Evidence Produced
 
 - OutcomeObject instance
-- Provenance entry: `entry:decision/outcome`
+- Governance receipt (`receipt_id`)
+- PL-1.1 provenance entry
 - Optional drift delta if execution envelope exceeded
 
-## 9. Traceability Links
+## 12. Traceability Links
 
 ```
-CRK1-R001 → ADR-001 → nova-studio/runtime → CTS-M1 → OutcomeObject → invariant_block → entry:decision/outcome
+CRK1-R001 → ADR-003/004 → nova-studio/runtime → CTS-M1 → OutcomeObject → invariant_block → PL-1.1
 ```
 
 | Link | Reference |
 |------|-----------|
+| ADR | [ADR-003](../../meta/adrs/ADR-003-four-layer-separation.md), [ADR-004](../../meta/adrs/ADR-004-transformation-context-invariant.md) |
 | Requirement | CRK1-R001 |
-| ADR | [ADR-001](../../meta/adrs/ADR-001-nova-studio-unified-shell.md) |
 | Implementation | `nova-studio/server/runtime/pipeline.mjs` |
 | CTS | CTS-M1 |
-| Evidence | OutcomeObject |
-| Receipt | REC-HDR-1.0 `invariant_block` |
-| Provenance | PL-1.0 `entry:decision/outcome` |
+| Provenance | PL-1.1 |
 
-## 10. Version
+## 13. Version
 
-1.0
+**Contract Version:** v1.0 (four-layer binding per CA-1.1)

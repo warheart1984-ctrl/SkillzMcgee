@@ -1,33 +1,57 @@
                  CONTINUITY OS — CRK-1 CONSTITUTIONAL LOOP
                  ==========================================
+                 Four-Layer Provenance Model (CA-1.1)
+
+                 AUTHORITY LAYER
+                 ┌───────────────────────────┐
+                 │ Governance Policies       │
+                 │ Constitutional Amendments │
+                 │ Steward Council Decisions │
+                 └──────────────┬────────────┘
+                                │
+                                ▼
+                 SPECIFICATION LAYER
+                 ┌───────────────────────────┐
+                 │ Transformation Specs T01–T12 │
+                 │ Contracts & Invariants    │
+                 └──────────────┬────────────┘
+                                │
+                                ▼
+                 IMPLEMENTATION LAYER
+                 ┌───────────────────────────┐
+                 │ MRI / Vendor Runtimes     │
+                 │ Conformance Claims C0–C6  │
+                 └──────────────┬────────────┘
+                                │
+                                ▼
+                 EXECUTION LAYER (12-Stage Loop)
 
    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
    │  Decision     │ ---> │   Outcome    │ ---> │   Evidence    │
    └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
-          │                       │                       │
+          │  T01                  │  T02                  │  T03
           ▼                       ▼                       ▼
    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-   │ Interpretation│ <--- │  Multi-Frame │ <--- │   Replayable  │
+   │ Interpretation│ ---> │ Policy Eval   │ ---> │ PolicyOutcome │
    └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
-          │                       │                       │
+          │  T04                  │  T05                  │  T06
           ▼                       ▼                       ▼
    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-   │ Policy Eval   │ ---> │ PolicyOutcome│ ---> │ GovernanceDec │
+   │ GovernanceDec │ ---> │ ExecutionPlan │ ---> │ RuntimeState  │
    └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
-          │                       │                       │
+          │  T07                  │  T08                  │  T09
           ▼                       ▼                       ▼
    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-   │ ExecutionPlan │ ---> │ RuntimeState │ ---> │   Receipt     │
+   │   Receipt     │ ---> │  Provenance   │ ---> │   Lineage     │
    └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
-          │                       │                       │
+          │  T10                  │  T11                  │  T12
           ▼                       ▼                       ▼
-   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-   │  Provenance   │ ---> │   Lineage    │ ---> │ DriftEnvelope │
-   └──────────────┘      └──────────────┘      └──────────────┘
+   ┌──────────────┐
+   │ DriftEnvelope │
+   └──────────────┘
 
-   Every stage produces exactly one semantic artifact.
-   Every artifact is governed, traceable, and reproducible.
-   This is the foundation of Continuity OS.
+   Every stage: authorized · specified · implemented · recorded (PL-1.1)
+   Invariant P-1 (R043): authority + spec + impl + assumptions + receipt
 
    Canonical spec: specification/constitutional-loop-v1.0.md
-   Amendment CA-1.0: one artifact per stage (T01–T12)
+   Amendments: CA-1.0 (one artifact/stage) · CA-1.1 (four-layer provenance)

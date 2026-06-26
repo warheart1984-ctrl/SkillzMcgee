@@ -84,6 +84,7 @@ This matrix links every normative requirement to:
 | **CRK1-R037** — Implementation-to-CTS Traceability | CTS-S5 | ledger | traceability_block.implementation, cts | invariant_block | entry:governance |
 | **CRK1-R038** — Documentation Completeness | — | ledger | FIA audit report | invariant_block | entry:governance |
 | **CRK1-R039** — Governance Bypass Prohibition | CTS-G4 | ledger | GEL audit log | invariant_block | entry:governance |
+| **CRK1-R043** — Transformation Provenance Completeness | — | ledger | PL-1.1 ProvenanceEntry with full binding fields | invariant_block | entry:governance |
 
 ## A5. Behavioral Requirements (R040–R042)
 
