@@ -4,7 +4,14 @@ const DB_NAME = "skillsstack-nova";
 const STORE_NAME = "receipts";
 const DB_VERSION = 1;
 
+function hasIndexedDB() {
+  return typeof globalThis.indexedDB !== "undefined";
+}
+
 function openDB() {
+  if (!hasIndexedDB()) {
+    return Promise.reject(new Error("IndexedDB unavailable"));
+  }
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
@@ -21,6 +28,7 @@ function openDB() {
 }
 
 export async function saveReceipt(receipt) {
+  if (!hasIndexedDB()) return receipt;
   const db = await openDB();
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, "readwrite");
@@ -31,6 +39,7 @@ export async function saveReceipt(receipt) {
 }
 
 export async function loadReceipts() {
+  if (!hasIndexedDB()) return [];
   const db = await openDB();
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, "readonly");
@@ -41,6 +50,7 @@ export async function loadReceipts() {
 }
 
 export async function clearStoredReceipts() {
+  if (!hasIndexedDB()) return;
   const db = await openDB();
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, "readwrite");

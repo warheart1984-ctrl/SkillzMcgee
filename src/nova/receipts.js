@@ -1,31 +1,47 @@
-// Governance receipts for NovaSlice
+import {
+  bootGovernedRuntime,
+  getRuntime,
+  _resetRuntimeForTests,
+} from "../runtime/boot.js";
+import { clearStoredReceipts } from "../storage/db.js";
+import { prepareReceiptForAppend } from "../singularity/receiptHash.js";
 
-let receipts = [];
+/**
+ * @deprecated Prefer appendGovernedReceipt via intentRouter; kept for CTS/dashboard imports.
+ */
+export function createReceipt(intent, output, lawsResult) {
+  const rt = getRuntime();
+  const slice =
+    typeof intent === "object" &&
+    intent !== null &&
+    "type" in intent &&
+    typeof intent.type === "string"
+      ? intent.type
+      : "nova";
 
-export function createReceipt({ intent, output, lawsResult }) {
-  const receipt = {
-    id: `REC-NOVA-${Date.now()}`,
+  const draft = {
+    id: `REC-NOVA-${crypto.randomUUID()}`,
     timestamp: new Date().toISOString(),
-    intent: {
-      type: intent.type,
-      confidence: intent.confidence
-    },
-    prompt: intent.prompt,
+    actor: "skillz",
+    slice,
+    intent,
     output,
-    laws: {
-      allowed: lawsResult.allowed,
-      violations: lawsResult.violations
-    }
+    status: lawsResult.allowed === false ? "error" : "ok",
+    laws: lawsResult,
   };
 
-  receipts.push(receipt);
-  return receipt;
+  const entry = prepareReceiptForAppend(draft, rt.ledger.all());
+  rt.ledger.append(entry);
+  rt.accumulator.applyEntry(entry);
+  return entry;
 }
 
 export function getReceipts() {
-  return receipts;
+  return getRuntime().ledger.all();
 }
 
-export function clearReceipts() {
-  receipts = [];
+export async function clearReceipts() {
+  await clearStoredReceipts();
+  _resetRuntimeForTests();
+  bootGovernedRuntime([]);
 }

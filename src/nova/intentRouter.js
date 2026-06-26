@@ -1,18 +1,30 @@
 import { evaluateIntent } from "./lawKernel.js";
-import { createReceipt } from "./receipts.js";
-import { callFreeLLM } from "../runtime/webRuntime.js";
+import {
+  appendGovernedReceipt,
+  createLLMAdapter,
+} from "../runtime/boot.js";
 
 export async function routeIntent(intent) {
   const lawsResult = evaluateIntent(intent);
+  const slice = intent?.type ?? "analysis";
 
   if (!lawsResult.allowed) {
     const output = {
       error: "Intent rejected by Law Kernel",
-      violations: lawsResult.violations
+      violations: lawsResult.violations,
     };
-    return createReceipt({ intent, output, lawsResult });
+    const receipt = await appendGovernedReceipt(intent, output, lawsResult, {
+      slice,
+    });
+    return { output, receipt };
   }
 
-  const llmOutput = await callFreeLLM(intent.prompt);
-  return createReceipt({ intent, output: llmOutput, lawsResult });
+  const llm = createLLMAdapter(lawsResult);
+  const { output, receipt } = await llm.ask(intent.prompt, {
+    sliceId: slice,
+    actor: "skillz",
+    intent,
+  });
+
+  return { output, receipt };
 }

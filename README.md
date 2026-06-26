@@ -1,37 +1,26 @@
-# SkillsStack + NovaSlice
+# SkillzMcGee — NovaSlice v0 Governed Runtime
 
-A portable, browser-native **lawful AI slice** for Skills. NovaSlice routes every prompt through a **Law Kernel**, records **governance receipts**, and validates integrity with a **CTS** (Compliance Test Suite).
+Browser-first workflow for Skillz: lawful slice execution, append-only receipts, and continuity-aware LLM calls.
 
-**Repository:** https://github.com/warheart1984-ctrl/SkillzMcgee
+## What this is
 
-## Architecture
+Not just a logging wrapper. The app runs a **v0 governed runtime**:
 
-```
-skillsstack-nova/
-  public/
-    index.html          # Dashboard UI
-  src/
-    nova/
-      lawKernel.js      # Intent evaluation against laws
-      intentRouter.js   # Route intents → LLM or rejection
-      novaSlice.js      # Public entry point
-      receipts.js       # Governance receipt store
-      cts.js            # Compliance test rules
-    runtime/
-      webRuntime.js     # Free LLM stub (swap for OpenRouter, etc.)
-    ui/
-      dashboard.js      # Browser UI wiring
-    storage/
-      db.js             # IndexedDB persistence
-```
+| Piece | Role |
+|-------|------|
+| **Continuity ledger** | Append-only receipt history (IndexedDB + in-memory) |
+| **State accumulator** | `state = reduce(ledger)` — last output per slice |
+| **Validator** | K0 invariants on every receipt before append |
+| **LLM adapter** | Prompts conditioned on slice state; every call logged |
+| **Boot** | Reload persisted receipts → rebuild ledger + state |
+| **Absolute Singularity** | AS-Ω fold: lineage + Merkle + nonlinear wave + DAR-Z fields + H_Ω |
 
-## Flow
+Conceptual mapping (from your architecture notes):
 
-1. **User prompt** → `novaSlice(prompt)` builds an intent (`type: analysis`, `confidence: 0.4`).
-2. **Law Kernel** evaluates the intent against `Laws` (disallowed types, max confidence).
-3. If **allowed** → `callFreeLLM` runs; if **rejected** → error output with violations.
-4. Every call produces a **receipt** (`REC-NOVA-*`) with intent, output, and law result.
-5. **CTS** validates receipt integrity (every call has a receipt; rejections record violations).
+- **Provenance** → receipt metadata (who, when, slice, intent)
+- **Lineage** → ordered receipt chain / `parentId`
+- **Continuity** → append-only ledger + dashboard history
+- **Absolute Singularity** → `foldAbsoluteSingularity()` — see `docs/AS-OMEGA.md`
 
 ## Quick start
 
@@ -40,31 +29,66 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). Use:
+Open the URL Vite prints (default `http://localhost:5173`).
 
-- **Run NovaSlice** — process a prompt through the lawful pipeline
-- **View Receipts** — inspect governance receipts (in-memory + IndexedDB)
-- **Run CTS** — run compliance checks on stored receipts
+## Usage
 
-## Laws (Law Kernel)
+1. Enter a prompt and click **Run Nova Slice**.
+2. Intent is evaluated by the law kernel; allowed runs go through the LLM adapter.
+3. Each run appends a governed receipt (ok or error).
+4. Receipts persist in IndexedDB and reload on refresh.
 
-| Rule | Effect |
-|------|--------|
-| `DISALLOWED_TYPES` | Blocks `unsafe`, `abuse`, `fraud` intent types |
-| `MAX_CONFIDENCE` | Rejects intents with confidence > 0.95 |
+**CTS:** Run **Run CTS** after at least one slice — `CTS-NOVA-001` checks that receipts exist.
 
-## CTS Rules
+## Project layout
 
-| ID | Description |
-|----|-------------|
-| `CTS-NOVA-001` | Every NovaSlice call produces a receipt |
-| `CTS-NOVA-002` | Rejected intents must record violations |
+```
+src/
+  governance/          # ledger, validator, reducer, invariants
+  singularity/         # AS-1 fold, wave math, DAR-Z tensors
+  runtime/
+    boot.js            # bootGovernedRuntime, appendGovernedReceipt, LLM factory
+    webRuntime.js      # browser LLM stub
+  core/adapters/
+    llmAdapter.js      # continuity-aware LLM wrapper
+  nova/
+    intentRouter.js    # law kernel → adapter or reject
+    novaSlice.js       # public slice API
+    lawKernel.js
+    cts.js
+  storage/db.js        # IndexedDB persistence
+  ui/dashboard.js      # boot on load, render receipts
+public/
+  index.html
+tests/
+  governance.test.mjs
+```
 
-## Extending
+## Scripts
 
-- **Real LLM**: Replace `callFreeLLM` in `src/runtime/webRuntime.js` with OpenRouter or another free-tier API.
-- **More laws**: Add rules in `src/nova/lawKernel.js`.
-- **More CTS rules**: Add checks in `src/nova/cts.js`.
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm test` | Governance unit tests (Node) |
+
+## Governed receipt shape
+
+```js
+{
+  id, timestamp, actor, slice, intent, output,
+  status: "ok" | "error",
+  laws: { allowed, violations? },
+  parentId?
+}
+```
+
+## Roadmap (v0 → v1)
+
+- **v0.1** — Receipt hashing + parent-hash chain
+- **v0.2** — Typed state schemas + diffs
+- **v0.3** — LLM output validation + prompt templates
+- **v1.0** — Full constitutional runtime loop
 
 ## License
 
