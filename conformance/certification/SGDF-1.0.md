@@ -51,6 +51,7 @@ Those are **measured** by COR-1.0 and CSR-1.0.
 6. Compare COR-1.0 to [RCD-1.0](./RCD-1.0.md)
 7. Confirm [ORC-1.0](./ORC-1.0.md) readiness
 8. Steward Council votes per [SCVP-1.0](./SCVP-1.0.md)
+9. Record decision in [GLS-1.0](../../governance/governance-ledger/GLS-1.0.md)
 ```
 
 ## E. Release criteria

@@ -82,4 +82,6 @@ Everything is evidence-driven.
 - [Don't Trust the Repository — Query It](./dont-trust-query-it.md)
 - [ORC-1.0](../../conformance/certification/ORC-1.0.md) — operational readiness
 - [RCD-1.0](../../conformance/certification/RCD-1.0.md) — release criteria
+- [GLS-1.0](../../governance/governance-ledger/GLS-1.0.md) — governance ledger
+- [v1.0 Launch Narrative](./v1.0-launch-narrative.md) — public overview
 - [SGDF-1.0](../../conformance/certification/SGDF-1.0.md) — steward governance framework

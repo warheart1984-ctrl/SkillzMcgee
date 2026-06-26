@@ -1,0 +1,21 @@
+{
+  "entry_id": "GLS-ENTRY-TEMPLATE",
+  "timestamp": "",
+  "decision_type": "release_vote",
+  "inputs": {
+    "cor_version": "COR-1.0",
+    "csr_version": "CSR-1.0",
+    "dra_version": "DRA-1.0",
+    "cav_version": "CAV-1.0",
+    "orc_version": "ORC-1.0",
+    "rcd_version": "RCD-1.0",
+    "canonical_commit": ""
+  },
+  "decision": "defer",
+  "rationale": [],
+  "steward_votes": [
+    { "steward_id": "steward:example", "vote": "defer", "notes": "" }
+  ],
+  "governance_hash": "",
+  "previous_hash": ""
+}

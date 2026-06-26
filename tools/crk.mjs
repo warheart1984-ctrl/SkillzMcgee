@@ -106,6 +106,27 @@ if (cmd === "rcd" && sub === "evaluate") {
   run(path.join(GENERATORS, "rcd-evaluate.mjs"), rest);
 }
 
+if (cmd === "gls" && sub === "validate") {
+  run(path.join(GENERATORS, "gls-validate.mjs"), rest);
+}
+
+if (cmd === "gls" && sub === "list") {
+  const ledgerPath = path.join(ROOT, "governance/governance-ledger/ledger.jsonl");
+  if (!fs.existsSync(ledgerPath)) {
+    console.error("Governance ledger empty. Run: node tools/generators/gls-append.mjs --genesis");
+    process.exit(3);
+  }
+  for (const line of fs.readFileSync(ledgerPath, "utf8").split("\n").filter(Boolean)) {
+    const e = JSON.parse(line);
+    console.log(`${e.entry_id}\t${e.decision_type}\t${e.decision}\t${e.timestamp}`);
+  }
+  process.exit(0);
+}
+
+if (cmd === "gls" && sub === "append") {
+  run(path.join(GENERATORS, "gls-append.mjs"), rest);
+}
+
 console.log(`CRK Conformance CLI
 
 Commands:
@@ -122,7 +143,10 @@ Commands:
   validate canonical [--fail-on-error]     CAV-1.0 lint
   orc evaluate [--out meta/ORC-1.0.json]   ORC-1.0 readiness checklist
   rcd evaluate [--out meta/RCD-1.0.json]   RCD-1.0 release criteria
+  gls validate [--fail-on-error]           GLS-1.0 ledger integrity
+  gls list                                 List governance ledger entries
+  gls append --file <entry.json>           Append ledger entry (steward use)
 
-See conformance/certification/ and docs/public/architecture-vs-evidence.md
+See governance/governance-ledger/GLS-1.0.md and docs/public/v1.0-launch-narrative.md
 `);
 process.exit(0);

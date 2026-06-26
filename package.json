@@ -43,6 +43,7 @@
     "spec:rebuild": "node tools/generators/darp-regenerate.mjs",
     "spec:orc": "node tools/generators/orc-evaluate.mjs --out meta/ORC-1.0.json",
     "spec:rcd": "node tools/generators/rcd-evaluate.mjs --out meta/RCD-1.0.json",
+    "spec:gls": "node tools/generators/gls-validate.mjs",
     "crk": "node tools/crk.mjs"
   },
   "engines": {

@@ -60,7 +60,7 @@ Approval requires a **supermajority** (⅔ of seated stewards).
 
 ### 5. Record
 
-Decision recorded in governance ledger with rationale. Template: [governance-decision-template.json](./governance-decision-template.json)
+Decision recorded in [Governance Ledger](../../governance/governance-ledger/GLS-1.0.md). Template: [entry-template.json](../../governance/governance-ledger/entry-template.json)
 
 ## D. Governance output
 

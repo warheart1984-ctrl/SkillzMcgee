@@ -1,0 +1,26 @@
+{
+  "entry_id": "GLS-20260626-001",
+  "timestamp": "2026-06-26T20:30:00.000Z",
+  "decision_type": "release_vote",
+  "inputs": {
+    "cor_version": "COR-1.0",
+    "csr_version": "CSR-1.0",
+    "dra_version": "DRA-1.0",
+    "cav_version": "CAV-1.0",
+    "orc_version": "ORC-1.0",
+    "rcd_version": "RCD-1.0",
+    "canonical_commit": "2255b29"
+  },
+  "decision": "defer",
+  "rationale": [
+    "RCD-1.0 not satisfied: proof_closure fail, 37 unanchored receipts",
+    "ORC-1.0 not ready for operational release vote",
+    "v1.0 specification and measurement infrastructure approved for publication",
+    "Research claims R004 R031 R035 R038 R039 explicitly deferred"
+  ],
+  "steward_votes": [
+    { "steward_id": "steward:council-chair", "vote": "defer", "notes": "Spec release yes; operational closure pending PL-1.1" },
+    { "steward_id": "steward:observability", "vote": "defer", "notes": "COR reports honest fail posture" },
+    { "steward_id": "steward:conformance", "vote": "defer", "notes": "RCD criteria documented; gaps tracked in DRA" }
+  ]
+}

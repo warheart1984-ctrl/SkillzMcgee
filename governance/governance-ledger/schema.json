@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governance Ledger Entry (GLS-1.0)",
+  "type": "object",
+  "properties": {
+    "entry_id": { "type": "string", "pattern": "^GLS-[0-9]{8}-[0-9]{3}$" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "decision_type": {
+      "type": "string",
+      "enum": ["release_vote", "policy_update", "spec_authorization", "role_assignment", "audit_result"]
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "cor_version": { "type": "string" },
+        "csr_version": { "type": "string" },
+        "dra_version": { "type": "string" },
+        "cav_version": { "type": "string" },
+        "orc_version": { "type": "string" },
+        "rcd_version": { "type": "string" },
+        "canonical_commit": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["approve", "reject", "defer"]
+    },
+    "rationale": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "steward_votes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "steward_id": { "type": "string" },
+          "vote": { "type": "string", "enum": ["approve", "reject", "defer", "abstain"] },
+          "notes": { "type": "string" }
+        },
+        "required": ["steward_id", "vote"]
+      },
+      "minItems": 1
+    },
+    "governance_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "previous_hash": { "type": "string" }
+  },
+  "required": [
+    "entry_id",
+    "timestamp",
+    "decision_type",
+    "decision",
+    "rationale",
+    "steward_votes",
+    "governance_hash",
+    "previous_hash"
+  ],
+  "additionalProperties": false
+}

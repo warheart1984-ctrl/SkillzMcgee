@@ -32,7 +32,8 @@
     "transformations": "conformance/proof-graph/transformation-records/",
     "evidence": "conformance/evidence-ledger/",
     "receipts": ".runtime/nova-studio/ledger.jsonl",
-    "provenance": "conformance/provenance-ledger/"
+    "provenance": "conformance/provenance-ledger/",
+    "governance_ledger": "governance/governance-ledger/ledger.jsonl"
   },
   "derived": {
     "proof_graph_index": "conformance/proof-graph/index.json",
