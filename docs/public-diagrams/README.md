@@ -1,5 +1,14 @@
 # Public Diagrams — Continuity OS v0.1
 
+## CRK-1 constitutional loop poster
+
+**Primary public graphic** — website, README, launch deck, print:
+
+- [constitutional-loop-poster.md](./constitutional-loop-poster.md)
+- [constitutional-loop-poster.txt](./constitutional-loop-poster.txt) (plain ASCII)
+
+Normative linear diagram: [../../specification/constitutional-loop-v1.0.md](../../specification/constitutional-loop-v1.0.md)
+
 ## High-level architecture
 
 ```

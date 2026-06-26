@@ -147,6 +147,7 @@
 ### Topics
 
 - Steward responsibilities
+- [Stewardship Charter](../../meta/stewardship-charter.md)
 - Anti-patterns (hidden state, silent bypass, founder knowledge)
 - Founder-independence (FIA)
 - Ethical obligations

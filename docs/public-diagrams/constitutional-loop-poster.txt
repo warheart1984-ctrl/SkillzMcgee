@@ -1,0 +1,33 @@
+                 CONTINUITY OS — CRK-1 CONSTITUTIONAL LOOP
+                 ==========================================
+
+   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+   │  Decision     │ ---> │   Outcome    │ ---> │   Evidence    │
+   └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
+          │                       │                       │
+          ▼                       ▼                       ▼
+   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+   │ Interpretation│ <--- │  Multi-Frame │ <--- │   Replayable  │
+   └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
+          │                       │                       │
+          ▼                       ▼                       ▼
+   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+   │ Policy Eval   │ ---> │ PolicyOutcome│ ---> │ GovernanceDec │
+   └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
+          │                       │                       │
+          ▼                       ▼                       ▼
+   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+   │ ExecutionPlan │ ---> │ RuntimeState │ ---> │   Receipt     │
+   └──────┬────────┘      └──────┬────────┘      └──────┬────────┘
+          │                       │                       │
+          ▼                       ▼                       ▼
+   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+   │  Provenance   │ ---> │   Lineage    │ ---> │ DriftEnvelope │
+   └──────────────┘      └──────────────┘      └──────────────┘
+
+   Every stage produces exactly one semantic artifact.
+   Every artifact is governed, traceable, and reproducible.
+   This is the foundation of Continuity OS.
+
+   Canonical spec: specification/constitutional-loop-v1.0.md
+   Amendment CA-1.0: one artifact per stage (T01–T12)

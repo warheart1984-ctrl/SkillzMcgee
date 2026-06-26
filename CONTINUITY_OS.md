@@ -41,7 +41,8 @@ Version 1.0 is the first **specification-stable**, founder-independent release o
 | [docs/launch-kit/](./docs/launch-kit/) | Public launch materials, [FAQ](./docs/launch-kit/FAQ.md), [animation script](./docs/launch-kit/constitutional-loop-animation-script.md) |
 | [docs/K-infinity-axioms/](./docs/K-infinity-axioms/) | K-∞ axiom set |
 | [meta/adr-template.md](./meta/adr-template.md) | ADR template with requirement linkage |
-| [meta/RELEASE_NOTES_v1.0.md](./meta/RELEASE_NOTES_v1.0.md) | Formal release notes |
+| [meta/stewardship-charter.md](./meta/stewardship-charter.md) | Multi-steward governance |
+| [meta/LONG_TERM_STABILITY_PLAN_v1.0.md](./meta/LONG_TERM_STABILITY_PLAN_v1.0.md) | 10-year stability plan |
 
 ### 4. Runnable runtime (Continuity OS v0.1 preview)
 

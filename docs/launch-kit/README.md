@@ -21,7 +21,9 @@ Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-on
 |-------|------|
 | Website | [website.html](./website.html) |
 | Extended FAQ | [FAQ.md](./FAQ.md) |
-| Animation script | [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md) |
+| Loop poster | [../public-diagrams/constitutional-loop-poster.md](../public-diagrams/constitutional-loop-poster.md) |
+| Animation script (60s) | [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md) |
+| Launch video script (2–3 min) | [launch-video-script.md](./launch-video-script.md) |
 | Whitepaper | [../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md](../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md) |
 
 ## Public FAQ (summary)
@@ -41,7 +43,8 @@ See [FAQ.md](./FAQ.md) for the full extended FAQ.
 - [x] Conformance plane — `conformance/`
 - [x] Public website copy — [website.html](./website.html)
 - [x] Extended FAQ — [FAQ.md](./FAQ.md)
-- [x] Animation script — [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md)
+- [x] Launch video script — [launch-video-script.md](./launch-video-script.md)
+- [x] Loop poster — [../public-diagrams/constitutional-loop-poster.md](../public-diagrams/constitutional-loop-poster.md)
 - [x] Academic paper pointer — `docs/academic-paper/`
 
 ## Get started
