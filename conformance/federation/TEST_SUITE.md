@@ -102,5 +102,6 @@ Full F1–F6 automation is a C5/C6 conformance target — catalog defined here; 
 
 ## Related
 
+- [ARBITRATION_ENGINE.md](./ARBITRATION_ENGINE.md) — formal arbitration specification
 - [../CTS-1.0/README.md](../CTS-1.0/README.md)
 - [../../specification/constitutional-proof.md](../../specification/constitutional-proof.md)

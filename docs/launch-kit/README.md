@@ -15,13 +15,24 @@ Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-on
 - Semantic Replay, Governance Receipts
 - Provenance Ledger, Federation Layer
 
-## Public FAQ
+## Public materials
+
+| Asset | Path |
+|-------|------|
+| Website | [website.html](./website.html) |
+| Extended FAQ | [FAQ.md](./FAQ.md) |
+| Animation script | [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md) |
+| Whitepaper | [../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md](../whitepaper/CONTINUITY_OS_v0.1_WHITEPAPER.md) |
+
+## Public FAQ (summary)
+
+See [FAQ.md](./FAQ.md) for the full extended FAQ.
 
 **Is Continuity OS an agent?** No — governed substrate for agents.
 
-**Does it restrict model capabilities?** No — it restricts unaccountable capabilities.
+**Does it replace AI models?** No — infrastructure layer for accountability.
 
-**Is it open source?** v0.1 is designed for full reproduction (Mission #006 / R1-0).
+**Is it open source?** Yes — v1.0 is open, reproducible, and auditable.
 
 ## Launch checklist
 
@@ -29,7 +40,9 @@ Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-on
 - [x] Specification plane — `specification/`
 - [x] Conformance plane — `conformance/`
 - [x] Public website copy — [website.html](./website.html)
-- [ ] Academic paper — `docs/academic-paper/`
+- [x] Extended FAQ — [FAQ.md](./FAQ.md)
+- [x] Animation script — [constitutional-loop-animation-script.md](./constitutional-loop-animation-script.md)
+- [x] Academic paper pointer — `docs/academic-paper/`
 
 ## Get started
 

@@ -14,6 +14,7 @@ See [criteria.md](./criteria.md).
 
 ## Steward certification
 
+- [steward-curriculum.md](./steward-curriculum.md) — 8-week training program
 - [steward-exam.md](./steward-exam.md) — Version 1.0 steward certification exam
 - [../../meta/steward-oath.md](../../meta/steward-oath.md) — Steward oath
 

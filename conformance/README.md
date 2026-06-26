@@ -22,7 +22,8 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [CTS-1.0/](./CTS-1.0/) | Constitutional test suite |
 | [MRI-1.0/](./MRI-1.0/) | Minimal reference implementation |
 | [compliance-profiles/](./compliance-profiles/) | C0–C6 badges |
-| [certification/](./certification/) | Certification process |
+| [certification/](./certification/) | Certification process + steward curriculum |
+| [federation/](./federation/) | F1–F6 tests + arbitration engine |
 | [reproduction-harness/](./reproduction-harness/) | R1-0 independent reproduction |
 | [founder-independence-audit/](./founder-independence-audit/) | FIA protocol |
 | [evidence-requirements/](./evidence-requirements/) | Evidence schema |
