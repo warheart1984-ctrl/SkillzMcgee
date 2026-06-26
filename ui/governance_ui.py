@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -104,3 +105,19 @@ class GovernanceUI:
 
         for line in timeline[-12:]:
             print(f"  · {line}")
+
+    def render_organism_layers(self, repo_root: str | Path | None = None) -> None:
+        """Organism layer diagram — includes LAW / GOVERNANCE binding substrate."""
+        root = Path(repo_root) if repo_root else Path(__file__).resolve().parent.parent
+        script = root / "scripts" / "print_layers.mjs"
+        if not script.exists():
+            return
+        result = subprocess.run(
+            ["node", str(script)],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            print(result.stdout)

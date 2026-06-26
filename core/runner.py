@@ -95,6 +95,7 @@ class SkillzRuntime:
         print("SkillzMcGee v1.0 — Constitutional Runtime")
         print("Enter: <slice> <input>  or  JSON  or  quit")
         print(f"Slices: {', '.join(self.slice_adapter.list_slices())}")
+        self.ui.render_organism_layers()
 
         while True:
             request = self.ui.get_user_request()
