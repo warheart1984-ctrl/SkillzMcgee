@@ -36,8 +36,12 @@ node tools/crk.mjs explain NODE CRK1-R012
 node tools/crk.mjs counterfactual remove NODE CRK1-R012
 node tools/crk.mjs query coverage
 node tools/crk.mjs validate closure
-npm run spec:cor
+npm run spec:rebuild
+node tools/crk.mjs orc evaluate
+node tools/crk.mjs rcd evaluate
 ```
+
+See also: [Architecture vs Evidence](./architecture-vs-evidence.md)
 
 Reports:
 

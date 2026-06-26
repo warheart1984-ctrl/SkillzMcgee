@@ -1,0 +1,238 @@
+{
+  "version": "ORC-1.0",
+  "evaluated_at": "2026-06-26T20:22:29.033Z",
+  "commit": "c8b645657e50b7c6b4df1da8d877c0e5752fe913",
+  "ready_for_governance_evaluation": false,
+  "summary": {
+    "pass": 17,
+    "fail": 6,
+    "manual": 8,
+    "pending": 1
+  },
+  "items": [
+    {
+      "id": "A1",
+      "section": "A",
+      "label": "All canonical artifacts present",
+      "status": "pass",
+      "detail": "core paths present"
+    },
+    {
+      "id": "A2",
+      "section": "A",
+      "label": "CAV-1.0 passes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A3",
+      "section": "A",
+      "label": "No dangling references",
+      "status": "pass",
+      "detail": "0 CAV errors"
+    },
+    {
+      "id": "A4",
+      "section": "A",
+      "label": "No circular authority chains",
+      "status": "manual",
+      "detail": "steward review"
+    },
+    {
+      "id": "A5",
+      "section": "A",
+      "label": "All timestamps monotonic",
+      "status": "manual",
+      "detail": "PL-1.1 ledger review"
+    },
+    {
+      "id": "A6",
+      "section": "A",
+      "label": "All canonical schemas validated",
+      "status": "pass",
+      "detail": "44 requirements in catalog"
+    },
+    {
+      "id": "B1",
+      "section": "B",
+      "label": "Proof-Graph Index regenerated",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:24.732Z"
+    },
+    {
+      "id": "B2",
+      "section": "B",
+      "label": "CSR-1.0 regenerated",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:29.468Z"
+    },
+    {
+      "id": "B3",
+      "section": "B",
+      "label": "COR-1.0 regenerated",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:34.174Z"
+    },
+    {
+      "id": "B4",
+      "section": "B",
+      "label": "Coverage Reports regenerated",
+      "status": "pending",
+      "detail": "optional until coverage generator ships"
+    },
+    {
+      "id": "B5",
+      "section": "B",
+      "label": "Release Manifest regenerated",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "B6",
+      "section": "B",
+      "label": "Dashboards regenerated",
+      "status": "manual",
+      "detail": "tools/dashboard/"
+    },
+    {
+      "id": "B7",
+      "section": "B",
+      "label": "No derived artifact manually edited",
+      "status": "pass",
+      "detail": "regenerate via DARP before vote"
+    },
+    {
+      "id": "C1",
+      "section": "C",
+      "label": "COR-1.0 includes all requirements",
+      "status": "fail",
+      "detail": "43/44"
+    },
+    {
+      "id": "C2",
+      "section": "C",
+      "label": "CSR-1.0 classifies all claims",
+      "status": "fail",
+      "detail": "43/44"
+    },
+    {
+      "id": "C3",
+      "section": "C",
+      "label": "DRA-1.0 executed",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:38.001Z"
+    },
+    {
+      "id": "C4",
+      "section": "C",
+      "label": "Explain-This-Node functional",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C5",
+      "section": "C",
+      "label": "Counterfactual engine functional",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D1",
+      "section": "D",
+      "label": "No orphaned requirements",
+      "status": "fail",
+      "detail": "38"
+    },
+    {
+      "id": "D2",
+      "section": "D",
+      "label": "No orphaned specifications",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "D3",
+      "section": "D",
+      "label": "No orphaned implementations",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "D4",
+      "section": "D",
+      "label": "All receipts anchored",
+      "status": "fail",
+      "detail": "37"
+    },
+    {
+      "id": "D5",
+      "section": "D",
+      "label": "Provenance chains intact",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "D6",
+      "section": "D",
+      "label": "Normative requirements ≥ Implemented",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D7",
+      "section": "D",
+      "label": "Critical requirements ≥ Verified",
+      "status": "fail",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "label": "Verified claims reproduced",
+      "status": "fail",
+      "detail": "6 verified"
+    },
+    {
+      "id": "E2",
+      "section": "E",
+      "label": "Reproduction logs valid",
+      "status": "manual",
+      "detail": "R1-0 harness review"
+    },
+    {
+      "id": "F1",
+      "section": "F",
+      "label": "COR-1.0 delivered to council",
+      "status": "manual",
+      "detail": ""
+    },
+    {
+      "id": "F2",
+      "section": "F",
+      "label": "CSR-1.0 delivered",
+      "status": "manual",
+      "detail": ""
+    },
+    {
+      "id": "F3",
+      "section": "F",
+      "label": "DRA-1.0 delivered",
+      "status": "manual",
+      "detail": ""
+    },
+    {
+      "id": "F4",
+      "section": "F",
+      "label": "Release Manifest delivered",
+      "status": "manual",
+      "detail": ""
+    },
+    {
+      "id": "F5",
+      "section": "F",
+      "label": "No misleading PASS assertions in derived artifacts",
+      "status": "pass",
+      "detail": "derived may report proof_closure: fail"
+    }
+  ]
+}

@@ -41,6 +41,8 @@
     "spec:cor": "node tools/generators/csr-registry.mjs && node tools/generators/proof-graph-index.mjs && node tools/generators/cor-generate.mjs --out meta/COR-1.0.json",
     "spec:dra": "node tools/generators/dra-analyze.mjs --out meta/DRA-1.0.json",
     "spec:rebuild": "node tools/generators/darp-regenerate.mjs",
+    "spec:orc": "node tools/generators/orc-evaluate.mjs --out meta/ORC-1.0.json",
+    "spec:rcd": "node tools/generators/rcd-evaluate.mjs --out meta/RCD-1.0.json",
     "crk": "node tools/crk.mjs"
   },
   "engines": {

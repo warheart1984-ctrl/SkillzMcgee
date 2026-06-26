@@ -1,0 +1,108 @@
+{
+  "version": "RCD-1.0",
+  "evaluated_at": "2026-06-26T20:22:40.646Z",
+  "commit": "c8b645657e50b7c6b4df1da8d877c0e5752fe913",
+  "release_criteria_satisfied": false,
+  "summary": {
+    "pass": 9,
+    "fail": 7
+  },
+  "criteria": [
+    {
+      "id": "A1",
+      "label": "CAV-1.0 passes with no errors",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "B1",
+      "label": "No orphaned requirements",
+      "status": "fail",
+      "detail": "38"
+    },
+    {
+      "id": "B2",
+      "label": "No orphaned specifications",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "B3",
+      "label": "No orphaned implementations",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "B4",
+      "label": "All receipts anchored",
+      "status": "fail",
+      "detail": "37"
+    },
+    {
+      "id": "B5",
+      "label": "Provenance chains intact",
+      "status": "pass",
+      "detail": "0"
+    },
+    {
+      "id": "B6",
+      "label": "proof_closure pass",
+      "status": "fail",
+      "detail": "fail"
+    },
+    {
+      "id": "C1",
+      "label": "No unexpected normative claims",
+      "status": "pass",
+      "detail": "CRK1-R008, CRK1-R009, CRK1-R019, CRK1-R043"
+    },
+    {
+      "id": "C2",
+      "label": "Critical requirements verified",
+      "status": "fail",
+      "detail": "CRK1-R001, CRK1-R002, CRK1-R003, CRK1-R004, CRK1-R005, CRK1-R006, CRK1-R007, CRK1-R008, CRK1-R009, CRK1-R010, CRK1-R015, CRK1-R016, CRK1-R043"
+    },
+    {
+      "id": "C3",
+      "label": "Verified claims have evidence",
+      "status": "fail",
+      "detail": "1 gaps"
+    },
+    {
+      "id": "C4",
+      "label": "Research claims documented in CSR",
+      "status": "pass",
+      "detail": "CRK1-R004, CRK1-R031, CRK1-R035, CRK1-R038, CRK1-R039"
+    },
+    {
+      "id": "D1",
+      "label": "Verified claims have full evidence chain",
+      "status": "fail",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "label": "COR generated",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:34.174Z"
+    },
+    {
+      "id": "E2",
+      "label": "CSR generated",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:29.468Z"
+    },
+    {
+      "id": "E3",
+      "label": "DRA executed",
+      "status": "pass",
+      "detail": "2026-06-26T20:12:38.001Z"
+    },
+    {
+      "id": "F1",
+      "label": "Critical claims reproduced (R1-0)",
+      "status": "fail",
+      "detail": "manual — R1-0 harness"
+    }
+  ]
+}

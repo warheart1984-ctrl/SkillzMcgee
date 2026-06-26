@@ -22,7 +22,7 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [CTS-1.0/](./CTS-1.0/) | Constitutional test suite |
 | [MRI-1.0/](./MRI-1.0/) | Minimal reference implementation |
 | [compliance-profiles/](./compliance-profiles/) | C0–C6 badges |
-| [certification/](./certification/) | Certification process + steward curriculum |
+| [certification/](./certification/) | Certification process, **ORC-1.0**, **RCD-1.0**, **SCVP-1.0**, **SGDF-1.0** |
 | [federation/](./federation/) | F1–F6 tests + arbitration engine |
 | [reproduction-harness/](./reproduction-harness/) | R1-0 independent reproduction |
 | [founder-independence-audit/](./founder-independence-audit/) | FIA protocol |
@@ -52,8 +52,15 @@ npm run spec:rebuild
 # or
 node tools/crk.mjs regenerate all
 node tools/crk.mjs validate canonical
-node tools/crk.mjs dra top-blockers
+npm run spec:rebuild
+node tools/crk.mjs orc evaluate
+node tools/crk.mjs rcd evaluate
 ```
+
+## Public explainers
+
+- [Architecture vs Evidence](../docs/public/architecture-vs-evidence.md)
+- [Don't Trust the Repository — Query It](../docs/public/dont-trust-query-it.md)
 
 ## Regenerate requirement files
 

@@ -18,7 +18,8 @@ Stewards consume:
 | CSR-1.0 | Claim maturity |
 | DRA-1.0 | Dependency risk / prioritization |
 | CAV-1.0 | Canonical validity |
-| Release criteria | Published thresholds |
+| [RCD-1.0](./RCD-1.0.md) | Published release thresholds |
+| [ORC-1.0](./ORC-1.0.md) | Pre-vote readiness checklist |
 
 Stewards do **not** consume hand-written reports, manually edited manifests, or subjective assessments as authoritative.
 
@@ -47,22 +48,20 @@ Those are **measured** by COR-1.0 and CSR-1.0.
 3. Measure constitutional state (COR-1.0)
 4. Classify claims (CSR-1.0)
 5. Analyze dependency risk (DRA-1.0)
-6. Compare COR-1.0 to release criteria
-7. Steward Council votes on release
+6. Compare COR-1.0 to [RCD-1.0](./RCD-1.0.md)
+7. Confirm [ORC-1.0](./ORC-1.0.md) readiness
+8. Steward Council votes per [SCVP-1.0](./SCVP-1.0.md)
 ```
 
-## E. Release criteria (v1.0 example)
+## E. Release criteria
 
-A release may require:
+Published in [RCD-1.0](./RCD-1.0.md). Evaluate live state:
 
-- 0 orphaned requirements
-- 0 broken provenance chains
-- ≥95% requirements verified (or explicit research deferral)
-- All normative claims at least **implemented**
-- All critical claims **verified**
-- No unresolved assumptions on critical paths
+```bash
+node tools/crk.mjs rcd evaluate
+```
 
-Stewards decide whether **measured** state satisfies these criteria — not whether criteria should be waived without record.
+Stewards decide whether **measured** state satisfies RCD — not whether criteria should be waived without record.
 
 ## F. Governance output
 

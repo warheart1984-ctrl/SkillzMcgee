@@ -98,6 +98,14 @@ if (cmd === "validate" && sub === "canonical") {
   run(path.join(GENERATORS, "cav-validate.mjs"), args);
 }
 
+if (cmd === "orc" && sub === "evaluate") {
+  run(path.join(GENERATORS, "orc-evaluate.mjs"), rest);
+}
+
+if (cmd === "rcd" && sub === "evaluate") {
+  run(path.join(GENERATORS, "rcd-evaluate.mjs"), rest);
+}
+
 console.log(`CRK Conformance CLI
 
 Commands:
@@ -112,7 +120,9 @@ Commands:
   query coverage [--requirement CRK1-R###]
   validate closure                         Fail if proof_closure != pass
   validate canonical [--fail-on-error]     CAV-1.0 lint
+  orc evaluate [--out meta/ORC-1.0.json]   ORC-1.0 readiness checklist
+  rcd evaluate [--out meta/RCD-1.0.json]   RCD-1.0 release criteria
 
-See conformance/observability/ and conformance/certification/SGDF-1.0.md
+See conformance/certification/ and docs/public/architecture-vs-evidence.md
 `);
 process.exit(0);
