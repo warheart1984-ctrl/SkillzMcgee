@@ -21,6 +21,7 @@ import {
   verifyGlobalContinuity,
 } from "./frs_continuity/index.js";
 import { detectConflicts, proposeReconciliation, applyReconciliation, logReconciliation } from "./frs_reconcile/index.js";
+import { federationTick } from "./federation_tick.js";
 
 /**
  * Boot federated node: identity + continuity state.
@@ -107,6 +108,21 @@ export function ingestFederatedEnvelope(envelope, localNodeId, continuity) {
   });
 
   return { event, continuity, conflicts, reconciliations };
+}
+
+/**
+ * AS-Ω fold + substration engine tick (L8 organism layer).
+ * @param {any[]} ledger
+ * @param {import('./frs_identity/index.js').NodeIdentity} identity
+ * @param {import('./frs_continuity/continuity.js').GlobalContinuityState} continuity
+ * @param {import('../runtime/federated_runtime.js').ReturnType<typeof import('../runtime/federated_runtime.js').createRuntime>} runtime
+ */
+export async function foldAndTickFederation(ledger, identity, continuity, runtime) {
+  const fold = foldFederatedSingularity(ledger, identity, continuity);
+  runtime.setContinuity(fold.continuity);
+  runtime.asOmega = fold.asOmega;
+  const tickResult = await federationTick(runtime);
+  return { ...fold, tickResult };
 }
 
 export {

@@ -7,6 +7,7 @@ from typing import Any, Callable
 from core.adapters.llm_adapter import LawfulLLMAdapter
 from core.adapters.slice_adapter import SliceAdapter
 from core.config import load_config
+from core.federation_bridge import run_federation_tick
 from core.receipts import build_receipt
 from governance.continuity_ledger import ContinuityLedger
 from governance.diff import deep_diff
@@ -44,7 +45,9 @@ class SkillzRuntime:
             constitution=self.constitution,
         )
         self.slice_adapter = SliceAdapter()
-        self.ui = GovernanceUI(self.ledger, self.state)
+        cosmic_path = self.config.get("cosmic_path", "skillz_cosmic.json")
+        self.ui = GovernanceUI(self.ledger, self.state, cosmic_path=cosmic_path)
+        self.federation_enabled = self.config.get("federation", {}).get("enabled", True)
 
     def process_request(self, request: UserRequest) -> dict[str, Any]:
         """Single iteration of the constitutional loop."""
@@ -79,6 +82,11 @@ class SkillzRuntime:
         self.llm_adapter.update_state(self.state)
         self.ui.state = self.state
         self.ledger.save()
+
+        if self.federation_enabled and self.ledger.path:
+            tick = run_federation_tick(self.ledger.path, cosmic_path=self.ui.cosmic_path)
+            if not tick.get("ok"):
+                receipt["federation_tick"] = {"ok": False, "error": tick.get("error")}
 
         return receipt
 

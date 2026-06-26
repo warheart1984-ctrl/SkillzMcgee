@@ -1,0 +1,19 @@
+/**
+ * Six canonical organism invariants — laws of being for the federated organism.
+ */
+
+export const ORGANISM_INVARIANTS = {
+  CONTINUITY_FIRST: "CONTINUITY_FIRST",
+  NO_SILENT_AUTHORITY_EXPANSION: "NO_SILENT_AUTHORITY_EXPANSION",
+  NO_UNLOGGED_MUTATION: "NO_UNLOGGED_MUTATION",
+  PRESERVE_LINEAGE_SOVEREIGNTY: "PRESERVE_LINEAGE_SOVEREIGNTY",
+  BIDIRECTIONAL_COHERENCE: "BIDIRECTIONAL_COHERENCE",
+  CONSTITUTIONAL_BINDING: "CONSTITUTIONAL_BINDING",
+};
+
+/** @type {Set<string>} */
+export const ALL_INVARIANTS = new Set(Object.values(ORGANISM_INVARIANTS));
+
+export function isValidInvariant(id) {
+  return ALL_INVARIANTS.has(id);
+}

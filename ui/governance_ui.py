@@ -1,9 +1,10 @@
-"""Governance console — receipt chain, state, invariants."""
+"""Governance console — receipt chain, state, invariants, cosmic timeline."""
 
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 from governance.continuity_ledger import ContinuityLedger
@@ -20,10 +21,16 @@ class UserRequest:
 class GovernanceUI:
     """Minimal governance explorer (CLI stub)."""
 
-    def __init__(self, ledger: ContinuityLedger, state: dict[str, Any]) -> None:
+    def __init__(
+        self,
+        ledger: ContinuityLedger,
+        state: dict[str, Any],
+        cosmic_path: str | Path | None = None,
+    ) -> None:
         self.ledger = ledger
         self.state = state
         self._prev_state: dict[str, Any] | None = None
+        self.cosmic_path = Path(cosmic_path) if cosmic_path else Path("skillz_cosmic.json")
 
     def get_user_request(self) -> UserRequest | None:
         raw = input("skillz> ").strip()
@@ -64,4 +71,36 @@ class GovernanceUI:
         for r in self.ledger.entries[-5:]:
             print(f"  - {r['id'][:16]}... ({r['slice']})")
 
+        self.render_cosmic_timeline()
+
         self._prev_state = dict(state)
+
+    def render_cosmic_timeline(self) -> None:
+        """Cosmic timeline panel — read-model from federation tick output."""
+        if not self.cosmic_path.exists():
+            return
+
+        try:
+            with open(self.cosmic_path, encoding="utf-8") as f:
+                cosmic = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return
+
+        timeline = cosmic.get("timeline") or []
+        tick = cosmic.get("tickResult") or {}
+
+        print("\n=== COSMIC TIMELINE ===")
+        if tick:
+            print(f"Needs: {tick.get('needCount', 0)} | Tasks: {tick.get('taskCount', 0)}")
+            fold = cosmic.get("fold") or {}
+            if fold.get("fingerprint"):
+                print(f"AS-Ω fingerprint: {fold['fingerprint'][:24]}...")
+            if "globalRootValid" in fold:
+                print(f"Global continuity valid: {fold['globalRootValid']}")
+
+        if not timeline:
+            print("  (no cosmic events yet)")
+            return
+
+        for line in timeline[-12:]:
+            print(f"  · {line}")

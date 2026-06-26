@@ -3,3 +3,4 @@ export { hashReceipt, merkleRoot, hashPayload } from "./merkle.js";
 export { stepWave, integrateWave } from "./nonlinearWave.js";
 export { solveFields } from "./darzFields.js";
 export { foldSingularity } from "./absoluteSingularity.js";
+export { collapseSubsystem, createAsOmegaServices } from "./collapse.js";

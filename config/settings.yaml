@@ -1,6 +1,10 @@
 ledger_path: skillz_ledger.json
 memory_path: skillz_memory.json
+cosmic_path: skillz_cosmic.json
 node_id: skillz-local-001
+
+federation:
+  enabled: true
 
 llm:
   provider: stub

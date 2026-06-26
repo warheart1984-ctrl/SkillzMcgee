@@ -7,6 +7,8 @@ export * from "./frs_genesis/index.js";
 export {
   bootFederatedNode,
   foldFederatedSingularity,
+  foldAndTickFederation,
   publishCosmosSnapshot,
   ingestFederatedEnvelope,
 } from "./frs.js";
+export { federationTick, engine as substrationEngine, substrations } from "./federation_tick.js";
