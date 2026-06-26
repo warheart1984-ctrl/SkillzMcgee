@@ -39,3 +39,14 @@ The repository becomes:
 Plane 1 (`specification/`) is timeless.  
 Plane 2 (`conformance/`) is evolvable.  
 R-∞ binds them.
+
+## Four-layer provenance (CA-1.1)
+
+Verification artifacts MUST also declare layer binding where applicable:
+
+- **Authority** — who authorized the artifact
+- **Specification** — which normative contract applies
+- **Implementation** — which code module realizes it
+- **Execution** — runtime evidence and ledger entries
+
+See [four-layer-provenance-model.md](./four-layer-provenance-model.md) and **CRK1-R043**.

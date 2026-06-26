@@ -30,3 +30,9 @@ Invariants are enforced by:
 - Constitutional contracts (see [contracts.md](./contracts.md))
 - Governance Enforcement Layer (GEL-1) — see `/conformance/`
 - CTS-1.0 test suite — see `/conformance/CTS-1.0/`
+
+## Provenance invariant P-1 (CA-1.1)
+
+Additive to K0–K12. Every semantic transformation SHALL declare authority, specification, implementation, assumptions, input artifact, output artifact, and receipt ([R043](./normative-requirements/R043.md)).
+
+See [four-layer-provenance-model.md](./four-layer-provenance-model.md).

@@ -1,20 +1,44 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://continuity-os.dev/schemas/evidence-ledger/v1.0",
-  "title": "CRK-1 Evidence Ledger (EL-1.0)",
-  "description": "Append-only evidence index linking constitutional objects to receipts and provenance. Complements PL-1.0.",
-  "version": "1.0",
+  "$id": "https://continuity-os.dev/schemas/evidence-ledger/v1.1",
+  "title": "CRK-1 Evidence Ledger (EL-1.1)",
+  "description": "Four-layer provenance index. Extends EL-1.0 with authority, spec, and implementation binding (CA-1.1, R043).",
+  "version": "1.1",
   "entries": [],
   "entrySchema": {
     "type": "object",
-    "required": ["id", "artifact_type", "artifact_id", "receipt_id", "hash", "timestamp"],
+    "required": [
+      "id",
+      "input_artifact_id",
+      "output_artifact_id",
+      "transformation_spec_id",
+      "implementation_id",
+      "authority_id",
+      "assumptions",
+      "receipt_id",
+      "hash",
+      "timestamp"
+    ],
     "properties": {
       "id": { "type": "string" },
+      "input_artifact_id": { "type": "string" },
+      "output_artifact_id": { "type": "string" },
+      "transformation_spec_id": { "type": "string" },
+      "implementation_id": { "type": "string" },
+      "authority_id": { "type": "string" },
+      "assumptions": {
+        "type": "object",
+        "required": ["policy_version", "evaluation_mode", "constitution_version"],
+        "properties": {
+          "policy_version": { "type": "string" },
+          "evaluation_mode": { "type": "string", "enum": ["strict", "audit", "replay"] },
+          "constitution_version": { "type": "string" },
+          "frame_set_version": { "type": "string" }
+        }
+      },
       "artifact_type": {
         "enum": ["DecisionObject", "OutcomeObject", "EvidenceObject", "InterpretationObject", "GovernanceReceipt"]
       },
-      "artifact_id": { "type": "string" },
-      "transformation_contract": { "type": "string" },
       "receipt_id": { "type": "string" },
       "requirement_ids": { "type": "array", "items": { "type": "string" } },
       "hash": { "type": "string" },
@@ -22,5 +46,5 @@
       "timestamp": { "type": "string", "format": "date-time" }
     }
   },
-  "notes": "Populate at runtime. Example live ledger: .runtime/nova-studio/ledger.jsonl"
+  "notes": "PL-1.1 / CA-1.1 binding. Runtime ledger transition: .runtime/nova-studio/ledger.jsonl"
 }

@@ -2,7 +2,8 @@
 
 **Authority:** CRK-1 Specification v1.0  
 **Status:** Normative  
-**Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)
+**Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md), [CA-1.1](../constitutional-amendments/CA-1.1-four-layer-provenance.md)  
+**Provenance:** [four-layer-provenance-model.md](../four-layer-provenance-model.md) · **R043**
 
 Twelve constitutionally recognized transformations. Each consumes exactly one semantic artifact and produces exactly one new semantic artifact.
 

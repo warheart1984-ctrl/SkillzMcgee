@@ -136,7 +136,21 @@ These extend the global correctness proof in [constitutional-proof.md](../../spe
 | F5 | Drift reconciliation |
 | F6 | Full arbitration convergence |
 
-**Pass:** Post-arbitration `Σ(R₁) ≡ Σ(R₂)` on roots, drift, and provenance tip.
+**Pass:** Post-arbitration `Σ(R₁) ≡ Σ(R₂)` on roots, drift, provenance tip, and **assumptions blocks** (PL-1.1).
+
+## X. Assumption-aware replay (CA-1.1)
+
+Arbitration and replay MUST compare:
+
+- `authority_id`
+- `transformation_spec_id`
+- `implementation_id`
+- `assumptions.policy_version`
+- `assumptions.evaluation_mode`
+
+Divergence in assumptions without authority authorization is a constitutional violation (R043).
+
+See [four-layer-provenance-model.md](../../specification/four-layer-provenance-model.md).
 
 ## IX. Implementation pointers (preview)
 

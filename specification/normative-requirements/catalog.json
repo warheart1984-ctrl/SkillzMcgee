@@ -418,5 +418,15 @@
     "verification": "CTS G1",
     "evidence": "Governance receipt per action",
     "traceability": "R042 → GEL-1 → CTS-G1"
+  },
+  {
+    "id": "CRK1-R043",
+    "series": "H",
+    "invariant": "P-1,K10,K6",
+    "title": "Transformation Provenance Completeness",
+    "rationale": "Every transformation must be fully reconstructable across authority, spec, implementation, and execution.",
+    "verification": "CTS G3, CTS S3, provenance inspector",
+    "evidence": "PL-1.1 ProvenanceEntry with full binding fields",
+    "traceability": "R043 → CA-1.1 → four-layer-provenance-model.md → PL-1.1"
   }
 ]

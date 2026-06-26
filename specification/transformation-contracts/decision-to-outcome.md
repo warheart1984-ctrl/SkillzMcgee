@@ -3,9 +3,26 @@
 ## 1. Authority
 
 CRK-1 Specification v1.0  
-**Constitutional Amendment:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
-**Normative Requirements:** CRK1-R001, CRK1-R005, CRK1-R014, CRK1-R015, CRK1-R040  
-**Constitutional Invariants:** K0, K1, K4, K5
+**Constitutional Amendments:** [CA-1.0](../constitutional-amendments/CA-1.0-one-artifact-per-stage.md), [CA-1.1](../constitutional-amendments/CA-1.1-four-layer-provenance.md)  
+**Normative Requirements:** CRK1-R001, CRK1-R005, CRK1-R014, CRK1-R015, CRK1-R040, **CRK1-R043**  
+**Constitutional Invariants:** K0, K1, K4, K5, **P-1**
+
+### Four-layer binding
+
+| Field | Value |
+|-------|-------|
+| **AuthorizedBy** | `steward-council/v1.0` |
+| **SpecificationID** | `T01/decision-to-outcome/v1.0` |
+| **ImplementationID** | `MRI-1.0/nova-studio-pipeline/1.0.0` |
+
+### Assumptions
+
+```yaml
+assumptions:
+  policy_version: "1.0"
+  evaluation_mode: "strict"
+  constitution_version: "1.0"
+```
 
 ## 2. Input Artifact
 
@@ -42,6 +59,7 @@ CRK-1 Specification v1.0
 - `outcome.decision_id === decision.id`.
 - No in-place mutation of DecisionObject (CA-1.0).
 - Outcome is eligible for evidence transformation.
+- PL-1.1 provenance entry records `input_artifact_id`, `output_artifact_id`, binding fields (R043).
 
 ## 6. Transformation Function
 

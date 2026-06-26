@@ -21,6 +21,7 @@ This directory contains **only normative content** — what must be true. No tes
 │  • Drift Envelopes                    │
 │  • Formal Semantics                   │
 │  • CA-1.0 (One-Artifact-Per-Stage)    │
+│  • CA-1.1 (Four-Layer Provenance)     │
 │  • Transformation Contracts           │
 └───────────────────────┬──────────────┘
                                            │
@@ -50,7 +51,8 @@ This directory contains **only normative content** — what must be true. No tes
 | [constitutional-loop-v1.0.md](./constitutional-loop-v1.0.md) | 12-stage loop diagram |
 | [semantic-artifact-types.md](./semantic-artifact-types.md) | Formal artifact type system |
 | [constitutional-proof.md](./constitutional-proof.md) | End-to-end correctness argument |
-| [constitutional-amendments/](./constitutional-amendments/) | Immutable amendments (CA-1.0) |
+| [four-layer-provenance-model.md](./four-layer-provenance-model.md) | Authority → Spec → Implementation → Execution |
+| [constitutional-amendments/](./constitutional-amendments/) | CA-1.0, CA-1.1 |
 | [transformation-contracts/](./transformation-contracts/) | T01–T12 transformation contracts |
 | [requirement-graph/](./requirement-graph/) | Requirement DAG and dependencies |
 

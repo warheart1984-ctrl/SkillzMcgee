@@ -16,7 +16,8 @@ Version 1.0 is the first **specification-stable**, founder-independent release o
 |------|----------|
 | [specification/](./specification/) | Constitutional principles, K0–K12, COM-1.0, contracts |
 | [specification/normative-requirements/](./specification/normative-requirements/) | **R001–R042** with metadata blocks |
-| [specification/constitutional-amendments/](./specification/constitutional-amendments/) | **CA-1.0** One-Artifact-Per-Stage |
+| [specification/four-layer-provenance-model.md](./specification/four-layer-provenance-model.md) | Authority → Spec → Implementation → Execution |
+| [specification/constitutional-amendments/CA-1.1-four-layer-provenance.md](./specification/constitutional-amendments/CA-1.1-four-layer-provenance.md) | Four-layer provenance (P-1) |
 | [specification/transformation-contracts/](./specification/transformation-contracts/) | Semantic stage contracts |
 | [specification/constitutional-proof.md](./specification/constitutional-proof.md) | End-to-end correctness proof |
 | [docs/whitepaper/](./docs/whitepaper/) | Public whitepaper |

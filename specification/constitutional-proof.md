@@ -132,6 +132,23 @@ I = aggregate(F(E))
 
 Thus interpretations remain plural and reproducible (R020, R021, K7–K8).
 
+### D. Four-layer provenance correctness (CA-1.1)
+
+For every transformation at execution time:
+
+```
+∀T : ∃ (authority_id, spec_id, impl_id, assumptions, input, output, receipt)
+  recorded in PL-1.1
+```
+
+Replay requires matching all four layers:
+
+```
+replay(output) ⟹ (authority, spec, impl, assumptions) match
+```
+
+Thus multi-implementation and assumption-aware reconstruction is sound (R043).
+
 ## V. Reproduction correctness
 
 If an independent steward:

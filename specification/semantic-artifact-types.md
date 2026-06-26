@@ -133,14 +133,58 @@ GovernanceReceipt = {
 }
 ```
 
-### 11. ProvenanceEntry (PL-1.0)
+### 11. ProvenanceEntry (PL-1.1)
+
+**Supersedes PL-1.0** for new conformance claims. PL-1.0 entries remain valid for legacy ledgers.
 
 ```typescript
 ProvenanceEntry = {
   id: ID,
+  input_artifact_id: ID,
+  output_artifact_id: ID,
+  transformation_spec_id: ID,   // SpecificationID
+  implementation_id: ID,        // ImplementationID
+  authority_id: ID,             // AuthorizedBy
+  assumptions: {
+    policy_version: string,
+    evaluation_mode: string,    // strict | audit | replay
+    constitution_version: string,
+    frame_set_version?: string
+  },
   receipt_id: ID,
   parent_hash: Hash,
   entry_hash: Hash,
+  timestamp: Timestamp
+}
+```
+
+**Invariant P-1 (R043):** All binding fields required for transformation provenance.
+
+### Layer identity types (non-loop artifacts)
+
+```typescript
+AuthorityRecord = {
+  id: ID,                        // authority_id
+  charter_version: string,
+  council_term: string,
+  active_policy_version: string,
+  timestamp: Timestamp
+}
+
+SpecificationRecord = {
+  id: ID,                        // transformation_spec_id
+  contract_path: string,
+  contract_version: string,
+  requirements: string[],         // CRK1-R###
+  timestamp: Timestamp
+}
+
+ImplementationRecord = {
+  id: ID,                        // implementation_id
+  spec_id: ID,
+  module_path: string,
+  semver: string,
+  conformance_profile: string,    // C0–C6
   timestamp: Timestamp
 }
 ```
@@ -181,3 +225,6 @@ COM-1.0 defines the **core five** objects (Identity, Decision, Outcome, Evidence
 | 10 | R033, R011, R012 |
 | 11–12 | R030, R012 |
 | 13 | R041, R022 |
+| PL-1.1 bindings | R043, P-1, CA-1.1 |
+
+See [four-layer-provenance-model.md](./four-layer-provenance-model.md).
