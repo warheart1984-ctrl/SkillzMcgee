@@ -1,1 +1,1 @@
-export { LAYERS, getLayer } from "./layers.js";
+export { LAYERS, getLayer, LAYER_MODULES } from "./layers.js";

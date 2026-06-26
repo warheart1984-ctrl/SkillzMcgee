@@ -11,4 +11,14 @@ export {
   publishCosmosSnapshot,
   ingestFederatedEnvelope,
 } from "./frs.js";
-export { federationTick, engine as substrationEngine, substrations } from "./federation_tick.js";
+export {
+  federationTick,
+  intelligenceTick,
+  willTick,
+  governanceTick,
+  buildTickContext,
+  captureTickState,
+  restoreTickState,
+  engine as substrationEngine,
+  substrations,
+} from "./federation_tick.js";

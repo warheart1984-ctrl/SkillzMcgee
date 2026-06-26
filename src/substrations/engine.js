@@ -30,18 +30,17 @@ export class SubstrationEngine {
   }
 
   /**
+   * Mind phase — analyze continuity, derive needs, plan tasks (no execution).
    * @param {import('./types.js').SubstrationContext} ctx
-   * @returns {Promise<import('./types.js').TickResult>}
+   * @returns {Promise<{ needs: import('./types.js').SubstrationNeed[]; tasks: import('./types.js').SubstrationTask[] }>}
    */
-  async tick(ctx) {
+  async plan(ctx) {
     /** @type {Map<string, any>} */
     const analyses = new Map();
     /** @type {import('./types.js').SubstrationNeed[]} */
     const allNeeds = [];
     /** @type {import('./types.js').SubstrationTask[]} */
     const allTasks = [];
-    /** @type {string[]} */
-    const actedBy = [];
 
     for (const s of this.substrations) {
       if (!s.enabled || !s.analyze) continue;
@@ -70,6 +69,20 @@ export class SubstrationEngine {
       allTasks.push(...tasks);
     }
 
+    return { needs: allNeeds, tasks: allTasks };
+  }
+
+  /**
+   * Will phase — execute planned substration tasks.
+   * @param {import('./types.js').SubstrationContext} ctx
+   * @param {{ needs: import('./types.js').SubstrationNeed[]; tasks: import('./types.js').SubstrationTask[] }} plan
+   * @returns {Promise<{ actedBy: string[] }>}
+   */
+  async act(ctx, plan) {
+    const { tasks: allTasks } = plan;
+    /** @type {string[]} */
+    const actedBy = [];
+
     for (const s of this.substrations) {
       if (!s.enabled || !s.act) continue;
 
@@ -85,7 +98,18 @@ export class SubstrationEngine {
       }
     }
 
-    return { needs: allNeeds, tasks: allTasks, actedBy };
+    return { actedBy };
+  }
+
+  /**
+   * Full tick — plan then act (legacy convenience).
+   * @param {import('./types.js').SubstrationContext} ctx
+   * @returns {Promise<import('./types.js').TickResult>}
+   */
+  async tick(ctx) {
+    const plan = await this.plan(ctx);
+    const { actedBy } = await this.act(ctx, plan);
+    return { ...plan, actedBy };
   }
 
   getByCluster(cluster) {

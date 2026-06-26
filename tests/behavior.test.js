@@ -94,7 +94,7 @@ describe("Behavior engine", () => {
     assert.ok(cosmic.readStream().some((e) => e.type === "BEHAVIOR_GOAL_PROPOSED"));
   });
 
-  it("federationTick includes behavior layer", async () => {
+  it("federationTick runs Mind → Will → Spine pipeline", async () => {
     const baseLedger = { entries: [], cosmicStream: [] };
     let continuity = emptyContinuityState();
     continuity = updateNodeRoot(continuity, {
@@ -118,5 +118,9 @@ describe("Behavior engine", () => {
     assert.ok(result.needs);
     assert.ok(result.behavior);
     assert.ok(result.meta);
+    assert.ok(result.intelligence);
+    assert.ok(result.will);
+    assert.ok(result.governance);
+    assert.equal(result.ok, true);
   });
 });
