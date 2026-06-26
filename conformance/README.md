@@ -26,6 +26,7 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [reproduction-harness/](./reproduction-harness/) | R1-0 independent reproduction |
 | [founder-independence-audit/](./founder-independence-audit/) | FIA protocol |
 | [evidence-requirements/](./evidence-requirements/) | Evidence schema |
+| [evidence-ledger/](./evidence-ledger/) | EL-1.0 artifact index |
 | [merkle-spine/](./merkle-spine/) | Cryptographic anchoring |
 | [provenance-ledger/](./provenance-ledger/) | PL-1.0 historical truth |
 

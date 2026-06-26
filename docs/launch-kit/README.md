@@ -4,7 +4,9 @@
 
 Continuity OS is a constitutional runtime ensuring intelligent systems remain interpretable, consequence-bound, reproducible, and historically accountable.
 
-Built on CRK-1 and the Continuity Layer (threads, events, lineage, replay).
+It doesn't replace AI models — it provides the governed execution, evidence, provenance, and accountability layer intelligent systems build upon.
+
+Built on CRK-1, [CA-1.0](../../specification/constitutional-amendments/CA-1.0-one-artifact-per-stage.md), and the Continuity Layer (threads, events, lineage, replay).
 
 ## What it provides
 
@@ -26,7 +28,7 @@ Built on CRK-1 and the Continuity Layer (threads, events, lineage, replay).
 - [x] Public diagrams — `docs/public-diagrams/`
 - [x] Specification plane — `specification/`
 - [x] Conformance plane — `conformance/`
-- [ ] Public website — `docs/launch-kit/website.html` (wireframe)
+- [x] Public website copy — [website.html](./website.html)
 - [ ] Academic paper — `docs/academic-paper/`
 
 ## Get started

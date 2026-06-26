@@ -4,7 +4,7 @@ Constitutional cognitive runtime with Merkle-linked receipts, deterministic redu
 
 **Architecture docs:** [BLUEPRINT.md](./BLUEPRINT.md) · [REALITY_STACK.md](./REALITY_STACK.md) · [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md) · [SUBSTRATION_ENGINE_BLUEPRINT.md](./SUBSTRATION_ENGINE_BLUEPRINT.md)
 
-**CRK-1 two-plane architecture:** [CONTINUITY_OS.md](./CONTINUITY_OS.md) (public overview) · [specification/README.md](./specification/README.md) (WHAT) · [conformance/README.md](./conformance/README.md) (HOW) · [traceability matrix](./conformance/traceability-matrix.md) (proof spine) · [R001–R042](./specification/normative-requirements/) · [v1.0 release notes](./meta/RELEASE_NOTES_v1.0.md)
+**CRK-1 two-plane architecture:** [CONTINUITY_OS.md](./CONTINUITY_OS.md) (public overview) · [specification/README.md](./specification/README.md) (WHAT) · [conformance/README.md](./conformance/README.md) (HOW) · [traceability matrix](./conformance/traceability-matrix.md) (proof spine) · [CA-1.0](./specification/constitutional-amendments/CA-1.0-one-artifact-per-stage.md) · [R001–R042](./specification/normative-requirements/) · [v1.0 release notes](./meta/RELEASE_NOTES_v1.0.md)
 
 ## Quick start
 

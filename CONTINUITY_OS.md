@@ -2,6 +2,8 @@
 
 Continuity OS is a **constitutional runtime** for governed, reproducible, and semantically diverse intelligent systems. **CRK-1** is the constitutional kernel at its core.
 
+Continuity OS doesn't replace AI models — it provides the governed execution, evidence, provenance, and accountability layer intelligent systems build upon.
+
 Version 1.0 is the first **specification-stable**, founder-independent release of the constitutional catalog and conformance proof system.
 
 > **Developer quick start:** see [README.md](./README.md) for runtime commands, tests, and Nova Studio.
@@ -14,7 +16,10 @@ Version 1.0 is the first **specification-stable**, founder-independent release o
 |------|----------|
 | [specification/](./specification/) | Constitutional principles, K0–K12, COM-1.0, contracts |
 | [specification/normative-requirements/](./specification/normative-requirements/) | **R001–R042** with metadata blocks |
+| [specification/constitutional-amendments/](./specification/constitutional-amendments/) | **CA-1.0** One-Artifact-Per-Stage |
+| [specification/transformation-contracts/](./specification/transformation-contracts/) | Semantic stage contracts |
 | [specification/UV1-DECL-1.0.md](./specification/UV1-DECL-1.0.md) | Unified Version 1.0 declaration |
+| [meta/REPOSITORY_STRUCTURE_v1.0.md](./meta/REPOSITORY_STRUCTURE_v1.0.md) | Canonical repo layout |
 
 ### 2. Conformance ecosystem (HOW we prove it is true)
 

@@ -5,14 +5,15 @@
 
 ## Constitutional Loop
 
-Every governed action must complete:
+Every governed action must complete one artifact per stage (CA-1.0):
 
 ```
-Decision → Outcome → Evidence → Interpretation → Governance → Receipt → Drift → Provenance
+DecisionObject → OutcomeObject → EvidenceObject → InterpretationObject → GovernanceReceipt → Provenance
 ```
 
-Each step is mandatory, governed, and replayable.
+Each stage is declared in a [Transformation Contract](./transformation-contracts/). Each step is mandatory, governed, and replayable. No in-place mutation. No multi-output stages.
 
+**Amendment:** [CA-1.0](./constitutional-amendments/CA-1.0-one-artifact-per-stage.md)  
 **Requirement:** CRK1-R040
 
 ## Governance Visibility

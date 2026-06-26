@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://continuity-os.dev/schemas/evidence-ledger/v1.0",
+  "title": "CRK-1 Evidence Ledger (EL-1.0)",
+  "description": "Append-only evidence index linking constitutional objects to receipts and provenance. Complements PL-1.0.",
+  "version": "1.0",
+  "entries": [],
+  "entrySchema": {
+    "type": "object",
+    "required": ["id", "artifact_type", "artifact_id", "receipt_id", "hash", "timestamp"],
+    "properties": {
+      "id": { "type": "string" },
+      "artifact_type": {
+        "enum": ["DecisionObject", "OutcomeObject", "EvidenceObject", "InterpretationObject", "GovernanceReceipt"]
+      },
+      "artifact_id": { "type": "string" },
+      "transformation_contract": { "type": "string" },
+      "receipt_id": { "type": "string" },
+      "requirement_ids": { "type": "array", "items": { "type": "string" } },
+      "hash": { "type": "string" },
+      "parent_hash": { "type": "string" },
+      "timestamp": { "type": "string", "format": "date-time" }
+    }
+  },
+  "notes": "Populate at runtime. Example live ledger: .runtime/nova-studio/ledger.jsonl"
+}

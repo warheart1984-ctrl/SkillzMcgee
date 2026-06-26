@@ -17,10 +17,12 @@ This directory contains **only normative content** — what must be true. No tes
                    │  • Object Model (COM‑1.0)             │
                    │  • Contracts                          │
                    │  • Invariants (K0–K12)                │
-                   │  • Required Behaviors                 │
-                   │  • Drift Envelopes                    │
-                   │  • Formal Semantics                   │
-                   └───────────────────────┬──────────────┘
+│  • Required Behaviors                 │
+│  • Drift Envelopes                    │
+│  • Formal Semantics                   │
+│  • CA-1.0 (One-Artifact-Per-Stage)    │
+│  • Transformation Contracts           │
+└───────────────────────┬──────────────┘
                                            │
                                            │  Conformance resolves to Specification
                                            ▼
@@ -45,6 +47,9 @@ This directory contains **only normative content** — what must be true. No tes
 | [drift-envelopes.md](./drift-envelopes.md) | CE(S), SE(S) monotonicity |
 | [semantics.md](./semantics.md) | Operational transition rules |
 | [normative-requirements/](./normative-requirements/) | R001–R042 catalog with metadata blocks |
+| [constitutional-amendments/](./constitutional-amendments/) | Immutable amendments (CA-1.0) |
+| [transformation-contracts/](./transformation-contracts/) | One-artifact-per-stage contracts |
+| [requirement-graph/](./requirement-graph/) | Requirement DAG and dependencies |
 
 ## Repository Invariant R-∞
 

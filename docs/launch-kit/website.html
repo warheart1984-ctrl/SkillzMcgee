@@ -5,38 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Continuity OS v0.1</title>
     <style>
-      body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
-      section { margin: 2rem 0; }
-      h1 { font-size: 1.75rem; }
-      h2 { font-size: 1.1rem; margin-top: 2rem; }
-      button { padding: 0.5rem 1rem; cursor: pointer; }
+      :root {
+        color-scheme: light dark;
+        --fg: #1a1a1a;
+        --muted: #555;
+        --accent: #2563eb;
+        --bg: #fafafa;
+        --card: #fff;
+        --border: #e5e7eb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #f3f4f6;
+          --muted: #9ca3af;
+          --accent: #60a5fa;
+          --bg: #111827;
+          --card: #1f2937;
+          --border: #374151;
+        }
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        line-height: 1.6;
+        color: var(--fg);
+        background: var(--bg);
+      }
+      section { margin: 2.5rem 0; }
+      h1 { font-size: 1.85rem; line-height: 1.2; margin-bottom: 0.5rem; }
+      h2 { font-size: 1.15rem; margin-top: 0; }
+      .tagline { font-size: 1.1rem; color: var(--muted); }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin: 1rem 0;
+      }
+      ul { padding-left: 1.25rem; }
+      li { margin: 0.35rem 0; }
+      code {
+        font-size: 0.9em;
+        background: var(--border);
+        padding: 0.1em 0.35em;
+        border-radius: 4px;
+      }
+      a { color: var(--accent); }
+      button, .btn {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+      footer { margin-top: 3rem; color: var(--muted); font-size: 0.9rem; }
     </style>
   </head>
   <body>
     <section id="hero">
       <h1>Continuity OS v0.1</h1>
-      <p>A constitutional runtime for governed, reproducible intelligence.</p>
-      <p>No black boxes. No silent failures. No hidden state.</p>
-      <button type="button" onclick="location.href='https://github.com/warheart1984-ctrl/SkillzMcgee'">Get Started</button>
+      <p class="tagline">
+        A constitutional runtime designed for governed, traceable, and reproducible intelligent systems.
+      </p>
+      <p>
+        Continuity OS doesn't replace AI models.
+        It provides the governed execution, evidence, provenance, and accountability layer that intelligent systems can build upon.
+      </p>
+      <p>
+        <a class="btn" href="https://github.com/warheart1984-ctrl/SkillzMcgee">Get Started</a>
+      </p>
     </section>
+
     <section id="features">
       <h2>What Continuity OS Provides</h2>
       <ul>
-        <li>Continuity Threads</li>
-        <li>Continuity Events</li>
-        <li>Lineage Graphs</li>
-        <li>Semantic Replay</li>
-        <li>Governance Receipts</li>
-        <li>Provenance Ledger</li>
-        <li>Federation Layer</li>
+        <li>Governed execution for intelligent systems</li>
+        <li>Traceable state transitions</li>
+        <li>Evidence-backed outcomes</li>
+        <li>Reproducible interpretations</li>
+        <li>Immutable provenance</li>
+        <li>Cross-runtime continuity</li>
+        <li>Semantic diversity guarantees</li>
       </ul>
     </section>
+
     <section id="how">
-      <h2>The Constitutional Loop</h2>
-      <p>Decision → Outcome → Evidence → Interpretation → Governance → Receipt → Lineage</p>
+      <h2>How It Works</h2>
+      <div class="card">
+        <p>Continuity OS enforces a constitutional loop where each stage:</p>
+        <ul>
+          <li>accepts exactly <strong>one</strong> semantic artifact</li>
+          <li>produces exactly <strong>one</strong> new semantic artifact</li>
+          <li>records evidence</li>
+          <li>updates provenance</li>
+          <li>maintains drift monotonicity</li>
+          <li>generates a governance receipt</li>
+        </ul>
+        <p>
+          <code>Decision → Outcome → Evidence → Interpretation → Receipt → Provenance</code>
+        </p>
+      </div>
+      <p>
+        This ensures no hidden state, no silent failures, and no semantic collapse.
+        See <a href="https://github.com/warheart1984-ctrl/SkillzMcgee/blob/main/specification/constitutional-amendments/CA-1.0-one-artifact-per-stage.md">CA-1.0</a> for the formal invariant.
+      </p>
     </section>
+
+    <section id="why">
+      <h2>Why It Matters</h2>
+      <p>Continuity OS ensures intelligent systems remain:</p>
+      <ul>
+        <li>accountable</li>
+        <li>interpretable</li>
+        <li>reproducible</li>
+        <li>historically anchored</li>
+        <li>semantically diverse</li>
+        <li>founder-independent</li>
+      </ul>
+      <p><strong>It is infrastructure — not an application.</strong></p>
+    </section>
+
+    <section id="open">
+      <h2>Open, Reproducible, Verifiable</h2>
+      <p>Continuity OS v0.1 includes:</p>
+      <ul>
+        <li>the CRK-1 constitutional specification</li>
+        <li>the conformance ecosystem</li>
+        <li>the reproduction harness</li>
+        <li>the red-team suite</li>
+        <li>the public diagrams</li>
+        <li>the academic paper</li>
+      </ul>
+      <p>Everything needed for independent verification.</p>
+    </section>
+
     <footer>
-      <p>Continuity OS v0.1 — Open, governed, reproducible intelligence.</p>
+      <p>Continuity OS v0.1 — CRK-1 constitutional runtime. MIT License.</p>
     </footer>
   </body>
 </html>
