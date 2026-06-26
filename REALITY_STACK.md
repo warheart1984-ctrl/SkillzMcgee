@@ -1,8 +1,8 @@
 # Reality Stack v1.0 — Canonical Architecture
 
-**Version:** 1.0  
+**Version:** 2.0 (FRS-1 Federation Layer)  
 **Status:** Canonical / Publishable  
-**Companion:** [BLUEPRINT.md](./BLUEPRINT.md) (SkillzMcGee implementation detail)  
+**Companion:** [BLUEPRINT.md](./BLUEPRINT.md) · [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md)  
 **Repo:** https://github.com/warheart1984-ctrl/SkillzMcgee
 
 A **7-layer governed cosmological runtime stack** for autonomous systems, agentic cognition, and persistent world simulation.
@@ -15,6 +15,8 @@ Every layer has a name, a role, concrete components, and a single function. High
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
+│  L8  Federation Layer (FRS-1)        Multi-node cosmos      │
+├─────────────────────────────────────────────────────────────┤
 │  L7  Intent Interface Layer          Human → artifacts      │
 ├─────────────────────────────────────────────────────────────┤
 │  L6  Cognitive Execution Layer       Agents → receipts      │
@@ -37,6 +39,7 @@ Every layer has a name, a role, concrete components, and a single function. High
 
 | Layer | Name | Role |
 |-------|------|------|
+| **L8** | Federation Layer (FRS-1) | Multi-node continuity + cosmos exchange |
 | **L7** | Intent Interface Layer | Human → system intent translation |
 | **L6** | Cognitive Execution Layer | Agent runtime + task execution |
 | **L5** | CRK-1 Constitutional Kernel | Governance + lawful behavior |
@@ -295,6 +298,33 @@ Executes actions that become **governed receipts**.
 
 ---
 
+---
+
+## Layer 8 — Federation Layer (L8) — FRS-1
+
+**Name:** Federated Reality Stack (FRS-1)  
+**Role:** Multi-node continuity, cosmos exchange, worldline migration, reconciliation, genesis.
+
+### Components
+
+| Module | Path | Role |
+|--------|------|------|
+| frs_identity | `src/federation/frs_identity/` | Node passport + fingerprint |
+| frs_exchange | `src/federation/frs_exchange/` | Signed envelope protocol |
+| frs_continuity | `src/federation/frs_continuity/` | Global Merkle + federated lineage |
+| frs_migration | `src/federation/frs_migration/` | Cross-node worldline movement |
+| frs_reconcile | `src/federation/frs_reconcile/` | Conflict detection + resolution |
+| frs_genesis | `src/federation/frs_genesis/` | Multi-cosmos coordinated resets |
+| Orchestrator | `src/federation/frs.js` | Boot, fold, publish, ingest |
+
+### Function
+
+Turns isolated nodes into a **federated cosmology** — sync, compare, and exchange worldlines.
+
+See [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md) for full spec.
+
+---
+
 ## Layer 7 — Intent Interface Layer (L7)
 
 **Name:** Intent Interface Layer  
@@ -417,6 +447,7 @@ keywords:
 | Document | Scope |
 |----------|-------|
 | [BLUEPRINT.md](./BLUEPRINT.md) | SkillzMcGee implementation detail — modules, schemas, extension guide |
+| [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md) | Federated Reality Stack Phase I — multi-node spec |
 | [README.md](./README.md) | Quick start + test commands |
 | [config/constitution.yaml](./config/constitution.yaml) | L5 declarative law |
 

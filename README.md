@@ -2,7 +2,7 @@
 
 Constitutional cognitive runtime with Merkle-linked receipts, deterministic reducers, and governed LLM execution.
 
-**Architecture docs:** [BLUEPRINT.md](./BLUEPRINT.md) · [REALITY_STACK.md](./REALITY_STACK.md)
+**Architecture docs:** [BLUEPRINT.md](./BLUEPRINT.md) · [REALITY_STACK.md](./REALITY_STACK.md) · [FRS-1_BLUEPRINT.md](./FRS-1_BLUEPRINT.md)
 
 ## Quick start
 
@@ -21,6 +21,7 @@ python main.py
 | v0.3 | `core/adapters/llm_adapter.py` | Lawful, context-bound LLM calls |
 | v1.0 | `core/runner.py`, `governance/validator.py` | Unified constitutional runtime loop |
 | v1.1 | `federation/federated_ledger.py` | Cross-node signed receipts + federated DAG |
+| **FRS-1** | `src/federation/` | Full federated cosmology (JS) — identity, exchange, continuity, migration, reconcile, genesis |
 | v2.0 | `governance/multi_agent.py` | Multi-agent scheduler + intent graph |
 | CRK-1 | `crk1/integration.py` | CRK-1 receipt/reducer/validator mapping |
 | DAR-Z | `darz/cosmophysics.py` | Cosmophysics reducer + timeline invariants |

@@ -7,6 +7,8 @@ venv/
 .env.local
 skillz_ledger.json
 skillz_memory.json
+node_identity.json
+node_id.json
 node_modules/
 .DS_Store
 *.log
