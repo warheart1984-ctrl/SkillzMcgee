@@ -1,0 +1,59 @@
+﻿Version 1.0 Drift Diagnostic Flowchart (ASCII)
+Status: Informative Â· Audience: Operators
+Reference: spec/drift-analysis-handbook-1.0.md
+
+====================================================================
+                    DRIFT SIGNAL OBSERVED
+====================================================================
+                              |
+                              v
+              +-------------------------------+
+              | Verify canon_version + epoch  |
+              | align with governance source  |
+              +-------------------------------+
+                              |
+                    mismatch? +--- yes --> RESYNC BASELINE (not drift)
+                              |
+                             no
+                              v
+              +-------------------------------+
+              | Read DRA composite + sub-     |
+              | vectors (mech / sem / const)  |
+              +-------------------------------+
+                              |
+              +---------------+---------------+
+              |               |               |
+              v               v               v
+        MECHANICAL      SEMANTIC       CONSTITUTIONAL
+        only rise       rise           rise OR invariant
+              |               |               |
+              v               v               v
+        Within CE?     Within SE?     Any violation?
+              |               |               |
+         no --+-- yes    no --+-- yes         |
+              |               |          yes -+-> STOP: steward +
+              v               v               |    preserve ledger
+        Log + monitor   Trace interpret-     |
+        patch review    ation + evidence     no
+                              |               v
+                              v          Within envelope?
+                        Policy outcome          |
+                        changed?            yes --> MONITOR
+                              |
+                         yes -+-> STEWARD REVIEW
+                              |
+                             no
+                              v
+                         MONITOR ONLY
+
+====================================================================
+LEGEND
+  CE  = Constitutional envelope (mechanical)
+  SE  = Semantic envelope
+  DRA = Drift Analysis Engine (conformance/observability/DRA-1.0)
+
+OPERATOR RULE: Inspect and escalate. Never mutate frozen canon or
+baseline without amendment procedure (spec/amendment-procedure-1.0.md).
+
+Related: docs/operator/semantic-drift-casebook-1.0.md
+====================================================================

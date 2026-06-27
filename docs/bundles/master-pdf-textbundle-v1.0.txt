@@ -1,0 +1,125 @@
+﻿Version 1.0 "Master PDF" Text-Mode Bundle
+Status: Informative Â· Purpose: Single-file concatenation of all constitutional artifacts
+
+====================================================================
+CONTINUITY OS â€” VERSION 1.0
+MASTER PDF TEXT-MODE BUNDLE
+====================================================================
+
+This bundle contains the complete text of the Version 1.0
+constitutional ecosystem, organized in canonical order.
+
+Index: spec/CONSTITUTIONAL-INDEX.md
+Effective freeze: 2026-06-26 (version-1.0-freeze-declaration.md)
+
+--------------------------------------------------------------------
+SECTION 1 â€” CONSTITUTIONAL BASELINE
+--------------------------------------------------------------------
+ â€¢ constitutional-baseline-1.0.md
+ â€¢ constitutional-compatibility-1.0.md
+ â€¢ constitutional-evolution-guidelines.md
+ â€¢ constitutional-stability-principle-1.0.md
+ â€¢ version-1.0-freeze-declaration.md
+ â€¢ what-we-froze-and-why-v1.0.md
+ â€¢ governance-charter-1.0.md
+ â€¢ stewardship-mandate-1.0.md
+ â€¢ steward-oath-1.0.md
+ â€¢ amendment-procedure-1.0.md
+ â€¢ amendment-gatekeeping-rules-1.0.md
+ â€¢ migration-guide-1.0.md
+ â€¢ certification-profile-1.0.md
+ â€¢ certification-checklist-1.0.md
+ â€¢ conformance-test-matrix-1.0.md
+ â€¢ constitutional-commentary-v1.0.md
+ â€¢ crk-wms-equivalence-table.md
+ â€¢ crk-wms-cross-plane-dependencies.txt
+
+--------------------------------------------------------------------
+SECTION 2 â€” SEMANTIC & SPECIFICATION LAYER
+--------------------------------------------------------------------
+ â€¢ CAR-1.0-Registry.md
+ â€¢ CRK-1 Specification (specification/)
+ â€¢ constitutional-stack-v1.0.md
+ â€¢ semantic-grammar-1.0.md
+ â€¢ glossary-1.0.md
+ â€¢ COR-Suite-Spec-1.0.md
+ â€¢ RFC-COR-Suite-1.0.md
+ â€¢ Proof-Analysis-Spec.md
+ â€¢ Proof Graph Model (conformance/proof-graph/)
+ â€¢ Evidence Model (conformance/evidence-ledger/)
+ â€¢ Provenance Model (conformance/provenance-ledger/)
+
+--------------------------------------------------------------------
+SECTION 3 â€” CONFORMANCE ECOSYSTEM
+--------------------------------------------------------------------
+ â€¢ CTS-1.0
+ â€¢ MRI-1.0 (Reference Implementation)
+ â€¢ PGI Specification (pgi.schema.json)
+ â€¢ DRA Specification (conformance/observability/DRA-1.0/)
+ â€¢ CAV-1.0-Validation.md
+ â€¢ semantic-test-suite-1.0.md
+ â€¢ drift-analysis-handbook-1.0.md
+ â€¢ cor-suite/IMPLEMENTATION.md
+ â€¢ Reproducibility Tests (reproduction-harness/)
+ â€¢ steward-exam.md (Steward / Operator certification exam)
+
+--------------------------------------------------------------------
+SECTION 4 â€” OPERATOR EXPERIENCE
+--------------------------------------------------------------------
+ â€¢ operator-quickstart-1.0.md
+ â€¢ IM-OH-1.0.md (Operator Handbook)
+ â€¢ operator-labs-1.0.md
+ â€¢ operator-scenarios-1.0.md
+ â€¢ forensics-guide-1.0.md
+ â€¢ semantic-drift-casebook-1.0.md
+ â€¢ drift-diagnostic-flowchart-1.0.txt
+ â€¢ drift-analysis-handbook-1.0.md (normative; cross-linked)
+ â€¢ architecture-deep-dive-v1.0.md
+ â€¢ architecture-poster-v1.0.txt
+
+--------------------------------------------------------------------
+SECTION 5 â€” STEWARDSHIP & GOVERNANCE
+--------------------------------------------------------------------
+ â€¢ steward-handbook-1.0.md
+ â€¢ steward-training-deck-1.0.txt
+ â€¢ steward-training-curriculum-1.0.md
+ â€¢ auditor-handbook-internal-v1.0.md
+ â€¢ external-auditor-handbook-v1.0.md
+
+--------------------------------------------------------------------
+SECTION 6 â€” MODELING & WORKFLOW SUITE
+--------------------------------------------------------------------
+ â€¢ WMS-1.0 Specification (workflow-modeling/)
+ â€¢ Canvas (workflow-canvas/)
+ â€¢ Templates
+ â€¢ Traceability Model
+ â€¢ WM-A1.0 Modeling Agent
+
+--------------------------------------------------------------------
+SECTION 7 â€” PUBLIC LAYER
+--------------------------------------------------------------------
+ â€¢ landing-page-v1.0.md
+ â€¢ public-faq-expanded-v1.0.md
+ â€¢ founders-letter-v1.0.md
+ â€¢ founders-log-entry-001.md
+ â€¢ version-1.0-press-bundle.txt
+ â€¢ architecture-deep-dive-v1.0.md
+ â€¢ continuity-os-v1.0.md (whitepaper)
+ â€¢ civilization-scale-builder/ (definition, manifesto, taxonomy, criteria, essay)
+
+--------------------------------------------------------------------
+SECTION 8 â€” EVOLUTION & PLANNING
+--------------------------------------------------------------------
+ â€¢ rfc-zero-v1.1.md
+ â€¢ version-1.1-planning-skeleton.md
+ â€¢ version-1.0-to-1.1-transition-brief.md
+
+--------------------------------------------------------------------
+SECTION 9 â€” POSTERS & VISUALS
+--------------------------------------------------------------------
+ â€¢ architecture-poster-v1.0.txt (ASCII)
+ â€¢ constitutional-loop-poster.txt (ASCII)
+
+====================================================================
+END OF MASTER BUNDLE
+====================================================================

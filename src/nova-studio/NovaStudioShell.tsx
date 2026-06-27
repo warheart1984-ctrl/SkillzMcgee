@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useOperatorContext } from "./state/operatorContext";
 import { useSubstrateEvents } from "./hooks/useSubstrateEvents";
-import "./styles/novaStudio.css";
+import { ContinuityStrip } from "./components/ContinuityStrip";
 
 interface RuntimeStatus {
   online?: boolean;
@@ -46,6 +46,9 @@ export const NovaStudioShell: React.FC = () => {
           <NavItem to="/nova/studio/proof-graph" label="Proof Graph" current={loc.pathname} />
           <NavItem to="/nova/studio/audit" label="Audit" current={loc.pathname} />
           <NavItem to="/nova/studio/steward" label="Steward Council" current={loc.pathname} />
+          <NavItem to="/nova/studio/semantic-bridge" label="Semantic Bridge" current={loc.pathname} />
+          <NavItem to="/nova/studio/communication" label="Communication" current={loc.pathname} />
+          <NavItem to="/nova/studio/communication/canon" label="Comm Canon" current={loc.pathname} />
         </nav>
       </aside>
 
@@ -57,9 +60,11 @@ export const NovaStudioShell: React.FC = () => {
               {runtime.online ? "Runtime OK" : "Runtime offline"}
             </span>
             <span>Slice: nova-slice-1</span>
-            <span>Last receipt: {lastReceipt?.id ?? "—"}</span>
+            <span>Last receipt: {lastReceipt?.id ?? "â€”"}</span>
           </div>
         </header>
+
+        <ContinuityStrip />
 
         <main className="ns-shell-content">
           <Outlet />
@@ -67,7 +72,7 @@ export const NovaStudioShell: React.FC = () => {
 
         <footer className="ns-shell-footer">
           <span>Last invariant: {invariantLabel}</span>
-          {lastReceipt?.phase && <span> · phase: {lastReceipt.phase}</span>}
+          {lastReceipt?.phase && <span> Â· phase: {lastReceipt.phase}</span>}
         </footer>
       </div>
     </div>

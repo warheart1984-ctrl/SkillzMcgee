@@ -1,0 +1,70 @@
+﻿.ns-continuity-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-family: ui-monospace, monospace;
+  border-bottom: 1px solid var(--ns-border, #2a2a3a);
+  background: var(--ns-strip-bg, #12121a);
+}
+
+.ns-continuity-label {
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.ns-continuity-score {
+  font-weight: 700;
+}
+
+.ns-continuity-state {
+  font-weight: 600;
+}
+
+.ns-continuity-trigger {
+  opacity: 0.85;
+}
+
+.ns-continuity-halt {
+  color: #fff;
+  background: #c0392b;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.ns-continuity-banner {
+  flex: 1 1 100%;
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.ns-continuity-warn .ns-continuity-score {
+  color: #f1c40f;
+}
+
+.ns-continuity-notify .ns-continuity-score {
+  color: #e67e22;
+}
+
+.ns-continuity-containment-epoch .ns-continuity-score,
+.ns-continuity-fail-closed .ns-continuity-score {
+  color: #e74c3c;
+}
+
+.ns-continuity-containment-epoch,
+.ns-continuity-fail-closed {
+  background: #1a0f0f;
+  border-color: #e74c3c;
+}
+
+.ns-continuity-canon-frozen {
+  color: #1c1917;
+  background: #fde047;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}

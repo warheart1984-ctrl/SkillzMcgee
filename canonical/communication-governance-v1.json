@@ -1,0 +1,156 @@
+﻿{
+  "doc_id": "AAIS-COMM-Î›-001",
+  "version": "1.0.0",
+  "comm_constitution_version": "1.0.0",
+  "scope": "communication-governance",
+  "rules": {
+    "identity_separation": {
+      "lane_id_required": true,
+      "cross_lane_reference_requires_receipt": true,
+      "identity_drift_entry_type": "communicationIdentityDrift"
+    },
+    "corridors": {
+      "corridor_drift_entry_type": "communicationCorridorDrift",
+      "impact_order": ["neither", "repo", "spec", "ops"]
+    },
+    "drift_thresholds": {
+      "warning": 0.05,
+      "notify_operator": 0.15,
+      "containment_epoch": 0.30,
+      "fail_closed": 0.50,
+      "global_ceiling": 0.70,
+      "corridor_drift_containment": 0.15,
+      "identity_drift_containment": 0.1
+    }
+  },
+  "routing_rules": [
+    {
+      "from_lane": "jon-darz-spec",
+      "to_lane": "jon-darz-human",
+      "reason": "category_out_of_corridor"
+    }
+  ],
+  "propagation_rules": [
+    {
+      "source_lane": "jon-darz-human",
+      "target_lane": "jon-darz-spec",
+      "threshold": 0.25,
+      "effect": "warn"
+    },
+    {
+      "source_lane": "jon-darz-human",
+      "target_lane": "jon-darz-architecture",
+      "threshold": 0.25,
+      "effect": "warn"
+    }
+  ],
+  "lanes": [
+    {
+      "lane_id": "jon-darz-spec",
+      "label": "Jon â†” Dar-Z (Spec)",
+      "participants": ["jon", "darz"],
+      "status": "ACTIVE",
+      "auto_reroute": true,
+      "reroute_to": "jon-darz-human",
+      "allowed_categories": ["normative", "architectural", "methodological"],
+      "allowed_altitudes": ["constitutional", "architectural"],
+      "comm_constitution_version": "1.0.0",
+      "corridor": {
+        "categories": ["normative", "architectural", "methodological"],
+        "altitudes": ["constitutional", "architectural"],
+        "max_impact": "spec",
+        "human_bandwidth": "none"
+      },
+      "continuity_budget": {
+        "max_composite": 0.30,
+        "session_budget": 0.50,
+        "session_spent": 0,
+        "reset_policy": "per-epoch"
+      }
+    },
+    {
+      "lane_id": "jon-darz-human",
+      "label": "Jon â†” Dar-Z (Human)",
+      "participants": ["jon", "darz"],
+      "status": "ACTIVE",
+      "allowed_categories": ["human", "implementation"],
+      "allowed_altitudes": ["human", "engineering"],
+      "comm_constitution_version": "1.0.0",
+      "corridor": {
+        "categories": ["human", "implementation"],
+        "altitudes": ["human", "engineering"],
+        "max_impact": "neither",
+        "human_bandwidth": "high"
+      },
+      "continuity_budget": {
+        "max_composite": 0.50,
+        "session_budget": 1.00,
+        "session_spent": 0,
+        "reset_policy": "daily"
+      }
+    },
+    {
+      "lane_id": "jon-darz-architecture",
+      "label": "Jon â†” Dar-Z (Architecture)",
+      "participants": ["jon", "darz"],
+      "status": "ACTIVE",
+      "allowed_categories": ["normative", "architectural", "methodological"],
+      "allowed_altitudes": ["constitutional", "architectural", "engineering"],
+      "comm_constitution_version": "1.0.0",
+      "corridor": {
+        "categories": ["normative", "architectural", "methodological"],
+        "altitudes": ["constitutional", "architectural", "engineering"],
+        "max_impact": "spec",
+        "human_bandwidth": "low"
+      },
+      "continuity_budget": {
+        "max_composite": 0.30,
+        "session_budget": 0.50,
+        "session_spent": 0,
+        "reset_policy": "per-epoch"
+      }
+    },
+    {
+      "lane_id": "jon-investor",
+      "label": "Jon â†” Investor",
+      "participants": ["jon", "investor"],
+      "status": "ACTIVE",
+      "allowed_categories": ["human", "implementation", "methodological"],
+      "allowed_altitudes": ["human", "engineering"],
+      "comm_constitution_version": "1.0.0",
+      "corridor": {
+        "categories": ["human", "implementation", "methodological"],
+        "altitudes": ["human", "engineering"],
+        "max_impact": "repo",
+        "human_bandwidth": "medium"
+      },
+      "continuity_budget": {
+        "max_composite": 0.40,
+        "session_budget": 0.80,
+        "session_spent": 0,
+        "reset_policy": "daily"
+      }
+    },
+    {
+      "lane_id": "jon-internal",
+      "label": "Jon â†” Internal",
+      "participants": ["jon", "internal"],
+      "status": "ACTIVE",
+      "allowed_categories": ["human", "implementation"],
+      "allowed_altitudes": ["human", "engineering"],
+      "comm_constitution_version": "1.0.0",
+      "corridor": {
+        "categories": ["human", "implementation"],
+        "altitudes": ["human", "engineering"],
+        "max_impact": "neither",
+        "human_bandwidth": "high"
+      },
+      "continuity_budget": {
+        "max_composite": 0.50,
+        "session_budget": 1.00,
+        "session_spent": 0,
+        "reset_policy": "daily"
+      }
+    }
+  ]
+}

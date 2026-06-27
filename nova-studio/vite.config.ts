@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+﻿import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -24,6 +24,16 @@ export default defineConfig({
         target: "http://localhost:8787",
         changeOrigin: true,
       },
+      "/ws": {
+        target: "ws://localhost:8787",
+        ws: true,
+        changeOrigin: true,
+      },
+      "/events": {
+        target: "ws://localhost:8787",
+        ws: true,
+        changeOrigin: true,
+      },
       "/canonical": {
         target: "http://localhost:8787",
         changeOrigin: true,
@@ -45,6 +55,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@nova-studio": path.join(repoRoot, "src/nova-studio"),
+      "@cor-client": path.join(repoRoot, "cor-client"),
       react: path.join(__dirname, "node_modules/react"),
       "react/jsx-runtime": path.join(__dirname, "node_modules/react/jsx-runtime.js"),
       "react/jsx-dev-runtime": path.join(__dirname, "node_modules/react/jsx-dev-runtime.js"),

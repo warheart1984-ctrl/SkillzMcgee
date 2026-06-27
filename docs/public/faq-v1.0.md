@@ -1,7 +1,7 @@
-# Continuity OS v1.0 — Public FAQ
+﻿# Continuity OS v1.0 â€” Public FAQ
 
-**Audience:** Website visitors, press, auditors, prospective stewards  
-**Related:** [Architecture vs Evidence](./architecture-vs-evidence.md) · [Launch Narrative](./v1.0-launch-narrative.md) · [Extended FAQ](../launch-kit/FAQ.md)
+**Audience:** Website visitors, press, auditors, prospective stewards
+**Related:** [Expanded FAQ (v1.0)](./public-faq-expanded-v1.0.md) Â· [Architecture vs Evidence](./architecture-vs-evidence.md) Â· [Launch Narrative](./v1.0-launch-narrative.md) Â· [Extended FAQ](../launch-kit/FAQ.md)
 
 ---
 
@@ -9,7 +9,7 @@
 
 Continuity OS is a **constitutional runtime** for governed, inspectable, multi-model intelligence. It makes every transformation explainable, auditable, and backed by evidence.
 
-It is infrastructure — not a single AI model. Models reason; Continuity OS ensures reasoning is consequence-bound, recorded, and verifiable.
+It is infrastructure â€” not a single AI model. Models reason; Continuity OS ensures reasoning is consequence-bound, recorded, and verifiable.
 
 ---
 
@@ -23,17 +23,17 @@ Version 1.0 is the first release where:
 - the system is **self-auditing** (COR, DRA, query API),
 - and all evidence is **publicly inspectable**.
 
-v1.0 ships specification and measurement openly. Operational release approval is a **governance decision** recorded in the Governance Ledger — not an assertion in marketing copy.
+v1.0 ships specification and measurement openly. Operational release approval is a **governance decision** recorded in the Governance Ledger â€” not an assertion in marketing copy.
 
 ---
 
-## What does “constitutional runtime” mean?
+## What does â€œconstitutional runtimeâ€ mean?
 
 It means the system operates under:
 
 - explicit **authorities**,
-- **transformation specifications** (T01–T12),
-- **normative requirements** (CRK1-R001–R043),
+- **transformation specifications** (T01â€“T12),
+- **normative requirements** (CRK1-R001â€“R043),
 - and **governed execution rules**.
 
 Every transformation is authorized, specified, implemented, executed, and recorded.
@@ -95,7 +95,7 @@ Index: `conformance/proof-graph/index.json`
 
 ## What is DRA-1.0?
 
-The **Dependency-Risk Analyzer**. It identifies which missing or incomplete artifacts create the largest downstream impact on proof closure — a prioritization engine for engineering and governance, not a release decision.
+The **Dependency-Risk Analyzer**. It identifies which missing or incomplete artifacts create the largest downstream impact on proof closure â€” a prioritization engine for engineering and governance, not a release decision.
 
 ```bash
 node tools/crk.mjs dra top-blockers
@@ -118,15 +118,15 @@ Everything is open. See the [External Auditor Handbook](../conformance/certifica
 
 ---
 
-## What does “Don’t trust the repository — query it” mean?
+## What does â€œDonâ€™t trust the repository â€” query itâ€ mean?
 
 Continuity OS doesn't ask for trust. It exposes evidence.
 
-Every claim is inspectable.  
-Every guarantee is measurable.  
+Every claim is inspectable.
+Every guarantee is measurable.
 Every result is reproducible.
 
-[Full explainer →](./dont-trust-query-it.md)
+[Full explainer â†’](./dont-trust-query-it.md)
 
 ---
 
@@ -139,7 +139,7 @@ Version 1.0 is **operationally complete** when:
 - COR-1.0 shows no critical gaps per [RCD-1.0](../conformance/certification/RCD-1.0.md),
 - and the Steward Council **approves** the release (GLS entry).
 
-The repository does **not** assert completeness — it **demonstrates** it. Current measured state may report gaps honestly (e.g. unanchored receipts) until closed.
+The repository does **not** assert completeness â€” it **demonstrates** it. Current measured state may report gaps honestly (e.g. unanchored receipts) until closed.
 
 ```bash
 node tools/crk.mjs rcd evaluate

@@ -1,4 +1,4 @@
-import test from "node:test";
+﻿import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import http from "node:http";
@@ -34,11 +34,21 @@ import { loadContinuityState } from "../services/continuityService.mjs";
 import { loadDriftPoints } from "../services/driftService.mjs";
 import { loadLedgerReceipts } from "../services/ledgerService.mjs";
 import { getSubstratePayload } from "../nova-studio/server/runtime/substrateState.mjs";
+import {
+  appendCommunicationGovernanceTick,
+  appendCommunicationTick,
+  freezeCommunicationCanon,
+  getCommunicationState,
+  getParsedCommunicationCanon,
+  listCommunicationTicks,
+  replayCommunication,
+} from "../runtime/communication/communicationRuntime.mjs";
+import { upsertLaneContract } from "../runtime/communication/laneRegistry.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const specimenRuntime = path.join(__dirname, "..", ".runtime", "nova-studio-test");
 
-test("governed pipeline produces intent→plan→reasoning→capabilities→receipts", async () => {
+test("governed pipeline produces intentâ†’planâ†’reasoningâ†’capabilitiesâ†’receipts", async () => {
   clearLedger();
   const result = await runGovernedPipeline({
     prompt: "read organism.py and list files",
@@ -193,6 +203,72 @@ test("run slice executes capability, appends receipt, continuity, and drift", as
   assert.ok(substrate.capabilities.some((cap) => cap.id === "slice_math"));
   assert.ok(substrate.receipts.some((receipt) => receipt.id === result.output.id));
   assert.ok(substrate.continuity.some((event) => event.kind === "ARTIFACT"));
+});
+
+test("communication ticks are lane-scoped, budgeted, replayable, and canon-bound", async () => {
+  const laneId = `test-comm-${Date.now()}`;
+  upsertLaneContract({
+    lane_id: laneId,
+    participants: ["jon", "darz"],
+    allowed_categories: ["human"],
+    allowed_altitudes: ["human"],
+    max_impact: "none",
+    human_bandwidth: "high",
+    continuity_budget: {
+      max_composite: 0.5,
+      session_budget: 1,
+      session_spent: 0,
+      reset_policy: "per-epoch",
+    },
+    drift_thresholds: { warn: 0.05, notify: 0.15, contain: 0.3, fail_closed: 0.5 },
+    comm_constitution_version: "1.0.0",
+    status: "ACTIVE",
+    created_at: new Date().toISOString(),
+  });
+
+  const result = appendCommunicationTick({
+    entry_type: "communicationTick",
+    lane_id: laneId,
+    direction: "jon->darz",
+    category: "human",
+    altitude: "human",
+    impact: "none",
+    core_claim: "Testing governed communication lane isolation.",
+    required_action: "none",
+    targets: [],
+    latency: "whenever",
+    drift_vector: { semantic: 0, altitude: 0, impact: 0, latency: 0, composite: 0.02 },
+  });
+
+  assert.equal(result.status, "ok");
+  assert.equal(result.tick.lane_id, laneId);
+  assert.equal(result.tick.comm_constitution_version, "1.0.0");
+  assert.ok(result.sideEffects.some((entry) => entry.entry_type === "communicationBudgetTick"));
+
+  const governance = appendCommunicationGovernanceTick({
+    communication_id: result.tick.id,
+    decision_type: "ack",
+    rationale: "test acknowledgement",
+    operator_id: "jon",
+    receipts: [],
+  });
+  assert.equal(governance.entry_type, "communicationGovernanceTick");
+
+  const filtered = listCommunicationTicks({ lane_id: laneId });
+  assert.ok(filtered.some((tick) => tick.id === result.tick.id));
+  const replayed = replayCommunication({ lane_id: laneId });
+  assert.ok(replayed.some((tick) => tick.id === result.tick.id));
+
+  const state = getCommunicationState();
+  assert.ok(state.lanes.some((lane) => lane.lane_id === laneId));
+  assert.ok(state.epochs.some((epoch) => epoch.lane_id === laneId));
+  assert.ok(state.continuity.communication_drift >= 0);
+
+  const parsed = await getParsedCommunicationCanon();
+  assert.ok(parsed["ACTIVE LANES"]);
+  const frozen = await freezeCommunicationCanon("jon");
+  assert.match(frozen.hash, /^sha256:/);
+  assert.equal(frozen.tick.entry_type, "communicationCanonFreezeTick");
 });
 
 test("specimen round-trip export import replay verify", () => {

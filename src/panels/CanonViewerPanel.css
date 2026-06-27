@@ -1,0 +1,148 @@
+﻿.canon-viewer {
+  padding: 16px;
+  color: #e5e7eb;
+  background: #050816;
+  min-height: 100%;
+}
+
+.canon-viewer-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.canon-viewer-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.canon-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.canon-viewer-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.canon-viewer-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.canon-diff-toggle {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.canon-status {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.canon-error {
+  color: #f87171;
+}
+
+.canon-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.canon-section {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.canon-section h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: #93c5fd;
+}
+
+.canon-section pre,
+.canon-raw pre,
+.canon-diff-detail {
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.75rem;
+  overflow: auto;
+  max-height: 280px;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.canon-diff-summary {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #b45309;
+  border-radius: 8px;
+  background: #1c1917;
+}
+
+.canon-diff-summary h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.canon-diff-summary ul {
+  margin: 0 0 8px;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.canon-raw {
+  margin-top: 12px;
+}
+
+.canon-raw summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.canon-viewer-frozen .canon-viewer-header h2 {
+  color: #fcd34d;
+}
+
+.canon-freeze-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid #ca8a04;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #422006 0%, #1c1917 100%);
+  font-size: 0.9rem;
+}
+
+.canon-freeze-banner strong {
+  color: #fde047;
+}
+
+.canon-freeze-baseline {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-family: ui-monospace, monospace;
+}

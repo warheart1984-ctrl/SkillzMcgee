@@ -1,5 +1,5 @@
-/**
- * Continuity substrate — constitutional memory (.runtime/continuity).
+﻿/**
+ * Continuity substrate â€” constitutional memory (.runtime/continuity).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -88,7 +88,7 @@ export function persistContinuityReceipt(receiptId, envelope) {
 }
 
 /**
- * Replay loader — reconstruct timeline for validation.
+ * Replay loader â€” reconstruct timeline for validation.
  */
 export function replayContinuity() {
   const state = loadContinuityState();
@@ -110,7 +110,11 @@ export function clearContinuityState() {
   for (const dir of [ARTIFACTS_DIR, RECEIPTS_DIR]) {
     if (fs.existsSync(dir)) {
       for (const f of fs.readdirSync(dir)) {
-        fs.unlinkSync(path.join(dir, f));
+        try {
+          fs.unlinkSync(path.join(dir, f));
+        } catch (err) {
+          if (err?.code !== "ENOENT") throw err;
+        }
       }
     }
   }
