@@ -1,4 +1,4 @@
-{
+﻿{
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
@@ -14,5 +14,15 @@
     "outDir": "dist-ts",
     "declaration": true
   },
-  "include": ["src/canonical/**/*.ts", "src/governance/**/*.ts", "src/cli/**/*.ts"]
+  "include": [
+    "src/canonical/**/*.ts",
+    "src/governance/**/*.ts",
+    "src/cli/**/*.ts",
+    "src/semantic-bridge/**/*.ts",
+    "src/cor/**/*.ts",
+    "src/analysis/**/*.ts",
+    "src/cor-suite/**/*.ts",
+    "src/maturity/**/*.ts",
+    "src/hygiene/**/*.ts"
+  ]
 }

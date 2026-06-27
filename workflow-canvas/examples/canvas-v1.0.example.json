@@ -1,0 +1,105 @@
+﻿{
+  "canvasVersion": "1.0.0",
+  "engagementId": "ENG-DEMO-001",
+  "generatedAt": "2026-06-27T12:00:00.000Z",
+  "methodology": "CMS-1.0",
+  "operatorReviewed": false,
+  "observationSet": {
+    "setVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "observations": [
+      {
+        "id": "OBS-001",
+        "capturedAt": "2026-06-20T14:30:00.000Z",
+        "sourceRef": "interview:ops-lead-2026-06-20",
+        "actors": ["Release engineer", "Steward"],
+        "inputs": ["Pull request merge event"],
+        "triggers": ["Merge to main"],
+        "steps": [
+          "Manual npm run pipeline in cor-suite",
+          "Wait for steward to review governance receipt",
+          "Ad-hoc Slack approval"
+        ],
+        "tools": ["GitHub", "Slack", "cor-suite CLI"],
+        "handoffs": ["Engineer â†’ Steward via Slack"],
+        "waitStates": ["Steward availability (avg 4h)"],
+        "bottlenecks": ["Human approval not tied to CAV output"],
+        "risks": ["Release without CAV pass if engineer skips pipeline"],
+        "artifactsProduced": ["governance-receipt.json"]
+      }
+    ]
+  },
+  "findingsSet": {
+    "setVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "findings": [
+      {
+        "id": "FND-001",
+        "observationIds": ["OBS-001"],
+        "summary": "Release governance relies on informal Slack approval rather than constitutional pipeline output.",
+        "patterns": ["Manual gate before deploy"],
+        "frictionPoints": ["4h steward wait", "No CI enforcement link"],
+        "failureModes": ["Pipeline skipped", "Approval without artifact review"],
+        "governanceGaps": ["No mandatory cav-report.json review"],
+        "complianceRisks": ["Unverified canonical state on release"],
+        "automationOpportunities": ["Constitutional Governance Pipeline in CI"]
+      }
+    ]
+  },
+  "recommendationSet": {
+    "setVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "recommendations": [
+      {
+        "id": "REC-001",
+        "findingIds": ["FND-001"],
+        "recommendation": "Enforce cor-governance-pipeline.yml on all main-branch merges; block reject/freeze decisions.",
+        "requiredCapabilities": ["GitHub Actions", "cor-suite npm scripts"],
+        "governanceImplications": ["Steward review moves to artifact inspection, not ad-hoc chat"],
+        "implementationConstraints": ["Requires project-infi CI access"],
+        "dependencies": ["CAR-1.0 registry committed", "CAV passing"]
+      }
+    ]
+  },
+  "expectedOutcomeSet": {
+    "setVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "expectedOutcomes": [
+      {
+        "id": "OUT-001",
+        "recommendationIds": ["REC-001"],
+        "description": "Every main merge runs full constitutional pipeline automatically.",
+        "expectedImprovement": "Zero releases without CAV + governance artifacts"
+      }
+    ]
+  },
+  "successMetricSet": {
+    "setVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "successMetrics": [
+      {
+        "id": "MET-001",
+        "expectedOutcomeIds": ["OUT-001"],
+        "name": "CI pipeline pass rate on main",
+        "definition": "Percentage of main-branch commits with successful cor-governance job",
+        "quantitative": true,
+        "baseline": "0%",
+        "target": "100% within 30 days"
+      }
+    ]
+  },
+  "traceabilityMap": {
+    "mapVersion": "1.0.0",
+    "generatedAt": "2026-06-27T12:00:00.000Z",
+    "chains": [
+      {
+        "chainId": "CHAIN-001",
+        "observationId": "OBS-001",
+        "findingId": "FND-001",
+        "recommendationId": "REC-001",
+        "expectedOutcomeId": "OUT-001",
+        "successMetricId": "MET-001"
+      }
+    ]
+  }
+}

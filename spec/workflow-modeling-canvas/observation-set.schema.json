@@ -1,0 +1,37 @@
+﻿{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/observation-set/1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observation Set (Canvas Layer 1)",
+  "type": "object",
+  "properties": {
+    "setVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "required": ["setVersion", "generatedAt", "observations"],
+  "$defs": {
+    "observation": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^OBS-" },
+        "capturedAt": { "type": "string", "format": "date-time" },
+        "sourceRef": { "type": "string" },
+        "actors": { "type": "array", "items": { "type": "string" } },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "triggers": { "type": "array", "items": { "type": "string" } },
+        "steps": { "type": "array", "items": { "type": "string" } },
+        "tools": { "type": "array", "items": { "type": "string" } },
+        "handoffs": { "type": "array", "items": { "type": "string" } },
+        "waitStates": { "type": "array", "items": { "type": "string" } },
+        "bottlenecks": { "type": "array", "items": { "type": "string" } },
+        "risks": { "type": "array", "items": { "type": "string" } },
+        "artifactsProduced": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "actors", "steps", "sourceRef"]
+    }
+  }
+}

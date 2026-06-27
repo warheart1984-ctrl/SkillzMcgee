@@ -1,0 +1,75 @@
+﻿Continuity OS v1.0 - Unified Architecture (Canonical)
+=====================================================
+
+Seven-layer governed ecosystem - text-mode diagram.
+
+                         +--------------------------------+
+                         |        K-infinity Axioms       |
+                         +---------------+----------------+
+                                         |
+                                         v
+                         +--------------------------------+
+                         |   Constitutional Principles    |
+                         +---------------+----------------+
+                                         |
+                                         v
+                  +----------------------------------------------+
+                  |        CRK-1 Specification Plane             |
+                  |  Invariants / Contracts / Object Model       |
+                  +---------------+------------------------------+
+                                  |
+                                  v
+       +------------------------------------------------------------------+
+       |                     Conformance Ecosystem                        |
+       |  CAR / CAV / COR / CSR / CTS / MRI / PGI / DRA                  |
+       |  Receipts / Provenance / Drift Envelopes / CI Governance         |
+       +---------------+--------------------------------------------------+
+                       |
+                       v
+       +------------------------------------------------------------------+
+       |                   Operator Experience Plane                       |
+       |  Nova Studio / Investigation Mode / Forensics / Visualizers       |
+       +---------------+--------------------------------------------------+
+                       |
+                       v
+       +------------------------------------------------------------------+
+       |             Workflow Modeling Suite (WMS-1.0)                    |
+       |  Canvas / CMS-1.0 / Templates / Operator Protocol / Examples      |
+       +---------------+--------------------------------------------------+
+                       |
+                       v
+       +------------------------------------------------------------------+
+       |           Nova Studio Modeling Agent (WM-A1.0)                   |
+       |  Observation -> Finding -> Recommendation -> Outcome -> Metric     |
+       +---------------+--------------------------------------------------+
+                       |
+                       v
+       +------------------------------------------------------------------+
+       |                 Public Messaging and Website Layer                |
+       |  "Do not trust the workflow - trace it."                          |
+       |  "The repository does not declare correctness."                   |
+       +------------------------------------------------------------------+
+
+Vertical integration summary
+----------------------------
+
+- CRK-1 governs computation.
+- WMS-1.0 governs workflows.
+- Both share the same semantic grammar.
+- Nova Studio is the operator shell.
+- The CI pipeline enforces constitutional correctness.
+- The public layer communicates the philosophy.
+
+This is the canonical single-organism view of Continuity OS v1.0.
+
+Related documents
+-----------------
+
+- SVG diagram: ../diagrams/unified-architecture.svg
+- SVG spec: ../diagrams/unified-architecture.svg.md
+- CRK x WMS mapping: crk-wms-equivalence-table.md
+- Cross-plane dependencies: crk-wms-cross-plane-dependencies.txt
+- COR Suite spec: ../../spec/COR-Suite-Spec-1.0.md
+- WMS suite: ../../workflow-modeling/README.md
+- Investigation handbook: ../operator/IM-OH-1.0.md
+- Launch announcement: ../public/v1.0-launch-announcement.md

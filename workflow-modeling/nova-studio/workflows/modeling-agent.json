@@ -1,0 +1,71 @@
+﻿{
+  "name": "Workflow Modeling Agent (WM-A1.0)",
+  "version": "1.0",
+  "methodology": "CMS-1.0",
+  "canvasVersion": "1.0.0",
+  "description": "Automates extraction, analysis, and traceability for governed workflow models.",
+  "governance": {
+    "humanReviewRequired": true,
+    "invariants": [
+      "No recommendation without an observation",
+      "No interpretation without evidence",
+      "No future state without traceability",
+      "No metric without a predicted outcome",
+      "No change without governance"
+    ]
+  },
+  "stages": [
+    {
+      "id": "obs",
+      "name": "Observation Extraction",
+      "prompt": "Extract raw observations. No interpretation. Assign OBS-* IDs. One observation per distinct workflow fact.",
+      "output": "ObservationSet",
+      "schema": "../../spec/workflow-modeling-canvas/observation-set.schema.json"
+    },
+    {
+      "id": "find",
+      "name": "Finding Derivation",
+      "prompt": "Convert observations into findings. Cite Observation IDs on every finding. Assign FND-* IDs.",
+      "output": "FindingsSet",
+      "schema": "../../spec/workflow-modeling-canvas/findings-set.schema.json",
+      "requires": ["obs"]
+    },
+    {
+      "id": "rec",
+      "name": "Recommendation Synthesis",
+      "prompt": "Generate recommendations. Cite Finding IDs. Must be actionable. Include governance implications.",
+      "output": "RecommendationSet",
+      "schema": "../../spec/workflow-modeling-canvas/recommendation-set.schema.json",
+      "requires": ["find"]
+    },
+    {
+      "id": "out",
+      "name": "Outcome Projection",
+      "prompt": "Define expected outcomes. Cite Recommendation IDs. Assign OUT-* IDs.",
+      "output": "ExpectedOutcomeSet",
+      "schema": "../../spec/workflow-modeling-canvas/expected-outcome-set.schema.json",
+      "requires": ["rec"]
+    },
+    {
+      "id": "met",
+      "name": "Metric Definition",
+      "prompt": "Define success metrics. Cite Expected Outcome IDs. Quantitative where possible. Assign MET-* IDs.",
+      "output": "SuccessMetricSet",
+      "schema": "../../spec/workflow-modeling-canvas/success-metric-set.schema.json",
+      "requires": ["out"]
+    },
+    {
+      "id": "trace",
+      "name": "Traceability Assembly",
+      "prompt": "Assemble the full chain: Observation -> Finding -> Recommendation -> Outcome -> Metric. Validate monotonicity.",
+      "output": "TraceabilityMap",
+      "schema": "../../spec/workflow-modeling-canvas/traceability-map.schema.json",
+      "requires": ["obs", "find", "rec", "out", "met"]
+    }
+  ],
+  "finalOutput": {
+    "envelope": "CanvasV1.0",
+    "schema": "../../spec/workflow-modeling-canvas/canvas-v1.0.schema.json",
+    "validateCommand": "npm run workflow-canvas:validate"
+  }
+}

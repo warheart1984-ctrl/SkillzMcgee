@@ -1,0 +1,50 @@
+﻿name: COR Governance Pipeline
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  governance-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: CAV validation
+        run: npm run cor-suite:cav
+
+      - name: COR measurement
+        run: npm run cor-suite:cor -- --skip-generators
+
+      - name: PGI proof graph index
+        run: npm run cor-suite:pgi
+
+      - name: DRA dependency risk assessment
+        run: npm run cor-suite:dra -- --skip-pgi
+
+      - name: Proof analysis
+        run: npm run cor-suite:analyze -- --skip-generators
+
+      - name: Governance decision
+        run: npm run cor-suite:govern
+
+      - name: Optional hard stop on reject or freeze
+        run: |
+          node -e "const fs=require('fs'); const r=JSON.parse(fs.readFileSync('meta/cor-suite/governance-receipt.json','utf8')); if (['reject','freeze'].includes(r.decision)) process.exit(1);"
+
+      - name: Upload governance artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cor-governance-pipeline-artifacts
+          path: |
+            meta/cor-suite/
+            cor-suite/car/car-1.0.json

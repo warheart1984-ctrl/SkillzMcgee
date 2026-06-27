@@ -1,0 +1,21 @@
+﻿{
+  "$id": "https://example.org/schema/maturity-vector.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Maturity Vector",
+  "type": "object",
+  "properties": {
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirementId": { "type": "string" },
+          "maturity": { "type": "string", "enum": ["normative", "implemented", "verified", "reproduced"] }
+        },
+        "required": ["requirementId", "maturity"]
+      }
+    }
+  },
+  "required": ["generatedAt", "requirements"]
+}

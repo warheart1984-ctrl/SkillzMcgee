@@ -1,0 +1,124 @@
+﻿                    CONTINUITY OS â€” VERSION 1.0
+                    CONSTITUTIONAL ARCHITECTURE POSTER
+
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                        K-âˆž AXIOMS                             â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 CONSTITUTIONAL PRINCIPLES                     â”‚
+ â”‚   Invariants Â· Authority Â· Semantic Boundaries                â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 CRK-1 SPECIFICATION PLANE                     â”‚
+ â”‚   Object Model Â· Required Behaviors Â· CAR-1.0                 â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 CONFORMANCE ECOSYSTEM                         â”‚
+ â”‚   CTS-1.0 Â· MRI-1.0 Â· PGI Â· DRA Â· Evidence Ledger             â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 OPERATOR EXPERIENCE PLANE                     â”‚
+ â”‚   Nova Studio Â· Investigation Mode Â· Forensics                â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 WORKFLOW MODELING SUITE (WMS-1.0)             â”‚
+ â”‚   CMS-1.0 Â· Canvas Â· Templates Â· Traceability                 â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 NOVA STUDIO MODELING AGENT (WM-A1.0)          â”‚
+ â”‚   Observation â†’ Finding â†’ Recommendation â†’ Outcome â†’ Metric   â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                 â†“
+ â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+ â”‚                 PUBLIC MESSAGING LAYER                        â”‚
+ â”‚   "Don't trust the workflow â€” trace it."                      â”‚
+ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+
+Vertical integration summary
+----------------------------
+
+- K-âˆž axioms ground constitutional principles.
+- CRK-1 governs runtime computation.
+- Conformance ecosystem verifies constitutional behavior.
+- Nova Studio is the operator shell.
+- WMS-1.0 governs organizational workflows.
+- CRK-1 and WMS share one semantic grammar.
+- CI pipeline enforces constitutional correctness.
+- Public layer communicates the philosophy.
+
+Constitutional corpus (spec/) â€” FROZEN 2026-06-26
+-------------------------------------------------
+
+  CONSTITUTIONAL-INDEX.md
+    â”œâ”€â”€ Baseline
+    â”‚     constitutional-baseline-1.0.md
+    â”‚     constitutional-compatibility-1.0.md
+    â”‚     constitutional-stability-principle-1.0.md
+    â”‚     version-1.0-freeze-declaration.md
+    â”‚     what-we-froze-and-why-v1.0.md
+    â”œâ”€â”€ Governance
+    â”‚     governance-charter-1.0.md
+    â”‚     stewardship-mandate-1.0.md
+    â”‚     steward-oath-1.0.md
+    â”‚     amendment-procedure-1.0.md
+    â”‚     amendment-gatekeeping-rules-1.0.md
+    â”œâ”€â”€ Semantics
+    â”‚     semantic-grammar-1.0.md
+    â”‚     glossary-1.0.md
+    â”‚     drift-analysis-handbook-1.0.md
+    â”œâ”€â”€ Conformance
+    â”‚     certification-profile-1.0.md
+    â”‚     certification-checklist-1.0.md
+    â”‚     conformance-test-matrix-1.0.md
+    â”‚     semantic-test-suite-1.0.md
+    â””â”€â”€ Stewardship
+          steward-handbook-1.0.md
+          steward-training-deck-1.0.txt
+          steward-training-curriculum-1.0.md
+          constitutional-commentary-v1.0.md
+
+Operator layer (docs/operator/)
+-------------------------------
+
+  operator-quickstart-1.0.md
+  IM-OH-1.0.md
+  operator-scenarios-1.0.md
+  forensics-guide-1.0.md
+
+Public layer (docs/public/)
+---------------------------
+
+  landing-page-v1.0.md
+  public-faq-expanded-v1.0.md
+  founders-letter-v1.0.md
+  founders-log-entry-001.md
+  version-1.0-press-bundle.txt
+  civilization-scale-builder/
+
+Evolution (spec/)
+-----------------
+
+  rfc-zero-v1.1.md
+  version-1.1-planning-skeleton.md
+  version-1.0-to-1.1-transition-brief.md
+
+Related documents
+-----------------
+
+- Master bundle: ../bundles/master-pdf-textbundle-v1.0.txt
+- Architecture deep dive: ../deepdives/architecture-deep-dive-v1.0.md
+- Extended text diagram: unified-architecture-v1.0.txt
+- SVG diagram: ../diagrams/unified-architecture.svg
+- CRK x WMS mapping: crk-wms-equivalence-table.md
+- Cross-plane dependencies: crk-wms-cross-plane-dependencies.txt
+- Constitutional index: ../../spec/CONSTITUTIONAL-INDEX.md
+- Freeze declaration: ../../spec/version-1.0-freeze-declaration.md
+- Whitepaper: ../whitepaper/continuity-os-v1.0.md
+
+Status: Informative Â· Version 1.0 Â· Frozen Â· High-level overview poster

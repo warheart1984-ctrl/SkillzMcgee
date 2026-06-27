@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "skillzmcgee",
   "version": "2.0.0",
-  "description": "Constitutional cognitive runtime with AS-Ω singularity fold",
+  "description": "Constitutional cognitive runtime with AS-Î© singularity fold",
   "type": "module",
   "main": "src/singularity/index.js",
   "scripts": {
@@ -55,8 +55,24 @@
     "test:canonical": "node --test tests/canonical_manifest.test.js",
     "governance:verify": "node node_modules/tsx/dist/cli.mjs src/cli/governance.ts verify",
     "test:governance-ledger": "node --test tests/governance_ledger.test.js",
+    "binding:audit": "node tools/audit/binding-conformance.mjs",
+    "test:binding": "node --test tests/binding_integration_conformance.test.js",
+    "test:semantic-bridge": "node --test --test-concurrency=1 tests/semantic_bridge.test.js tests/semanticBridge.test.js tests/communication_governance.test.js tests/communication_continuity.test.js tests/communication_canon.test.js tests/communication_canon_freeze.test.js",
     "crk": "node tools/crk.mjs",
-    "audit": "node tools/audit.mjs"
+    "audit": "node tools/audit.mjs",
+    "cor-suite": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts",
+    "cor-suite:car": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts car:bootstrap",
+    "cor-suite:cav": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts cav",
+    "cor-suite:cor": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts cor",
+    "cor-suite:pgi": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts pgi",
+    "cor-suite:dra": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts dra",
+    "cor-suite:analyze": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts analyze",
+    "cor-suite:govern": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts govern",
+    "cor-suite:maturity": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts maturity",
+    "cor-suite:hygiene": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts hygiene",
+    "cor-suite:pipeline": "node node_modules/tsx/dist/cli.mjs src/cli/cor-suite.ts pipeline",
+    "test:cor-suite": "node node_modules/tsx/dist/cli.mjs --test tests/cor_suite.test.js",
+    "workflow-canvas:validate": "node node_modules/tsx/dist/cli.mjs workflow-canvas/cli-validate.ts"
   },
   "engines": {
     "node": ">=18"
@@ -70,6 +86,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^26.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }
