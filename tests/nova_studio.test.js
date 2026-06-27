@@ -44,9 +44,37 @@ import {
   replayCommunication,
 } from "../runtime/communication/communicationRuntime.mjs";
 import { upsertLaneContract } from "../runtime/communication/laneRegistry.mjs";
+import { reloadFreezeState } from "../nova-studio/server/runtime/canonFreeze.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const specimenRuntime = path.join(__dirname, "..", ".runtime", "nova-studio-test");
+const communicationCanonPath = path.join(__dirname, "..", "governance", "communication", "COMM-CANON.md");
+const communicationGovDir = path.join(__dirname, "..", ".runtime", "communication-governance");
+
+function readOptionalFile(filePath) {
+  return fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : null;
+}
+
+function restoreOptionalFile(filePath, contents) {
+  if (contents === null) {
+    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+    return;
+  }
+  fs.writeFileSync(filePath, contents, "utf8");
+}
+
+function clearCommunicationFreezeArtifacts() {
+  for (const name of [
+    "canon-freeze.json",
+    "canon-freeze-ticks.jsonl",
+    "COMM-CANON@1.0.0.md",
+    "constitution.runtime.json",
+  ]) {
+    const artifactPath = path.join(communicationGovDir, name);
+    if (fs.existsSync(artifactPath)) fs.unlinkSync(artifactPath);
+  }
+  reloadFreezeState();
+}
 
 test("governed pipeline produces intent→plan→reasoning→capabilities→receipts", async () => {
   clearLedger();
@@ -206,6 +234,10 @@ test("run slice executes capability, appends receipt, continuity, and drift", as
 });
 
 test("communication ticks are lane-scoped, budgeted, replayable, and canon-bound", async () => {
+  const canonBefore = readOptionalFile(communicationCanonPath);
+  clearCommunicationFreezeArtifacts();
+
+  try {
   const laneId = `test-comm-${Date.now()}`;
   upsertLaneContract({
     lane_id: laneId,
@@ -269,6 +301,10 @@ test("communication ticks are lane-scoped, budgeted, replayable, and canon-bound
   const frozen = await freezeCommunicationCanon("jon");
   assert.match(frozen.hash, /^sha256:/);
   assert.equal(frozen.tick.entry_type, "communicationCanonFreezeTick");
+  } finally {
+    restoreOptionalFile(communicationCanonPath, canonBefore);
+    clearCommunicationFreezeArtifacts();
+  }
 });
 
 test("specimen round-trip export import replay verify", () => {
