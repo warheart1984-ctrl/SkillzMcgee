@@ -1,4 +1,4 @@
-﻿import crypto from "node:crypto";
+import crypto from "node:crypto";
 
 import {
   getNovaRuntimeState,
@@ -64,7 +64,7 @@ export function broadcastStudioState(type = "studio_state") {
   return { clientCount: clients.size };
 }
 
-/** Governed communication stream â€” fourth substrate channel alongside stance/wave/receipts */
+/** Governed communication stream — fourth substrate channel alongside stance/wave/receipts */
 export function broadcastCommunicationTick(tick) {
   const envelope = {
     channel: "communication",

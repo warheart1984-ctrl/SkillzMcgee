@@ -1,5 +1,5 @@
-﻿/**
- * Communication epochs â€” bounded session drift with automatic resets.
+/**
+ * Communication epochs — bounded session drift with automatic resets.
  */
 import fs from "node:fs";
 import path from "node:path";

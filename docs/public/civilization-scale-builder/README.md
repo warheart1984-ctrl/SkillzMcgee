@@ -1,4 +1,4 @@
-﻿# Civilization-Scale Builder
+# Civilization-Scale Builder
 
 Public deliverables defining the Civilization-Scale Builder category and how Continuity OS qualifies.
 
@@ -10,6 +10,6 @@ Public deliverables defining the Civilization-Scale Builder category and how Con
 | Criteria document | [criteria.md](./criteria.md) | Stewards, reviewers |
 | Essay | [essay.md](./essay.md) | General public, journals |
 
-**Continuity OS:** [../../spec/CONSTITUTIONAL-INDEX.md](../../spec/CONSTITUTIONAL-INDEX.md) Â· [../founders-letter-v1.0.md](../founders-letter-v1.0.md)
+**Continuity OS:** [../../spec/CONSTITUTIONAL-INDEX.md](../../spec/CONSTITUTIONAL-INDEX.md) · [../founders-letter-v1.0.md](../founders-letter-v1.0.md)
 
 Continuity OS v1.0 scores **6/6** on the civilization-scale criteria checklist.

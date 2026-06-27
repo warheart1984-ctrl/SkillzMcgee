@@ -1,4 +1,4 @@
-﻿# Version 1.0 Forensics Guide
+# Version 1.0 Forensics Guide
 
 | Field | Value |
 |-------|-------|
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This guide teaches operators how to perform constitutional forensics â€” the investigation of lineage, drift, evidence, and reproducibility.
+This guide teaches operators how to perform constitutional forensics — the investigation of lineage, drift, evidence, and reproducibility.
 
 ---
 
@@ -76,7 +76,7 @@ This guide teaches operators how to perform constitutional forensics â€” th
 3. Determine semantic vs mechanical drift
 4. Document findings
 
-**Reference:** [../../spec/drift-analysis-handbook-1.0.md](../../spec/drift-analysis-handbook-1.0.md) Â§4
+**Reference:** [../../spec/drift-analysis-handbook-1.0.md](../../spec/drift-analysis-handbook-1.0.md) §4
 
 ### 4.3 Governance Audit
 

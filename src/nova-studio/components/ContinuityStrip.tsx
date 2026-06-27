@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ContinuityStrip.css";
 
 interface ContinuityState {
@@ -60,7 +60,7 @@ export function ContinuityStrip() {
     <div className={`ns-continuity-strip ns-continuity-${stateClass}`}>
       <span className="ns-continuity-label">CONTINUITY</span>
       <span className="ns-continuity-score">{score.toFixed(2)}</span>
-      <span className="ns-continuity-sep">â†’</span>
+      <span className="ns-continuity-sep">→</span>
       <span className="ns-continuity-state">STATE: {state}</span>
       {trigger && <span className="ns-continuity-trigger">TRIGGER: {trigger}</span>}
       {killSwitch.halted && (
@@ -73,7 +73,7 @@ export function ContinuityStrip() {
       )}
       {state === "CONTAINMENT_EPOCH" && trigger === "communication" && (
         <span className="ns-continuity-banner">
-          Automatic Containment Epoch â€” Trigger: Communication Drift
+          Automatic Containment Epoch — Trigger: Communication Drift
         </span>
       )}
     </div>

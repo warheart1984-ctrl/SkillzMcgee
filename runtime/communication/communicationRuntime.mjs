@@ -1,4 +1,4 @@
-﻿import { generateCommunicationCanon, freezeCommunicationCanon } from "./canonGenerator.mjs";
+import { generateCommunicationCanon, freezeCommunicationCanon } from "./canonGenerator.mjs";
 import { parseCanon } from "./canonParser.mjs";
 import { computeCommunicationDrift } from "./communicationDrift.mjs";
 import { computeContinuityMetrics, evaluateContinuity } from "./continuityFold.mjs";

@@ -1,4 +1,4 @@
-﻿# Version 1.0 Freeze Declaration
+# Version 1.0 Freeze Declaration
 
 | Field | Value |
 |-------|-------|
@@ -62,5 +62,5 @@ Version 1.0 is frozen as of **2026-06-26**.
 | Document | Role |
 |----------|------|
 | [founders-letter-v1.0.md](../docs/public/founders-letter-v1.0.md) | Founders' statement on the freeze |
-| [founders-log-entry-001.md](../docs/public/founders-log-entry-001.md) | Founder's Log â€” Entry #001 |
+| [founders-log-entry-001.md](../docs/public/founders-log-entry-001.md) | Founder's Log — Entry #001 |
 | [version-1.0-press-bundle.txt](../docs/public/version-1.0-press-bundle.txt) | Public press bundle |

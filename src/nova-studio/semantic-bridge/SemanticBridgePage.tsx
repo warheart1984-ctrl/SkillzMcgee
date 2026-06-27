@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import SemanticBridgePanel from "../../panels/SemanticBridgePanel.jsx";
 
 export const SemanticBridgePage: React.FC = () => (

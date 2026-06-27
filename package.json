@@ -1,7 +1,7 @@
-﻿{
+{
   "name": "skillzmcgee",
   "version": "2.0.0",
-  "description": "Constitutional cognitive runtime with AS-Î© singularity fold",
+  "description": "Constitutional cognitive runtime with AS-Ω singularity fold",
   "type": "module",
   "main": "src/singularity/index.js",
   "scripts": {

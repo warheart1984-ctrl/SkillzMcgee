@@ -1,5 +1,5 @@
-﻿/**
- * Communication kill switch â€” global halt of all communication lanes.
+/**
+ * Communication kill switch — global halt of all communication lanes.
  */
 import {
   getCurrentContinuityScore,

@@ -1,5 +1,5 @@
-﻿{
-  "doc_id": "AAIS-COMM-Î›-001",
+{
+  "doc_id": "AAIS-COMM-Λ-001",
   "version": "1.0.0",
   "comm_constitution_version": "1.0.0",
   "scope": "communication-governance",
@@ -47,7 +47,7 @@
   "lanes": [
     {
       "lane_id": "jon-darz-spec",
-      "label": "Jon â†” Dar-Z (Spec)",
+      "label": "Jon ↔ Dar-Z (Spec)",
       "participants": ["jon", "darz"],
       "status": "ACTIVE",
       "auto_reroute": true,
@@ -70,7 +70,7 @@
     },
     {
       "lane_id": "jon-darz-human",
-      "label": "Jon â†” Dar-Z (Human)",
+      "label": "Jon ↔ Dar-Z (Human)",
       "participants": ["jon", "darz"],
       "status": "ACTIVE",
       "allowed_categories": ["human", "implementation"],
@@ -91,7 +91,7 @@
     },
     {
       "lane_id": "jon-darz-architecture",
-      "label": "Jon â†” Dar-Z (Architecture)",
+      "label": "Jon ↔ Dar-Z (Architecture)",
       "participants": ["jon", "darz"],
       "status": "ACTIVE",
       "allowed_categories": ["normative", "architectural", "methodological"],
@@ -112,7 +112,7 @@
     },
     {
       "lane_id": "jon-investor",
-      "label": "Jon â†” Investor",
+      "label": "Jon ↔ Investor",
       "participants": ["jon", "investor"],
       "status": "ACTIVE",
       "allowed_categories": ["human", "implementation", "methodological"],
@@ -133,7 +133,7 @@
     },
     {
       "lane_id": "jon-internal",
-      "label": "Jon â†” Internal",
+      "label": "Jon ↔ Internal",
       "participants": ["jon", "internal"],
       "status": "ACTIVE",
       "allowed_categories": ["human", "implementation"],

@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchAllCorArtifacts } from "../../../cor-client/fetchers/cor.js";
 import { buildLineageGraph } from "../../../cor-client/visualizers/lineage-graph.js";
 import { buildMaturityMap, maturityColor } from "../../../cor-client/visualizers/maturity-map.js";
@@ -32,7 +32,7 @@ export const CorDashboardPage: React.FC = () => {
     return (
       <div className="ns-page">
         <h1>COR Suite Dashboard</h1>
-        <p>Loading COR Suite data from project-infiâ€¦</p>
+        <p>Loading COR Suite data from project-infi…</p>
       </div>
     );
   }
@@ -48,12 +48,12 @@ export const CorDashboardPage: React.FC = () => {
   return (
     <div className="ns-page">
       <h1>COR Suite Dashboard</h1>
-      <p className="ns-muted">Control tower view â€” governance runs in project-infi</p>
+      <p className="ns-muted">Control tower view — governance runs in project-infi</p>
 
       <section className="ns-section">
         <h2>Governance Decision</h2>
         <p>
-          <strong>{String((data.receipt as { decision?: string }).decision ?? "â€”")}</strong>
+          <strong>{String((data.receipt as { decision?: string }).decision ?? "—")}</strong>
         </p>
         <pre className="ns-pre">{JSON.stringify(data.receipt, null, 2)}</pre>
       </section>
@@ -86,7 +86,7 @@ export const CorDashboardPage: React.FC = () => {
               {cell.requirementId}
             </li>
           ))}
-          {maturity.cells.length > 24 && <li>â€¦and {maturity.cells.length - 24} more</li>}
+          {maturity.cells.length > 24 && <li>…and {maturity.cells.length - 24} more</li>}
         </ul>
       </section>
 

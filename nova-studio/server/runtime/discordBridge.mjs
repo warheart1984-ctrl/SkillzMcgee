@@ -1,5 +1,5 @@
-﻿/**
- * Discord message stream over WebSocket â€” /ws/discord
+/**
+ * Discord message stream over WebSocket — /ws/discord
  * Payload: { author, content, timestamp, channel }
  */
 import crypto from "node:crypto";

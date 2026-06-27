@@ -1,4 +1,4 @@
-﻿# GOV-INV-1.0 - COR Suite Constitutional Invariants
+# GOV-INV-1.0 - COR Suite Constitutional Invariants
 
 **Version:** 1.0
 **Status:** Normative

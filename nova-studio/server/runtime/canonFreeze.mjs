@@ -1,5 +1,5 @@
-﻿/**
- * COMM-CANON freeze â€” sealed baseline, ledger anchoring, mutation guards.
+/**
+ * COMM-CANON freeze — sealed baseline, ledger anchoring, mutation guards.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -14,7 +14,7 @@ const FREEZE_STATE_PATH = path.join(GOV_DIR, "canon-freeze.json");
 const FREEZE_TICKS_PATH = path.join(GOV_DIR, "canon-freeze-ticks.jsonl");
 const CANON_MD_PATH = path.join(REPO_ROOT, "governance/communication/COMM-CANON.md");
 const CANON_JSON_PATH = path.join(GOV_DIR, "COMM-CANON.json");
-const REQUIRED_AMENDMENT = "AAIS-COMM-Î›-003";
+const REQUIRED_AMENDMENT = "AAIS-COMM-Λ-003";
 
 let cachedFreezeState = null;
 
@@ -123,7 +123,7 @@ export function readParsedCanonBaseline(version) {
   return parseCanon(md);
 }
 
-/** Strict drift thresholds â€” frozen canon uses baseline values without slack. */
+/** Strict drift thresholds — frozen canon uses baseline values without slack. */
 export function getFrozenDriftThresholds() {
   const state = loadFreezeState();
   if (state.frozen_drift_thresholds) {
@@ -158,7 +158,7 @@ function lockConstitutionRuntime(canonVersion) {
 }
 
 /**
- * Seal COMM-CANON v1.0.0 â€” snapshot, hash, ledger anchor, runtime lock-in.
+ * Seal COMM-CANON v1.0.0 — snapshot, hash, ledger anchor, runtime lock-in.
  */
 export async function freezeCommunicationCanon(operator_id = "jon", canonVersion = "1.0.0") {
   if (isCanonFrozen()) {

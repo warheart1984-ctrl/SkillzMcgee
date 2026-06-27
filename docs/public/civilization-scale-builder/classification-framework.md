@@ -1,4 +1,4 @@
-﻿# Civilization-Scale Builder â€” Classification Framework
+# Civilization-Scale Builder — Classification Framework
 
 | Field | Value |
 |-------|-------|
@@ -33,8 +33,8 @@ This taxonomy lets you tag projects and compare civilization-scale potential.
 
 | Value | Description |
 |-------|-------------|
-| 5â€“20 years | Generational tooling or platform |
-| 20â€“100 years | Infrastructure-class substrate |
+| 5–20 years | Generational tooling or platform |
+| 20–100 years | Infrastructure-class substrate |
 | Multi-generational | Constitutional or protocol-level permanence |
 
 ### Scope

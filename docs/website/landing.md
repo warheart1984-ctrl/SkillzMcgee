@@ -1,4 +1,4 @@
-﻿# Continuity OS - Version 1.0
+# Continuity OS - Version 1.0
 
 A constitutional runtime designed for governed, traceable, and reproducible intelligent systems.
 

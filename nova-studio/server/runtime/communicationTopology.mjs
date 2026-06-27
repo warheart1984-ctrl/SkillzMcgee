@@ -1,5 +1,5 @@
-﻿/**
- * Lane topology â€” split and merge communication contexts.
+/**
+ * Lane topology — split and merge communication contexts.
  */
 import fs from "node:fs";
 import path from "node:path";

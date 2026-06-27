@@ -1,5 +1,5 @@
-﻿/**
- * Canon generator â€” runtime state â†’ COMM-CANON.md (structured JSON sections).
+/**
+ * Canon generator — runtime state → COMM-CANON.md (structured JSON sections).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -58,8 +58,8 @@ export function getConstitutionVersions() {
   const constitution = loadConstitution();
   return {
     "COMM-CANON": "1.0.0",
-    "AAIS-COMM-Î›-001": constitution.version ?? constitution.comm_constitution_version ?? "1.0.0",
-    "AAIS-COMM-Î›-002": "1.0.0",
+    "AAIS-COMM-Λ-001": constitution.version ?? constitution.comm_constitution_version ?? "1.0.0",
+    "AAIS-COMM-Λ-002": "1.0.0",
   };
 }
 
@@ -121,49 +121,49 @@ export function generateCommunicationCanon(options = {}) {
 
 ---
 
-## Â§1 â€” ACTIVE LANES
+## §1 — ACTIVE LANES
 
 \`\`\`json
 ${JSON.stringify({ lanes: data.lanes }, null, 2)}
 \`\`\`
 
-## Â§2 â€” EPOCHS
+## §2 — EPOCHS
 
 \`\`\`json
 ${JSON.stringify({ epochs: data.epochs }, null, 2)}
 \`\`\`
 
-## Â§3 â€” CONTINUITY BUDGETS
+## §3 — CONTINUITY BUDGETS
 
 \`\`\`json
 ${JSON.stringify({ budgets: data.budgets }, null, 2)}
 \`\`\`
 
-## Â§4 â€” DRIFT THRESHOLDS
+## §4 — DRIFT THRESHOLDS
 
 \`\`\`json
 ${JSON.stringify({ drift_thresholds: data.drift_thresholds }, null, 2)}
 \`\`\`
 
-## Â§5 â€” CROSS-LANE INVARIANTS
+## §5 — CROSS-LANE INVARIANTS
 
 \`\`\`json
 ${JSON.stringify({ cross_lane_invariants: data.cross_lane_invariants }, null, 2)}
 \`\`\`
 
-## Â§6 â€” ROUTING RULES
+## §6 — ROUTING RULES
 
 \`\`\`json
 ${JSON.stringify({ routing_rules: data.routing_rules }, null, 2)}
 \`\`\`
 
-## Â§7 â€” CONSTITUTION VERSIONS
+## §7 — CONSTITUTION VERSIONS
 
 \`\`\`json
 ${JSON.stringify({ constitution_versions: data.constitution_versions }, null, 2)}
 \`\`\`
 
-## Â§8 â€” LANE TOPOLOGY
+## §8 — LANE TOPOLOGY
 
 \`\`\`json
 ${JSON.stringify({ lane_topology: data.lane_topology }, null, 2)}

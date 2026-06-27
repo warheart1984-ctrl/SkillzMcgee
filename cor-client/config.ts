@@ -1,5 +1,5 @@
-﻿/**
- * COR client configuration â€” skillzmcgee consumes project-infi outputs only.
+/**
+ * COR client configuration — skillzmcgee consumes project-infi outputs only.
  * Set COR_SUITE_BASE_URL to override the default raw GitHub URL base.
  */
 

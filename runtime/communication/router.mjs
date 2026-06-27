@@ -1,4 +1,4 @@
-﻿import { listLedgerEntries } from "./store.mjs";
+import { listLedgerEntries } from "./store.mjs";
 
 export const DEFAULT_ROUTING_RULES = [
   {

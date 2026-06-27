@@ -1,4 +1,4 @@
-﻿# Diagrams (v1.0)
+# Diagrams (v1.0)
 
 Canonical visual and mapping assets for Continuity OS v1.0.
 

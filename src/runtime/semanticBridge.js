@@ -1,5 +1,5 @@
-﻿/**
- * Semantic Bridge runtime â€” classification, normalization, reply generation.
+/**
+ * Semantic Bridge runtime — classification, normalization, reply generation.
  * Facade over src/semantic-bridge (v1.0 protocol).
  */
 import {
@@ -37,7 +37,7 @@ export function generateReply(normalized) {
     "",
     `Core: ${normalized.coreClaim}`,
     "",
-    `Context: ${normalized.context || "â€”"}`,
+    `Context: ${normalized.context || "—"}`,
     "",
     `Impact: ${normalized.impact}`,
     "",

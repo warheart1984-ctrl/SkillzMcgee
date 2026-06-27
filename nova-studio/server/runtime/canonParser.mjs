@@ -1,5 +1,5 @@
-﻿/**
- * Canon parser â€” extract JSON sections from COMM-CANON markdown.
+/**
+ * Canon parser — extract JSON sections from COMM-CANON markdown.
  */
 
 /**
@@ -8,7 +8,7 @@
  */
 export function parseCanon(canonMarkdown) {
   const sections = {};
-  const regex = /## Â§(\d+) â€” ([^\n]+)[\s\S]*?```json([\s\S]*?)```/g;
+  const regex = /## §(\d+) — ([^\n]+)[\s\S]*?```json([\s\S]*?)```/g;
 
   let match = regex.exec(canonMarkdown);
   while (match !== null) {

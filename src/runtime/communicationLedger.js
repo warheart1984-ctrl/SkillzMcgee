@@ -1,5 +1,5 @@
-﻿/**
- * Client â€” anchor normalized messages as communicationTick entries (lane-scoped).
+/**
+ * Client — anchor normalized messages as communicationTick entries (lane-scoped).
  */
 import { getActiveLaneId } from "./laneContext.js";
 

@@ -1,49 +1,49 @@
-﻿Version 1.0 Steward Training Deck (Text-Mode)
-Status: Informative Â· Audience: New Stewards Â· Version: 1.0
+Version 1.0 Steward Training Deck (Text-Mode)
+Status: Informative · Audience: New Stewards · Version: 1.0
 
-Related: spec/steward-handbook-1.0.md Â· spec/governance-charter-1.0.md Â· spec/CONSTITUTIONAL-INDEX.md
+Related: spec/steward-handbook-1.0.md · spec/governance-charter-1.0.md · spec/CONSTITUTIONAL-INDEX.md
 
 ===========================================================
-CONTINUITY OS â€” VERSION 1.0
+CONTINUITY OS — VERSION 1.0
 STEWARD TRAINING DECK (TEXT MODE)
 ===========================================================
 
-SECTION 1 â€” WHAT IS A STEWARD?
+SECTION 1 — WHAT IS A STEWARD?
 -----------------------------------------------------------
 A steward is a constitutional guardian.
 Stewards protect:
-  â€¢ the baseline
-  â€¢ the invariants
-  â€¢ the semantic grammar
-  â€¢ the reproducibility guarantees
-  â€¢ the identity of the platform
+  • the baseline
+  • the invariants
+  • the semantic grammar
+  • the reproducibility guarantees
+  • the identity of the platform
 
 Stewards do NOT:
-  â€¢ maintain code
-  â€¢ manage product features
-  â€¢ optimize performance
-  â€¢ own operational tooling
+  • maintain code
+  • manage product features
+  • optimize performance
+  • own operational tooling
 
 Stewards govern the Constitution, not the implementation.
 
 
-SECTION 2 â€” THE CONSTITUTIONAL BASELINE
+SECTION 2 — THE CONSTITUTIONAL BASELINE
 -----------------------------------------------------------
 The baseline consists of:
-  â€¢ CAR-1.0
-  â€¢ Authority â†’ Specification â†’ Implementation â†’ Execution
-  â€¢ One-artifact-per-stage invariant
-  â€¢ Proof graph model
-  â€¢ Evidence + provenance model
-  â€¢ Validation â†’ Measurement â†’ Analysis â†’ Governance
-  â€¢ Reproducibility requirement
+  • CAR-1.0
+  • Authority → Specification → Implementation → Execution
+  • One-artifact-per-stage invariant
+  • Proof graph model
+  • Evidence + provenance model
+  • Validation → Measurement → Analysis → Governance
+  • Reproducibility requirement
 
 This baseline is frozen.
 
 Reference: spec/constitutional-baseline-1.0.md
 
 
-SECTION 3 â€” THE STEWARD'S MISSION
+SECTION 3 — THE STEWARD'S MISSION
 -----------------------------------------------------------
 1. Preserve constitutional semantics.
 2. Prevent drift.
@@ -53,61 +53,61 @@ SECTION 3 â€” THE STEWARD'S MISSION
 6. Uphold transparency.
 
 
-SECTION 4 â€” HOW TO REVIEW A CHANGE
+SECTION 4 — HOW TO REVIEW A CHANGE
 -----------------------------------------------------------
 Ask:
-  â€¢ Does it alter the baseline?
-  â€¢ Does it change semantics?
-  â€¢ Does it break reproducibility?
-  â€¢ Does it violate invariants?
-  â€¢ Does it change artifact categories?
-  â€¢ Does it alter the constitutional loop?
-  â€¢ Does it modify proof graph semantics?
+  • Does it alter the baseline?
+  • Does it change semantics?
+  • Does it break reproducibility?
+  • Does it violate invariants?
+  • Does it change artifact categories?
+  • Does it alter the constitutional loop?
+  • Does it modify proof graph semantics?
 
-If yes â†’ Constitutional Amendment (2.0)
-If no â†’ Minor or Patch
+If yes → Constitutional Amendment (2.0)
+If no → Minor or Patch
 
-Reference: spec/amendment-procedure-1.0.md Â· spec/constitutional-evolution-guidelines.md
+Reference: spec/amendment-procedure-1.0.md · spec/constitutional-evolution-guidelines.md
 
 
-SECTION 5 â€” VERSIONING DISCIPLINE
+SECTION 5 — VERSIONING DISCIPLINE
 -----------------------------------------------------------
 Patch (1.0.x)
-  â€¢ Clarifications
-  â€¢ Non-semantic corrections
+  • Clarifications
+  • Non-semantic corrections
 
 Minor (1.x)
-  â€¢ New capabilities
-  â€¢ Optional extensions
-  â€¢ No baseline changes
+  • New capabilities
+  • Optional extensions
+  • No baseline changes
 
 Major (2.0)
-  â€¢ Constitutional amendments
-  â€¢ Baseline changes
-  â€¢ Semantic changes
+  • Constitutional amendments
+  • Baseline changes
+  • Semantic changes
 
 
-SECTION 6 â€” THE STEWARD MINDSET
+SECTION 6 — THE STEWARD MINDSET
 -----------------------------------------------------------
 Stewards must:
-  â€¢ Think in invariants
-  â€¢ Reason in semantics
-  â€¢ Govern with evidence
-  â€¢ Avoid founder bias
-  â€¢ Maintain neutrality
-  â€¢ Protect identity
+  • Think in invariants
+  • Reason in semantics
+  • Govern with evidence
+  • Avoid founder bias
+  • Maintain neutrality
+  • Protect identity
 
 Stewards are custodians of continuity.
 
 
-SECTION 7 â€” COMPLETION
+SECTION 7 — COMPLETION
 -----------------------------------------------------------
 A steward is trained when they can:
-  â€¢ Identify constitutional vs operational changes
-  â€¢ Evaluate compatibility
-  â€¢ Apply the amendment procedure
-  â€¢ Maintain semantic stability
-  â€¢ Govern evolution responsibly
+  • Identify constitutional vs operational changes
+  • Evaluate compatibility
+  • Apply the amendment procedure
+  • Maintain semantic stability
+  • Govern evolution responsibly
 
 ===========================================================
 END OF TRAINING DECK

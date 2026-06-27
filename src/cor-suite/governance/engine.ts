@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { COR_SUITE_PATHS } from "../paths.js";
 import type { CorStateVector } from "../paths.js";
 import type { ProofAnalysisResult } from "../../analysis/index.js";

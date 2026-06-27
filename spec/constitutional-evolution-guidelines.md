@@ -1,4 +1,4 @@
-﻿# Constitutional Evolution Guidelines â€” Version 1.0
+# Constitutional Evolution Guidelines — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -93,7 +93,7 @@ Does not affect constitutional semantics.
 - UI/UX improvements
 - new operator workflows
 
-**Versioning:** patch (1.0.x) â€” see Â§5.1.
+**Versioning:** patch (1.0.x) — see §5.1.
 
 ### 3.2 Constitutional Extensions (Moderate)
 
@@ -109,9 +109,9 @@ Adds new capabilities without altering the baseline.
 
 - compatibility analysis
 - migration guidance
-- version bump (1.x â†’ 1.y)
+- version bump (1.x → 1.y)
 
-**Versioning:** minor (1.x) â€” see Â§5.2.
+**Versioning:** minor (1.x) — see §5.2.
 
 ### 3.3 Constitutional Amendments (Major)
 
@@ -126,11 +126,11 @@ Changes the baseline.
 
 **Requirements:**
 
-- new constitutional version (1.x â†’ 2.0)
+- new constitutional version (1.x → 2.0)
 - formal migration plan
 - lineage declaration
 
-**Versioning:** major (2.0) â€” see Â§5.3.
+**Versioning:** major (2.0) — see §5.3.
 
 ---
 
@@ -152,7 +152,7 @@ Implementations must follow the updated specification.
 
 Execution must produce reproducible constitutional state.
 
-See [constitutional-baseline-1.0.md Â§2.2](./constitutional-baseline-1.0.md#22-authority--specification--implementation--execution-separation).
+See [constitutional-baseline-1.0.md §2.2](./constitutional-baseline-1.0.md#22-authority--specification--implementation--execution-separation).
 
 ---
 

@@ -1,11 +1,11 @@
-﻿# COMMUNICATION CANON (COMM-CANON)
+# COMMUNICATION CANON (COMM-CANON)
 Version: 1.0.0
 Generated: 2026-06-27T05:12:29.098Z
 Status: SEALED
 
 ---
 
-## Â§1 â€” ACTIVE LANES
+## §1 — ACTIVE LANES
 ```json
 {
   "lanes": [
@@ -458,7 +458,7 @@ Status: SEALED
 }
 ```
 
-## Â§2 â€” EPOCHS
+## §2 — EPOCHS
 ```json
 {
   "epochs": [
@@ -576,7 +576,7 @@ Status: SEALED
 }
 ```
 
-## Â§3 â€” CONTINUITY BUDGETS
+## §3 — CONTINUITY BUDGETS
 ```json
 {
   "budgets": {
@@ -668,7 +668,7 @@ Status: SEALED
 }
 ```
 
-## Â§4 â€” DRIFT THRESHOLDS
+## §4 — DRIFT THRESHOLDS
 ```json
 {
   "drift_thresholds": {
@@ -680,7 +680,7 @@ Status: SEALED
 }
 ```
 
-## Â§5 â€” CROSS-LANE INVARIANTS
+## §5 — CROSS-LANE INVARIANTS
 ```json
 {
   "cross_lane_invariants": [
@@ -703,7 +703,7 @@ Status: SEALED
 }
 ```
 
-## Â§6 â€” ROUTING RULES
+## §6 — ROUTING RULES
 ```json
 {
   "routing_rules": [
@@ -722,19 +722,19 @@ Status: SEALED
 }
 ```
 
-## Â§7 â€” CONSTITUTION VERSIONS
+## §7 — CONSTITUTION VERSIONS
 ```json
 {
   "constitution_versions": {
-    "AAIS-COMM-Î›-001": "1.0.0",
-    "AAIS-COMM-Î›-002": "1.0.0",
+    "AAIS-COMM-Λ-001": "1.0.0",
+    "AAIS-COMM-Λ-002": "1.0.0",
     "COMM-CANON": "1.0.0",
     "canon_state": "FROZEN"
   }
 }
 ```
 
-## Â§8 â€” LANE TOPOLOGY
+## §8 — LANE TOPOLOGY
 ```json
 {
   "lane_topology": {

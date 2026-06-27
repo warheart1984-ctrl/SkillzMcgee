@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @typedef {"communicationTick"} CommunicationEntryType
  * @typedef {"jon->darz"|"darz->jon"} CommunicationDirection
  */
@@ -37,7 +37,7 @@ export function zeroDriftVector() {
   return { semantic: 0, altitude: 0, impact: 0, latency: 0, composite: 0 };
 }
 
-/** @param {unknown} body â€” inbound POST body (pre-enrichment) */
+/** @param {unknown} body — inbound POST body (pre-enrichment) */
 export function validateCommunicationTickInput(body) {
   if (!body || typeof body !== "object") {
     return { ok: false, error: "Body must be an object" };
@@ -58,7 +58,7 @@ export function validateCommunicationTickInput(body) {
   return { ok: true, tick };
 }
 
-/** @param {unknown} tick â€” persisted communicationTick record */
+/** @param {unknown} tick — persisted communicationTick record */
 export function validateCommunicationTick(tick) {
   const input = validateCommunicationTickInput(tick);
   if (!input.ok) return input;

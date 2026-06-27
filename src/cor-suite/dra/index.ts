@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { COR_SUITE_PATHS } from "../paths.js";
 import type { CarArtifact } from "../paths.js";
 import { emitArtifact } from "../../cor/emitters/json.js";

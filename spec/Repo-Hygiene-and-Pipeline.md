@@ -1,4 +1,4 @@
-﻿# Repo Hygiene and COR Pipeline
+# Repo Hygiene and COR Pipeline
 
 **Role:** Operational prerequisite (runs before CAV-1.0)
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -16,11 +16,11 @@ The substrate ensuring the repository is always CAR/COR-compatible.
 3. COR-1.0 / CSR-1.0 / DRA-1.0 measure
 4. Proof Analysis
 5. Maturity vector
-6. Governance (+ receipt â†’ CAR)
+6. Governance (+ receipt → CAR)
 7. Communication / dashboards
 ```
 
-Reference: `project-infi/cor-suite` â†’ `npm run pipeline`
+Reference: `project-infi/cor-suite` → `npm run pipeline`
 
 ## Requirements
 
@@ -45,7 +45,7 @@ Reference: `project-infi/cor-suite` â†’ `npm run pipeline`
 
 ### D. Reproducible builds
 
-- Build â†’ verify â†’ reproduce must be identical across machines
+- Build → verify → reproduce must be identical across machines
 
 ### E. CI/CD integration
 

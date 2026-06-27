@@ -1,4 +1,4 @@
-﻿# Version 1.0 Stewardship Mandate
+# Version 1.0 Stewardship Mandate
 
 | Field | Value |
 |-------|-------|

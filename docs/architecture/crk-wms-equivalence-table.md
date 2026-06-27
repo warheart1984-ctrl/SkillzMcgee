@@ -1,4 +1,4 @@
-﻿# CRK-1 x WMS Equivalence Table (Canonical Mapping)
+# CRK-1 x WMS Equivalence Table (Canonical Mapping)
 
 **Version:** 1.0
 **Status:** Normative bridge document

@@ -1,5 +1,5 @@
-﻿/**
- * Continuity substrate â€” constitutional memory (.runtime/continuity).
+/**
+ * Continuity substrate — constitutional memory (.runtime/continuity).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -88,7 +88,7 @@ export function persistContinuityReceipt(receiptId, envelope) {
 }
 
 /**
- * Replay loader â€” reconstruct timeline for validation.
+ * Replay loader — reconstruct timeline for validation.
  */
 export function replayContinuity() {
   const state = loadContinuityState();

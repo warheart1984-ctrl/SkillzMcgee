@@ -1,5 +1,5 @@
-﻿/**
- * Lane context â€” sovereign communication identity per operator session.
+/**
+ * Lane context — sovereign communication identity per operator session.
  */
 const STORAGE_KEY = "nova.communication.lane_id";
 export const DEFAULT_LANE_ID = "jon-darz-architecture";

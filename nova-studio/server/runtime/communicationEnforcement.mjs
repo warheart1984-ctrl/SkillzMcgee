@@ -1,5 +1,5 @@
-﻿/**
- * Communication enforcement â€” classifier, routing, budgets, drift-aware reply guard.
+/**
+ * Communication enforcement — classifier, routing, budgets, drift-aware reply guard.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -23,7 +23,7 @@ function appendJsonl(name, record) {
   fs.appendFileSync(path.join(GOV_DIR, name), `${JSON.stringify(record)}\n`, "utf8");
 }
 
-/** Drift-aware message classifier (AAIS-COMM-Î›-002) */
+/** Drift-aware message classifier (AAIS-COMM-Λ-002) */
 export function classifyMessage(text) {
   const t = String(text ?? "").toLowerCase();
 
@@ -132,7 +132,7 @@ export function enforceCommunicationRules(tick, context = {}) {
   };
 
   if (drift > budget.max_composite) {
-    return { ok: false, error: "Drift exceeds max_composite â€” containment required", drift, tick: body };
+    return { ok: false, error: "Drift exceeds max_composite — containment required", drift, tick: body };
   }
 
   const epochSummary = getEpochBudgetSummary(body.lane_id);
@@ -149,7 +149,7 @@ export function enforceCommunicationRules(tick, context = {}) {
   });
 
   if (projectedSpent > epochSummary.session_budget) {
-    return { ok: false, error: "Session drift budget exceeded â€” containment required", drift, tick: body };
+    return { ok: false, error: "Session drift budget exceeded — containment required", drift, tick: body };
   }
 
   return { ok: true, tick: body, lane, drift, epochSummary };

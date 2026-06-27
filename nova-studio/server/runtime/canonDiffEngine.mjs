@@ -1,11 +1,11 @@
-﻿/**
- * Canon diff engine â€” structural diff of parsed COMM-CANON sections.
+/**
+ * Canon diff engine — structural diff of parsed COMM-CANON sections.
  */
 import { parseCanon } from "./canonParser.mjs";
 
 /**
- * @param {string|Record<string, unknown>} oldCanon â€” markdown or pre-parsed
- * @param {string|Record<string, unknown>} newCanon â€” markdown or pre-parsed
+ * @param {string|Record<string, unknown>} oldCanon — markdown or pre-parsed
+ * @param {string|Record<string, unknown>} newCanon — markdown or pre-parsed
  */
 export function diffCanons(oldCanon, newCanon) {
   const oldParsed = typeof oldCanon === "string" ? parseCanon(oldCanon) : oldCanon;

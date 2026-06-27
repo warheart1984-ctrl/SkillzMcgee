@@ -1,7 +1,7 @@
-﻿# Founder-Independent Governance Charter
+# Founder-Independent Governance Charter
 
 **Authority:** SCC-1.0, GLS-1.0, GL-1.0
-**Status:** Normative â€” constitutional governance charter
+**Status:** Normative — constitutional governance charter
 **Related:** [../steward-council/SCC-1.0.md](../steward-council/SCC-1.0.md), [../governance-ledger/GLS-1.0.md](../governance-ledger/GLS-1.0.md), [../ledger/GL-1.0.md](../ledger/GL-1.0.md)
 
 ## Purpose
@@ -16,7 +16,7 @@ This charter ensures the COR Suite and constitutional repository remain **founde
 | **Auditor** | Independently reproduce verification; may not unilaterally modify canonical spec |
 | **Operator** | Run builds, regenerate observability artifacts; may not override governance decisions |
 
-Membership rules: [SCC-1.0](../steward-council/SCC-1.0.md) â€” minimum 3, maximum 9 stewards; 12-month renewable terms.
+Membership rules: [SCC-1.0](../steward-council/SCC-1.0.md) — minimum 3, maximum 9 stewards; 12-month renewable terms.
 
 ## Decision authority
 
@@ -37,8 +37,8 @@ The Council **may not**:
 ## Amendment process
 
 1. Proposal recorded in governance ledger with rationale and evidence refs
-2. Quorum: â…” of seated stewards ([SCVP-1.0](../../conformance/certification/SCVP-1.0.md))
-3. Approval: â…” supermajority
+2. Quorum: ⅔ of seated stewards ([SCVP-1.0](../../conformance/certification/SCVP-1.0.md))
+3. Approval: ⅔ supermajority
 4. Amendment artifact committed to `specification/constitutional-amendments/` or COR Suite `spec/` as appropriate
 5. Regenerate observability: `npm run spec:rebuild`
 

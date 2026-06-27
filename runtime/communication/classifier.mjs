@@ -1,4 +1,4 @@
-﻿export function classifyMessage(text) {
+export function classifyMessage(text) {
   const t = String(text ?? "").toLowerCase();
   if (t.includes("invariant") || t.includes("axiom") || t.includes("law")) return "normative";
   if (t.includes("interface") || t.includes("diagram") || t.includes("stack") || t.includes("architecture")) return "architectural";

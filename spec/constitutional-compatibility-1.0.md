@@ -1,4 +1,4 @@
-﻿# Constitutional Compatibility â€” Version 1.0
+# Constitutional Compatibility — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -29,7 +29,7 @@ A future implementation is constitutionally compatible with Version 1.0 if and o
 1. The constitutional baseline defined in [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md).
 2. The observable constitutional behavior defined by the Version 1.0 specification.
 3. The one-artifact-per-stage invariant.
-4. The constitutional loop (Validation â†’ Measurement â†’ Analysis â†’ Governance).
+4. The constitutional loop (Validation → Measurement → Analysis → Governance).
 5. Deterministic reproducibility of derived artifacts from canonical state.
 6. Proof graph semantics, including lineage, provenance, and monotonicity.
 7. Category boundaries, including artifact types and transformation rules.
@@ -62,7 +62,7 @@ The following may vary freely without affecting compatibility:
 
 These components must preserve constitutional semantics, but are not constitutionally constrained.
 
-See [constitutional-baseline-1.0.md Â§3](./constitutional-baseline-1.0.md#3-operational-capability-non-constitutional).
+See [constitutional-baseline-1.0.md §3](./constitutional-baseline-1.0.md#3-operational-capability-non-constitutional).
 
 ---
 

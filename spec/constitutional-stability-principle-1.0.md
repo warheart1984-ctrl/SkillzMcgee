@@ -1,4 +1,4 @@
-﻿# Constitutional Stability Principle â€” Version 1.0
+# Constitutional Stability Principle — Version 1.0
 
 | Field | Value |
 |-------|-------|

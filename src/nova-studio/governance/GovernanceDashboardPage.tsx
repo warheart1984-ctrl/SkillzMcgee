@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   fetchAllGovernanceArtifacts,
   type CavReportShape,
@@ -26,17 +26,17 @@ function releaseCriteriaStatus(data: GovernanceBundle) {
       id: "governance-decision",
       label: "Governance decision not reject/freeze",
       pass: !["reject", "freeze"].includes(decision),
-      detail: decision || "â€”",
+      detail: decision || "—",
     },
     {
       id: "dra-risk",
-      label: "DRA-1.0: no high-risk requirements (score â‰¥ 10)",
+      label: "DRA-1.0: no high-risk requirements (score ≥ 10)",
       pass: highRisk === 0,
       detail: `${highRisk} high-risk of ${riskEntries.length} requirements`,
     },
     {
       id: "csr-coverage",
-      label: "CSR-1.0: decision coverage â‰¥ 80%",
+      label: "CSR-1.0: decision coverage ≥ 80%",
       pass:
         ((data.csr as { decisionCoverage?: { coverageRatio?: number } }).decisionCoverage
           ?.coverageRatio ?? 0) >= 0.8,
@@ -84,7 +84,7 @@ export const GovernanceDashboardPage: React.FC = () => {
     return (
       <div className="ns-page">
         <h1>Steward Governance Dashboard</h1>
-        <p>Loading governance dataâ€¦</p>
+        <p>Loading governance data…</p>
       </div>
     );
   }
@@ -97,7 +97,7 @@ export const GovernanceDashboardPage: React.FC = () => {
   return (
     <div className="ns-page">
       <h1>Steward Governance Dashboard</h1>
-      <p className="ns-muted">Operator cockpit â€” CAR / CAV / COR / DRA / PGI / governance receipts</p>
+      <p className="ns-muted">Operator cockpit — CAR / CAV / COR / DRA / PGI / governance receipts</p>
 
       <section className="ns-section">
         <h2>Release Criteria (v1.0)</h2>
@@ -107,14 +107,14 @@ export const GovernanceDashboardPage: React.FC = () => {
               <span className={`ns-badge ns-badge-${row.pass ? "ok" : "fail"}`}>
                 {row.pass ? "pass" : "fail"}
               </span>{" "}
-              {row.label} â€” {row.detail}
+              {row.label} — {row.detail}
             </li>
           ))}
         </ul>
       </section>
 
       <section className="ns-section">
-        <h2>Canonical Validation (CAVâ€‘1.0)</h2>
+        <h2>Canonical Validation (CAV‑1.0)</h2>
         <h3>Blocking Findings</h3>
         <pre className="ns-pre">{JSON.stringify(cav.blocking, null, 2)}</pre>
         <h3>Advisory Findings</h3>
@@ -122,17 +122,17 @@ export const GovernanceDashboardPage: React.FC = () => {
       </section>
 
       <section className="ns-section">
-        <h2>Constitutional State (CORâ€‘1.0)</h2>
+        <h2>Constitutional State (COR‑1.0)</h2>
         <pre className="ns-pre">{JSON.stringify(cor.structuralIntegrity, null, 2)}</pre>
       </section>
 
       <section className="ns-section">
-        <h2>Dependency Risk (DRAâ€‘1.0)</h2>
+        <h2>Dependency Risk (DRA‑1.0)</h2>
         <pre className="ns-pre">{JSON.stringify(dra.risk, null, 2)}</pre>
       </section>
 
       <section className="ns-section">
-        <h2>Proofâ€‘Graph Index (PGIâ€‘1.0)</h2>
+        <h2>Proof‑Graph Index (PGI‑1.0)</h2>
         <p>
           {pgi.nodes?.length ?? 0} nodes, {pgi.edges?.length ?? 0} edges
         </p>
@@ -140,7 +140,7 @@ export const GovernanceDashboardPage: React.FC = () => {
       </section>
 
       <section className="ns-section">
-        <h2>Stewardship (CSRâ€‘1.0)</h2>
+        <h2>Stewardship (CSR‑1.0)</h2>
         <pre className="ns-pre">{JSON.stringify(data.csr, null, 2)}</pre>
       </section>
 

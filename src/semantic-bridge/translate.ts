@@ -1,4 +1,4 @@
-﻿import { DARZ_CATEGORY_LABEL } from "./classify.js";
+import { DARZ_CATEGORY_LABEL } from "./classify.js";
 import { normalizeMessage } from "./normalizeMessage.js";
 import type {
   DarzToJonTranslation,
@@ -16,8 +16,8 @@ const CATEGORY_LABEL: Record<string, string> = {
 
 function bandwidthLine(latency: NormalizedMessage["latency"]): string {
   if (latency === "now") return "Need eyes today.";
-  if (latency === "soon") return "No rush â€” soon is fine.";
-  return "No rush â€” whenever you have bandwidth.";
+  if (latency === "soon") return "No rush — soon is fine.";
+  return "No rush — whenever you have bandwidth.";
 }
 
 function askLine(ask: NormalizedMessage["ask"]): string {
@@ -27,7 +27,7 @@ function askLine(ask: NormalizedMessage["ask"]): string {
     case "refine":
       return "Would you refine this?";
     case "ignore":
-      return "FYI only â€” no action required.";
+      return "FYI only — no action required.";
     case "respond":
       return "What's your read?";
     case "review":
@@ -50,13 +50,13 @@ function bulletItems(msg: NormalizedMessage): string[] {
 function acknowledgment(msg: NormalizedMessage): string {
   switch (msg.category) {
     case "normative":
-      return "Understood â€” treating this as normative specification input.";
+      return "Understood — treating this as normative specification input.";
     case "architectural":
-      return "Got it â€” locking the structural read at architectural altitude.";
+      return "Got it — locking the structural read at architectural altitude.";
     case "methodological":
       return "Clear on verification and evidence posture.";
     case "implementation":
-      return "Acknowledged â€” implementation track.";
+      return "Acknowledged — implementation track.";
     case "human":
       return "Heard you.";
     default:
@@ -84,8 +84,8 @@ function nextSteps(msg: NormalizedMessage): string[] {
 
 function timingLine(latency: NormalizedMessage["latency"]): string {
   if (latency === "now") return "I'll prioritize this today.";
-  if (latency === "soon") return "I'll pick this up soon â€” not blocking you.";
-  return "Queued for whenever â€” no pressure on your side.";
+  if (latency === "soon") return "I'll pick this up soon — not blocking you.";
+  return "Queued for whenever — no pressure on your side.";
 }
 
 function formatDarzCanonical(msg: NormalizedMessage): string {
@@ -135,7 +135,7 @@ function generateJonReply(msg: NormalizedMessage): string {
     msg.context ? `\n${msg.context}` : null,
     "",
     "**Impact**",
-    `${msg.normativeImpact}${msg.repositoryTargets.length ? ` â†’ ${msg.repositoryTargets.join(", ")}` : ""}`,
+    `${msg.normativeImpact}${msg.repositoryTargets.length ? ` → ${msg.repositoryTargets.join(", ")}` : ""}`,
     "",
     "**My move**",
     ...steps.map((s) => `- ${s}`),
@@ -211,7 +211,7 @@ export function suggestReply(msg: NormalizedMessage): string {
   return translateJonToDarz(msg).body;
 }
 
-/** Dar-Z â†’ Jon protocol entry: normalize + full translation bundle */
+/** Dar-Z → Jon protocol entry: normalize + full translation bundle */
 export function processDarzInbound(rawText: string, overrides: Partial<NormalizedMessage> = {}) {
   const message = normalizeMessage(rawText, "darz->jon", overrides);
   const translation = translateDarzToJon(message);

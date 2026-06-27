@@ -1,23 +1,23 @@
-﻿# Operator Workflow Modeling Protocol (OWMP-1.0)
+# Operator Workflow Modeling Protocol (OWMP-1.0)
 
-**Version:** 1.0 Â· **Audience:** Internal operators, auditors, Nova Studio agents
+**Version:** 1.0 · **Audience:** Internal operators, auditors, Nova Studio agents
 
 Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ---
 
-## Stage 1 â€” Observation Capture
+## Stage 1 — Observation Capture
 
 - Capture raw workflow events.
 - **No interpretation allowed.**
-- Assign monotonic IDs: `OBS-001`, `OBS-002`, â€¦
+- Assign monotonic IDs: `OBS-001`, `OBS-002`, …
 - Produce **Observation Set**.
 
 **Exit criteria:** Every observation has actors, steps, and source reference.
 
 ---
 
-## Stage 2 â€” Analytical Derivation
+## Stage 2 — Analytical Derivation
 
 - Convert observations into **Findings**.
 - **Must cite Observation IDs** on every finding.
@@ -27,7 +27,7 @@ Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ---
 
-## Stage 3 â€” Recommendation Synthesis
+## Stage 3 — Recommendation Synthesis
 
 - Each recommendation **must cite at least one Finding**.
 - Include governance implications and constraints.
@@ -37,7 +37,7 @@ Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ---
 
-## Stage 4 â€” Outcome Projection
+## Stage 4 — Outcome Projection
 
 - Define expected improvements.
 - **Must cite Recommendation IDs**.
@@ -47,7 +47,7 @@ Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ---
 
-## Stage 5 â€” Metric Definition
+## Stage 5 — Metric Definition
 
 - Define measurable indicators (quantitative where possible).
 - **Must cite Expected Outcome IDs**.
@@ -58,9 +58,9 @@ Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ---
 
-## Stage 6 â€” Traceability Assembly
+## Stage 6 — Traceability Assembly
 
-- Build full chain: Observation â†’ Finding â†’ Recommendation â†’ Outcome â†’ Metric.
+- Build full chain: Observation → Finding → Recommendation → Outcome → Metric.
 - **Validate monotonicity** (no broken links, no orphan nodes).
 - Produce **Traceability Map**.
 
@@ -70,7 +70,7 @@ Technical, rigor-focused protocol for executing CMS-1.0 engagements.
 
 ## Operator checklist
 
-- [ ] Observation Set complete â€” no interpretation fields populated
+- [ ] Observation Set complete — no interpretation fields populated
 - [ ] Findings cite observations
 - [ ] Recommendations cite findings
 - [ ] Outcomes cite recommendations

@@ -1,5 +1,5 @@
-﻿/**
- * Enriched lane context for API/UI â€” avoids circular imports in governance core.
+/**
+ * Enriched lane context for API/UI — avoids circular imports in governance core.
  */
 import { getLaneContext } from "./communicationGovernance.mjs";
 import { getEpochBudgetSummary } from "./communicationEpochs.mjs";

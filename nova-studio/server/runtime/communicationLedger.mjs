@@ -1,5 +1,5 @@
-﻿/**
- * communicationTick ledger â€” governed human communication evidence stream.
+/**
+ * communicationTick ledger — governed human communication evidence stream.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -74,7 +74,7 @@ function applyUnifiedContainment(tick, enforcement, trigger = "communication") {
   ) {
     suspendLane(
       tick.lane_id,
-      `Automatic Containment Epoch â€” Trigger: ${trigger === "communication" ? "Communication Drift" : trigger}`,
+      `Automatic Containment Epoch — Trigger: ${trigger === "communication" ? "Communication Drift" : trigger}`,
     );
     broadcastStudioState({
       containment: true,

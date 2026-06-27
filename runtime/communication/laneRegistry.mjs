@@ -1,4 +1,4 @@
-﻿import { COMM_CONSTITUTION_VERSION, DRIFT_THRESHOLDS } from "./constants.mjs";
+import { COMM_CONSTITUTION_VERSION, DRIFT_THRESHOLDS } from "./constants.mjs";
 import { COMM_LANES_PATH, readJson, writeJson } from "./store.mjs";
 
 function now() {

@@ -1,4 +1,4 @@
-﻿# Investigation Mode Operator Handbook (IM-OH-1.0)
+# Investigation Mode Operator Handbook (IM-OH-1.0)
 
 **Version:** 1.0
 **Audience:** Operators, auditors, Nova Studio agents

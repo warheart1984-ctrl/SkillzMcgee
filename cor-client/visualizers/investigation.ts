@@ -1,4 +1,4 @@
-﻿import type { CavReportShape } from "../fetchers/cor.js";
+import type { CavReportShape } from "../fetchers/cor.js";
 
 export interface PgiShape {
   nodes?: Array<{ id: string; kind: string; path: string }>;
@@ -86,12 +86,12 @@ export function buildInvestigationForensics(input: {
     blockingCount === 0 && structuralOk && decision === "approve" && highRiskCount === 0;
 
   let summary = "Investigation complete.";
-  if (blockingCount > 0) summary = `${blockingCount} CAV blocking finding(s) â€” release blocked.`;
+  if (blockingCount > 0) summary = `${blockingCount} CAV blocking finding(s) — release blocked.`;
   else if (!structuralOk) summary = "Critical structural lineage breaks detected.";
   else if (decision === "reject" || decision === "freeze") summary = `Governance ${decision}.`;
   else if (highRiskCount > 0) summary = `${highRiskCount} high-risk requirement(s) in DRA.`;
   else if (decision === "require_fixes") summary = "Advisory fixes required before approve.";
-  else if (readyForRelease) summary = "All constitutional checks pass â€” release ready.";
+  else if (readyForRelease) summary = "All constitutional checks pass — release ready.";
 
   return {
     lineage: {

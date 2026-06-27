@@ -1,5 +1,5 @@
-﻿/**
- * Communication Canon â€” facade over canonGenerator for backward compatibility.
+/**
+ * Communication Canon — facade over canonGenerator for backward compatibility.
  */
 import fs from "node:fs";
 import {

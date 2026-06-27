@@ -1,4 +1,4 @@
-﻿# Version 1.0 Operator Labs
+# Version 1.0 Operator Labs
 
 | Field | Value |
 |-------|-------|
@@ -6,19 +6,19 @@
 | Audience | Operators-in-training |
 | Version | 1.0 |
 
-**Prerequisites:** [operator-quickstart-1.0.md](./operator-quickstart-1.0.md) Â· [IM-OH-1.0.md](./IM-OH-1.0.md)
+**Prerequisites:** [operator-quickstart-1.0.md](./operator-quickstart-1.0.md) · [IM-OH-1.0.md](./IM-OH-1.0.md)
 
 ---
 
 ## Purpose
 
-Hands-on exercises for Investigation Mode. Each lab is read-only against constitutional state â€” operators inspect; they do not amend the baseline.
+Hands-on exercises for Investigation Mode. Each lab is read-only against constitutional state — operators inspect; they do not amend the baseline.
 
-**Runtime:** `npm run nova-studio` â†’ `/nova/studio/investigation-mode`
+**Runtime:** `npm run nova-studio` → `/nova/studio/investigation-mode`
 
 ---
 
-## Lab 1 â€” Receipt lineage
+## Lab 1 — Receipt lineage
 
 **Goal:** Trace a decision from receipt to proof-graph node.
 
@@ -30,7 +30,7 @@ Hands-on exercises for Investigation Mode. Each lab is read-only against constit
 
 ---
 
-## Lab 2 â€” Drift classification
+## Lab 2 — Drift classification
 
 **Goal:** Classify drift using the constitutional signal model.
 
@@ -42,7 +42,7 @@ Hands-on exercises for Investigation Mode. Each lab is read-only against constit
 
 ---
 
-## Lab 3 â€” Communication canon inspection
+## Lab 3 — Communication canon inspection
 
 **Goal:** Verify COMM-CANON state and ledger alignment.
 
@@ -54,7 +54,7 @@ Hands-on exercises for Investigation Mode. Each lab is read-only against constit
 
 ---
 
-## Lab 4 â€” Forensic replay
+## Lab 4 — Forensic replay
 
 **Goal:** Reconstruct an operator scenario from evidence.
 
@@ -66,11 +66,11 @@ Hands-on exercises for Investigation Mode. Each lab is read-only against constit
 
 ---
 
-## Lab 5 â€” Steward gate (observation only)
+## Lab 5 — Steward gate (observation only)
 
 **Goal:** Understand what stewards may change vs what operators may only inspect.
 
-1. Read [steward-handbook-1.0.md](../../spec/steward-handbook-1.0.md) Â§ operator boundary.
+1. Read [steward-handbook-1.0.md](../../spec/steward-handbook-1.0.md) § operator boundary.
 2. List three actions that require steward council vs operator read access.
 
 **Pass:** Correct boundary list; no attempted constitutional mutation during labs.

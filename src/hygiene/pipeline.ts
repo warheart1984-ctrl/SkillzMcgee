@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { generateCor } from "../cor/index.js";
 import { runProofAnalysis } from "../analysis/index.js";
 import { emitCavValidation } from "../cor-suite/car/validate.js";

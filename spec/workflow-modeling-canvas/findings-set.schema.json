@@ -1,4 +1,4 @@
-﻿{
+{
   "$id": "https://continuity-os.dev/schemas/workflow-canvas/findings-set/1.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Findings Set (Canvas Layer 2)",

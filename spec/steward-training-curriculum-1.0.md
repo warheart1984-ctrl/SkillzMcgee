@@ -1,4 +1,4 @@
-﻿# Version 1.0 Steward Training Curriculum
+# Version 1.0 Steward Training Curriculum
 
 | Field | Value |
 |-------|-------|
@@ -25,7 +25,7 @@ It consists of four modules:
 
 ---
 
-## 2. Module I â€” Constitutional Foundations
+## 2. Module I — Constitutional Foundations
 
 ### Topics
 
@@ -46,7 +46,7 @@ It consists of four modules:
 
 ---
 
-## 3. Module II â€” Semantic Governance
+## 3. Module II — Semantic Governance
 
 ### Topics
 
@@ -66,7 +66,7 @@ It consists of four modules:
 
 ---
 
-## 4. Module III â€” Conformance and Verification
+## 4. Module III — Conformance and Verification
 
 ### Topics
 
@@ -86,7 +86,7 @@ It consists of four modules:
 
 ---
 
-## 5. Module IV â€” Amendment Stewardship
+## 5. Module IV — Amendment Stewardship
 
 ### Topics
 

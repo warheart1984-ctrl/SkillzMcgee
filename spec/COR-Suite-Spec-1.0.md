@@ -1,4 +1,4 @@
-﻿# COR Suite - Consolidated Specification (v1.0)
+# COR Suite - Consolidated Specification (v1.0)
 
 **Constitutional Architecture for Evidence-First Governance**
 

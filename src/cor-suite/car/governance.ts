@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import { COR_SUITE_PATHS, REPO_ROOT } from "../paths.js";
 import type { CarArtifact, CarRegistry, CorStateVector } from "../paths.js";

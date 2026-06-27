@@ -1,4 +1,4 @@
-﻿import test from "node:test";
+import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import http from "node:http";
@@ -48,7 +48,7 @@ import { upsertLaneContract } from "../runtime/communication/laneRegistry.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const specimenRuntime = path.join(__dirname, "..", ".runtime", "nova-studio-test");
 
-test("governed pipeline produces intentâ†’planâ†’reasoningâ†’capabilitiesâ†’receipts", async () => {
+test("governed pipeline produces intent→plan→reasoning→capabilities→receipts", async () => {
   clearLedger();
   const result = await runGovernedPipeline({
     prompt: "read organism.py and list files",

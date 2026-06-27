@@ -1,25 +1,25 @@
-﻿# Constitutional Stack v1.0
+# Constitutional Stack v1.0
 
 **Authority:** CRK-1 Specification v1.0
-**Status:** Normative â€” consolidated layer contract
+**Status:** Normative — consolidated layer contract
 **Version:** 1.0
 
 This document defines the **six-layer constitutional stack**: canonical truth, validation, measurement, analysis, governance, and communication. Each layer has a strict boundary. Downstream layers consume upstream outputs; upstream layers MUST NOT perform downstream responsibilities.
 
 ```
 CAR-1.0 (Canonical)
-    â†“
+    ↓
 CAV-1.0 (Validation)
-    â†“
-COR-1.0 Â· CSR-1.0 Â· DRA-1.0 (Measurement)
-    â†“
+    ↓
+COR-1.0 · CSR-1.0 · DRA-1.0 (Measurement)
+    ↓
 Proof Analysis (Analysis)
-    â†“
+    ↓
 Steward Council / Governance Engine (Governance)
-    â†“
+    ↓
 Public Documentation (Communication)
 
-Repo Hygiene â€” operational prerequisite (runs before CAV; not a constitutional layer)
+Repo Hygiene — operational prerequisite (runs before CAV; not a constitutional layer)
 ```
 
 ## Related artifacts
@@ -37,11 +37,11 @@ Repo Hygiene â€” operational prerequisite (runs before CAV; not a constitut
 
 **Release criteria:** [../governance/release-criteria/v1.0.md](../governance/release-criteria/v1.0.md)
 
-**RFC:** [RFC-COR-Suite-1.0.md](../spec/RFC-COR-Suite-1.0.md) (Proposed Standard) Â· **Consolidated spec:** [COR-Suite-Spec-1.0.md](../spec/COR-Suite-Spec-1.0.md)
+**RFC:** [RFC-COR-Suite-1.0.md](../spec/RFC-COR-Suite-1.0.md) (Proposed Standard) · **Consolidated spec:** [COR-Suite-Spec-1.0.md](../spec/COR-Suite-Spec-1.0.md)
 
 ---
 
-## 1. Canonical Layer â€” CAR-1.0
+## 1. Canonical Layer — CAR-1.0
 
 ### 1.1 Role
 
@@ -49,7 +49,7 @@ Defines **constitutional truth**. Every canonical object is explicitly registere
 
 ### 1.2 Artifact
 
-**CAR-1.0** â€” Canonical Artifact Registry (`car/car-1.0.json`).
+**CAR-1.0** — Canonical Artifact Registry (`car/car-1.0.json`).
 
 ### 1.3 Responsibility
 
@@ -63,7 +63,7 @@ CAR MUST NOT be inferred, overwritten, or extended by measurement, analysis, gov
 
 ---
 
-## 2. Validation Layer â€” CAV-1.0
+## 2. Validation Layer — CAV-1.0
 
 ### 2.1 Role
 
@@ -93,7 +93,7 @@ Validation is **separate from measurement and governance**.
 
 ---
 
-## 3. Measurement Layer â€” COR-1.0, CSR-1.0, DRA-1.0
+## 3. Measurement Layer — COR-1.0, CSR-1.0, DRA-1.0
 
 ### 3.1 Role
 
@@ -114,7 +114,7 @@ Computes **constitutional state** from canonical artifacts.
 
 ### 3.4 COR-1.0 scope
 
-Reports normative requirements, structural integrity (orphans, missing links, broken lineage), and a deterministic repository state vector â€” **derived by grouping CAR entries**, not by scanning for canonical paths.
+Reports normative requirements, structural integrity (orphans, missing links, broken lineage), and a deterministic repository state vector — **derived by grouping CAR entries**, not by scanning for canonical paths.
 
 ### 3.5 Prohibitions
 
@@ -129,7 +129,7 @@ Output: purely descriptive ledgers conforming to published schemas.
 
 ---
 
-## 4. Analysis Layer â€” Proof Graph / Counterfactuals
+## 4. Analysis Layer — Proof Graph / Counterfactuals
 
 ### 4.1 Role
 
@@ -145,7 +145,7 @@ Proof-Analysis results: claims, dependency maps, regression reports, counterfact
 
 ### 4.4 Capabilities
 
-- Counterfactual analysis (â€œwhat breaks if X disappears?â€)
+- Counterfactual analysis (“what breaks if X disappears?”)
 - Dependency impact and blast radius
 - Regression detection (implementation, verification, evidence)
 - Architectural consequence mapping
@@ -156,7 +156,7 @@ Analysis MUST NOT modify repository state, mutate CAR/COR outputs, invent eviden
 
 ---
 
-## 5. Governance Layer â€” Steward Council
+## 5. Governance Layer — Steward Council
 
 ### 5.1 Role
 
@@ -171,11 +171,11 @@ Evaluates measured state against **published criteria** and records decisions.
 
 ### 5.3 Artifacts
 
-**Governance receipts** â€” registered in CAR as `kind: "governance_receipt"`.
+**Governance receipts** — registered in CAR as `kind: "governance_receipt"`.
 
 ### 5.4 Decisions
 
-Approve Â· Reject Â· Require fixes Â· Escalate Â· Freeze Â· Retire
+Approve · Reject · Require fixes · Escalate · Freeze · Retire
 
 ### 5.5 Prohibitions
 
@@ -187,7 +187,7 @@ Governance MUST NOT:
 
 ---
 
-## 6. Communication Layer â€” Public Documentation
+## 6. Communication Layer — Public Documentation
 
 ### 6.1 Role
 
@@ -206,7 +206,7 @@ Release notes, public reports, dashboards (e.g. skillzmcgee Nova COR dashboard),
 > The repository does not declare its own correctness.
 > It exposes the evidence required for independent reviewers to determine it.
 
-**â€œDonâ€™t trust the repository â€” query it.â€**
+**“Don’t trust the repository — query it.”**
 
 ### 6.5 Prohibitions
 
@@ -216,10 +216,10 @@ Communication MUST reflect upstream results; it MUST NOT override or reinterpret
 
 ## Layer dependency rule
 
-If CAR is incomplete â†’ CAV fails â†’ measurement is invalid.
-If CAV blocking findings exist â†’ COR MUST NOT run.
-If COR is nondeterministic â†’ Analysis is unstable.
-If Analysis is unstable â†’ Governance is untrustworthy.
+If CAR is incomplete → CAV fails → measurement is invalid.
+If CAV blocking findings exist → COR MUST NOT run.
+If COR is nondeterministic → Analysis is unstable.
+If Analysis is unstable → Governance is untrustworthy.
 Communication describes the stack; it never alters it.
 
 ## Operational prerequisite: Repo Hygiene

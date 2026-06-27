@@ -1,4 +1,4 @@
-﻿# Continuity OS Specification Suite â€” Version 1.0
+# Continuity OS Specification Suite — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -43,7 +43,7 @@ These documents define the immutable identity of Version 1.0:
 | [constitutional-stability-principle-1.0.md](./constitutional-stability-principle-1.0.md) | Semantics frozen; implementations free |
 | [version-1.0-freeze-declaration.md](./version-1.0-freeze-declaration.md) | Formal freeze declaration (2026-06-26) |
 | [what-we-froze-and-why-v1.0.md](./what-we-froze-and-why-v1.0.md) | Historical retrospective of the freeze |
-| [certification-profile-1.0.md](./certification-profile-1.0.md) | C0â€“C3 certification levels |
+| [certification-profile-1.0.md](./certification-profile-1.0.md) | C0–C3 certification levels |
 | [certification-checklist-1.0.md](./certification-checklist-1.0.md) | Authoritative certification checklist |
 | [governance-charter-1.0.md](./governance-charter-1.0.md) | Governance model and processes |
 | [stewardship-mandate-1.0.md](./stewardship-mandate-1.0.md) | Steward responsibilities and obligations |
@@ -54,13 +54,13 @@ These documents define the immutable identity of Version 1.0:
 | [version-1.1-planning-skeleton.md](./version-1.1-planning-skeleton.md) | Version 1.1 planning framework (draft) |
 | [steward-handbook-1.0.md](./steward-handbook-1.0.md) | Steward responsibilities and processes |
 | [steward-training-deck-1.0.txt](./steward-training-deck-1.0.txt) | Steward onboarding training deck (text-mode) |
-| [amendment-procedure-1.0.md](./amendment-procedure-1.0.md) | Constitutional amendment procedure (â†’ 2.0) |
+| [amendment-procedure-1.0.md](./amendment-procedure-1.0.md) | Constitutional amendment procedure (→ 2.0) |
 | [amendment-gatekeeping-rules-1.0.md](./amendment-gatekeeping-rules-1.0.md) | Amendment justification requirements |
 | [glossary-1.0.md](./glossary-1.0.md) | Normative glossary of constitutional terms |
 | [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) | Semantic categories and transformation rules |
 | [conformance-test-matrix-1.0.md](./conformance-test-matrix-1.0.md) | CTS-1.0 conformance test matrix |
 | [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md) | COR Suite standards-track architecture |
-| [../docs/architecture/crk-wms-equivalence-table.md](../docs/architecture/crk-wms-equivalence-table.md) | CRK-1 Ã— WMS semantic mapping |
+| [../docs/architecture/crk-wms-equivalence-table.md](../docs/architecture/crk-wms-equivalence-table.md) | CRK-1 × WMS semantic mapping |
 | [../docs/architecture/crk-wms-cross-plane-dependencies.txt](../docs/architecture/crk-wms-cross-plane-dependencies.txt) | Cross-plane dependency graph |
 
 No changes may be made to these documents without creating a **new constitutional version**.
@@ -125,7 +125,7 @@ Defines how operators interact with constitutional state:
 
 | Document | Role |
 |----------|------|
-| [../docs/operator/operator-quickstart-1.0.md](../docs/operator/operator-quickstart-1.0.md) | Operator quickstart â€” Investigation Mode essentials |
+| [../docs/operator/operator-quickstart-1.0.md](../docs/operator/operator-quickstart-1.0.md) | Operator quickstart — Investigation Mode essentials |
 | [../docs/operator/IM-OH-1.0.md](../docs/operator/IM-OH-1.0.md) | Investigation Mode Operator Handbook |
 | [../docs/operator/operator-scenarios-1.0.md](../docs/operator/operator-scenarios-1.0.md) | Five real-world operator scenarios |
 | [../docs/operator/forensics-guide-1.0.md](../docs/operator/forensics-guide-1.0.md) | Constitutional forensics procedures |
@@ -146,7 +146,7 @@ These documents define **how the system is used** and **who maintains it**.
 | [../docs/public/landing-page-v1.0.md](../docs/public/landing-page-v1.0.md) | Public website landing page |
 | [../docs/public/public-faq-expanded-v1.0.md](../docs/public/public-faq-expanded-v1.0.md) | Expanded public FAQ |
 | [../docs/public/founders-letter-v1.0.md](../docs/public/founders-letter-v1.0.md) | Founders' letter |
-| [../docs/public/founders-log-entry-001.md](../docs/public/founders-log-entry-001.md) | Founder's Log â€” Entry #001 |
+| [../docs/public/founders-log-entry-001.md](../docs/public/founders-log-entry-001.md) | Founder's Log — Entry #001 |
 | [../docs/public/version-1.0-press-bundle.txt](../docs/public/version-1.0-press-bundle.txt) | Press-ready bundle |
 | [../docs/public/civilization-scale-builder/](../docs/public/civilization-scale-builder/) | Civilization-Scale Builder deliverables |
 | [../docs/whitepaper/continuity-os-v1.0.md](../docs/whitepaper/continuity-os-v1.0.md) | Public v1.0 narrative |
@@ -159,7 +159,7 @@ These documents define **how the platform is communicated**. They must remain do
 
 | Document | Role |
 |----------|------|
-| [rfc-zero-v1.1.md](./rfc-zero-v1.1.md) | RFC-0 â€” Version 1.1 direction (draft) |
+| [rfc-zero-v1.1.md](./rfc-zero-v1.1.md) | RFC-0 — Version 1.1 direction (draft) |
 | [version-1.1-planning-skeleton.md](./version-1.1-planning-skeleton.md) | Version 1.1 planning framework |
 | [version-1.0-to-1.1-transition-brief.md](./version-1.0-to-1.1-transition-brief.md) | Post-freeze transition guidance |
 
@@ -197,7 +197,7 @@ Implementations may evolve freely as long as constitutional semantics remain int
 
 ## 10. Workflow Modeling Canvas (CMS-1.0)
 
-Evidence-chain consulting methodology â€” separate from COR Suite constitutional stack, bridged via CRK-1 Ã— WMS equivalence.
+Evidence-chain consulting methodology — separate from COR Suite constitutional stack, bridged via CRK-1 × WMS equivalence.
 
 | Document | Description |
 |----------|-------------|

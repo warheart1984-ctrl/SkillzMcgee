@@ -1,4 +1,4 @@
-﻿# COR Suite - Folder Structure
+# COR Suite - Folder Structure
 
 **Version:** 1.0
 **Repository:** `skillzmcgee` cockpit/runtime mirror for the COR Suite artifacts.
@@ -7,67 +7,67 @@ This document records the repository-native layout for CAR-1.0, CAV-1.0, COR-1.0
 
 ```text
 skillzmcgee/
-â”œâ”€â”€ cor-suite/
-â”‚   â””â”€â”€ car/
-â”‚       â””â”€â”€ car-1.0.json
-â”œâ”€â”€ governance/
-â”‚   â”œâ”€â”€ invariants/
-â”‚   â”‚   â””â”€â”€ GOV-INV-1.0.md
-â”‚   â””â”€â”€ release-criteria/
-â”‚       â””â”€â”€ v1.0.md
-â”œâ”€â”€ meta/
-â”‚   â””â”€â”€ cor-suite/
-â”‚       â”œâ”€â”€ cav-validation.json
-â”‚       â”œâ”€â”€ cor-state.json
-â”‚       â”œâ”€â”€ pgi-1.0.json
-â”‚       â”œâ”€â”€ dra-report.json
-â”‚       â”œâ”€â”€ proof-analysis.json
-â”‚       â”œâ”€â”€ maturity-vector.json
-â”‚       â”œâ”€â”€ governance-receipt.json
-â”‚       â””â”€â”€ repo-hygiene-status.json
-â”œâ”€â”€ spec/
-â”‚   â”œâ”€â”€ CAR-1.0-Registry.md
-â”‚   â”œâ”€â”€ CAV-1.0-Validation.md
-â”‚   â”œâ”€â”€ COR-1.0-Contract.md
-â”‚   â”œâ”€â”€ COR-Suite-Spec-1.0.md
-â”‚   â”œâ”€â”€ RFC-COR-Suite-1.0.md
-â”‚   â”œâ”€â”€ car-1.0.schema.json
-â”‚   â”œâ”€â”€ cav-validation.schema.json
-â”‚   â”œâ”€â”€ cor-state-vector.schema.json
-â”‚   â”œâ”€â”€ pgi.schema.json
-â”‚   â”œâ”€â”€ dra-report.schema.json
-â”‚   â”œâ”€â”€ governance-receipt.schema.json
-â”‚   â””â”€â”€ workflow-modeling-canvas/
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ analysis/
-â”‚   â”œâ”€â”€ cli/
-â”‚   â”‚   â””â”€â”€ cor-suite.ts
-â”‚   â”œâ”€â”€ cor/
-â”‚   â”œâ”€â”€ cor-suite/
-â”‚   â”‚   â”œâ”€â”€ car/
-â”‚   â”‚   â”œâ”€â”€ dra/
-â”‚   â”‚   â”œâ”€â”€ governance/
-â”‚   â”‚   â”œâ”€â”€ pgi/
-â”‚   â”‚   â””â”€â”€ paths.ts
-â”‚   â”œâ”€â”€ hygiene/
-â”‚   â”œâ”€â”€ maturity/
-â”‚   â””â”€â”€ nova-studio/
-â”œâ”€â”€ tests/
-â”‚   â””â”€â”€ cor_suite.test.js
-â”œâ”€â”€ workflow-canvas/
-â”‚   â”œâ”€â”€ cli-validate.ts
-â”‚   â”œâ”€â”€ examples/
-â”‚   â”‚   â””â”€â”€ canvas-v1.0.example.json
-â”‚   â”œâ”€â”€ types.ts
-â”‚   â””â”€â”€ validate.ts
-â””â”€â”€ workflow-modeling/
-    â”œâ”€â”€ README.md
-    â”œâ”€â”€ conformance/
-    â”œâ”€â”€ launch-kit/
-    â”‚   â””â”€â”€ LaunchKit.md
-    â””â”€â”€ nova-studio/
-        â””â”€â”€ workflows/
-            â””â”€â”€ modeling-agent.json
+├── cor-suite/
+│   └── car/
+│       └── car-1.0.json
+├── governance/
+│   ├── invariants/
+│   │   └── GOV-INV-1.0.md
+│   └── release-criteria/
+│       └── v1.0.md
+├── meta/
+│   └── cor-suite/
+│       ├── cav-validation.json
+│       ├── cor-state.json
+│       ├── pgi-1.0.json
+│       ├── dra-report.json
+│       ├── proof-analysis.json
+│       ├── maturity-vector.json
+│       ├── governance-receipt.json
+│       └── repo-hygiene-status.json
+├── spec/
+│   ├── CAR-1.0-Registry.md
+│   ├── CAV-1.0-Validation.md
+│   ├── COR-1.0-Contract.md
+│   ├── COR-Suite-Spec-1.0.md
+│   ├── RFC-COR-Suite-1.0.md
+│   ├── car-1.0.schema.json
+│   ├── cav-validation.schema.json
+│   ├── cor-state-vector.schema.json
+│   ├── pgi.schema.json
+│   ├── dra-report.schema.json
+│   ├── governance-receipt.schema.json
+│   └── workflow-modeling-canvas/
+├── src/
+│   ├── analysis/
+│   ├── cli/
+│   │   └── cor-suite.ts
+│   ├── cor/
+│   ├── cor-suite/
+│   │   ├── car/
+│   │   ├── dra/
+│   │   ├── governance/
+│   │   ├── pgi/
+│   │   └── paths.ts
+│   ├── hygiene/
+│   ├── maturity/
+│   └── nova-studio/
+├── tests/
+│   └── cor_suite.test.js
+├── workflow-canvas/
+│   ├── cli-validate.ts
+│   ├── examples/
+│   │   └── canvas-v1.0.example.json
+│   ├── types.ts
+│   └── validate.ts
+└── workflow-modeling/
+    ├── README.md
+    ├── conformance/
+    ├── launch-kit/
+    │   └── LaunchKit.md
+    └── nova-studio/
+        └── workflows/
+            └── modeling-agent.json
 ```
 
 ## Pipeline Order

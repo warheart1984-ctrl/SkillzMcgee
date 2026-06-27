@@ -1,4 +1,4 @@
-﻿import test from "node:test";
+import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -63,7 +63,7 @@ test("diffCanons detects structural section changes", () => {
 test("generateCommunicationCanon includes all eight sections", () => {
   const md = generateCommunicationCanon();
   for (let i = 1; i <= 8; i += 1) {
-    assert.ok(md.includes(`Â§${i} â€”`), `missing section ${i}`);
+    assert.ok(md.includes(`§${i} —`), `missing section ${i}`);
   }
   assert.ok(md.includes("```json"));
 });

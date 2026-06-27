@@ -1,4 +1,4 @@
-﻿import { DRIFT_THRESHOLDS } from "./constants.mjs";
+import { DRIFT_THRESHOLDS } from "./constants.mjs";
 
 export function listCrossLaneInvariants() {
   return [

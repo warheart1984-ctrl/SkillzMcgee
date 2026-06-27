@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * COR Suite CLI - CAR -> CAV -> COR -> PGI -> DRA -> Analysis -> Maturity -> Governance.
  */

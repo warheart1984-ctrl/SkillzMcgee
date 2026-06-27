@@ -1,4 +1,4 @@
-﻿# Version 1.0 Semantic Drift Casebook
+# Version 1.0 Semantic Drift Casebook
 
 | Field | Value |
 |-------|-------|
@@ -13,11 +13,11 @@
 
 ## Purpose
 
-Worked cases illustrating how semantic drift appears in Version 1.0 systems. Each case maps drift signals to operator action â€” not to ad-hoc fixes.
+Worked cases illustrating how semantic drift appears in Version 1.0 systems. Each case maps drift signals to operator action — not to ad-hoc fixes.
 
 ---
 
-## Case A â€” Interpretation shift without code change
+## Case A — Interpretation shift without code change
 
 **Signal:** Semantic drift vector rises; mechanical drift flat.
 
@@ -35,7 +35,7 @@ Worked cases illustrating how semantic drift appears in Version 1.0 systems. Eac
 
 ---
 
-## Case B â€” Lane merge under frozen canon
+## Case B — Lane merge under frozen canon
 
 **Signal:** Communication topology mutation blocked; governance tick records `guardCanonMutation`.
 
@@ -44,7 +44,7 @@ Worked cases illustrating how semantic drift appears in Version 1.0 systems. Eac
 **Diagnosis:**
 
 1. Confirm `canon_state: FROZEN` on latest communication tick.
-2. Identify required amendment path (`AAIS-COMM-Î›-003` or successor).
+2. Identify required amendment path (`AAIS-COMM-Λ-003` or successor).
 
 **Operator action:** Do not bypass guard. File amendment proposal; use read-only topology view.
 
@@ -52,24 +52,24 @@ Worked cases illustrating how semantic drift appears in Version 1.0 systems. Eac
 
 ---
 
-## Case C â€” Composite drift within envelope
+## Case C — Composite drift within envelope
 
-**Signal:** Composite drift 0.04â€“0.12; all sub-vectors below strict thresholds.
+**Signal:** Composite drift 0.04–0.12; all sub-vectors below strict thresholds.
 
 **Scenario:** Normal epoch variance after implementation patch (mechanical + minor semantic noise).
 
 **Diagnosis:**
 
-1. Classify sub-vectors per handbook Â§2.
+1. Classify sub-vectors per handbook §2.
 2. Confirm DRA report marks epoch as **within envelope**.
 
 **Operator action:** Monitor; no governance escalation. Log for trend analysis.
 
-**Lesson:** Not all drift is actionable â€” envelopes encode expected variance.
+**Lesson:** Not all drift is actionable — envelopes encode expected variance.
 
 ---
 
-## Case D â€” Constitutional drift (critical)
+## Case D — Constitutional drift (critical)
 
 **Signal:** Invariant violation or proof-graph cycle detected; DRA severity **critical**.
 
@@ -87,7 +87,7 @@ Worked cases illustrating how semantic drift appears in Version 1.0 systems. Eac
 
 ---
 
-## Case E â€” False alarm from stale baseline
+## Case E — False alarm from stale baseline
 
 **Signal:** High diff against canon markdown; ledger shows version mismatch.
 

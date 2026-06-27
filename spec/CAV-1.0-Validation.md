@@ -1,4 +1,4 @@
-﻿# CAV-1.0 Validation
+# CAV-1.0 Validation
 
 **Layer:** Validation
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -10,7 +10,7 @@ CAV-1.0 (Canonical Artifact Validation) verifies the integrity of CAR-1.0 and ev
 
 ## Purpose
 
-Validation is **separate from measurement and governance**. CAV answers: â€œIs the canonical registry well-formed and consistent with the repository?â€ It MUST NOT make governance decisions or interpret measurements as approve/reject.
+Validation is **separate from measurement and governance**. CAV answers: “Is the canonical registry well-formed and consistent with the repository?” It MUST NOT make governance decisions or interpret measurements as approve/reject.
 
 ## Inputs
 
@@ -20,12 +20,12 @@ Validation is **separate from measurement and governance**. CAV answers: â€œ
 
 ## Checks
 
-1. **Schema conformance** â€” registry and entries match CAR-1.0 JSON Schema.
-2. **Path existence** â€” every active artifact path exists in the repository.
-3. **Hash integrity** â€” stored `hash` matches SHA-256 of file contents.
-4. **Unique IDs** â€” no duplicate `id` values.
-5. **Lifecycle consistency** â€” retired entries have `retiredAt`; deprecated entries SHOULD have `supersededBy`.
-6. **Link integrity** â€” `supersedes`, `supersededBy`, `related` reference known IDs.
+1. **Schema conformance** — registry and entries match CAR-1.0 JSON Schema.
+2. **Path existence** — every active artifact path exists in the repository.
+3. **Hash integrity** — stored `hash` matches SHA-256 of file contents.
+4. **Unique IDs** — no duplicate `id` values.
+5. **Lifecycle consistency** — retired entries have `retiredAt`; deprecated entries SHOULD have `supersededBy`.
+6. **Link integrity** — `supersedes`, `supersededBy`, `related` reference known IDs.
 
 ## Output classification
 
@@ -67,7 +67,7 @@ CAV-1.0 MUST NOT:
 ## Pipeline position
 
 ```
-Repo Hygiene â†’ CAV-1.0 validate â†’ COR / CSR / DRA measure â†’ Proof Analysis â†’ Governance â†’ Communication
+Repo Hygiene → CAV-1.0 validate → COR / CSR / DRA measure → Proof Analysis → Governance → Communication
 ```
 
 COR-1.0 MUST NOT run when CAV reports blocking findings.

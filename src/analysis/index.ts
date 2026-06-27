@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { COR_SUITE_PATHS } from "../cor-suite/paths.js";
 import type { CorStateVector } from "../cor-suite/paths.js";
 import { loadLegacyCor } from "../cor/loaders/repo.js";
@@ -30,7 +30,7 @@ export interface ProofAnalysisResult {
 
 function loadCorState(): CorStateVector {
   const p = COR_SUITE_PATHS.outputs.corState;
-  if (!fs.existsSync(p)) throw new Error(`COR state missing â€” run: cor-suite cor (${p})`);
+  if (!fs.existsSync(p)) throw new Error(`COR state missing — run: cor-suite cor (${p})`);
   return JSON.parse(fs.readFileSync(p, "utf8")) as CorStateVector;
 }
 

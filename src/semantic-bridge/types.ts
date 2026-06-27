@@ -1,4 +1,4 @@
-﻿export const CATEGORIES = [
+export const CATEGORIES = [
   "normative",
   "architectural",
   "methodological",
@@ -12,7 +12,7 @@ export type MessageDirection = "jon->darz" | "darz->jon";
 
 export type Impact = "spec" | "repo" | "ops" | "neither";
 
-/** Dar-Z â†’ Jon normative impact (spec / repo / neither) */
+/** Dar-Z → Jon normative impact (spec / repo / neither) */
 export type NormativeImpact = "spec" | "repo" | "neither";
 
 export const REPOSITORY_TARGETS = [
@@ -38,14 +38,14 @@ export interface NormalizedMessage {
   coreClaim: string;
   context: string;
   impact: Impact;
-  /** Dar-Z â†’ Jon: collapsed spec / repo / neither */
+  /** Dar-Z → Jon: collapsed spec / repo / neither */
   normativeImpact: NormativeImpact;
   requiredAction: AskAction;
-  /** Dar-Z â†’ Jon: what Jon needs to update, write, or adjust */
+  /** Dar-Z → Jon: what Jon needs to update, write, or adjust */
   requiredActionDetail: string;
   ask: AskAction;
   targets: string[];
-  /** Dar-Z â†’ Jon: specification / conformance / MRI / docs / website */
+  /** Dar-Z → Jon: specification / conformance / MRI / docs / website */
   repositoryTargets: RepositoryTarget[];
   altitude: Altitude;
   latency: Latency;

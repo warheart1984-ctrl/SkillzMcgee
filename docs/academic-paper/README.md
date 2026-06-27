@@ -1,4 +1,4 @@
-﻿# Academic Paper
+# Academic Paper
 
 Academic-facing documents for Continuity OS and CRK-1.
 

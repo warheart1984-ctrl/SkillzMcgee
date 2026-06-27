@@ -1,4 +1,4 @@
-﻿import crypto from "node:crypto";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { COR_SUITE_PATHS, REPO_ROOT } from "../paths.js";

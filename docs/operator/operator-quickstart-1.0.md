@@ -1,4 +1,4 @@
-﻿# Version 1.0 Operator Quickstart
+# Version 1.0 Operator Quickstart
 
 | Field | Value |
 |-------|-------|

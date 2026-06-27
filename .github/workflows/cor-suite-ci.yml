@@ -1,4 +1,4 @@
-﻿name: COR Suite CI
+name: COR Suite CI
 
 on:
   push:

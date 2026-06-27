@@ -1,4 +1,4 @@
-﻿import test from "node:test";
+import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -19,7 +19,7 @@ test("binding integration audit runs and records report", () => {
   assert.ok(fs.existsSync(reportPath));
 });
 
-test("Negotiant Core whitepaper invariants â€” determinism suite passes", () => {
+test("Negotiant Core whitepaper invariants — determinism suite passes", () => {
   const report = runBindingConformanceAudit();
   assert.equal(report.negotiant_core.ok, true);
   assert.equal(report.build_checks.every((c) => c.ok), true);

@@ -1,4 +1,4 @@
-﻿import { COMM_CONSTITUTION_VERSION, DRIFT_THRESHOLDS } from "./constants.mjs";
+import { COMM_CONSTITUTION_VERSION, DRIFT_THRESHOLDS } from "./constants.mjs";
 import { computeDriftVector } from "./communicationDrift.mjs";
 import { getLaneContract, updateLaneStatus, validateTickAgainstLane } from "./laneRegistry.mjs";
 import { routeMessage } from "./router.mjs";

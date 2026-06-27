@@ -1,4 +1,4 @@
-﻿# Version 1.0 Semantic Test Suite
+# Version 1.0 Semantic Test Suite
 
 | Field | Value |
 |-------|-------|
@@ -44,30 +44,30 @@ Semantic correctness is required for constitutional compatibility.
 | Test ID | Requirement | Expected Behavior |
 |---------|-------------|-------------------|
 | SEM-CAT-01 | Artifact categories match CRK-1 | No category drift |
-| SEM-CAT-02 | WMS categories map 1:1 to CRK-1 | Observation â†” Evidence, etc. |
+| SEM-CAT-02 | WMS categories map 1:1 to CRK-1 | Observation ↔ Evidence, etc. |
 | SEM-CAT-03 | No cross-category contamination | Categories remain pure |
 
-**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) Â§2
+**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) §2
 
 ### 3.2 Invariant Preservation Tests
 
 | Test ID | Requirement | Expected Behavior |
 |---------|-------------|-------------------|
-| SEM-INV-01 | One-artifact-per-stage | Exactly one input â†’ one output |
-| SEM-INV-02 | Loop ordering preserved | V â†’ M â†’ A â†’ G |
+| SEM-INV-01 | One-artifact-per-stage | Exactly one input → one output |
+| SEM-INV-02 | Loop ordering preserved | V → M → A → G |
 | SEM-INV-03 | Monotonic lineage | No backward edges |
 
-**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) Â§3
+**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) §3
 
 ### 3.3 Transformation Semantics Tests
 
 | Test ID | Requirement | Expected Behavior |
 |---------|-------------|-------------------|
-| SEM-TRN-01 | Evidence â†’ Interpretation | Interpretation references evidence |
-| SEM-TRN-02 | Interpretation â†’ Policy Evaluation | Evaluation references interpretation |
-| SEM-TRN-03 | Policy Evaluation â†’ Policy Outcome | Outcome references evaluation |
+| SEM-TRN-01 | Evidence → Interpretation | Interpretation references evidence |
+| SEM-TRN-02 | Interpretation → Policy Evaluation | Evaluation references interpretation |
+| SEM-TRN-03 | Policy Evaluation → Policy Outcome | Outcome references evaluation |
 
-**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) Â§4.1
+**Reference:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) §4.1
 
 ### 3.4 Constitutional Loop Semantics Tests
 
@@ -78,7 +78,7 @@ Semantic correctness is required for constitutional compatibility.
 | SEM-LOOP-03 | Analysis semantics | Correct interpretation |
 | SEM-LOOP-04 | Governance semantics | Decision grounded in analysis |
 
-**Reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.6
+**Reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.6
 
 ### 3.5 Proof Graph Semantics Tests
 
@@ -94,10 +94,10 @@ Semantic correctness is required for constitutional compatibility.
 
 | Test ID | Requirement | Expected Behavior |
 |---------|-------------|-------------------|
-| SEM-REP-01 | Deterministic semantics | Same inputs â†’ same meaning |
+| SEM-REP-01 | Deterministic semantics | Same inputs → same meaning |
 | SEM-REP-02 | Canonical derivation | Meaning derives from canonical state |
 
-**Reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.7
+**Reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.7
 
 ---
 

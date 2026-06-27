@@ -1,5 +1,5 @@
-﻿/**
- * Unified evidence ledger append â€” same substrate as zoneTick / governanceTick views.
+/**
+ * Unified evidence ledger append — same substrate as zoneTick / governanceTick views.
  */
 import fs from "node:fs";
 import path from "node:path";

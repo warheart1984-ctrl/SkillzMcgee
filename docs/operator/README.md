@@ -1,4 +1,4 @@
-﻿# Operator Layer â€” Version 1.0
+# Operator Layer — Version 1.0
 
 Informative documents for operators, analysts, and investigators using Investigation Mode and the Version 1.0 runtime.
 
@@ -12,7 +12,7 @@ Informative documents for operators, analysts, and investigators using Investiga
 
 | Document | Purpose |
 |----------|---------|
-| [operator-quickstart-1.0.md](./operator-quickstart-1.0.md) | Essentials â€” start here |
+| [operator-quickstart-1.0.md](./operator-quickstart-1.0.md) | Essentials — start here |
 | [IM-OH-1.0.md](./IM-OH-1.0.md) | Full Investigation Mode handbook |
 | [operator-scenarios-1.0.md](./operator-scenarios-1.0.md) | Five real-world scenarios |
 | [operator-labs-1.0.md](./operator-labs-1.0.md) | Five hands-on Investigation Mode labs |

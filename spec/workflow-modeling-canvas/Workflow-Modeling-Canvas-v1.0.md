@@ -1,12 +1,12 @@
-﻿# Workflow Modeling Canvas v1.0
+# Workflow Modeling Canvas v1.0
 
-**Version:** 1.0 Â· **Status:** Normative Â· **Methodology:** [CMS-1.0](./CMS-1.0.md)
+**Version:** 1.0 · **Status:** Normative · **Methodology:** [CMS-1.0](./CMS-1.0.md)
 
 The Workflow Modeling Canvas is a governed consulting framework that enforces evidence-first reasoning, explicit semantic boundaries, traceable recommendations, reproducible analysis, and founder-independent methodology.
 
 ---
 
-## Layer 1 â€” Current State (Observation Layer)
+## Layer 1 — Current State (Observation Layer)
 
 **Purpose:** Capture what actually happens, not what stakeholders believe happens.
 
@@ -27,11 +27,11 @@ The Workflow Modeling Canvas is a governed consulting framework that enforces ev
 
 **Output artifact:** **Observation Set** (`observation-set.schema.json`)
 
-**Rule:** No interpretation in this layer â€” raw facts only.
+**Rule:** No interpretation in this layer — raw facts only.
 
 ---
 
-## Layer 2 â€” Analysis (Interpretation Layer)
+## Layer 2 — Analysis (Interpretation Layer)
 
 **Purpose:** Derive meaning from observations.
 
@@ -54,7 +54,7 @@ The Workflow Modeling Canvas is a governed consulting framework that enforces ev
 
 ---
 
-## Layer 3 â€” Future State (Governance Layer)
+## Layer 3 — Future State (Governance Layer)
 
 **Purpose:** Define what should change and why.
 
@@ -75,19 +75,19 @@ The Workflow Modeling Canvas is a governed consulting framework that enforces ev
 
 ---
 
-## Layer 4 â€” Evidence Chain (Traceability Layer)
+## Layer 4 — Evidence Chain (Traceability Layer)
 
 **Purpose:** Ensure every recommendation is grounded in observed reality.
 
 ### Canonical chain
 
 ```
-Observation â†’ Finding â†’ Recommendation â†’ Expected Outcome â†’ Success Metric
+Observation → Finding → Recommendation → Expected Outcome → Success Metric
 ```
 
 **Output artifacts:** **Success Metric Set**, **Traceability Map**
 
-**Rule:** The traceability map **MUST** be monotonic â€” no orphan nodes, no backward-only links.
+**Rule:** The traceability map **MUST** be monotonic — no orphan nodes, no backward-only links.
 
 ---
 

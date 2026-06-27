@@ -1,9 +1,9 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { validateCanvas, type WorkflowCanvasV1, type CanvasValidationResult } from "../../../workflow-canvas/index.js";
 import exampleCanvas from "../../../workflow-canvas/examples/canvas-v1.0.example.json";
 
 const OWMP_CHECKLIST = [
-  "Observation Set complete â€” no interpretation in Layer 1",
+  "Observation Set complete — no interpretation in Layer 1",
   "Findings cite observation IDs",
   "Recommendations cite finding IDs",
   "Expected outcomes cite recommendation IDs",
@@ -28,7 +28,7 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
   const chainPreview = useMemo(() => {
     if (!canvas) return [];
     return canvas.traceabilityMap.chains.slice(0, 10).map((c) => ({
-      chain: `${c.observationId} â†’ ${c.findingId} â†’ ${c.recommendationId} â†’ ${c.expectedOutcomeId} â†’ ${c.successMetricId}`,
+      chain: `${c.observationId} → ${c.findingId} → ${c.recommendationId} → ${c.expectedOutcomeId} → ${c.successMetricId}`,
       id: c.chainId,
     }));
   }, [canvas]);
@@ -37,7 +37,7 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
     return (
       <div className="ns-page">
         <h1>Workflow Modeling Canvas v1.0</h1>
-        <p>Loading canvasâ€¦</p>
+        <p>Loading canvas…</p>
       </div>
     );
   }
@@ -46,13 +46,13 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
     <div className="ns-page">
       <h1>Workflow Modeling Canvas v1.0</h1>
       <p className="ns-muted">
-        CMS-1.0 Â· Evidence chain: Observation â†’ Finding â†’ Recommendation â†’ Outcome â†’ Metric
+        CMS-1.0 · Evidence chain: Observation → Finding → Recommendation → Outcome → Metric
       </p>
 
       <section className="ns-section">
         <h2>Validation ({validation.valid ? "valid" : "issues"})</h2>
         <p>
-          {validation.observationCount} observations Â· {validation.chainCount} traceability chains
+          {validation.observationCount} observations · {validation.chainCount} traceability chains
         </p>
         {!validation.valid && (
           <ul className="ns-list">
@@ -84,22 +84,22 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
 
       {layer === 1 && (
         <section className="ns-section">
-          <h2>Layer 1 â€” Current State (Observation Set)</h2>
-          <p>Raw facts only â€” no interpretation.</p>
+          <h2>Layer 1 — Current State (Observation Set)</h2>
+          <p>Raw facts only — no interpretation.</p>
           <pre className="ns-pre">{JSON.stringify(canvas.observationSet, null, 2)}</pre>
         </section>
       )}
 
       {layer === 2 && (
         <section className="ns-section">
-          <h2>Layer 2 â€” Analysis (Findings Set)</h2>
+          <h2>Layer 2 — Analysis (Findings Set)</h2>
           <pre className="ns-pre">{JSON.stringify(canvas.findingsSet, null, 2)}</pre>
         </section>
       )}
 
       {layer === 3 && (
         <section className="ns-section">
-          <h2>Layer 3 â€” Future State</h2>
+          <h2>Layer 3 — Future State</h2>
           <h3>Recommendations</h3>
           <pre className="ns-pre">{JSON.stringify(canvas.recommendationSet, null, 2)}</pre>
           <h3>Expected Outcomes</h3>
@@ -109,7 +109,7 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
 
       {layer === 4 && (
         <section className="ns-section">
-          <h2>Layer 4 â€” Evidence Chain</h2>
+          <h2>Layer 4 — Evidence Chain</h2>
           <h3>Success Metrics</h3>
           <pre className="ns-pre">{JSON.stringify(canvas.successMetricSet, null, 2)}</pre>
           <h3>Traceability Map</h3>
@@ -129,7 +129,7 @@ export const WorkflowModelingCanvasPage: React.FC = () => {
           {OWMP_CHECKLIST.map((item) => (
             <li key={item}>
               <span className={`ns-badge ns-badge-${validation.valid ? "ok" : "fail"}`}>
-                {validation.valid ? "âœ“" : "â—‹"}
+                {validation.valid ? "✓" : "○"}
               </span>{" "}
               {item}
             </li>

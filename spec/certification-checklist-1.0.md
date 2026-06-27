@@ -1,4 +1,4 @@
-﻿# Version 1.0 Certification Checklist
+# Version 1.0 Certification Checklist
 
 | Field | Value |
 |-------|-------|
@@ -38,7 +38,7 @@ Certification is evaluated across five categories:
 
 All categories must pass for certification.
 
-**Certification levels (C0â€“C3):** See [certification-profile-1.0.md Â§2](./certification-profile-1.0.md#2-certification-levels). Higher levels require additional items beyond this baseline checklist.
+**Certification levels (C0–C3):** See [certification-profile-1.0.md §2](./certification-profile-1.0.md#2-certification-levels). Higher levels require additional items beyond this baseline checklist.
 
 ---
 
@@ -62,7 +62,7 @@ All categories must pass for certification.
 - [ ] Governance stage produces decisions consistent with constitutional rules
 - [ ] Stages are not merged, reordered, or bypassed
 
-**Normative reference:** [constitutional-baseline-1.0.md Â§2.6](./constitutional-baseline-1.0.md#26-validation--measurement--analysis--governance-separation), [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
+**Normative reference:** [constitutional-baseline-1.0.md §2.6](./constitutional-baseline-1.0.md#26-validation--measurement--analysis--governance-separation), [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
 
 ### 3.3 Proof Graph Semantics
 
@@ -73,7 +73,7 @@ All categories must pass for certification.
 - [ ] All edges correspond to governed transformations
 - [ ] No orphan nodes or unanchored edges
 
-**Normative reference:** [../conformance/proof-graph/README.md](../conformance/proof-graph/README.md), [constitutional-baseline-1.0.md Â§2.3â€“2.4](./constitutional-baseline-1.0.md#23-one-artifact-per-stage-invariant)
+**Normative reference:** [../conformance/proof-graph/README.md](../conformance/proof-graph/README.md), [constitutional-baseline-1.0.md §2.3–2.4](./constitutional-baseline-1.0.md#23-one-artifact-per-stage-invariant)
 
 ### 3.4 Reproducibility & Determinism
 
@@ -82,7 +82,7 @@ All categories must pass for certification.
 - [ ] No nondeterministic behavior affects constitutional outputs
 - [ ] Drift envelopes are computed deterministically
 
-**Normative reference:** [constitutional-compatibility-1.0.md Â§4.1](./constitutional-compatibility-1.0.md#41-canonical-input-equivalence), [../conformance/reproduction-harness/R1-0.md](../conformance/reproduction-harness/R1-0.md)
+**Normative reference:** [constitutional-compatibility-1.0.md §4.1](./constitutional-compatibility-1.0.md#41-canonical-input-equivalence), [../conformance/reproduction-harness/R1-0.md](../conformance/reproduction-harness/R1-0.md)
 
 ### 3.5 Governance & Evidence Integrity
 
@@ -103,7 +103,7 @@ All categories must pass for certification.
 | **Certified** | All checklist items pass |
 | **Not certified** | Any item fails |
 
-Certified implementations must produce the artifacts defined in [certification-profile-1.0.md Â§4](./certification-profile-1.0.md#4-certification-artifacts).
+Certified implementations must produce the artifacts defined in [certification-profile-1.0.md §4](./certification-profile-1.0.md#4-certification-artifacts).
 
 **Auditor resources:** [../conformance/certification/auditor-handbook-internal-v1.0.md](../conformance/certification/auditor-handbook-internal-v1.0.md), [../conformance/certification/external-auditor-handbook-v1.0.md](../conformance/certification/external-auditor-handbook-v1.0.md)
 
@@ -119,6 +119,6 @@ This checklist is **normative** for Version 1.0 and must be used for all certifi
 
 | Document | Relationship |
 |----------|--------------|
-| [certification-profile-1.0.md](./certification-profile-1.0.md) | C0â€“C3 levels and test suite requirements |
+| [certification-profile-1.0.md](./certification-profile-1.0.md) | C0–C3 levels and test suite requirements |
 | [migration-guide-1.0.md](./migration-guide-1.0.md) | Pre-certification migration path |
 | [../conformance/CTS-1.0/README.md](../conformance/CTS-1.0/README.md) | Automated conformance test suite |

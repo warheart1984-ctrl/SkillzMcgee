@@ -1,5 +1,5 @@
-﻿/**
- * Communication governance â€” corridor validation, identity isolation, amendments.
+/**
+ * Communication governance — corridor validation, identity isolation, amendments.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -55,7 +55,7 @@ function impactRank(impact) {
 
 function corridorSummary(lane) {
   const c = lane.corridor;
-  return `Allowed: ${c.categories.join("/")} @ ${c.altitudes.join("/")} Â· max impact ${c.max_impact}`;
+  return `Allowed: ${c.categories.join("/")} @ ${c.altitudes.join("/")} · max impact ${c.max_impact}`;
 }
 
 export function getLaneContext(laneId) {
@@ -117,7 +117,7 @@ export function validateCorridor(tick, lane) {
   return violations;
 }
 
-/** Â§4 â€” compute drift vector against lane corridor (AAIS-COMM-Î›-001) */
+/** §4 — compute drift vector against lane corridor (AAIS-COMM-Λ-001) */
 export function computeDriftVector(tick, lane, violations = []) {
   const corridor = lane.corridor;
   const category = tick.category;
@@ -175,7 +175,7 @@ export function getDriftThresholds() {
   };
 }
 
-/** Â§4 C-6 â€” map composite drift to containment action */
+/** §4 C-6 — map composite drift to containment action */
 export function evaluateDriftContainment(driftVector) {
   const t = getDriftThresholds();
   const c = driftVector.composite;
@@ -271,7 +271,7 @@ export function enforceCommunicationTick(body, context = {}) {
   if (suspended) {
     return {
       ok: false,
-      error: `Lane ${body.lane_id} is SUSPENDED â€” governance override required`,
+      error: `Lane ${body.lane_id} is SUSPENDED — governance override required`,
       violations,
     };
   }
@@ -359,7 +359,7 @@ function bumpVersion(version, level = "MINOR") {
 export function proposeAmendment(body) {
   const proposal = appendCommunicationGovernanceTick({
     decision_type: "propose-amendment",
-    doc_id: body.doc_id ?? "AAIS-COMM-Î›-001",
+    doc_id: body.doc_id ?? "AAIS-COMM-Λ-001",
     proposal: body.proposal,
     affected_lanes: body.affected_lanes ?? [],
     operator: body.operator ?? "operator:local",
@@ -462,7 +462,7 @@ export function listCommunicationTicksForLane(laneId, limit = 50) {
 
 export function listCommunicationTicksFiltered({ laneId, governanceOverride = false, limit = 50 }) {
   if (!laneId && !governanceOverride) {
-    throw new Error("lane_id required â€” no global communication queries without governance override");
+    throw new Error("lane_id required — no global communication queries without governance override");
   }
 
   const logPath = path.join(REPO_ROOT, ".runtime/communication-ledger/ticks.jsonl");

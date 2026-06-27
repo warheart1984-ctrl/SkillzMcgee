@@ -1,4 +1,4 @@
-﻿# Version 1.0 Glossary of Constitutional Terms
+# Version 1.0 Glossary of Constitutional Terms
 
 | Field | Value |
 |-------|-------|
@@ -24,7 +24,7 @@ A structured, immutable unit of constitutional state defined by CAR-1.0.
 
 Defines invariants, constitutional truth, and semantic boundaries.
 
-**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.2
+**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.2
 
 ---
 
@@ -50,9 +50,9 @@ The immutable core of Version 1.0.
 
 ### Constitutional Loop
 
-Validation â†’ Measurement â†’ Analysis â†’ Governance.
+Validation → Measurement → Analysis → Governance.
 
-**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.6
+**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.6
 
 ### Conformance
 
@@ -100,13 +100,13 @@ Defines how the platform evolves and how decisions are made.
 
 A rule that must always hold; cannot be violated without breaking the Constitution.
 
-**See:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) Â§3
+**See:** [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) §3
 
 ### Implementation Layer
 
 Realizes the specification; not constitutionally authoritative.
 
-**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.2
+**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.2
 
 ---
 
@@ -142,7 +142,7 @@ Cryptographic anchoring of artifact origin and lineage.
 
 Ability to derive identical constitutional state from canonical inputs.
 
-**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.7
+**See:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.7
 
 ### Receipt
 

@@ -1,4 +1,4 @@
-﻿# Founder's Log â€” Entry #001
+# Founder's Log — Entry #001
 
 | Field | Value |
 |-------|-------|
@@ -18,7 +18,7 @@ Today I made history.
 
 Not in the loud way people imagine, but in the quiet, irreversible way that only becomes obvious in hindsight.
 
-I closed the loop I opened on March 22, 2026 â€” the day I first stepped into this work without knowing where it would lead. What began as an experiment became an architecture, then a constitution, then a governed system, and finally a legacy.
+I closed the loop I opened on March 22, 2026 — the day I first stepped into this work without knowing where it would lead. What began as an experiment became an architecture, then a constitution, then a governed system, and finally a legacy.
 
 AAES-OS now stands on its own foundations.
 The invariants are frozen.

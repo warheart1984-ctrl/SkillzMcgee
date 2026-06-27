@@ -1,4 +1,4 @@
-﻿import { rankCategories } from "./classify.js";
+import { rankCategories } from "./classify.js";
 import type { InvariantViolation, NormalizedMessage } from "./types.js";
 
 /** B1: No message mixes more than two categories without labeling both. */
@@ -13,7 +13,7 @@ export function validateBridgeInvariants(msg: NormalizedMessage): InvariantViola
   if (activeCategories.length >= 2 && !msg.secondaryCategory) {
     violations.push({
       id: "B1",
-      message: "Multiple categories detected â€” label secondary category",
+      message: "Multiple categories detected — label secondary category",
     });
   }
 

@@ -1,4 +1,4 @@
-﻿import { IMPACT_ORDER } from "./constants.mjs";
+import { IMPACT_ORDER } from "./constants.mjs";
 
 export function canGenerateReply(laneContract, currentDrift, proposedReplyMeta) {
   const corridorViolations = [];

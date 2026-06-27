@@ -1,15 +1,15 @@
-﻿# COR Client (skillzmcgee)
+# COR Client (skillzmcgee)
 
-**skillzmcgee is the cockpit** â€” it visualizes COR Suite outputs from **project-infi**. It does not run governance, proof analysis, or hygiene locally.
+**skillzmcgee is the cockpit** — it visualizes COR Suite outputs from **project-infi**. It does not run governance, proof analysis, or hygiene locally.
 
 ## Layout
 
 ```
 cor-client/
-â”œâ”€â”€ config.ts           # Base URL / artifact paths
-â”œâ”€â”€ fetchers/           # Fetch cor-state, analysis, receipts, maturity
-â”œâ”€â”€ visualizers/        # Lineage graph, maturity map, invariant dashboard
-â””â”€â”€ adapters/           # (future) alternate sources
+├── config.ts           # Base URL / artifact paths
+├── fetchers/           # Fetch cor-state, analysis, receipts, maturity
+├── visualizers/        # Lineage graph, maturity map, invariant dashboard
+└── adapters/           # (future) alternate sources
 ```
 
 ## Local development
@@ -36,4 +36,4 @@ https://raw.githubusercontent.com/<org>/project-infi/main/cor-suite/out
 
 ## Nova Studio
 
-Dashboard: `src/nova-studio/cor/CorDashboardPage.tsx` â†’ route `/nova/studio/cor`.
+Dashboard: `src/nova-studio/cor/CorDashboardPage.tsx` → route `/nova/studio/cor`.

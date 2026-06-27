@@ -1,4 +1,4 @@
-﻿import { COR_SUITE_PATHS, type CarArtifact, type CarArtifactKind } from "../paths.js";
+import { COR_SUITE_PATHS, type CarArtifact, type CarArtifactKind } from "../paths.js";
 import { emitArtifact } from "../../cor/emitters/json.js";
 import { loadCarRegistry } from "../car/registry.js";
 

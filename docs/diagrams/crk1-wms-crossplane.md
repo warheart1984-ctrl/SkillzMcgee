@@ -1,4 +1,4 @@
-﻿# CRK-1 x WMS Cross-Plane Dependency Graph
+# CRK-1 x WMS Cross-Plane Dependency Graph
 
 **Version:** 1.0
 **Status:** Canonical Mapping

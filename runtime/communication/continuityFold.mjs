@@ -1,4 +1,4 @@
-﻿import { getDriftPoints } from "../../substrate/drift-engine.mjs";
+import { getDriftPoints } from "../../substrate/drift-engine.mjs";
 import { computeCommunicationContinuity } from "./communicationDrift.mjs";
 
 export function computeRuntimeContinuity() {

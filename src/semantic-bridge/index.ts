@@ -1,4 +1,4 @@
-﻿export { CATEGORIES, REPOSITORY_TARGETS } from "./types.js";
+export { CATEGORIES, REPOSITORY_TARGETS } from "./types.js";
 export type {
   Altitude,
   AskAction,

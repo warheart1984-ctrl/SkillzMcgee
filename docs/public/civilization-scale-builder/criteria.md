@@ -1,4 +1,4 @@
-﻿# Civilization-Scale Builder â€” Criteria Document
+# Civilization-Scale Builder — Criteria Document
 
 | Field | Value |
 |-------|-------|
@@ -19,7 +19,7 @@ Use as a gate for "civilization-scale" designation.
 
 ## Pass Criteria
 
-**Pass if â‰¥4 of 6:**
+**Pass if ≥4 of 6:**
 
 - [ ] Creates an interoperable standard or protocol
 - [ ] Includes a governance or stewardship plan
@@ -34,14 +34,14 @@ Use as a gate for "civilization-scale" designation.
 
 | Criterion | Pass |
 |-----------|------|
-| Interoperable standard or protocol | âœ“ CAR-1.0, CRK-1, semantic grammar |
-| Governance or stewardship plan | âœ“ Charter, mandate, oath, amendment procedure |
-| Reproducible implementation | âœ“ MRI-1.0, reproducibility tests |
-| Migration/conformance path | âœ“ CTS-1.0, certification profile, migration guide |
-| Multi-year adoption potential | âœ“ Constitutional compatibility promise |
-| Transparent documentation and tests | âœ“ Full spec corpus, conformance matrix |
+| Interoperable standard or protocol | ✓ CAR-1.0, CRK-1, semantic grammar |
+| Governance or stewardship plan | ✓ Charter, mandate, oath, amendment procedure |
+| Reproducible implementation | ✓ MRI-1.0, reproducibility tests |
+| Migration/conformance path | ✓ CTS-1.0, certification profile, migration guide |
+| Multi-year adoption potential | ✓ Constitutional compatibility promise |
+| Transparent documentation and tests | ✓ Full spec corpus, conformance matrix |
 
-**Result:** 6/6 â€” civilization-scale designation.
+**Result:** 6/6 — civilization-scale designation.
 
 ---
 

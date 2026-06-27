@@ -1,4 +1,4 @@
-﻿import { COR_SUITE_PATHS } from "../paths.js";
+import { COR_SUITE_PATHS } from "../paths.js";
 import type { CarArtifact, CarRegistry } from "../paths.js";
 import {
   canonicalArtifactPath,

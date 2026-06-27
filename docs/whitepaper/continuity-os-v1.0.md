@@ -1,4 +1,4 @@
-﻿# Continuity OS - Version 1.0 Whitepaper
+# Continuity OS - Version 1.0 Whitepaper
 
 ## A Constitutional Runtime for Governed, Traceable, and Reproducible Intelligent Systems
 

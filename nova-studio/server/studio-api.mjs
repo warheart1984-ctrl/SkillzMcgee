@@ -1,6 +1,6 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
- * Nova Studio API â€” HTTP bridge for UI + Python runtime.
+ * Nova Studio API — HTTP bridge for UI + Python runtime.
  */
 
 import http from "node:http";
@@ -305,7 +305,7 @@ const server = http.createServer(async (req, res) => {
         : path.join(COR_INFI_OUT, name);
       if (!fs.existsSync(filePath)) {
         return json(res, 404, {
-          error: "cor artifact not found â€” run pipeline in project-infi/cor-suite",
+          error: "cor artifact not found — run pipeline in project-infi/cor-suite",
           path: filePath,
         });
       }
@@ -1131,6 +1131,6 @@ server.on("upgrade", (req, socket, head) => {
 
 server.listen(PORT, () => {
   const layout = getStaticLayout();
-  console.log(`Nova Studio API â†’ http://localhost:${PORT}`);
+  console.log(`Nova Studio API → http://localhost:${PORT}`);
   console.log(`Static UI: ${layout.kind} (${layout.root})`);
 });

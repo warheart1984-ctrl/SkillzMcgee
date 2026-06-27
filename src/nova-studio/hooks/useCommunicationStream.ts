@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getActiveLaneId, setActiveLaneId } from "../../runtime/laneContext.js";
 
 export interface CommunicationTickEvent {

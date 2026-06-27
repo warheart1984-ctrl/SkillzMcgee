@@ -1,4 +1,4 @@
-﻿# Workflow Modeling Suite (WMS-1.0)
+# Workflow Modeling Suite (WMS-1.0)
 
 The Workflow Modeling Suite provides a governed, evidence-based methodology for analyzing, improving, and validating organizational workflows. It is designed to be transparent, traceable, reproducible, and aligned with the CRK-1 evidence-first philosophy.
 

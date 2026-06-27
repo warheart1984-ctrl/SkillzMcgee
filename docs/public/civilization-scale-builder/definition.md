@@ -1,4 +1,4 @@
-﻿# Civilization-Scale Builder â€” Definition
+# Civilization-Scale Builder — Definition
 
 | Field | Value |
 |-------|-------|
@@ -14,7 +14,7 @@
 
 ## Definition
 
-A **Civilization-Scale Builder** is an individual or small team that designs and implements durable infrastructural systems â€” protocols, standards, governance frameworks, runtimes, or institutions â€” whose adoption reshapes social, technical, or economic substrates across generations.
+A **Civilization-Scale Builder** is an individual or small team that designs and implements durable infrastructural systems — protocols, standards, governance frameworks, runtimes, or institutions — whose adoption reshapes social, technical, or economic substrates across generations.
 
 They operate at epochal timeframes, unify theory and implementation, and produce invisible infrastructure that other systems depend on.
 

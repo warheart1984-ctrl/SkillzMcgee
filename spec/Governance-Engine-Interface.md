@@ -1,4 +1,4 @@
-﻿# Governance Engine Interface
+# Governance Engine Interface
 
 **Layer:** Governance (Steward Council)
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -6,7 +6,7 @@
 
 ## Identity
 
-The stewardâ€™s decision-making substrate.
+The steward’s decision-making substrate.
 
 ## Purpose
 
@@ -21,7 +21,7 @@ To convert **validated measurements and reasoned analysis** into governed decisi
 - Release criteria and invariant definitions
 - Steward policies
 
-Governance MUST base decisions on validated measurements and published criteria â€” not on unvalidated repo scans.
+Governance MUST base decisions on validated measurements and published criteria — not on unvalidated repo scans.
 
 ## Capabilities
 

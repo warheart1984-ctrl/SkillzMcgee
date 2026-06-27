@@ -1,4 +1,4 @@
-﻿/* Nova Studio â€” cockpit-grade substrate UI */
+/* Nova Studio — cockpit-grade substrate UI */
 .novaStudio-root {
   display: flex;
   flex-direction: column;
@@ -691,7 +691,7 @@
   color: #94a3b8;
 }
 
-/* Semantic Bridge (DAR-Z â†” JON) */
+/* Semantic Bridge (DAR-Z ↔ JON) */
 .ns-semantic-bridge {
   max-width: 1400px;
 }

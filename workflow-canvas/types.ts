@@ -1,4 +1,4 @@
-﻿/** Workflow Modeling Canvas v1.0 â€” CMS-1.0 types */
+/** Workflow Modeling Canvas v1.0 — CMS-1.0 types */
 
 export interface Observation {
   id: string;

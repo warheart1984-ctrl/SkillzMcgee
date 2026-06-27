@@ -1,4 +1,4 @@
-﻿# Version 1.0 Steward Oath
+# Version 1.0 Steward Oath
 
 | Field | Value |
 |-------|-------|

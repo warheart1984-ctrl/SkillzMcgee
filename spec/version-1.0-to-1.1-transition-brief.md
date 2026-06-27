@@ -1,4 +1,4 @@
-﻿# Version 1.0 â†’ 1.1 Transition Brief
+# Version 1.0 → 1.1 Transition Brief
 
 | Field | Value |
 |-------|-------|

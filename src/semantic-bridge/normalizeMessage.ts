@@ -1,4 +1,4 @@
-﻿import { classifyMessage, detectSecondaryCategory } from "./classify.js";
+import { classifyMessage, detectSecondaryCategory } from "./classify.js";
 import type {
   Altitude,
   AskAction,
@@ -22,7 +22,7 @@ export function extractCoreClaim(text: string): string {
   const first = lines[0] ?? text.trim();
   if (first.length <= 160) return first;
   const sentence = first.match(/^[^.!?]+[.!?]/)?.[0];
-  return (sentence ?? first.slice(0, 157) + "â€¦").trim();
+  return (sentence ?? first.slice(0, 157) + "…").trim();
 }
 
 export function inferContext(text: string, coreClaim: string): string {
@@ -86,7 +86,7 @@ export function inferDarzRequiredActionDetail(
 ): string {
   const t = text.toLowerCase();
   if (category === "human") {
-    return /\?/.test(text) ? "Respond at human altitude â€” no repo work unless asked" : "Hold space â€” no action required";
+    return /\?/.test(text) ? "Respond at human altitude — no repo work unless asked" : "Hold space — no action required";
   }
   if (/\bimplement\b|\bbuild\b|\bwire\b/.test(t)) {
     return "Implement the described change in repo";

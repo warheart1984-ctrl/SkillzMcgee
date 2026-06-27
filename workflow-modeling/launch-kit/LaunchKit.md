@@ -1,4 +1,4 @@
-﻿# Workflow Modeling Launch Kit (Consultant Edition)
+# Workflow Modeling Launch Kit (Consultant Edition)
 
 Welcome to the Workflow Modeling Suite.
 

@@ -1,4 +1,4 @@
-﻿# Maturity Model
+# Maturity Model
 
 **Layer:** Measurement (COR-derived)
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -10,14 +10,14 @@ A monotonic, auditable ladder of constitutional integrity, computed from CAR gro
 
 ## Levels
 
-1. **Normative** â€” Requirement exists and has authority.
-2. **Implemented** â€” Implementation artifact exists and is linked.
-3. **Verified** â€” Verification evidence demonstrates conformance.
-4. **Reproduced** â€” Independent reviewer reproduces verification.
+1. **Normative** — Requirement exists and has authority.
+2. **Implemented** — Implementation artifact exists and is linked.
+3. **Verified** — Verification evidence demonstrates conformance.
+4. **Reproduced** — Independent reviewer reproduces verification.
 
 ## Properties
 
-- Strictly implies previous levels (reproduced â†’ verified â†’ implemented â†’ normative)
+- Strictly implies previous levels (reproduced → verified → implemented → normative)
 - Fully evidence-driven
 - No subjective interpretation
 - Reproducibility as apex state

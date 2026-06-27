@@ -1,4 +1,4 @@
-﻿{
+{
   "$id": "https://continuity-os.dev/schemas/cor-suite/csr-report/1.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CSR-1.0 Constitutional Stewardship Report",

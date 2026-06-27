@@ -1,4 +1,4 @@
-﻿# Version 1.0 Migration Guide
+# Version 1.0 Migration Guide
 
 | Field | Value |
 |-------|-------|
@@ -36,7 +36,7 @@ Each phase must be completed **in order**.
 
 ## 3. Migration Phases
 
-### 3.1 Phase 1 â€” Canonicalization
+### 3.1 Phase 1 — Canonicalization
 
 - Convert all artifacts to CAR-1.0
 - Remove non-canonical fields from constitutional paths
@@ -47,19 +47,19 @@ Each phase must be completed **in order**.
 
 **References:** [CAR-1.0-Registry.md](./CAR-1.0-Registry.md), [../conformance/provenance-ledger/spec.md](../conformance/provenance-ledger/spec.md)
 
-### 3.2 Phase 2 â€” Semantic Alignment
+### 3.2 Phase 2 — Semantic Alignment
 
 - Align object model with CRK-1
 - Enforce one-artifact-per-stage invariant
-- Align constitutional loop ordering (Validation â†’ Measurement â†’ Analysis â†’ Governance)
+- Align constitutional loop ordering (Validation → Measurement → Analysis → Governance)
 - Ensure deterministic transformations
 - Validate category boundaries
 
 **Outcome:** System exhibits correct constitutional semantics.
 
-**References:** [../specification/README.md](../specification/README.md), [../specification/semantic-artifact-types.md](../specification/semantic-artifact-types.md), [constitutional-baseline-1.0.md Â§2.3](./constitutional-baseline-1.0.md#23-one-artifact-per-stage-invariant)
+**References:** [../specification/README.md](../specification/README.md), [../specification/semantic-artifact-types.md](../specification/semantic-artifact-types.md), [constitutional-baseline-1.0.md §2.3](./constitutional-baseline-1.0.md#23-one-artifact-per-stage-invariant)
 
-### 3.3 Phase 3 â€” Conformance Integration
+### 3.3 Phase 3 — Conformance Integration
 
 - Integrate CTS-1.0
 - Validate against MRI-1.0
@@ -71,11 +71,11 @@ Each phase must be completed **in order**.
 
 **References:** [../conformance/CTS-1.0/README.md](../conformance/CTS-1.0/README.md), [../conformance/MRI-1.0/README.md](../conformance/MRI-1.0/README.md), [../conformance/observability/DRA-1.0/spec.md](../conformance/observability/DRA-1.0/spec.md)
 
-### 3.4 Phase 4 â€” Governance Integration
+### 3.4 Phase 4 — Governance Integration
 
 - Ensure governance decisions are evidence-backed
 - Anchor decisions in receipts
-- Validate governance â†’ execution traceability
+- Validate governance → execution traceability
 - Remove any implicit or hidden governance logic
 
 **Outcome:** System becomes fully governed and traceable.

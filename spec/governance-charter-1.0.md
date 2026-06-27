@@ -1,4 +1,4 @@
-﻿# Continuity OS Governance Charter â€” Version 1.0
+# Continuity OS Governance Charter — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -123,10 +123,10 @@ Require:
 - formal proposal
 - compatibility analysis
 - migration plan
-- version bump (1.x â†’ 2.0)
+- version bump (1.x → 2.0)
 - lineage declaration
 
-**Normative reference:** [constitutional-evolution-guidelines.md Â§3.3](./constitutional-evolution-guidelines.md#33-constitutional-amendments-major), [amendment-procedure-1.0.md](./amendment-procedure-1.0.md)
+**Normative reference:** [constitutional-evolution-guidelines.md §3.3](./constitutional-evolution-guidelines.md#33-constitutional-amendments-major), [amendment-procedure-1.0.md](./amendment-procedure-1.0.md)
 
 ### 4.2 Minor Extensions
 
@@ -134,9 +134,9 @@ Require:
 
 - compatibility statement
 - no baseline changes
-- version bump (1.0 â†’ 1.x)
+- version bump (1.0 → 1.x)
 
-**Normative reference:** [constitutional-evolution-guidelines.md Â§3.2](./constitutional-evolution-guidelines.md#32-constitutional-extensions-moderate)
+**Normative reference:** [constitutional-evolution-guidelines.md §3.2](./constitutional-evolution-guidelines.md#32-constitutional-extensions-moderate)
 
 ### 4.3 Patch Updates
 
@@ -146,7 +146,7 @@ Allow:
 - non-semantic corrections
 - documentation fixes
 
-**Normative reference:** [constitutional-evolution-guidelines.md Â§5.1](./constitutional-evolution-guidelines.md#51-patch-10x)
+**Normative reference:** [constitutional-evolution-guidelines.md §5.1](./constitutional-evolution-guidelines.md#51-patch-10x)
 
 ### 4.4 Certification
 
@@ -172,7 +172,7 @@ Governance decisions must produce:
 | **Rationale** | Evidence-backed justification |
 | **Evidence** | Linked canonical artifacts and receipts |
 | **Compatibility impact** | Statement against [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) |
-| **Version update** | If applicable â€” patch, minor, or major bump |
+| **Version update** | If applicable — patch, minor, or major bump |
 
 **Template:** [../conformance/certification/governance-decision-template.json](../conformance/certification/governance-decision-template.json)
 

@@ -1,4 +1,4 @@
-﻿name: COR Governance Pipeline
+name: COR Governance Pipeline
 
 on:
   workflow_dispatch:

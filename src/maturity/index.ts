@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { COR_SUITE_PATHS } from "../cor-suite/paths.js";
 import type { CorStateVector, MaturityLevel } from "../cor-suite/paths.js";
 import { emitArtifact } from "../cor/emitters/json.js";
@@ -12,7 +12,7 @@ export interface MaturityVector {
 
 function loadCorState(): CorStateVector {
   const p = COR_SUITE_PATHS.outputs.corState;
-  if (!fs.existsSync(p)) throw new Error("COR state missing â€” run cor-suite cor first");
+  if (!fs.existsSync(p)) throw new Error("COR state missing — run cor-suite cor first");
   return JSON.parse(fs.readFileSync(p, "utf8")) as CorStateVector;
 }
 

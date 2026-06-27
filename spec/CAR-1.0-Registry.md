@@ -1,4 +1,4 @@
-﻿# CAR-1.0 Registry
+# CAR-1.0 Registry
 
 **Layer:** Canonical
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -10,7 +10,7 @@ CAR-1.0 (Canonical Artifact Registry) is the **single source of constitutional t
 
 ## Purpose
 
-Every canonical object â€” requirement, specification, implementation, verification, evidence, schema, governance receipt â€” MUST be explicitly registered. Downstream layers read **only from CAR-1.0**, not from ad-hoc repository scans.
+Every canonical object — requirement, specification, implementation, verification, evidence, schema, governance receipt — MUST be explicitly registered. Downstream layers read **only from CAR-1.0**, not from ad-hoc repository scans.
 
 ## Registry artifact
 

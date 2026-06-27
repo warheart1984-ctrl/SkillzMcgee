@@ -1,4 +1,4 @@
-﻿CRK-1 x WMS Cross-Plane Dependency Graph
+CRK-1 x WMS Cross-Plane Dependency Graph
 ========================================
 
 Canonical text-mode dependency graph for Continuity OS v1.0.

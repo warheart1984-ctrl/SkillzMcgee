@@ -1,4 +1,4 @@
-﻿# Architecture Documentation (v1.0)
+# Architecture Documentation (v1.0)
 
 Canonical architecture references for Continuity OS v1.0.
 

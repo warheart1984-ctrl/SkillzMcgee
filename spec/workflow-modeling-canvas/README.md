@@ -1,4 +1,4 @@
-﻿# Workflow Modeling Canvas (v1.0)
+# Workflow Modeling Canvas (v1.0)
 
 **Evidence-chain integrated consulting framework**
 
@@ -6,7 +6,7 @@
 |----------|----------|
 | [Workflow-Modeling-Canvas-v1.0.md](./Workflow-Modeling-Canvas-v1.0.md) | Normative (4 layers) |
 | [CMS-1.0.md](./CMS-1.0.md) | Consulting Methodology Specification |
-| [Evidence-Chain-Template.md](./Evidence-Chain-Template.md) | Observation â†’ Metric template |
+| [Evidence-Chain-Template.md](./Evidence-Chain-Template.md) | Observation → Metric template |
 | [Client-Edition.md](./Client-Edition.md) | Client-facing |
 | [OWMP-1.0.md](./OWMP-1.0.md) | Internal operators / auditors |
 | [WM-A1.0.md](./WM-A1.0.md) | Nova Studio agent protocol |

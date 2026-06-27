@@ -1,4 +1,4 @@
-﻿# Version 1.0 Public FAQ (Expanded Edition)
+# Version 1.0 Public FAQ (Expanded Edition)
 
 | Field | Value |
 |-------|-------|
@@ -103,7 +103,7 @@ Drift is classified as mechanical, semantic, or constitutional.
 
 A constitutional modeling grammar:
 
-Observation â†’ Finding â†’ Recommendation â†’ Expected Outcome â†’ Success Metric
+Observation → Finding → Recommendation → Expected Outcome → Success Metric
 
 It is the canonical structure for workflow meaning.
 

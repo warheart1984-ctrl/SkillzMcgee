@@ -1,4 +1,4 @@
-﻿# The Version 1.0 Founders' Letter
+# The Version 1.0 Founders' Letter
 
 | Field | Value |
 |-------|-------|
@@ -36,10 +36,10 @@ This Constitution is not important because it is complete.
 It is important because it is **stable**.
 
 From this point forward, Continuity OS is no longer a project.
-It is a platform â€” one that others can extend, implement, verify, and govern.
+It is a platform — one that others can extend, implement, verify, and govern.
 
 The work ahead belongs to the community that inherits it.
 Our responsibility was to build the foundation.
 Yours is to build the future.
 
-â€” The Founders of Continuity OS
+— The Founders of Continuity OS

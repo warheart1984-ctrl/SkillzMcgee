@@ -1,4 +1,4 @@
-﻿/** Lineage graph data from COR structural integrity + requirements. */
+/** Lineage graph data from COR structural integrity + requirements. */
 export interface LineageNode {
   id: string;
   kind: "requirement" | "implementation" | "verification" | "orphan";

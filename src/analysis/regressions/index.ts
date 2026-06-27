@@ -1,4 +1,4 @@
-﻿import type { CorStateVector } from "../../cor-suite/paths.js";
+import type { CorStateVector } from "../../cor-suite/paths.js";
 import type { LegacyCor } from "../../cor/loaders/repo.js";
 
 export function runRegressions(

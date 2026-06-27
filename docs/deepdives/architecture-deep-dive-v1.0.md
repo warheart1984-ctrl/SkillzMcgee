@@ -1,4 +1,4 @@
-﻿# Version 1.0 Architecture Deep Dive (Long-Form)
+# Version 1.0 Architecture Deep Dive (Long-Form)
 
 | Field | Value |
 |-------|-------|
@@ -89,13 +89,13 @@ Every edge is a governed transformation.
 
 ## 6. Drift Semantics
 
-Drift is not noise â€” it is a constitutional signal.
+Drift is not noise — it is a constitutional signal.
 
 | Type | Severity |
 |------|----------|
 | Mechanical drift | Harmless variance |
 | Semantic drift | Meaningful change |
-| Constitutional drift | Critical â€” requires escalation |
+| Constitutional drift | Critical — requires escalation |
 
 Drift envelopes define expected variance.
 
@@ -154,4 +154,4 @@ This is a constitutional machine.
 
 ## 10. Conclusion
 
-Version 1.0 is not the end â€” it is the beginning of a new class of systems.
+Version 1.0 is not the end — it is the beginning of a new class of systems.

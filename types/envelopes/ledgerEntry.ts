@@ -1,4 +1,4 @@
-﻿export type DriftVector = {
+export type DriftVector = {
   semantic: number;
   altitude: number;
   impact: number;

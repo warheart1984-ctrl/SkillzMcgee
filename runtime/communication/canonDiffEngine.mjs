@@ -1,4 +1,4 @@
-﻿import { parseCanon } from "./canonParser.mjs";
+import { parseCanon } from "./canonParser.mjs";
 
 export function diffCanons(oldCanon, newCanon) {
   const oldParsed = parseCanon(oldCanon);

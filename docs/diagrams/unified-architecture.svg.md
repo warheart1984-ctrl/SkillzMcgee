@@ -1,4 +1,4 @@
-﻿# Unified Architecture Diagram (SVG Specification)
+# Unified Architecture Diagram (SVG Specification)
 
 **Version:** 1.0
 **Status:** Canonical

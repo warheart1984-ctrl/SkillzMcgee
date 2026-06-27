@@ -1,4 +1,4 @@
-﻿export const COMM_CONSTITUTION_VERSION = "1.0.0";
+export const COMM_CONSTITUTION_VERSION = "1.0.0";
 export const COMM_CANON_VERSION = "1.0.0";
 export const COMM_CANON_STATE = "FROZEN";
 

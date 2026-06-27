@@ -1,4 +1,4 @@
-﻿# Version 1.1 RFC Zero (Initial Proposal)
+# Version 1.1 RFC Zero (Initial Proposal)
 
 | Field | Value |
 |-------|-------|
@@ -12,13 +12,13 @@
 
 ---
 
-## RFC-0 â€” Version 1.1 Direction Setting
+## RFC-0 — Version 1.1 Direction Setting
 
 ### 1. Purpose
 
 RFC-0 defines the initial direction for Version 1.1.
 
-It does not propose specific changes â€” it defines the space in which changes may occur.
+It does not propose specific changes — it defines the space in which changes may occur.
 
 ---
 

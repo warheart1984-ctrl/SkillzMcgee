@@ -1,1 +1,1 @@
-﻿export { fetchCorState, fetchProofAnalysis } from "./cor.js";
+export { fetchCorState, fetchProofAnalysis } from "./cor.js";

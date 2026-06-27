@@ -1,4 +1,4 @@
-﻿import test from "node:test";
+import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -54,7 +54,7 @@ test("freezeCommunicationCanon seals v1.0.0 with hash and ledger tick", async ()
   assert.ok(isCanonFrozen());
 
   const freezeMeta = getCanonFreezeState();
-  assert.equal(freezeMeta.required_amendment, "AAIS-COMM-Î›-003");
+  assert.equal(freezeMeta.required_amendment, "AAIS-COMM-Λ-003");
   assert.equal(freezeMeta.baseline_id, "COMM-CANON@1.0.0");
 });
 
@@ -72,11 +72,11 @@ test("guardCanonMutation blocks writes while frozen", async () => {
   );
 });
 
-test("guardCanonMutation allows unlock with AAIS-COMM-Î›-003", async () => {
+test("guardCanonMutation allows unlock with AAIS-COMM-Λ-003", async () => {
   await freezeCommunicationCanon("jon", "1.0.0");
 
   assert.doesNotThrow(() =>
-    guardCanonMutation("applyConstitutionUpdate", { amendment_unlock: "AAIS-COMM-Î›-003" }),
+    guardCanonMutation("applyConstitutionUpdate", { amendment_unlock: "AAIS-COMM-Λ-003" }),
   );
 });
 

@@ -1,5 +1,5 @@
-﻿/**
- * Semantic Bridge API â€” normalize + append to evidence log.
+/**
+ * Semantic Bridge API — normalize + append to evidence log.
  */
 import fs from "node:fs";
 import path from "node:path";

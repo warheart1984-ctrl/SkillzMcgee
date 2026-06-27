@@ -1,7 +1,7 @@
-﻿{
+{
   "$id": "https://continuity-os.dev/schemas/workflow-canvas/expected-outcome-set/1.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Expected Outcome Set (Canvas Layer 3â€“4)",
+  "title": "Expected Outcome Set (Canvas Layer 3–4)",
   "type": "object",
   "properties": {
     "setVersion": { "type": "string" },

@@ -1,4 +1,4 @@
-﻿# COR-1.0 Contract
+# COR-1.0 Contract
 
 **Layer:** Measurement (with CSR-1.0, DRA-1.0)
 **RFC:** [RFC-COR-Suite-1.0.md](./RFC-COR-Suite-1.0.md)
@@ -10,12 +10,12 @@ COR-1.0 is the deterministic **measurement** of constitutional repository state,
 
 ## Purpose
 
-To expose exactly what exists, how it is linked, and what evidence supports it â€” **without inference, interpretation, or governance decisions**.
+To expose exactly what exists, how it is linked, and what evidence supports it — **without inference, interpretation, or governance decisions**.
 
 ## Inputs (normative)
 
-- **CAR-1.0** â€” Canonical Artifact Registry (`car/car-1.0.json`); MUST be the sole source of canonical object identity.
-- **CAV-1.0** â€” Validation MUST pass blocking checks before COR generation runs.
+- **CAR-1.0** — Canonical Artifact Registry (`car/car-1.0.json`); MUST be the sole source of canonical object identity.
+- **CAV-1.0** — Validation MUST pass blocking checks before COR generation runs.
 
 COR MUST NOT scan the repository for canonical paths when CAR is available.
 
@@ -67,10 +67,10 @@ A pure evidence ledger conforming to `cor-state-vector.schema.json`, optionally 
 
 ## Relationship to CSR and DRA
 
-- **CSR-1.0** â€” stewardship metrics from governance artifacts registered in CAR.
-- **DRA-1.0** â€” dependency-risk and readiness metrics from CAR lineage (separate artifact; MUST NOT be folded into COR prohibitions).
+- **CSR-1.0** — stewardship metrics from governance artifacts registered in CAR.
+- **DRA-1.0** — dependency-risk and readiness metrics from CAR lineage (separate artifact; MUST NOT be folded into COR prohibitions).
 
 ## Implementation
 
 - **Governed substrate:** `project-infi/cor-suite/src/cor/from-car.ts`, `npm run cor`
-- **Legacy (deprecated for canonical):** `skillzmcgee/tools/generators/cor-generate.mjs` â€” filesystem scan; superseded by CAR-first pipeline in project-infi
+- **Legacy (deprecated for canonical):** `skillzmcgee/tools/generators/cor-generate.mjs` — filesystem scan; superseded by CAR-first pipeline in project-infi

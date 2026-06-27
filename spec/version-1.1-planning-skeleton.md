@@ -1,4 +1,4 @@
-﻿# Version 1.1 Planning Skeleton
+# Version 1.1 Planning Skeleton
 
 | Field | Value |
 |-------|-------|
@@ -13,7 +13,7 @@
 
 This document provides a structured skeleton for planning Version 1.1 of Continuity OS.
 
-It does **not** define any changes â€” it defines the framework for proposing them.
+It does **not** define any changes — it defines the framework for proposing them.
 
 Version 1.1 is a **capability expansion**, not a constitutional amendment.
 
@@ -44,7 +44,7 @@ Version 1.1 is a **capability expansion**, not a constitutional amendment.
 - expand Nova Studio integrations
 - introduce new analysis or visualization layers
 
-**Versioning:** Minor bump (1.0 â†’ 1.1) per [constitutional-evolution-guidelines.md Â§5.2](./constitutional-evolution-guidelines.md#52-minor-1x).
+**Versioning:** Minor bump (1.0 → 1.1) per [constitutional-evolution-guidelines.md §5.2](./constitutional-evolution-guidelines.md#52-minor-1x).
 
 ---
 
@@ -64,7 +64,7 @@ Version 1.1 is a **capability expansion**, not a constitutional amendment.
 
 | ID | Capability | Owner | Status |
 |----|------------|-------|--------|
-| â€” | â€” | â€” | â€” |
+| — | — | — | — |
 
 ### 3.2 Compatibility Analysis
 
@@ -117,26 +117,26 @@ For each proposed capability, answer:
 | **1.1** | Capability expansion; baseline intact |
 | **2.0** | Baseline change; constitutional amendment required |
 
-**Reference:** [constitutional-evolution-guidelines.md Â§3](./constitutional-evolution-guidelines.md#3-types-of-evolution)
+**Reference:** [constitutional-evolution-guidelines.md §3](./constitutional-evolution-guidelines.md#3-types-of-evolution)
 
 ---
 
 ## 4. Planning Workflow
 
 ```
-Propose capability (Â§3.1)
-        â†“
-Compatibility analysis (Â§3.2)
-        â†“
-Implementation strategy (Â§3.3)
-        â†“
-Conformance extensions (Â§3.4)
-        â†“
-Governance review (Â§3.5)
-        â†“
-Versioning decision (Â§3.6)
-        â†“
-Steward Council approval â†’ spec update
+Propose capability (§3.1)
+        ↓
+Compatibility analysis (§3.2)
+        ↓
+Implementation strategy (§3.3)
+        ↓
+Conformance extensions (§3.4)
+        ↓
+Governance review (§3.5)
+        ↓
+Versioning decision (§3.6)
+        ↓
+Steward Council approval → spec update
 ```
 
 ---

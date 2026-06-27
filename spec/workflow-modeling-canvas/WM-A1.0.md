@@ -1,6 +1,6 @@
-﻿# Nova Studio Workflow Modeling Agent (WM-A1.0)
+# Nova Studio Workflow Modeling Agent (WM-A1.0)
 
-**Version:** A1.0 Â· **Protocol:** [OWMP-1.0](./OWMP-1.0.md) Â· **Canvas:** [Workflow-Modeling-Canvas-v1.0.md](./Workflow-Modeling-Canvas-v1.0.md)
+**Version:** A1.0 · **Protocol:** [OWMP-1.0](./OWMP-1.0.md) · **Canvas:** [Workflow-Modeling-Canvas-v1.0.md](./Workflow-Modeling-Canvas-v1.0.md)
 
 Agent-ready specification for AI-assisted workflow modeling in Nova Studio.
 
@@ -49,7 +49,7 @@ Agent-ready specification for AI-assisted workflow modeling in Nova Studio.
 
 ### 6. Assemble traceability map
 
-- Full chain from Observation â†’ Metric.
+- Full chain from Observation → Metric.
 - Run validation before presenting to operator.
 
 ---
@@ -61,7 +61,7 @@ Agent-ready specification for AI-assisted workflow modeling in Nova Studio.
 | Canvas v1.0 JSON | `canvas-v1.0.schema.json` |
 | Traceability Map | Embedded + standalone |
 | Draft client report | Derived from [Client-Edition](./Client-Edition.md) |
-| Operator review checklist | OWMP-1.0 Â§ Operator checklist |
+| Operator review checklist | OWMP-1.0 § Operator checklist |
 
 ---
 

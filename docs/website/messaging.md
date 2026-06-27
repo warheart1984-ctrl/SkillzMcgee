@@ -1,4 +1,4 @@
-﻿# Workflow Modeling Messaging (Public Site)
+# Workflow Modeling Messaging (Public Site)
 
 ## Core Message
 

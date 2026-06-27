@@ -1,4 +1,4 @@
-﻿# Version 1.0 Constitutional Commentary
+# Version 1.0 Constitutional Commentary
 
 *(In the style of the Federalist Papers)*
 
@@ -14,7 +14,7 @@
 
 ---
 
-## Commentary I â€” On the Necessity of a Constitutional Runtime
+## Commentary I — On the Necessity of a Constitutional Runtime
 
 Every complex system eventually reaches a point where correctness can no longer be enforced through implementation alone.
 
@@ -26,17 +26,17 @@ This is the foundation of trust.
 
 ---
 
-## Commentary II â€” On the Separation of Authority and Execution
+## Commentary II — On the Separation of Authority and Execution
 
 Authority defines truth. Execution merely follows it.
 
-By separating Authority â†’ Specification â†’ Implementation â†’ Execution, Continuity OS ensures that no implementation can redefine meaning.
+By separating Authority → Specification → Implementation → Execution, Continuity OS ensures that no implementation can redefine meaning.
 
 This is the essence of constitutional governance.
 
 ---
 
-## Commentary III â€” On the Role of Canonical Artifacts
+## Commentary III — On the Role of Canonical Artifacts
 
 Canonical artifacts are the Constitution's memory.
 
@@ -46,7 +46,7 @@ Where traditional systems rely on logs, heuristics, or tribal knowledge, Continu
 
 ---
 
-## Commentary IV â€” On Drift as a Constitutional Signal
+## Commentary IV — On Drift as a Constitutional Signal
 
 Drift is not noise. Drift is meaning.
 
@@ -56,7 +56,7 @@ A system that can detect its own drift is a system capable of self-governance.
 
 ---
 
-## Commentary V â€” On the Stability of Version 1.0
+## Commentary V — On the Stability of Version 1.0
 
 A Constitution is valuable not because it is complete, but because it is stable.
 

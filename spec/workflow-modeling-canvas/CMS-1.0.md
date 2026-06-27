@@ -1,6 +1,6 @@
-﻿# Consulting Methodology Specification (CMS-1.0)
+# Consulting Methodology Specification (CMS-1.0)
 
-**Version:** 1.0 Â· **Canvas:** [Workflow-Modeling-Canvas-v1.0.md](./Workflow-Modeling-Canvas-v1.0.md)
+**Version:** 1.0 · **Canvas:** [Workflow-Modeling-Canvas-v1.0.md](./Workflow-Modeling-Canvas-v1.0.md)
 
 ---
 

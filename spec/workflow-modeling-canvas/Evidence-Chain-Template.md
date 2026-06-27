@@ -1,6 +1,6 @@
-﻿# Evidence Chain Template (CMS-1.0)
+# Evidence Chain Template (CMS-1.0)
 
-Use this template for every observation â†’ outcome thread. One thread per distinct workflow issue or improvement.
+Use this template for every observation → outcome thread. One thread per distinct workflow issue or improvement.
 
 ---
 

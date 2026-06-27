@@ -1,5 +1,5 @@
-﻿Version 1.0 Drift Diagnostic Flowchart (ASCII)
-Status: Informative Â· Audience: Operators
+Version 1.0 Drift Diagnostic Flowchart (ASCII)
+Status: Informative · Audience: Operators
 Reference: spec/drift-analysis-handbook-1.0.md
 
 ====================================================================

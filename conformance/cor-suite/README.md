@@ -1,14 +1,14 @@
-﻿# COR Suite â€” Constitutional Observability, Reasoning, and Governance Architecture
+# COR Suite — Constitutional Observability, Reasoning, and Governance Architecture
 
 ## Overview
 
 The COR Suite defines the foundational architecture for constitutional software systems. It establishes a strict separation between:
 
-- **Observability** â€” what exists
-- **Reasoning** â€” what the evidence implies
-- **Governance** â€” what decisions follow
-- **Lifecycle** â€” how requirements mature
-- **Operational substrate** â€” how determinism is maintained
+- **Observability** — what exists
+- **Reasoning** — what the evidence implies
+- **Governance** — what decisions follow
+- **Lifecycle** — how requirements mature
+- **Operational substrate** — how determinism is maintained
 
 The suite is designed to be evidence-first, reproducible, and founder-independent.
 
@@ -18,16 +18,16 @@ The COR Suite consists of six layers:
 
 | Layer | Document |
 |-------|----------|
-| **COR-1.0** â€” Observability | [../../spec/COR-1.0-Contract.md](../../spec/COR-1.0-Contract.md) |
-| **Proof Analysis** â€” Reasoning | [../../spec/Proof-Analysis-Spec.md](../../spec/Proof-Analysis-Spec.md) |
-| **Governance Engine** â€” Decision | [../../spec/Governance-Engine-Interface.md](../../spec/Governance-Engine-Interface.md) |
-| **Maturity Model** â€” Lifecycle | [../../spec/Maturity-Model.md](../../spec/Maturity-Model.md) |
-| **Repo Hygiene â†’ COR Pipeline** â€” Operational | [../../spec/Repo-Hygiene-and-Pipeline.md](../../spec/Repo-Hygiene-and-Pipeline.md) |
-| **Public Messaging** â€” Narrative | [../../spec/Public-Messaging.md](../../spec/Public-Messaging.md) |
+| **COR-1.0** — Observability | [../../spec/COR-1.0-Contract.md](../../spec/COR-1.0-Contract.md) |
+| **Proof Analysis** — Reasoning | [../../spec/Proof-Analysis-Spec.md](../../spec/Proof-Analysis-Spec.md) |
+| **Governance Engine** — Decision | [../../spec/Governance-Engine-Interface.md](../../spec/Governance-Engine-Interface.md) |
+| **Maturity Model** — Lifecycle | [../../spec/Maturity-Model.md](../../spec/Maturity-Model.md) |
+| **Repo Hygiene → COR Pipeline** — Operational | [../../spec/Repo-Hygiene-and-Pipeline.md](../../spec/Repo-Hygiene-and-Pipeline.md) |
+| **Public Messaging** — Narrative | [../../spec/Public-Messaging.md](../../spec/Public-Messaging.md) |
 
 Normative RFC: [../../spec/RFC-COR-Suite-1.0.md](../../spec/RFC-COR-Suite-1.0.md)
 
-**Implementation:** [IMPLEMENTATION.md](./IMPLEMENTATION.md) Â· `npm run cor-suite:pipeline`
+**Implementation:** [IMPLEMENTATION.md](./IMPLEMENTATION.md) · `npm run cor-suite:pipeline`
 
 ## Philosophy
 
@@ -40,17 +40,17 @@ This principle guides every layer of the COR Suite.
 
 ```
 /
-â”œâ”€â”€ spec/                         â† normative COR Suite specs + schemas
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ cor/                      â† COR-1.0 generator
-â”‚   â”œâ”€â”€ analysis/                 â† Proof Analysis
-â”‚   â”œâ”€â”€ cor-suite/governance/     â† Governance engine (avoids src/governance collision)
-â”‚   â”œâ”€â”€ maturity/
-â”‚   â”œâ”€â”€ hygiene/
-â”‚   â””â”€â”€ cli/cor-suite.ts
-â”œâ”€â”€ governance/charter/
-â”œâ”€â”€ meta/cor-suite/               â† generated artifacts
-â””â”€â”€ .github/workflows/cor-suite-ci.yml
+├── spec/                         ← normative COR Suite specs + schemas
+├── src/
+│   ├── cor/                      ← COR-1.0 generator
+│   ├── analysis/                 ← Proof Analysis
+│   ├── cor-suite/governance/     ← Governance engine (avoids src/governance collision)
+│   ├── maturity/
+│   ├── hygiene/
+│   └── cli/cor-suite.ts
+├── governance/charter/
+├── meta/cor-suite/               ← generated artifacts
+└── .github/workflows/cor-suite-ci.yml
 ```
 
 Implementation in this repository also lives under `specification/`, `conformance/observability/`, `tools/generators/`, and `nova-studio/`.

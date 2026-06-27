@@ -1,4 +1,4 @@
-﻿export function computeDriftVector(tick, previousTick = null) {
+export function computeDriftVector(tick, previousTick = null) {
   const semantic = previousTick && previousTick.category !== tick.category ? 0.4 : 0;
   const altitude = previousTick && previousTick.altitude !== tick.altitude ? 0.3 : 0;
   const impact = tick.impact === "none" && tick.required_action && tick.required_action !== "none" ? 0.7 : 0;

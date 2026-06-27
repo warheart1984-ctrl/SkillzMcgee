@@ -1,4 +1,4 @@
-﻿/** Declarative invariant definitions for the governance engine. */
+/** Declarative invariant definitions for the governance engine. */
 
 export interface InvariantCheck {
   id: string;

@@ -1,4 +1,4 @@
-﻿# Version 1.0 Operator Scenarios
+# Version 1.0 Operator Scenarios
 
 | Field | Value |
 |-------|-------|
@@ -21,7 +21,7 @@ These scenarios teach operators how to use Investigation Mode to inspect, valida
 
 ---
 
-## 2. Scenario 1 â€” Unexpected Drift Spike
+## 2. Scenario 1 — Unexpected Drift Spike
 
 **Situation:**
 A subsystem shows a sudden increase in drift.
@@ -38,11 +38,11 @@ A subsystem shows a sudden increase in drift.
 **Success Condition:**
 Operator identifies whether drift is semantic, mechanical, or constitutional.
 
-**Reference:** [../../spec/drift-analysis-handbook-1.0.md](../../spec/drift-analysis-handbook-1.0.md) Â§5
+**Reference:** [../../spec/drift-analysis-handbook-1.0.md](../../spec/drift-analysis-handbook-1.0.md) §5
 
 ---
 
-## 3. Scenario 2 â€” Conflicting Interpretations
+## 3. Scenario 2 — Conflicting Interpretations
 
 **Situation:**
 Two analysis artifacts disagree.
@@ -61,7 +61,7 @@ Operator resolves semantic conflict using evidence.
 
 ---
 
-## 4. Scenario 3 â€” Governance Decision Review
+## 4. Scenario 3 — Governance Decision Review
 
 **Situation:**
 A governance decision appears inconsistent.
@@ -80,7 +80,7 @@ Operator confirms decision is evidence-backed and reproducible.
 
 ---
 
-## 5. Scenario 4 â€” Canonical Artifact Corruption
+## 5. Scenario 4 — Canonical Artifact Corruption
 
 **Situation:**
 A canonical artifact fails validation.
@@ -101,7 +101,7 @@ Operator restores canonical state without semantic loss.
 
 ---
 
-## 6. Scenario 5 â€” Counterfactual Governance Simulation
+## 6. Scenario 5 — Counterfactual Governance Simulation
 
 **Situation:**
 Stakeholders request "what if" analysis.

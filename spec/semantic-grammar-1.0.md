@@ -1,4 +1,4 @@
-﻿# Version 1.0 Semantic Grammar Reference
+# Version 1.0 Semantic Grammar Reference
 
 | Field | Value |
 |-------|-------|
@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document defines the semantic grammar of Continuity OS â€” the categories, invariants, and transformation rules that give the platform its constitutional identity.
+This document defines the semantic grammar of Continuity OS — the categories, invariants, and transformation rules that give the platform its constitutional identity.
 
 ---
 
@@ -57,7 +57,7 @@ These categories map 1:1 to CRK-1 semantics.
 
 Every stage transforms exactly one artifact into one artifact.
 
-**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.3
+**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.3
 
 ### 3.2 Monotonic Lineage
 
@@ -67,21 +67,21 @@ Lineage must be acyclic and strictly forward.
 
 ### 3.3 Deterministic Reproducibility
 
-Same inputs â†’ same outputs.
+Same inputs → same outputs.
 
-**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.7
+**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.7
 
 ### 3.4 Canonical Boundaries
 
 No cross-category contamination.
 
-**Normative reference:** [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) Â§2
+**Normative reference:** [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) §2
 
 ### 3.5 Constitutional Loop Ordering
 
-Validation â†’ Measurement â†’ Analysis â†’ Governance.
+Validation → Measurement → Analysis → Governance.
 
-**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) Â§2.6
+**Normative reference:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md) §2.6
 
 ---
 
@@ -90,10 +90,10 @@ Validation â†’ Measurement â†’ Analysis â†’ Governance.
 ### 4.1 Valid Transformations
 
 ```
-Evidence â†’ Interpretation
-Interpretation â†’ Policy Evaluation
-Policy Evaluation â†’ Policy Outcome
-Policy Outcome â†’ Drift Envelope
+Evidence → Interpretation
+Interpretation → Policy Evaluation
+Policy Evaluation → Policy Outcome
+Policy Outcome → Drift Envelope
 ```
 
 Each transformation must:
@@ -106,13 +106,13 @@ Each transformation must:
 ### 4.2 Workflow Transformations
 
 ```
-Observation â†’ Finding
-Finding â†’ Recommendation
-Recommendation â†’ Expected Outcome
-Expected Outcome â†’ Success Metric
+Observation → Finding
+Finding → Recommendation
+Recommendation → Expected Outcome
+Expected Outcome → Success Metric
 ```
 
-These transformations follow the same one-artifact-per-stage invariant and map to CRK-1 semantics via the CRK-1 Ã— WMS equivalence table.
+These transformations follow the same one-artifact-per-stage invariant and map to CRK-1 semantics via the CRK-1 × WMS equivalence table.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Continuity OS â€” Version 1.0
+# Continuity OS — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -16,7 +16,7 @@
 
 ### What is Continuity OS?
 
-Continuity OS is a new kind of system â€” a **constitutional machine**.
+Continuity OS is a new kind of system — a **constitutional machine**.
 
 Instead of trusting code, heuristics, or opaque models, Continuity OS enforces:
 

@@ -1,4 +1,4 @@
-﻿# Version 1.0 "What We Froze and Why" Retrospective
+# Version 1.0 "What We Froze and Why" Retrospective
 
 | Field | Value |
 |-------|-------|

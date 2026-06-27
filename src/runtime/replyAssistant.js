@@ -1,5 +1,5 @@
-﻿/**
- * Rule-based reply refinement â€” category and altitude aware (no external AI).
+/**
+ * Rule-based reply refinement — category and altitude aware (no external AI).
  */
 export function refineReply(normalized, draftReply) {
   const lines = [];

@@ -1,11 +1,11 @@
-﻿# Constitutional Observability (COR / CSR)
+# Constitutional Observability (COR / CSR)
 
 **Authority:** CRK-1 Conformance v1.0
-**Status:** Normative instrumentation â€” not documentation
+**Status:** Normative instrumentation — not documentation
 
 This directory defines how the repository reports its own constitutional health.
 
-**Stack contract:** [../../specification/constitutional-stack-v1.0.md](../../specification/constitutional-stack-v1.0.md) â€” layer boundaries for COR, Proof Analysis, Governance, and hygiene.
+**Stack contract:** [../../specification/constitutional-stack-v1.0.md](../../specification/constitutional-stack-v1.0.md) — layer boundaries for COR, Proof Analysis, Governance, and hygiene.
 
 **COR Suite package (GitHub-ready):** [../cor-suite/README.md](../cor-suite/README.md)
 

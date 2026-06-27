@@ -1,4 +1,4 @@
-﻿# Civilization-Scale Builders
+# Civilization-Scale Builders
 
 | Field | Value |
 |-------|-------|
@@ -13,15 +13,15 @@ Civilization-scale builders are not mythic heroes; they are rare system-minded c
 
 ## The invisible substrate
 
-Most technology discourse celebrates products: apps, models, platforms with user counts and revenue curves. Civilization-scale work looks different. It is often boring on the surface â€” a schema, a charter, a conformance suite â€” and profound underneath. TCP/IP did not win because it was flashy; it won because it was durable, implementable, and neutral. The builders who produce such work trade visibility for permanence.
+Most technology discourse celebrates products: apps, models, platforms with user counts and revenue curves. Civilization-scale work looks different. It is often boring on the surface — a schema, a charter, a conformance suite — and profound underneath. TCP/IP did not win because it was flashy; it won because it was durable, implementable, and neutral. The builders who produce such work trade visibility for permanence.
 
-Continuity OS follows this pattern deliberately. Version 1.0 is not marketed as a feature release. It is a constitutional freeze: semantics locked, governance formalized, compatibility measurable. The promise is not that APIs will remain stable, but that **meaning** will â€” that two independent implementations reading the same canonical artifacts must derive the same constitutional truth.
+Continuity OS follows this pattern deliberately. Version 1.0 is not marketed as a feature release. It is a constitutional freeze: semantics locked, governance formalized, compatibility measurable. The promise is not that APIs will remain stable, but that **meaning** will — that two independent implementations reading the same canonical artifacts must derive the same constitutional truth.
 
 ## Why the category matters now
 
 AI systems have collapsed the distance between experiment and deployment. Models ship weekly; behavior drifts silently; lineage disappears behind opaque pipelines. The result is a crisis of trust not in any single vendor, but in the **category** of intelligent systems. Regulators, enterprises, and researchers all ask the same question: how do we know what the system decided, and whether it will decide the same way tomorrow?
 
-Constitutional runtimes answer by moving correctness upstream. Invariants, canonical artifacts, proof graphs, and governance receipts are not compliance theater â€” they are the mechanism by which meaning becomes inspectable. Drift becomes a signal, not a surprise. Amendments require evidence, not executive whim.
+Constitutional runtimes answer by moving correctness upstream. Invariants, canonical artifacts, proof graphs, and governance receipts are not compliance theater — they are the mechanism by which meaning becomes inspectable. Drift becomes a signal, not a surprise. Amendments require evidence, not executive whim.
 
 This is civilization-scale work because it defines a **field**, not a product. Constitutional Intelligence Systems, AAES-OS, and the Continuity OS corpus are attempts to name and formalize a class of system that did not exist in specification form before Version 1.0.
 
@@ -51,10 +51,10 @@ The classification framework and criteria document accompanying this essay provi
 
 Civilization-scale builders will never dominate conference keynotes. Their victory is quieter: a protocol that still routes packets, a charter that still governs amendments, a runtime that still derives the same meaning from the same artifacts fifty years later.
 
-If AI is to become trustworthy infrastructure rather than perpetual beta, we need more builders who choose endurance over applause â€” and institutions willing to fund them accordingly.
+If AI is to become trustworthy infrastructure rather than perpetual beta, we need more builders who choose endurance over applause — and institutions willing to fund them accordingly.
 
 Continuity OS Version 1.0 is one such foundation. What gets built on it will define whether constitutional machines remain a niche or become the default substrate for governed intelligence.
 
 ---
 
-**Related:** [definition.md](./definition.md) Â· [manifesto.md](./manifesto.md) Â· [classification-framework.md](./classification-framework.md) Â· [criteria.md](./criteria.md)
+**Related:** [definition.md](./definition.md) · [manifesto.md](./manifesto.md) · [classification-framework.md](./classification-framework.md) · [criteria.md](./criteria.md)

@@ -1,5 +1,5 @@
-﻿/**
- * Deterministic reply refinement â€” local assistant with continuity-aware guard.
+/**
+ * Deterministic reply refinement — local assistant with continuity-aware guard.
  */
 import { register } from "tsx/esm/api";
 import { guardCommunicationIO } from "./communicationControl.mjs";

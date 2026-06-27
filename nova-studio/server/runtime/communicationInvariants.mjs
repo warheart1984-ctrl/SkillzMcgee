@@ -1,5 +1,5 @@
-﻿/**
- * Cross-lane invariants â€” global constitutional rules (X-1, X-2, X-3).
+/**
+ * Cross-lane invariants — global constitutional rules (X-1, X-2, X-3).
  */
 import fs from "node:fs";
 import path from "node:path";

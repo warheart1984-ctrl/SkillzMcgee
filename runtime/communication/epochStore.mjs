@@ -1,4 +1,4 @@
-﻿import { COMM_EPOCHS_PATH, readJson, writeJson } from "./store.mjs";
+import { COMM_EPOCHS_PATH, readJson, writeJson } from "./store.mjs";
 
 function now() {
   return new Date().toISOString();

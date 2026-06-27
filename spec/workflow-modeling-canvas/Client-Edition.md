@@ -1,4 +1,4 @@
-﻿# Workflow Modeling Canvas â€” Client Edition
+# Workflow Modeling Canvas — Client Edition
 
 A transparent, traceable consulting methodology for improving how work flows through your organization.
 
@@ -6,7 +6,7 @@ A transparent, traceable consulting methodology for improving how work flows thr
 
 ## 1. Current State
 
-We map how work **actually** moves through your organization â€” step by step, tool by tool, person by person. We record what we observe, not what we assume.
+We map how work **actually** moves through your organization — step by step, tool by tool, person by person. We record what we observe, not what we assume.
 
 ---
 
@@ -26,7 +26,7 @@ We design improved workflows grounded in evidence, not assumptions. Each recomme
 
 Every recommendation we make is traceable:
 
-**Observation â†’ Finding â†’ Recommendation â†’ Expected Outcome â†’ Success Metric**
+**Observation → Finding → Recommendation → Expected Outcome → Success Metric**
 
 This ensures:
 
@@ -47,4 +47,4 @@ This ensures:
 | **Implementation Roadmap** | Sequenced changes with dependencies |
 | **Success Metrics Dashboard** | How we will know improvement occurred |
 
-This methodology is transparent, traceable, and reproducible â€” so you can audit our reasoning at any time.
+This methodology is transparent, traceable, and reproducible — so you can audit our reasoning at any time.

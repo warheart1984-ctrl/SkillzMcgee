@@ -1,4 +1,4 @@
-﻿import { COR_ARTIFACTS, fetchArtifact } from "../config.js";
+import { COR_ARTIFACTS, fetchArtifact } from "../config.js";
 
 export async function fetchCarRegistry() {
   return fetchArtifact(COR_ARTIFACTS.carRegistry);
@@ -15,7 +15,7 @@ export async function fetchCavReport() {
   return fetchArtifact<CavReportShape>(COR_ARTIFACTS.cavReport);
 }
 
-/** Alias â€” simplified blocking/advisory report for dashboards. */
+/** Alias — simplified blocking/advisory report for dashboards. */
 export const fetchCav = fetchCavReport;
 
 export interface CavReportShape {

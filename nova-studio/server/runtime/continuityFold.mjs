@@ -1,5 +1,5 @@
-﻿/**
- * Continuity fold â€” unified drift across runtime, governance, cockpit, communication.
+/**
+ * Continuity fold — unified drift across runtime, governance, cockpit, communication.
  */
 import fs from "node:fs";
 import path from "node:path";

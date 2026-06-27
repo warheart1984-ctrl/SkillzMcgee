@@ -1,4 +1,4 @@
-﻿# Version 1.0 Drift Analysis Handbook
+# Version 1.0 Drift Analysis Handbook
 
 | Field | Value |
 |-------|-------|
@@ -18,7 +18,7 @@
 
 This handbook defines the semantics, procedures, and interpretation rules for drift analysis in Version 1.0.
 
-Drift is a **constitutional signal** â€” not a bug.
+Drift is a **constitutional signal** — not a bug.
 
 ---
 
@@ -76,7 +76,7 @@ Envelopes must be:
 | Step | Action |
 |------|--------|
 | **Detect** | Identify deviation from envelope |
-| **Classify** | Mechanical â†’ Semantic â†’ Constitutional |
+| **Classify** | Mechanical → Semantic → Constitutional |
 | **Trace** | Use lineage to locate root cause |
 | **Validate** | Confirm evidence and reproducibility |
 | **Decide** | Governance decision if constitutional |

@@ -1,6 +1,6 @@
-﻿import type { Category } from "./types.js";
+import type { Category } from "./types.js";
 
-/** Dar-Z â†’ Jon classification buckets (v1.0) */
+/** Dar-Z → Jon classification buckets (v1.0) */
 export const DARZ_CATEGORY_LABEL: Record<Category, string> = {
   normative: "A. Normative Specification Input",
   architectural: "B. Architectural Refinement",
@@ -20,7 +20,7 @@ const SCORES: Record<Category, RegExp[]> = {
     /\bnormative\b/i,
     /\brequirement\b/i,
     /\bsemantic artifact\b/i,
-    /\bÎ›\b/,
+    /\bΛ\b/,
     /\bbinding\b/i,
     /\bcanon\b/i,
   ],

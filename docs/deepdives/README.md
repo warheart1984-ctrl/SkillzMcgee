@@ -1,4 +1,4 @@
-﻿# Architecture Deep Dives â€” Version 1.0
+# Architecture Deep Dives — Version 1.0
 
 Long-form technical and philosophical documents for architects, researchers, and stewards.
 

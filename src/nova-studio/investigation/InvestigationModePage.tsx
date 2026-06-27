@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { fetchAllGovernanceArtifacts } from "../../../cor-client/fetchers/cor.js";
 import { buildInvestigationForensics } from "../../../cor-client/visualizers/investigation.js";
 
@@ -41,7 +41,7 @@ export const InvestigationModePage: React.FC = () => {
     return (
       <div className="ns-page">
         <h1>Investigation Mode</h1>
-        <p>Loading Investigation Modeâ€¦</p>
+        <p>Loading Investigation Mode…</p>
       </div>
     );
   }
@@ -54,7 +54,7 @@ export const InvestigationModePage: React.FC = () => {
   return (
     <div className="ns-page">
       <h1>Investigation Mode</h1>
-      <p className="ns-muted">Forensic cockpit â€” CAR â†’ CAV â†’ COR â†’ PGI â†’ DRA â†’ governance receipts</p>
+      <p className="ns-muted">Forensic cockpit — CAR → CAV → COR → PGI → DRA → governance receipts</p>
 
       <section className="ns-section">
         <h2>Readiness Summary</h2>
@@ -63,8 +63,8 @@ export const InvestigationModePage: React.FC = () => {
         </p>
         <ul className="ns-list">
           <li>
-            CAV blocking: {forensics.readiness.blockingCount} Â· DRA high-risk:{" "}
-            {forensics.readiness.highRiskCount} Â· Decision:{" "}
+            CAV blocking: {forensics.readiness.blockingCount} · DRA high-risk:{" "}
+            {forensics.readiness.highRiskCount} · Decision:{" "}
             {forensics.readiness.governanceDecision}
           </li>
           <li>
@@ -77,7 +77,7 @@ export const InvestigationModePage: React.FC = () => {
       <section className="ns-section">
         <h2>Lineage (PGI-1.0)</h2>
         <p>
-          {forensics.lineage.requirementCount} requirements Â· {forensics.lineage.edgeCount} edges
+          {forensics.lineage.requirementCount} requirements · {forensics.lineage.edgeCount} edges
         </p>
         <pre className="ns-pre">{JSON.stringify(forensics.lineage.byRequirement.slice(0, 20), null, 2)}</pre>
       </section>
@@ -88,7 +88,7 @@ export const InvestigationModePage: React.FC = () => {
       </section>
 
       <section className="ns-section">
-        <h2>Counterfactuals (DRA â€” if verification gaps closed)</h2>
+        <h2>Counterfactuals (DRA — if verification gaps closed)</h2>
         <pre className="ns-pre">{JSON.stringify(forensics.counterfactuals.slice(0, 15), null, 2)}</pre>
       </section>
 

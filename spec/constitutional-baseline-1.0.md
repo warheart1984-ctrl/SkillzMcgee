@@ -1,4 +1,4 @@
-﻿# Constitutional Baseline â€” Version 1.0
+# Constitutional Baseline — Version 1.0
 
 | Field | Value |
 |-------|-------|
@@ -38,7 +38,7 @@ All constitutional computation derives from CAR-1.0.
 
 **Normative reference:** [CAR-1.0-Registry.md](./CAR-1.0-Registry.md)
 
-### 2.2 Authority â†’ Specification â†’ Implementation â†’ Execution Separation
+### 2.2 Authority → Specification → Implementation → Execution Separation
 
 The constitutional system must preserve the four-plane separation:
 
@@ -62,7 +62,7 @@ Every constitutional stage must:
 
 This invariant is foundational and cannot be removed or weakened.
 
-**Bridge:** CRK-1 Ã— WMS equivalence â€” [../docs/architecture/crk-wms-equivalence-table.md](../docs/architecture/crk-wms-equivalence-table.md)
+**Bridge:** CRK-1 × WMS equivalence — [../docs/architecture/crk-wms-equivalence-table.md](../docs/architecture/crk-wms-equivalence-table.md)
 
 ### 2.4 Proof Graph Model
 
@@ -86,7 +86,7 @@ All constitutional state must be:
 
 No constitutional claim may exist without evidence.
 
-### 2.6 Validation â†’ Measurement â†’ Analysis â†’ Governance Separation
+### 2.6 Validation → Measurement → Analysis → Governance Separation
 
 The constitutional loop must preserve the four-stage separation:
 
@@ -142,10 +142,10 @@ These components must preserve constitutional semantics, but their internal desi
 
 A future implementation is constitutionally compatible with Version 1.0 if:
 
-1. It preserves all components of the constitutional baseline defined in Â§2.
+1. It preserves all components of the constitutional baseline defined in §2.
 2. It produces the same observable constitutional behavior from the same canonical artifacts.
 3. It maintains the one-artifact-per-stage invariant.
-4. It preserves the constitutional loop (Validation â†’ Measurement â†’ Analysis â†’ Governance).
+4. It preserves the constitutional loop (Validation → Measurement → Analysis → Governance).
 5. It maintains deterministic reproducibility of derived artifacts.
 6. It preserves the proof graph semantics and provenance guarantees.
 
@@ -220,16 +220,16 @@ All future work must preserve the semantics defined herein.
 | Document | Relationship |
 |----------|--------------|
 | [CONSTITUTIONAL-INDEX.md](./CONSTITUTIONAL-INDEX.md) | Authoritative map of the Version 1.0 corpus |
-| [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) | Compatibility criteria (Â§4 baseline rule) |
-| [constitutional-evolution-guidelines.md](./constitutional-evolution-guidelines.md) | Evolution and amendment governance (Â§5) |
-| [certification-profile-1.0.md](./certification-profile-1.0.md) | Conformance certification (C0â€“C3) |
+| [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) | Compatibility criteria (§4 baseline rule) |
+| [constitutional-evolution-guidelines.md](./constitutional-evolution-guidelines.md) | Evolution and amendment governance (§5) |
+| [certification-profile-1.0.md](./certification-profile-1.0.md) | Conformance certification (C0–C3) |
 | [governance-charter-1.0.md](./governance-charter-1.0.md) | Governance model and processes |
 | [steward-handbook-1.0.md](./steward-handbook-1.0.md) | Steward operational handbook |
 | [steward-training-deck-1.0.txt](./steward-training-deck-1.0.txt) | Steward onboarding training deck |
 | [semantic-grammar-1.0.md](./semantic-grammar-1.0.md) | Semantic categories, invariants, and transformation rules |
 | [glossary-1.0.md](./glossary-1.0.md) | Normative glossary of constitutional terms |
 | [amendment-procedure-1.0.md](./amendment-procedure-1.0.md) | Constitutional amendment procedure |
-| [constitutional-stability-principle-1.0.md](./constitutional-stability-principle-1.0.md) | Stability principle â€” semantics frozen |
+| [constitutional-stability-principle-1.0.md](./constitutional-stability-principle-1.0.md) | Stability principle — semantics frozen |
 | [version-1.0-freeze-declaration.md](./version-1.0-freeze-declaration.md) | Formal freeze declaration (2026-06-26) |
 | [what-we-froze-and-why-v1.0.md](./what-we-froze-and-why-v1.0.md) | Freeze retrospective |
 | [../governance/communication/COMM-CANON.md](../governance/communication/COMM-CANON.md) | Communication substrate canon (domain-specific) |

@@ -1,4 +1,4 @@
-﻿export type MaturityLevel = "normative" | "implemented" | "verified" | "reproduced";
+export type MaturityLevel = "normative" | "implemented" | "verified" | "reproduced";
 
 export interface MaturityCell {
   requirementId: string;

@@ -1,2 +1,2 @@
-﻿export * from "./types.js";
+export * from "./types.js";
 export { validateCanvas, assembleTraceabilityMap } from "./validate.js";

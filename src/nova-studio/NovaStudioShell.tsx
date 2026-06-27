@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useOperatorContext } from "./state/operatorContext";
 import { useSubstrateEvents } from "./hooks/useSubstrateEvents";
@@ -60,7 +60,7 @@ export const NovaStudioShell: React.FC = () => {
               {runtime.online ? "Runtime OK" : "Runtime offline"}
             </span>
             <span>Slice: nova-slice-1</span>
-            <span>Last receipt: {lastReceipt?.id ?? "â€”"}</span>
+            <span>Last receipt: {lastReceipt?.id ?? "—"}</span>
           </div>
         </header>
 
@@ -72,7 +72,7 @@ export const NovaStudioShell: React.FC = () => {
 
         <footer className="ns-shell-footer">
           <span>Last invariant: {invariantLabel}</span>
-          {lastReceipt?.phase && <span> Â· phase: {lastReceipt.phase}</span>}
+          {lastReceipt?.phase && <span> · phase: {lastReceipt.phase}</span>}
         </footer>
       </div>
     </div>

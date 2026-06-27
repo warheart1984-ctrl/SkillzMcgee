@@ -1,4 +1,4 @@
-﻿# Version 1.0 Conformance Test Matrix
+# Version 1.0 Conformance Test Matrix
 
 | Field | Value |
 |-------|-------|
@@ -72,7 +72,7 @@ Each row defines:
 
 | Requirement | Category | Test ID | CTS | Expected Behavior | Evidence |
 |-------------|----------|---------|-----|-------------------|----------|
-| Deterministic outputs | Repro | REP-D01 | E1, E5 | Same inputs â†’ same outputs | Repro receipts |
+| Deterministic outputs | Repro | REP-D01 | E1, E5 | Same inputs → same outputs | Repro receipts |
 | Canonical derivation | Repro | REP-C01 | E2, M5 | Derived from canonical state | Ledger entries |
 | Independent reproduction | Repro | REP-I01 | E5, G5 | Cross-run equivalence | MRI parity report |
 
@@ -90,11 +90,11 @@ Each row defines:
 
 | Series | Domain | Matrix categories |
 |--------|--------|-------------------|
-| **M** (M1â€“M5) | Mechanical â€” consequence loop | Loop, Repro |
-| **S** (S1â€“S5) | Structural â€” schemas, contracts | Canonical, Loop, Proof |
-| **E** (E1â€“E5) | Semantic â€” multiplicity, replay | Canonical, Loop, Proof, Repro |
-| **G** (G1â€“G5) | Governance â€” receipts, Merkle | Canonical, Loop, Proof, Repro |
-| **D** (D1â€“D5) | Drift â€” CE/SE monotonicity | Drift |
+| **M** (M1–M5) | Mechanical — consequence loop | Loop, Repro |
+| **S** (S1–S5) | Structural — schemas, contracts | Canonical, Loop, Proof |
+| **E** (E1–E5) | Semantic — multiplicity, replay | Canonical, Loop, Proof, Repro |
+| **G** (G1–G5) | Governance — receipts, Merkle | Canonical, Loop, Proof, Repro |
+| **D** (D1–D5) | Drift — CE/SE monotonicity | Drift |
 
 ---
 
@@ -117,10 +117,10 @@ Full CTS reports: `reports/` per [CTS-1.0 README](../conformance/CTS-1.0/README.
 
 | Certification level | Minimum matrix coverage |
 |---------------------|-------------------------|
-| **C0** | Â§3.1 (CAR-P01, CAR-H01, CAR-C01) |
-| **C1** | Â§3.1 + Â§3.2 |
-| **C2** | Â§3.1â€“3.4 |
-| **C3** | Â§3.1â€“3.5 (full matrix) |
+| **C0** | §3.1 (CAR-P01, CAR-H01, CAR-C01) |
+| **C1** | §3.1 + §3.2 |
+| **C2** | §3.1–3.4 |
+| **C3** | §3.1–3.5 (full matrix) |
 
 See [certification-profile-1.0.md](./certification-profile-1.0.md).
 

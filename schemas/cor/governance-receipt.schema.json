@@ -1,4 +1,4 @@
-﻿{
+{
   "$id": "https://example.org/schema/governance-receipt.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Governance Receipt",

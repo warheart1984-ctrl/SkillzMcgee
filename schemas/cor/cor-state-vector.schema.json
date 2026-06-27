@@ -1,4 +1,4 @@
-﻿{
+{
   "$id": "https://example.org/schema/cor-state-vector.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "COR-1.0 State Vector",

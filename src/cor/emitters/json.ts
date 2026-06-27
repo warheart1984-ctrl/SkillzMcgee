@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import { COR_SUITE_PATHS } from "../../cor-suite/paths.js";
 import type { CorStateVector } from "../../cor-suite/paths.js";

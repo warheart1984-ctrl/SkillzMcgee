@@ -1,4 +1,4 @@
-﻿import crypto from "node:crypto";
+import crypto from "node:crypto";
 import { COMM_CONSTITUTION_VERSION } from "./constants.mjs";
 import { appendLedgerEntry, listLedgerEntries } from "./store.mjs";
 

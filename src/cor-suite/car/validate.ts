@@ -1,4 +1,4 @@
-﻿import crypto from "node:crypto";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import { COR_SUITE_PATHS } from "../paths.js";
 import type { CarArtifact, CarRegistry } from "../paths.js";

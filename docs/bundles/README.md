@@ -1,4 +1,4 @@
-﻿# Document Bundles â€” Version 1.0
+# Document Bundles — Version 1.0
 
 Single-file concatenations and export maps for the constitutional corpus.
 
@@ -8,4 +8,4 @@ Single-file concatenations and export maps for the constitutional corpus.
 
 **Index:** [../../spec/CONSTITUTIONAL-INDEX.md](../../spec/CONSTITUTIONAL-INDEX.md)
 
-These bundles are **informative** â€” they index and organize; authoritative text lives in the linked source documents.
+These bundles are **informative** — they index and organize; authoritative text lives in the linked source documents.

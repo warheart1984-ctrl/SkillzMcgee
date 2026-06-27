@@ -1,4 +1,4 @@
-﻿Continuity OS v1.0 - Unified Architecture (Canonical)
+Continuity OS v1.0 - Unified Architecture (Canonical)
 =====================================================
 
 Seven-layer governed ecosystem - text-mode diagram.

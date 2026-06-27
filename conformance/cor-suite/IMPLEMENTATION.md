@@ -1,4 +1,4 @@
-﻿# COR Suite â€” Constitutional Observability, Reasoning, and Governance Architecture
+# COR Suite — Constitutional Observability, Reasoning, and Governance Architecture
 
 Normative specs and schemas live at **[../../spec/](../../spec/)**. Implementation lives under **`src/cor/`**, **`src/analysis/`**, **`src/cor-suite/governance/`**, **`src/maturity/`**, **`src/hygiene/`**, and **`src/cli/cor-suite.ts`**.
 

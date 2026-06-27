@@ -1,4 +1,4 @@
-﻿# RFC-COR-SUITE-1.0
+# RFC-COR-SUITE-1.0
 
 **Constitutional Observability, Validation, Measurement, Analysis, Governance, and Communication Architecture**
 

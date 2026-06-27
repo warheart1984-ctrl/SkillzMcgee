@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Navigate, type RouteObject } from "react-router-dom";
 import { NovaStudioShell } from "./NovaStudioShell";
 import { CapabilitiesPage } from "./capabilities/CapabilitiesPage";

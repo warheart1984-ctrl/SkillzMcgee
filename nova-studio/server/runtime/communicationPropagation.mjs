@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cross-lane drift propagation rules.
  */
 import fs from "node:fs";

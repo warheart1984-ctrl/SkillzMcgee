@@ -1,5 +1,5 @@
-﻿/**
- * communicationTick builder â€” governed human-to-human communication evidence.
+/**
+ * communicationTick builder — governed human-to-human communication evidence.
  */
 import crypto from "node:crypto";
 import { zeroDriftVector } from "../../types/envelopes/ledgerEntry.mjs";

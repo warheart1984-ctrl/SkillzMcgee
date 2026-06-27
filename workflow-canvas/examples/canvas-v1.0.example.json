@@ -1,4 +1,4 @@
-﻿{
+{
   "canvasVersion": "1.0.0",
   "engagementId": "ENG-DEMO-001",
   "generatedAt": "2026-06-27T12:00:00.000Z",
@@ -21,7 +21,7 @@
           "Ad-hoc Slack approval"
         ],
         "tools": ["GitHub", "Slack", "cor-suite CLI"],
-        "handoffs": ["Engineer â†’ Steward via Slack"],
+        "handoffs": ["Engineer → Steward via Slack"],
         "waitStates": ["Steward availability (avg 4h)"],
         "bottlenecks": ["Human approval not tied to CAV output"],
         "risks": ["Release without CAV pass if engineer skips pipeline"],

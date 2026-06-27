@@ -1,5 +1,5 @@
-﻿/**
- * Communication continuity â€” aggregate drift across all lanes for the continuity fold.
+/**
+ * Communication continuity — aggregate drift across all lanes for the continuity fold.
  */
 import fs from "node:fs";
 import path from "node:path";

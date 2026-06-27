@@ -1,4 +1,4 @@
-﻿# Version 1.0 â†’ 2.0 Amendment Gatekeeping Rules
+# Version 1.0 → 2.0 Amendment Gatekeeping Rules
 
 | Field | Value |
 |-------|-------|

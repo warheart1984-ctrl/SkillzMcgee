@@ -1,5 +1,5 @@
-﻿/**
- * Binding Integration Addendum conformance audit (AAIS-VB-Î›-ADD-001).
+/**
+ * Binding Integration Addendum conformance audit (AAIS-VB-Λ-ADD-001).
  * Compares current SkillzMcGee build against U-1..U-4 invariants.
  */
 import fs from "node:fs";
@@ -70,7 +70,7 @@ function auditU1() {
   if (!hasZoneTick) violations.push("Evidence ledger schema missing zoneTick taxonomy");
   if (!hasUnified) {
     violations.push(
-      "UnifiedLedgerEntry / moduleTick superset not implemented (Addendum Â§1.2)",
+      "UnifiedLedgerEntry / moduleTick superset not implemented (Addendum §1.2)",
     );
   }
 
@@ -100,11 +100,11 @@ function auditU2() {
   const violations = [];
   if (dualGate) {
     violations.push(
-      "runSlice applies CRK-2 invariants then lawKernel â€” potential dual governance pass (GRE generic + module-local)",
+      "runSlice applies CRK-2 invariants then lawKernel — potential dual governance pass (GRE generic + module-local)",
     );
   }
   if (grvlNamed.length === 0) {
-    violations.push("GRVL not named as GRE Stage 2 realization for Negotiant Core (Â§2.2)");
+    violations.push("GRVL not named as GRE Stage 2 realization for Negotiant Core (§2.2)");
   }
 
   return {
@@ -117,7 +117,7 @@ function auditU2() {
 }
 
 function auditU3() {
-  const bindingPdfText = ""; // ratified Î› still says stabilization epoch
+  const bindingPdfText = ""; // ratified Λ still says stabilization epoch
   const safeMode = read("src/governance/safe_mode.js");
   const escalation = read("src/governance/escalation.js");
   const driftEngine = read("substrate/drift-engine.mjs");
@@ -143,10 +143,10 @@ function auditU3() {
 
   const violations = [];
   if (!hasNumericThresholds) {
-    violations.push("Î›.5 drift escalation thresholds (0.05/0.15/0.30/0.50) not encoded");
+    violations.push("Λ.5 drift escalation thresholds (0.05/0.15/0.30/0.50) not encoded");
   }
   if (hasContainmentEpoch.length === 0) {
-    violations.push("Addendum Â§3 Automatic Containment Epoch not implemented");
+    violations.push("Addendum §3 Automatic Containment Epoch not implemented");
   }
   if (hasStabilizationEpoch.length > 0) {
     violations.push(
@@ -172,17 +172,17 @@ function auditU4() {
   const zoneTick = read("src/ledger/zoneTick.js");
   const ledgerSchema = read("governance/standards/theta/canon/evidence-ledger-schema.md");
 
-  const hasLambdaVersion = /Î»_version|lambda_version/.test(
+  const hasLambdaVersion = /λ_version|lambda_version/.test(
     zoneTick + ledgerSchema + negotiantCanon,
   );
   const hasRecertTick = /recertificationTick/.test(ledgerSchema + zoneTick);
 
   const violations = [];
   if (!hasLambdaVersion) {
-    violations.push("Î»_version field not recorded on ledger entries (Addendum Â§4.2.1)");
+    violations.push("λ_version field not recorded on ledger entries (Addendum §4.2.1)");
   }
   if (!hasRecertTick) {
-    violations.push("recertificationTick entry type not implemented (Addendum Â§4.2.3)");
+    violations.push("recertificationTick entry type not implemented (Addendum §4.2.3)");
   }
 
   return {
@@ -243,9 +243,9 @@ export function runBindingConformanceAudit() {
 
   const report = {
     audited_at: new Date().toISOString(),
-    addendum: "AAIS-VB-Î›-ADD-001 v1.0.0 (DRAFT)",
+    addendum: "AAIS-VB-Λ-ADD-001 v1.0.0 (DRAFT)",
     parents: [
-      "AAIS-VB-Î›-001 (Voss Binding v1.0.0, RATIFIED 2026-05-02)",
+      "AAIS-VB-Λ-001 (Voss Binding v1.0.0, RATIFIED 2026-05-02)",
       "Negotiant Core Whitepaper v1.0.0 (2026-06-26)",
     ],
     summary: {
@@ -262,7 +262,7 @@ export function runBindingConformanceAudit() {
     negotiant_core: negotiant,
     build_checks: buildChecks,
     ratified_binding_note:
-      "Ratified Î› PDF still specifies 'Stabilization epoch' at drift > 0.30; Addendum Â§3 corrects this to Automatic Containment Epoch (DRAFT, not yet binding).",
+      "Ratified Λ PDF still specifies 'Stabilization epoch' at drift > 0.30; Addendum §3 corrects this to Automatic Containment Epoch (DRAFT, not yet binding).",
   };
 
   fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });

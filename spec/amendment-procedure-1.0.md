@@ -1,4 +1,4 @@
-﻿# Version 1.0 Constitutional Amendment Procedure
+# Version 1.0 Constitutional Amendment Procedure
 
 | Field | Value |
 |-------|-------|
@@ -16,7 +16,7 @@ This document defines the formal procedure for amending the Continuity OS consti
 Amendments are **rare** and represent changes to the **identity** of the platform.
 
 **Baseline:** [constitutional-baseline-1.0.md](./constitutional-baseline-1.0.md)
-**Evolution guidelines:** [constitutional-evolution-guidelines.md Â§3.3](./constitutional-evolution-guidelines.md#33-constitutional-amendments-major)
+**Evolution guidelines:** [constitutional-evolution-guidelines.md §3.3](./constitutional-evolution-guidelines.md#33-constitutional-amendments-major)
 **Steward handbook:** [steward-handbook-1.0.md](./steward-handbook-1.0.md)
 
 ---
@@ -45,7 +45,7 @@ A valid amendment proposal must include:
 
 | Artifact | Description |
 |----------|-------------|
-| **Rationale** | Constitutional necessity â€” why baseline change is required |
+| **Rationale** | Constitutional necessity — why baseline change is required |
 | **Constitutional impact analysis** | Affected invariants, loops, categories |
 | **Compatibility impact** | Backward/forward compatibility per [constitutional-compatibility-1.0.md](./constitutional-compatibility-1.0.md) |
 | **Migration plan** | Path for existing implementations |
@@ -108,7 +108,7 @@ All publication artifacts must be recorded in the governance ledger.
 
 ## 6. Domain-Specific Amendments
 
-Substrate-specific amendments (e.g., communication governance `AAIS-COMM-Î›-003`) follow the same evidence and approval discipline but operate **within** the constitutional baseline unless they trigger Â§2 triggers.
+Substrate-specific amendments (e.g., communication governance `AAIS-COMM-Λ-003`) follow the same evidence and approval discipline but operate **within** the constitutional baseline unless they trigger §2 triggers.
 
 Example: `COMM-CANON` freeze unlock requires domain amendment + operator approval; baseline change requires this procedure.
 
@@ -124,6 +124,6 @@ This procedure is **normative** and governs all constitutional amendments.
 
 | Document | Relationship |
 |----------|--------------|
-| [governance-charter-1.0.md Â§4.1](./governance-charter-1.0.md#41-constitutional-amendments) | Charter-level amendment requirements |
-| [certification-profile-1.0.md Â§5](./certification-profile-1.0.md#5-certification-validity) | Certification invalidation on amendment |
+| [governance-charter-1.0.md §4.1](./governance-charter-1.0.md#41-constitutional-amendments) | Charter-level amendment requirements |
+| [certification-profile-1.0.md §5](./certification-profile-1.0.md#5-certification-validity) | Certification invalidation on amendment |
 | [CONSTITUTIONAL-INDEX.md](./CONSTITUTIONAL-INDEX.md) | Index update required for new lineage |

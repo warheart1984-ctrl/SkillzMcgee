@@ -1,4 +1,4 @@
-﻿# Version 1.0 Steward Handbook
+# Version 1.0 Steward Handbook
 
 | Field | Value |
 |-------|-------|

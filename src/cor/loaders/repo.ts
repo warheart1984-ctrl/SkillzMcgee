@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import { COR_SUITE_PATHS, REPO_ROOT } from "../../cor-suite/paths.js";
 
 export function loadJson<T>(filePath: string): T {

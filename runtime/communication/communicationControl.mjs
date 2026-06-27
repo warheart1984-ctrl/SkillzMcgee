@@ -1,4 +1,4 @@
-﻿let COMM_HALTED = false;
+let COMM_HALTED = false;
 
 export function activateCommunicationKillSwitch(operator_id, rationale, writer) {
   COMM_HALTED = true;

@@ -1,4 +1,4 @@
-﻿export interface InvariantRow {
+export interface InvariantRow {
   id: string;
   status: "pass" | "warn" | "fail";
   detail: string;
