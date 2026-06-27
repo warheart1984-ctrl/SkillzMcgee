@@ -24,15 +24,22 @@ import {
   persistContinuityReceipt,
 } from "./continuity-substrate.mjs";
 import { recordDriftPoint, getDriftPoints } from "./drift-engine.mjs";
+import { buildSliceRuntime } from "./executor/slices.mjs";
 
 function findCapability(capabilityId) {
   return getAllCapabilities().find((c) => c.id === capabilityId);
 }
 
-async function executeSliceBody(capabilityId, input) {
+async function executeSliceBody(cap, input) {
+  const capabilityId = cap.id;
   if (capabilityId === "slice_math") {
     const value = Number(input?.value ?? 0) + 1;
     return { ok: true, output: { value }, deterministic: true };
+  }
+  if (cap.kind === "llm") {
+    const runtime = buildSliceRuntime(cap);
+    const output = await runtime.run(input);
+    return { ok: true, output, deterministic: false };
   }
   const result = await executeCapability(capabilityId, input);
   return { ...result, deterministic: capabilityId !== "llm" };
@@ -69,7 +76,7 @@ export async function runSlice({ operator, capabilityId, input, continuityState,
     requireParent: false,
   });
 
-  const execResult = await executeSliceBody(capabilityId, input);
+  const execResult = await executeSliceBody(cap, input);
   const output = execResult.output;
   const outputHash = output !== undefined && output !== null ? stableHash(output) : undefined;
 

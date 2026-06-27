@@ -68,6 +68,34 @@ export const SLICE_CAPABILITIES = [
       required: ["value"],
     },
   },
+  {
+    id: "llm_echo",
+    kind: "llm",
+    path: "lawful-nova",
+    inputSchema: {
+      type: "object",
+      properties: {
+        prompt: { type: "string" },
+        model: { type: "string" },
+        max_tokens: { type: "number" },
+        temperature: { type: "number" },
+      },
+      required: ["prompt"],
+    },
+    outputSchema: {
+      type: "object",
+      properties: {
+        capabilityId: { type: "string" },
+        provider: { type: "string" },
+        model: { type: "string" },
+        promptHash: { type: "string" },
+        text: { type: "string" },
+        inputTokens: { type: "number" },
+        outputTokens: { type: "number" },
+      },
+      required: ["text", "promptHash"],
+    },
+  },
 ];
 
 export function getAllCapabilities() {

@@ -47,6 +47,15 @@ npm run nova-studio
 
 See [nova-studio/NOVA_STUDIO.md](./nova-studio/NOVA_STUDIO.md) and [docs/dev-quickstart-windows.md](./docs/dev-quickstart-windows.md).
 
+### Using SkillzMcGee after cloning
+
+Fresh clones can run SkillzMcGee in deterministic mode, through local Ollama, or
+through a Nova/OpenAI-compatible `/v1/chat/completions` endpoint.
+
+See [docs/USING_SKILLZMCGEE.md](./docs/USING_SKILLZMCGEE.md) for the universal
+clone/install/provider workflow, and [docs/lawful-nova-slice.md](./docs/lawful-nova-slice.md)
+for deeper receipt and slice details.
+
 ## Architecture
 
 | Layer | Module | Purpose |

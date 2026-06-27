@@ -233,6 +233,67 @@ test("run slice executes capability, appends receipt, continuity, and drift", as
   assert.ok(substrate.continuity.some((event) => event.kind === "ARTIFACT"));
 });
 
+test("lawful llm slice routes through Nova-compatible provider", async (t) => {
+  clearLedger();
+  const previousEnv = {
+    NOVA_PROVIDER: process.env.NOVA_PROVIDER,
+    NOVA_OPENAI_BASE_URL: process.env.NOVA_OPENAI_BASE_URL,
+    NOVA_OPENAI_MODEL: process.env.NOVA_OPENAI_MODEL,
+    NOVA_API_KEY: process.env.NOVA_API_KEY,
+  };
+  t.after(() => {
+    for (const [key, value] of Object.entries(previousEnv)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  });
+
+  let sawBearer = false;
+  let sawPrompt = false;
+  const provider = http.createServer(async (req, res) => {
+    if (req.method !== "POST" || req.url !== "/v1/chat/completions") {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    sawBearer = req.headers.authorization === "Bearer test-nova-key";
+    const body = await readRequestJson(req);
+    sawPrompt = body.messages?.at(-1)?.content === "write lawful code";
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({
+      model: body.model,
+      choices: [{ message: { role: "assistant", content: "lawful nova slice ready" } }],
+      usage: { prompt_tokens: 7, completion_tokens: 4, total_tokens: 11 },
+    }));
+  });
+  await new Promise((resolve) => provider.listen(0, "127.0.0.1", resolve));
+  t.after(() => closeTestServer(provider));
+  const address = provider.address();
+  const port = typeof address === "object" && address ? address.port : 0;
+
+  process.env.NOVA_PROVIDER = "nova";
+  process.env.NOVA_OPENAI_BASE_URL = `http://127.0.0.1:${port}/v1`;
+  process.env.NOVA_OPENAI_MODEL = "nova-local";
+  process.env.NOVA_API_KEY = "test-nova-key";
+
+  const result = await runSlice({
+    operator: "operator:test",
+    capabilityId: "llm_echo",
+    input: { prompt: "write lawful code", model: "nova-local", max_tokens: 16 },
+    continuityState: { checkpoint: "00000", events: [] },
+  });
+
+  assert.equal(result.ok, true, result.violations.join(", "));
+  assert.equal(sawBearer, true);
+  assert.equal(sawPrompt, true);
+  assert.equal(result.output.status, "ok");
+  assert.equal(result.value.provider, "openai-compatible");
+  assert.equal(result.value.model, "nova-local");
+  assert.equal(result.value.text, "lawful nova slice ready");
+  assert.equal(result.value.inputTokens, 7);
+  assert.equal(result.value.outputTokens, 4);
+});
+
 test("communication ticks are lane-scoped, budgeted, replayable, and canon-bound", async () => {
   const canonBefore = readOptionalFile(communicationCanonPath);
   clearCommunicationFreezeArtifacts();
@@ -432,6 +493,22 @@ function closeTestServer(server) {
     server.closeAllConnections?.();
     server.close(() => resolve());
     setTimeout(resolve, 100);
+  });
+}
+
+function readRequestJson(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => {
+      try {
+        const raw = Buffer.concat(chunks).toString("utf8");
+        resolve(raw ? JSON.parse(raw) : {});
+      } catch (err) {
+        reject(err);
+      }
+    });
+    req.on("error", reject);
   });
 }
 
