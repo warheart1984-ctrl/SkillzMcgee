@@ -79,19 +79,27 @@ export const DEFAULT_CAPABILITIES = [
   {
     id: "llm_echo",
     kind: "llm",
+    path: "lawful-nova",
     inputSchema: {
       type: "object",
       properties: {
         prompt: { type: "string" },
         model: { type: "string" },
+        max_tokens: { type: "number" },
+        temperature: { type: "number" },
       },
       required: ["prompt"],
     },
     outputSchema: {
       type: "object",
       properties: {
+        capabilityId: { type: "string" },
+        provider: { type: "string" },
+        model: { type: "string" },
         text: { type: "string" },
         promptHash: { type: "string" },
+        inputTokens: { type: "number" },
+        outputTokens: { type: "number" },
       },
     },
   },

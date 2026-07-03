@@ -110,7 +110,11 @@ export function clearContinuityState() {
   for (const dir of [ARTIFACTS_DIR, RECEIPTS_DIR]) {
     if (fs.existsSync(dir)) {
       for (const f of fs.readdirSync(dir)) {
-        fs.unlinkSync(path.join(dir, f));
+        try {
+          fs.unlinkSync(path.join(dir, f));
+        } catch (err) {
+          if (err?.code !== "ENOENT") throw err;
+        }
       }
     }
   }

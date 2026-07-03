@@ -1,0 +1,34 @@
+{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/success-metric-set/1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Success Metric Set (Canvas Layer 4)",
+  "type": "object",
+  "properties": {
+    "setVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "successMetrics": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/successMetric" }
+    }
+  },
+  "required": ["setVersion", "generatedAt", "successMetrics"],
+  "$defs": {
+    "successMetric": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^MET-" },
+        "expectedOutcomeIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "name": { "type": "string" },
+        "definition": { "type": "string" },
+        "quantitative": { "type": "boolean" },
+        "target": { "type": "string" },
+        "baseline": { "type": "string" }
+      },
+      "required": ["id", "expectedOutcomeIds", "name", "definition"]
+    }
+  }
+}

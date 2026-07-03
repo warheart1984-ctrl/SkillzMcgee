@@ -1,0 +1,37 @@
+{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/traceability-map/1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Traceability Map (Canvas Layer 4)",
+  "type": "object",
+  "properties": {
+    "mapVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "chains": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/chain" },
+      "minItems": 1
+    }
+  },
+  "required": ["mapVersion", "generatedAt", "chains"],
+  "$defs": {
+    "chain": {
+      "type": "object",
+      "properties": {
+        "chainId": { "type": "string" },
+        "observationId": { "type": "string" },
+        "findingId": { "type": "string" },
+        "recommendationId": { "type": "string" },
+        "expectedOutcomeId": { "type": "string" },
+        "successMetricId": { "type": "string" }
+      },
+      "required": [
+        "chainId",
+        "observationId",
+        "findingId",
+        "recommendationId",
+        "expectedOutcomeId",
+        "successMetricId"
+      ]
+    }
+  }
+}

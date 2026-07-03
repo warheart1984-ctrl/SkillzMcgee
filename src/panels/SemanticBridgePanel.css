@@ -1,0 +1,220 @@
+.semantic-bridge-panel {
+  padding: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e5e7eb;
+  background: #050816;
+}
+
+.semantic-bridge-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: #f9fafb;
+}
+
+.semantic-bridge-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.semantic-bridge-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+.semantic-bridge-toolbar select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+.lane-context-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.lane-context-bar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+}
+
+.lane-context-bar select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.corridor-summary {
+  color: #64748b;
+  font-size: 0.75rem;
+  flex: 1;
+  min-width: 12rem;
+}
+
+.lane-status {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.lane-status-active {
+  border: 1px solid #166534;
+  color: #86efac;
+}
+
+.lane-status-suspended {
+  border: 1px solid #991b1b;
+  color: #fca5a5;
+}
+
+.drift-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: #422006;
+  border: 1px solid #b45309;
+  color: #fcd34d;
+  text-transform: uppercase;
+}
+
+.drift-corridor_drift {
+  background: #422006;
+}
+
+.drift-identity_drift {
+  background: #450a0a;
+  border-color: #991b1b;
+  color: #fca5a5;
+}
+
+.discord-status {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+}
+
+.discord-status-live {
+  color: #86efac;
+  border-color: #166534;
+  background: rgba(22, 101, 52, 0.2);
+}
+
+.discord-status-off {
+  color: #94a3b8;
+}
+
+.discord-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0 0 8px;
+}
+
+.bridge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .bridge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bridge-column {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #1f2937;
+}
+
+.bridge-column h3 {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.bridge-column textarea {
+  width: 100%;
+  min-height: 140px;
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  padding: 8px;
+  font-size: 0.85rem;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: ui-monospace, monospace;
+}
+
+.bridge-column button {
+  margin-top: 8px;
+  margin-right: 8px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: #f9fafb;
+}
+
+.bridge-column button:hover {
+  background: #1d4ed8;
+}
+
+.bridge-column button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.normalized-block {
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  padding: 8px;
+  font-size: 0.8rem;
+  max-height: 220px;
+  overflow: auto;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.bridge-column p {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.reply-guard-banner {
+  background: #1a0f0f;
+  border: 1px solid #e74c3c;
+  color: #ff6b6b;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}

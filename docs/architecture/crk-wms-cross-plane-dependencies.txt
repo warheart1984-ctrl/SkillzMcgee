@@ -1,0 +1,77 @@
+CRK-1 x WMS Cross-Plane Dependency Graph
+========================================
+
+Canonical text-mode dependency graph for Continuity OS v1.0.
+
+[Layer 1] CRK-1 Specification
+  - Invariants (R001-R042)
+  - Object Model (Decision, Outcome, Evidence, Interpretation, Policy Evaluation, Policy Outcome)
+  - Required Behaviors (Constitutional Loop)
+
+[Layer 2] Conformance Ecosystem
+  - CAR / CAV (canonical registry + validation)
+  - COR / CSR (constitutional observability + stewardship)
+  - CTS (tests constitutional behaviors)
+  - MRI (reference implementation)
+  - PGI (provenance graph)
+  - DRA (drift analysis)
+  - Receipts + Evidence Ledger
+
+[Layer 3] Workflow Modeling Suite (WMS-1.0)
+  - CMS-1.0 (normative consulting methodology)
+    - Observation
+    - Finding
+    - Recommendation
+    - Expected Outcome
+    - Success Metric
+  - Workflow Modeling Canvas v1.0
+  - Operator Protocol (OWMP-1.0)
+
+[Layer 4] Nova Studio Modeling Agent (WM-A1.0)
+  - Uses CMS-1.0 stages as semantic types
+  - Writes to WMS evidence structures
+  - Anchors outputs in CRK-1 evidence ledger
+
+Cross-plane edges
+-----------------
+
+CRK-1.Evidence          -> WMS.Observation
+CRK-1.Interpretation    -> WMS.Finding
+CRK-1.PolicyEvaluation  -> WMS.Recommendation
+CRK-1.PolicyOutcome     -> WMS.ExpectedOutcome
+CRK-1.DriftEnvelope     -> WMS.SuccessMetric
+CRK-1.ReceiptLineage    -> WMS.TraceabilityMap
+
+Conformance -> WMS
+------------------
+
+CTS / MRI / PGI / DRA results
+  -> feed into WMS Observations (system-level workflow)
+
+WMS Recommendations
+  -> feed back into Governance decisions (system changes)
+
+Nova Studio
+-----------
+
+WM-A1.0
+  - reads CRK-1 state via COR / CAV / CAR
+  - generates WMS artifacts
+  - writes back to evidence ledger + provenance
+
+Investigation Mode (IM-OH-1.0)
+  - reads both planes (constitutional + workflow)
+  - provides unified readiness, lineage, drift, and counterfactuals
+
+Result
+------
+
+A closed, governed loop where constitutional runtime and workflow methodology
+share the same semantic grammar and evidence discipline.
+
+Related
+-------
+
+- crk-wms-equivalence-table.md
+- ../diagrams/unified-architecture.svg
+- ../operator/IM-OH-1.0.md

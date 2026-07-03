@@ -34,9 +34,47 @@ import { loadContinuityState } from "../services/continuityService.mjs";
 import { loadDriftPoints } from "../services/driftService.mjs";
 import { loadLedgerReceipts } from "../services/ledgerService.mjs";
 import { getSubstratePayload } from "../nova-studio/server/runtime/substrateState.mjs";
+import {
+  appendCommunicationGovernanceTick,
+  appendCommunicationTick,
+  freezeCommunicationCanon,
+  getCommunicationState,
+  getParsedCommunicationCanon,
+  listCommunicationTicks,
+  replayCommunication,
+} from "../runtime/communication/communicationRuntime.mjs";
+import { upsertLaneContract } from "../runtime/communication/laneRegistry.mjs";
+import { reloadFreezeState } from "../nova-studio/server/runtime/canonFreeze.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const specimenRuntime = path.join(__dirname, "..", ".runtime", "nova-studio-test");
+const communicationCanonPath = path.join(__dirname, "..", "governance", "communication", "COMM-CANON.md");
+const communicationGovDir = path.join(__dirname, "..", ".runtime", "communication-governance");
+
+function readOptionalFile(filePath) {
+  return fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : null;
+}
+
+function restoreOptionalFile(filePath, contents) {
+  if (contents === null) {
+    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+    return;
+  }
+  fs.writeFileSync(filePath, contents, "utf8");
+}
+
+function clearCommunicationFreezeArtifacts() {
+  for (const name of [
+    "canon-freeze.json",
+    "canon-freeze-ticks.jsonl",
+    "COMM-CANON@1.0.0.md",
+    "constitution.runtime.json",
+  ]) {
+    const artifactPath = path.join(communicationGovDir, name);
+    if (fs.existsSync(artifactPath)) fs.unlinkSync(artifactPath);
+  }
+  reloadFreezeState();
+}
 
 test("governed pipeline produces intent→plan→reasoning→capabilities→receipts", async () => {
   clearLedger();
@@ -195,6 +233,141 @@ test("run slice executes capability, appends receipt, continuity, and drift", as
   assert.ok(substrate.continuity.some((event) => event.kind === "ARTIFACT"));
 });
 
+test("lawful llm slice routes through Nova-compatible provider", async (t) => {
+  clearLedger();
+  const previousEnv = {
+    NOVA_PROVIDER: process.env.NOVA_PROVIDER,
+    NOVA_OPENAI_BASE_URL: process.env.NOVA_OPENAI_BASE_URL,
+    NOVA_OPENAI_MODEL: process.env.NOVA_OPENAI_MODEL,
+    NOVA_API_KEY: process.env.NOVA_API_KEY,
+  };
+  t.after(() => {
+    for (const [key, value] of Object.entries(previousEnv)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  });
+
+  let sawBearer = false;
+  let sawPrompt = false;
+  const provider = http.createServer(async (req, res) => {
+    if (req.method !== "POST" || req.url !== "/v1/chat/completions") {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    sawBearer = req.headers.authorization === "Bearer test-nova-key";
+    const body = await readRequestJson(req);
+    sawPrompt = body.messages?.at(-1)?.content === "write lawful code";
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({
+      model: body.model,
+      choices: [{ message: { role: "assistant", content: "lawful nova slice ready" } }],
+      usage: { prompt_tokens: 7, completion_tokens: 4, total_tokens: 11 },
+    }));
+  });
+  await new Promise((resolve) => provider.listen(0, "127.0.0.1", resolve));
+  t.after(() => closeTestServer(provider));
+  const address = provider.address();
+  const port = typeof address === "object" && address ? address.port : 0;
+
+  process.env.NOVA_PROVIDER = "nova";
+  process.env.NOVA_OPENAI_BASE_URL = `http://127.0.0.1:${port}/v1`;
+  process.env.NOVA_OPENAI_MODEL = "nova-local";
+  process.env.NOVA_API_KEY = "test-nova-key";
+
+  const result = await runSlice({
+    operator: "operator:test",
+    capabilityId: "llm_echo",
+    input: { prompt: "write lawful code", model: "nova-local", max_tokens: 16 },
+    continuityState: { checkpoint: "00000", events: [] },
+  });
+
+  assert.equal(result.ok, true, result.violations.join(", "));
+  assert.equal(sawBearer, true);
+  assert.equal(sawPrompt, true);
+  assert.equal(result.output.status, "ok");
+  assert.equal(result.value.provider, "openai-compatible");
+  assert.equal(result.value.model, "nova-local");
+  assert.equal(result.value.text, "lawful nova slice ready");
+  assert.equal(result.value.inputTokens, 7);
+  assert.equal(result.value.outputTokens, 4);
+});
+
+test("communication ticks are lane-scoped, budgeted, replayable, and canon-bound", async () => {
+  const canonBefore = readOptionalFile(communicationCanonPath);
+  clearCommunicationFreezeArtifacts();
+
+  try {
+  const laneId = `test-comm-${Date.now()}`;
+  upsertLaneContract({
+    lane_id: laneId,
+    participants: ["jon", "darz"],
+    allowed_categories: ["human"],
+    allowed_altitudes: ["human"],
+    max_impact: "none",
+    human_bandwidth: "high",
+    continuity_budget: {
+      max_composite: 0.5,
+      session_budget: 1,
+      session_spent: 0,
+      reset_policy: "per-epoch",
+    },
+    drift_thresholds: { warn: 0.05, notify: 0.15, contain: 0.3, fail_closed: 0.5 },
+    comm_constitution_version: "1.0.0",
+    status: "ACTIVE",
+    created_at: new Date().toISOString(),
+  });
+
+  const result = appendCommunicationTick({
+    entry_type: "communicationTick",
+    lane_id: laneId,
+    direction: "jon->darz",
+    category: "human",
+    altitude: "human",
+    impact: "none",
+    core_claim: "Testing governed communication lane isolation.",
+    required_action: "none",
+    targets: [],
+    latency: "whenever",
+    drift_vector: { semantic: 0, altitude: 0, impact: 0, latency: 0, composite: 0.02 },
+  });
+
+  assert.equal(result.status, "ok");
+  assert.equal(result.tick.lane_id, laneId);
+  assert.equal(result.tick.comm_constitution_version, "1.0.0");
+  assert.ok(result.sideEffects.some((entry) => entry.entry_type === "communicationBudgetTick"));
+
+  const governance = appendCommunicationGovernanceTick({
+    communication_id: result.tick.id,
+    decision_type: "ack",
+    rationale: "test acknowledgement",
+    operator_id: "jon",
+    receipts: [],
+  });
+  assert.equal(governance.entry_type, "communicationGovernanceTick");
+
+  const filtered = listCommunicationTicks({ lane_id: laneId });
+  assert.ok(filtered.some((tick) => tick.id === result.tick.id));
+  const replayed = replayCommunication({ lane_id: laneId });
+  assert.ok(replayed.some((tick) => tick.id === result.tick.id));
+
+  const state = getCommunicationState();
+  assert.ok(state.lanes.some((lane) => lane.lane_id === laneId));
+  assert.ok(state.epochs.some((epoch) => epoch.lane_id === laneId));
+  assert.ok(state.continuity.communication_drift >= 0);
+
+  const parsed = await getParsedCommunicationCanon();
+  assert.ok(parsed["ACTIVE LANES"]);
+  const frozen = await freezeCommunicationCanon("jon");
+  assert.match(frozen.hash, /^sha256:/);
+  assert.equal(frozen.tick.entry_type, "communicationCanonFreezeTick");
+  } finally {
+    restoreOptionalFile(communicationCanonPath, canonBefore);
+    clearCommunicationFreezeArtifacts();
+  }
+});
+
 test("specimen round-trip export import replay verify", () => {
   clearLedger();
   appendReceipt({
@@ -320,6 +493,22 @@ function closeTestServer(server) {
     server.closeAllConnections?.();
     server.close(() => resolve());
     setTimeout(resolve, 100);
+  });
+}
+
+function readRequestJson(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => {
+      try {
+        const raw = Buffer.concat(chunks).toString("utf8");
+        resolve(raw ? JSON.parse(raw) : {});
+      } catch (err) {
+        reject(err);
+      }
+    });
+    req.on("error", reject);
   });
 }
 

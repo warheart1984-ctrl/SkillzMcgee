@@ -3,6 +3,7 @@ import crypto from "node:crypto";
 import {
   getNovaRuntimeState,
   getStudioState,
+  logEvent,
   subscribeStudioEvents,
 } from "./studioRuntime.mjs";
 import { NOVA_RUNTIME_ID, NOVA_SESSION_ID } from "../../../runtime/state-store.mjs";
@@ -60,6 +61,23 @@ export function broadcastStudioState(type = "studio_state") {
   for (const client of clients) {
     sendJson(client, payload);
   }
+  return { clientCount: clients.size };
+}
+
+/** Governed communication stream — fourth substrate channel alongside stance/wave/receipts */
+export function broadcastCommunicationTick(tick) {
+  const envelope = {
+    channel: "communication",
+    type: "communication",
+    runtime_id: NOVA_RUNTIME_ID,
+    session_id: NOVA_SESSION_ID,
+    timestamp: new Date().toISOString(),
+    payload: tick,
+  };
+  for (const client of clients) {
+    sendJson(client, envelope);
+  }
+  logEvent("communication_tick", { tickId: tick.id, direction: tick.direction });
   return { clientCount: clients.size };
 }
 

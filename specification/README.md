@@ -1,6 +1,6 @@
 # CRK-1 Specification (Plane 1)
 
-**Authority:** CRK-1 Specification v1.0  
+**Authority:** CRK-1 Specification v1.0
 **Status:** Normative — frozen for Version 1.0
 
 This directory contains **only normative content** — what must be true. No tests, tools, or implementations belong here.
@@ -51,6 +51,7 @@ This directory contains **only normative content** — what must be true. No tes
 | [constitutional-loop-v1.0.md](./constitutional-loop-v1.0.md) | 12-stage loop diagram |
 | [semantic-artifact-types.md](./semantic-artifact-types.md) | Formal artifact type system |
 | [constitutional-proof.md](./constitutional-proof.md) | End-to-end correctness argument |
+| [constitutional-stack-v1.0.md](./constitutional-stack-v1.0.md) | Six-layer stack: COR, Proof Analysis, Governance, Maturity, Hygiene, Messaging |
 | [four-layer-provenance-model.md](./four-layer-provenance-model.md) | Authority → Spec → Implementation → Execution |
 | [layer-object-model.md](./layer-object-model.md) | AuthorityObject, SpecificationObject, ImplementationObject |
 | [constitutional-amendments/](./constitutional-amendments/) | CA-1.0, CA-1.1 |

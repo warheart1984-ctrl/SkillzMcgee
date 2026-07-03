@@ -1,0 +1,87 @@
+.comm-governance-panel {
+  padding: 1rem;
+  border-left: 1px solid #2a2a3a;
+  min-width: 260px;
+  font-size: 0.85rem;
+}
+
+.comm-governance-panel h3 {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.lane-budget h4,
+.reroute-log h4,
+.invariant-list h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.budget-bar {
+  height: 8px;
+  background: #2a2a3a;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.budget-fill {
+  height: 100%;
+  background: #27ae60;
+  transition: width 0.3s ease;
+}
+
+.budget-yellow .budget-fill { background: #f1c40f; }
+.budget-orange .budget-fill { background: #e67e22; }
+.budget-red .budget-fill { background: #e74c3c; }
+
+.budget-meta {
+  opacity: 0.65;
+  font-size: 0.75rem;
+}
+
+.containment-actions {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  background: #1a0f0f;
+}
+
+.containment-title {
+  color: #ff6b6b;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.action-row button {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.reroute-item {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #222;
+}
+
+.reroute-item small {
+  display: block;
+  opacity: 0.6;
+  font-size: 0.7rem;
+}
+
+.invariant-item {
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
+}
+
+.invariant-item code {
+  margin-right: 0.35rem;
+}

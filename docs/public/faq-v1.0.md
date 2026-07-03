@@ -1,7 +1,7 @@
 # Continuity OS v1.0 — Public FAQ
 
-**Audience:** Website visitors, press, auditors, prospective stewards  
-**Related:** [Architecture vs Evidence](./architecture-vs-evidence.md) · [Launch Narrative](./v1.0-launch-narrative.md) · [Extended FAQ](../launch-kit/FAQ.md)
+**Audience:** Website visitors, press, auditors, prospective stewards
+**Related:** [Expanded FAQ (v1.0)](./public-faq-expanded-v1.0.md) · [Architecture vs Evidence](./architecture-vs-evidence.md) · [Launch Narrative](./v1.0-launch-narrative.md) · [Extended FAQ](../launch-kit/FAQ.md)
 
 ---
 
@@ -122,8 +122,8 @@ Everything is open. See the [External Auditor Handbook](../conformance/certifica
 
 Continuity OS doesn't ask for trust. It exposes evidence.
 
-Every claim is inspectable.  
-Every guarantee is measurable.  
+Every claim is inspectable.
+Every guarantee is measurable.
 Every result is reproducible.
 
 [Full explainer →](./dont-trust-query-it.md)

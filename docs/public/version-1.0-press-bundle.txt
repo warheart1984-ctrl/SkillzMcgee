@@ -1,0 +1,60 @@
+Version 1.0 Final Press-Ready Bundle (Text-Mode)
+Status: Public · Purpose: Media-ready summary of the constitutional platform
+
+====================================================================
+CONTINUITY OS — VERSION 1.0
+FINAL PRESS-READY BUNDLE
+====================================================================
+
+TITLE
+  Continuity OS Version 1.0 — The First Constitutional Runtime
+
+SUMMARY
+  Continuity OS introduces a new class of system: a constitutional
+  runtime where every decision is evidence-backed, traceable,
+  reproducible, and governed.
+
+KEY ANNOUNCEMENTS
+  • Version 1.0 constitutional baseline is frozen.
+  • Constitutional Stability Principle adopted.
+  • Constitutional compatibility guaranteed across implementations.
+  • Full conformance ecosystem released (CTS-1.0, MRI-1.0, PGI, DRA).
+  • Complete operator experience (Investigation Mode, Drift Map,
+    Lineage Explorer, Counterfactual Engine).
+  • Workflow Modeling Suite (WMS-1.0) released as canonical modeling
+    grammar.
+  • Governance Charter, Amendment Procedure, and Steward Mandate
+    formally adopted.
+
+WHY IT MATTERS
+  Continuity OS transforms AI systems from opaque black boxes into
+  constitutional machines with:
+    • deterministic semantics
+    • canonical artifacts
+    • governed transformations
+    • reproducible outcomes
+    • transparent lineage
+
+THE PROMISE OF VERSION 1.0
+  Version 1.0 does not promise API stability.
+  It promises constitutional stability.
+
+  Meaning:
+    If two independent implementations receive the same canonical
+    artifacts, they must derive the same constitutional meaning,
+    proof relationships, and governance guarantees.
+
+THE FUTURE
+  Version 1.1 will expand capability.
+  Version 2.0 will only occur if constitutional change is justified.
+
+REFERENCES
+  Landing page: docs/public/landing-page-v1.0.md
+  Founders' letter: docs/public/founders-letter-v1.0.md
+  FAQ: docs/public/public-faq-expanded-v1.0.md
+  Constitutional index: spec/CONSTITUTIONAL-INDEX.md
+  Freeze declaration: spec/version-1.0-freeze-declaration.md
+
+====================================================================
+END OF PRESS BUNDLE
+====================================================================

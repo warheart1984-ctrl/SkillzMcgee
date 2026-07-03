@@ -691,6 +691,166 @@
   color: #94a3b8;
 }
 
+/* Semantic Bridge (DAR-Z ↔ JON) */
+.ns-semantic-bridge {
+  max-width: 1400px;
+}
+
+.ns-bridge-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ns-bridge-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.ns-bridge-toolbar select {
+  padding: 0.35rem 0.5rem;
+  background: #16161a;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #e6edf3;
+}
+
+.ns-bridge-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .ns-bridge-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ns-bridge-pane h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: #c9d1d9;
+}
+
+.ns-bridge-textarea,
+.ns-bridge-output {
+  width: 100%;
+  min-height: 14rem;
+  padding: 0.6rem;
+  background: #0d0d0f;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #e6edf3;
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.ns-bridge-output {
+  white-space: pre-wrap;
+  overflow: auto;
+  margin: 0 0 0.75rem;
+}
+
+.ns-bridge-field {
+  margin-bottom: 0.55rem;
+}
+
+.ns-bridge-field label {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 0.2rem;
+}
+
+.ns-bridge-field input,
+.ns-bridge-field textarea,
+.ns-bridge-field select {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  background: #16161a;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #e6edf3;
+  font-size: 0.8rem;
+}
+
+.ns-bridge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.ns-bridge-violations {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  background: #422006;
+  border: 1px solid #b45309;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #fcd34d;
+}
+
+.ns-bridge-violations li {
+  margin: 0.15rem 0;
+}
+
+.ns-bridge-check {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.ns-bridge-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.ns-bridge-tag {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.72rem;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  background: #16161a;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.ns-bridge-tag-active {
+  border-color: #388bfd;
+  color: #58a6ff;
+  background: rgba(56, 139, 253, 0.12);
+}
+
+.ns-bridge-canonical {
+  margin: 0.75rem 0 0;
+  padding: 0.6rem;
+  background: #0d0d0f;
+  border: 1px dashed #30363d;
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  color: #8b949e;
+  max-height: 12rem;
+  overflow: auto;
+}
+
+/* Skeleton panel styles live in src/panels/SemanticBridgePanel.css */
+
 /* Nova Studio shell (operator layout) */
 .ns-shell {
   display: flex;

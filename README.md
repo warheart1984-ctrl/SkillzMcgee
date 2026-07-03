@@ -26,6 +26,15 @@ Most AI systems are black boxes. SkillzMcGee makes every decision **observable, 
 4. **Fold singularity** → Terminal state reconstructed + verified
 5. **Inspect** → Dashboard shows receipts, wave state, continuity proof
 
+### Using SkillzMcGee after cloning
+
+Fresh clones can run SkillzMcGee in deterministic mode, through local Ollama, or
+through a Nova/OpenAI-compatible `/v1/chat/completions` endpoint.
+
+See [docs/USING_SKILLZMCGEE.md](./docs/USING_SKILLZMCGEE.md) for the universal
+clone/install/provider workflow, and [docs/lawful-nova-slice.md](./docs/lawful-nova-slice.md)
+for deeper receipt and slice details.
+
 ## Architecture
 
 | Layer | Module | Proof |

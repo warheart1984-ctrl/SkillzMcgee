@@ -6,8 +6,12 @@ export const MODES = [
   { to: "/nova/studio/continuity", label: "Continuity" },
   { to: "/nova/studio/proof-graph", label: "Proof Graph" },
   { to: "/nova/studio/audit", label: "Audit" },
+  { to: "/nova/studio/cor", label: "COR Suite" },
+  { to: "/nova/studio/governance-dashboard", label: "Governance" },
   { to: "/nova/studio/forensics", label: "Forensics" },
   { to: "/nova/studio/investigate", label: "Investigate" },
+  { to: "/nova/studio/workflow-canvas", label: "Workflow Canvas" },
+  { to: "/nova/studio/investigation-mode", label: "Investigation Mode" },
   { to: "/nova/studio/steward", label: "Steward" },
 ] as const;
 

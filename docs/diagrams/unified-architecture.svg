@@ -1,0 +1,60 @@
+<svg width="900" height="900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Continuity OS v1.0 unified architecture</title>
+  <desc id="desc">Seven-layer governed ecosystem from K-infinity axioms through public messaging.</desc>
+  <style>
+    .box { fill:#0b1020; stroke:#4fd1c5; stroke-width:1.5; }
+    .text { fill:#e2e8f0; font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size:12px; }
+    .title { font-weight:700; font-size:13px; }
+    .line { stroke:#64748b; stroke-width:1.2; marker-end:url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <rect class="box" x="320" y="40" width="260" height="50" rx="6" ry="6" />
+  <text class="text title" x="450" y="65" text-anchor="middle">K-infinity Axioms</text>
+  <text class="text" x="450" y="80" text-anchor="middle">Foundational constitutional assumptions</text>
+
+  <rect class="box" x="320" y="110" width="260" height="60" rx="6" ry="6" />
+  <text class="text title" x="450" y="135" text-anchor="middle">Constitutional Principles</text>
+  <text class="text" x="450" y="150" text-anchor="middle">Authority / Invariants / Governance</text>
+
+  <rect class="box" x="260" y="190" width="380" height="80" rx="6" ry="6" />
+  <text class="text title" x="450" y="215" text-anchor="middle">CRK-1 Specification Plane</text>
+  <text class="text" x="450" y="230" text-anchor="middle">Invariants / Contracts / Object Model / Required Behaviors</text>
+  <text class="text" x="450" y="245" text-anchor="middle">Normative requirements R001-R042</text>
+
+  <rect class="box" x="220" y="290" width="460" height="90" rx="6" ry="6" />
+  <text class="text title" x="450" y="315" text-anchor="middle">Conformance Ecosystem</text>
+  <text class="text" x="450" y="330" text-anchor="middle">CAR / CAV / COR / CSR / CTS / MRI / PGI / DRA</text>
+  <text class="text" x="450" y="345" text-anchor="middle">Receipts / Provenance / Drift Envelopes / CI Governance</text>
+
+  <rect class="box" x="220" y="400" width="460" height="90" rx="6" ry="6" />
+  <text class="text title" x="450" y="425" text-anchor="middle">Operator Experience Plane</text>
+  <text class="text" x="450" y="440" text-anchor="middle">Nova Studio / Investigation Mode / Forensics / Visualizers</text>
+  <text class="text" x="450" y="455" text-anchor="middle">"Do not trust the repository - query it."</text>
+
+  <rect class="box" x="220" y="510" width="460" height="90" rx="6" ry="6" />
+  <text class="text title" x="450" y="535" text-anchor="middle">Workflow Modeling Suite (WMS-1.0)</text>
+  <text class="text" x="450" y="550" text-anchor="middle">Canvas / CMS-1.0 / Templates / Operator Protocol / Examples</text>
+  <text class="text" x="450" y="565" text-anchor="middle">Observation -> Finding -> Recommendation -> Outcome -> Metric</text>
+
+  <rect class="box" x="240" y="620" width="420" height="80" rx="6" ry="6" />
+  <text class="text title" x="450" y="645" text-anchor="middle">Nova Studio Modeling Agent (WM-A1.0)</text>
+  <text class="text" x="450" y="660" text-anchor="middle">AI-assisted evidence-chain builder with operator review</text>
+
+  <rect class="box" x="240" y="720" width="420" height="80" rx="6" ry="6" />
+  <text class="text title" x="450" y="745" text-anchor="middle">Public Messaging and Website Layer</text>
+  <text class="text" x="450" y="760" text-anchor="middle">Continuity OS as governed infrastructure</text>
+  <text class="text" x="450" y="775" text-anchor="middle">"The repository does not declare correctness."</text>
+
+  <line class="line" x1="450" y1="90" x2="450" y2="110" />
+  <line class="line" x1="450" y1="170" x2="450" y2="190" />
+  <line class="line" x1="450" y1="270" x2="450" y2="290" />
+  <line class="line" x1="450" y1="380" x2="450" y2="400" />
+  <line class="line" x1="450" y1="490" x2="450" y2="510" />
+  <line class="line" x1="450" y1="600" x2="450" y2="620" />
+  <line class="line" x1="450" y1="700" x2="450" y2="720" />
+</svg>

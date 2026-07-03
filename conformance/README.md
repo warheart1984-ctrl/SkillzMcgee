@@ -1,6 +1,6 @@
 # Conformance Ecosystem (Plane 2)
 
-**Authority:** CRK-1 Conformance v1.0  
+**Authority:** CRK-1 Conformance v1.0
 **Status:** Dynamic — evolves with engineering
 
 This directory contains **verification, evidence, and certification** — how we demonstrate the specification is true.
@@ -33,6 +33,7 @@ Every artifact here must resolve to one or more normative requirements in `/spec
 | [merkle-spine/](./merkle-spine/) | Cryptographic anchoring |
 | [proof-graph/](./proof-graph/) | Proof-graph index, explain engine, counterfactual engine, canonical/derived registry |
 | [observability/](./observability/) | **COR-1.0**, **CSR-1.0**, **DRA-1.0**, **DARP-1.0** |
+| [cor-suite/](./cor-suite/) | COR Suite JSON Schemas (state vector, proof analysis, governance receipt, maturity, hygiene) |
 | [validation/](./validation/) | **CAV-1.0** canonical artifact validator |
 | [certification/SGDF-1.0.md](./certification/SGDF-1.0.md) | Steward governance decision framework |
 | [provenance-ledger/](./provenance-ledger/) | PL-1.1 historical truth |

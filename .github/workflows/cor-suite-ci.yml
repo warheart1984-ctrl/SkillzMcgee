@@ -1,0 +1,56 @@
+name: COR Suite CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cor-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Repo hygiene
+        run: npm run cor-suite:hygiene
+
+      - name: Validate CAR with CAV
+        run: npm run cor-suite:cav
+
+      - name: Generate COR state vector
+        run: npm run cor-suite:cor -- --skip-generators
+
+      - name: Generate PGI proof graph index
+        run: npm run cor-suite:pgi
+
+      - name: Generate DRA report
+        run: npm run cor-suite:dra -- --skip-pgi
+
+      - name: Run Proof Analysis
+        run: npm run cor-suite:analyze -- --skip-generators
+
+      - name: Compute maturity vector
+        run: npm run cor-suite:maturity
+
+      - name: Governance gate
+        run: npm run cor-suite:govern
+
+      - name: Upload COR Suite artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cor-suite-artifacts
+          path: |
+            meta/cor-suite/
+            cor-suite/car/car-1.0.json
+
+      - name: Constitutional tests
+        run: npm run test:cor-suite

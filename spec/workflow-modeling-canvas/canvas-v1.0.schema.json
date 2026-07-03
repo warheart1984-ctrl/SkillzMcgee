@@ -1,0 +1,31 @@
+{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/canvas-v1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workflow Modeling Canvas v1.0",
+  "type": "object",
+  "properties": {
+    "canvasVersion": { "type": "string", "const": "1.0.0" },
+    "engagementId": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "methodology": { "type": "string", "const": "CMS-1.0" },
+    "operatorReviewed": { "type": "boolean" },
+    "observationSet": { "$ref": "./observation-set.schema.json" },
+    "findingsSet": { "$ref": "./findings-set.schema.json" },
+    "recommendationSet": { "$ref": "./recommendation-set.schema.json" },
+    "expectedOutcomeSet": { "$ref": "./expected-outcome-set.schema.json" },
+    "successMetricSet": { "$ref": "./success-metric-set.schema.json" },
+    "traceabilityMap": { "$ref": "./traceability-map.schema.json" }
+  },
+  "required": [
+    "canvasVersion",
+    "engagementId",
+    "generatedAt",
+    "methodology",
+    "observationSet",
+    "findingsSet",
+    "recommendationSet",
+    "expectedOutcomeSet",
+    "successMetricSet",
+    "traceabilityMap"
+  ]
+}

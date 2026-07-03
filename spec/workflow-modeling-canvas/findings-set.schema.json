@@ -1,0 +1,38 @@
+{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/findings-set/1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Findings Set (Canvas Layer 2)",
+  "type": "object",
+  "properties": {
+    "setVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    }
+  },
+  "required": ["setVersion", "generatedAt", "findings"],
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^FND-" },
+        "observationIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "summary": { "type": "string" },
+        "patterns": { "type": "array", "items": { "type": "string" } },
+        "frictionPoints": { "type": "array", "items": { "type": "string" } },
+        "failureModes": { "type": "array", "items": { "type": "string" } },
+        "decisionPoints": { "type": "array", "items": { "type": "string" } },
+        "automationOpportunities": { "type": "array", "items": { "type": "string" } },
+        "governanceGaps": { "type": "array", "items": { "type": "string" } },
+        "complianceRisks": { "type": "array", "items": { "type": "string" } },
+        "costTimeInefficiencies": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["id", "observationIds", "summary"]
+    }
+  }
+}

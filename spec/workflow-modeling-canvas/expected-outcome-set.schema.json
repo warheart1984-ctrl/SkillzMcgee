@@ -1,0 +1,31 @@
+{
+  "$id": "https://continuity-os.dev/schemas/workflow-canvas/expected-outcome-set/1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expected Outcome Set (Canvas Layer 3–4)",
+  "type": "object",
+  "properties": {
+    "setVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "expectedOutcomes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/expectedOutcome" }
+    }
+  },
+  "required": ["setVersion", "generatedAt", "expectedOutcomes"],
+  "$defs": {
+    "expectedOutcome": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^OUT-" },
+        "recommendationIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "description": { "type": "string" },
+        "expectedImprovement": { "type": "string" }
+      },
+      "required": ["id", "recommendationIds", "description"]
+    }
+  }
+}

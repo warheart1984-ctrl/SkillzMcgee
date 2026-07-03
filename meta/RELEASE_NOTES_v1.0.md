@@ -1,7 +1,7 @@
 # CRK-1 / Continuity OS — Version 1.0 Release Notes
 
-**Release date:** 2026-06-26  
-**Tag:** `v1.0.0-spec` (specification plane)  
+**Release date:** 2026-06-26
+**Tag:** `v1.0.0-spec` (specification plane)
 **Scope:** CRK-1 kernel specification + Continuity OS v0.1 preview runtime
 
 ## 1. Summary
@@ -89,6 +89,11 @@ CRK-1 kernel remains intact; V1 artifacts remain binding on V1 provenance.
 
 ## 6. Key links
 
+- [spec/CONSTITUTIONAL-INDEX.md](../spec/CONSTITUTIONAL-INDEX.md) — authoritative Version 1.0 document map (frozen 2026-06-26)
+- [spec/version-1.0-freeze-declaration.md](../spec/version-1.0-freeze-declaration.md) — formal freeze declaration
+- [docs/bundles/master-pdf-textbundle-v1.0.txt](../docs/bundles/master-pdf-textbundle-v1.0.txt) — single-file corpus index
+- [docs/public/civilization-scale-builder/](../docs/public/civilization-scale-builder/) — public category framing
+- [docs/academic-paper/README.md](../docs/academic-paper/README.md) — academic source set (v1.0 whitepaper)
 - [CONTINUITY_OS.md](../CONTINUITY_OS.md) — public-facing overview
 - [conformance/traceability-matrix.md](../conformance/traceability-matrix.md) — master audit matrix
 - [specification/normative-requirements/](../specification/normative-requirements/) — R001–R042

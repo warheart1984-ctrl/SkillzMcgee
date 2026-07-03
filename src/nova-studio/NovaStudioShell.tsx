@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useOperatorContext } from "./state/operatorContext";
 import { useSubstrateEvents } from "./hooks/useSubstrateEvents";
-import "./styles/novaStudio.css";
+import { ContinuityStrip } from "./components/ContinuityStrip";
 
 interface RuntimeStatus {
   online?: boolean;
@@ -46,6 +46,9 @@ export const NovaStudioShell: React.FC = () => {
           <NavItem to="/nova/studio/proof-graph" label="Proof Graph" current={loc.pathname} />
           <NavItem to="/nova/studio/audit" label="Audit" current={loc.pathname} />
           <NavItem to="/nova/studio/steward" label="Steward Council" current={loc.pathname} />
+          <NavItem to="/nova/studio/semantic-bridge" label="Semantic Bridge" current={loc.pathname} />
+          <NavItem to="/nova/studio/communication" label="Communication" current={loc.pathname} />
+          <NavItem to="/nova/studio/communication/canon" label="Comm Canon" current={loc.pathname} />
         </nav>
       </aside>
 
@@ -60,6 +63,8 @@ export const NovaStudioShell: React.FC = () => {
             <span>Last receipt: {lastReceipt?.id ?? "—"}</span>
           </div>
         </header>
+
+        <ContinuityStrip />
 
         <main className="ns-shell-content">
           <Outlet />

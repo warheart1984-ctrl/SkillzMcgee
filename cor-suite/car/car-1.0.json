@@ -1,0 +1,261 @@
+{
+  "carVersion": "CAR-1.0",
+  "generatedAt": "2026-06-27T06:24:47.312Z",
+  "artifacts": [
+    {
+      "id": "CORSUITE.REQ-001",
+      "namespace": "CORSUITE",
+      "kind": "requirement",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "spec/COR-Suite-Spec-1.0.md",
+      "hash": "sha256:d9f71ae7c6695338a6c36c7a577996af6f07b6370b2912385fb3638b91e2c7dd",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.314Z"
+      }
+    },
+    {
+      "id": "CORSUITE.SPEC-001",
+      "namespace": "CORSUITE",
+      "kind": "specification",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "spec/COR-1.0-Contract.md",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:ba4b8bfb6021558f995d3a58eaf97c6bc197fca3609e50d5775159e1ad52feea",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.315Z"
+      }
+    },
+    {
+      "id": "CORSUITE.SPEC-002",
+      "namespace": "CORSUITE",
+      "kind": "specification",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "spec/CAR-1.0-Registry.md",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:ca16a48986c73ff0b0e6f7264247c254a6495ff636235f64665f08ca02646f1a",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.315Z"
+      }
+    },
+    {
+      "id": "CORSUITE.SCHEMA-001",
+      "namespace": "CORSUITE",
+      "kind": "schema",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "spec/car-1.0.schema.json",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:3b8af78a33a13dc660c41cf3bd6d6011879e5a2968e1e7c6c433fb94a7883d3a",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.316Z"
+      }
+    },
+    {
+      "id": "CORSUITE.SCHEMA-002",
+      "namespace": "CORSUITE",
+      "kind": "schema",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/pgi.schema.json",
+      "path": "spec/pgi.schema.json",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:37f21238dcb741aa4588efeaeed9ae008dfbbde2dce77b9384a24bad978113c5",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.316Z"
+      }
+    },
+    {
+      "id": "CORSUITE.SCHEMA-003",
+      "namespace": "CORSUITE",
+      "kind": "schema",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/dra-report.schema.json",
+      "path": "spec/dra-report.schema.json",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:8fb7d386202a39f719a3bb74e5916e04f4ac9e0cb320485d911086ddc5cceb34",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.317Z"
+      }
+    },
+    {
+      "id": "CORSUITE.IMPL-001",
+      "namespace": "CORSUITE",
+      "kind": "implementation",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "src/cor/index.ts",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:5d64a088135067bda00844887d35b830e6825785f4b1f5f2f128abe476004d8a",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.318Z"
+      }
+    },
+    {
+      "id": "CORSUITE.IMPL-002",
+      "namespace": "CORSUITE",
+      "kind": "implementation",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "src/cor-suite/car/registry.ts",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:34fdc3660c960cf6422069c7491de82c0bf2ad7a330f0721e9cf23988a09020d",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.319Z"
+      }
+    },
+    {
+      "id": "CORSUITE.IMPL-003",
+      "namespace": "CORSUITE",
+      "kind": "implementation",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "src/cor-suite/car/validate.ts",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:0ca9fbe664209ffe8b08c8ce829f46cc66b821ebc4a482a4dbb314198fd0155d",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.320Z"
+      }
+    },
+    {
+      "id": "CORSUITE.IMPL-004",
+      "namespace": "CORSUITE",
+      "kind": "implementation",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/pgi.schema.json",
+      "path": "src/cor-suite/pgi/index.ts",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:1b494071d55cb15090ac65fca30a73b1c9c4a0bc8b59fbce26d080ccd5641415",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.321Z"
+      }
+    },
+    {
+      "id": "CORSUITE.IMPL-005",
+      "namespace": "CORSUITE",
+      "kind": "implementation",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/dra-report.schema.json",
+      "path": "src/cor-suite/dra/index.ts",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:a48f3cd31b83418387f1e0abe4d28d50f7cd7d1db46e1c30a65c01dfef155ae0",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.322Z"
+      }
+    },
+    {
+      "id": "CORSUITE.VER-001",
+      "namespace": "CORSUITE",
+      "kind": "verification",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "tests/cor_suite.test.js",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:8ad749ade80f55657123102b2366a3523b30675bd8ee6c63682652aa3898f443",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.322Z"
+      }
+    },
+    {
+      "id": "CORSUITE.EVID-001",
+      "namespace": "CORSUITE",
+      "kind": "evidence",
+      "version": "1.0.0",
+      "status": "active",
+      "authority": "COR Suite 1.0",
+      "schemaRef": "spec/car-1.0.schema.json",
+      "path": "spec/CAV-1.0-Validation.md",
+      "links": {
+        "related": [
+          "CORSUITE.REQ-001"
+        ]
+      },
+      "hash": "sha256:f0707578bf2618aff04cf0aa60d2c93966ae3d76a83ac23311bb00957e16eda5",
+      "lifecycle": {
+        "createdAt": "2026-06-26T00:00:00.000Z",
+        "updatedAt": "2026-06-27T06:24:47.323Z"
+      }
+    }
+  ]
+}
