@@ -137,6 +137,19 @@ import {
   handleDiscordWebSocketUpgrade,
 } from "./runtime/discordBridge.mjs";
 import { handleAssistantRefine } from "./runtime/assistant.mjs";
+import {
+  getNodeAlerts,
+  getNodeContinuity,
+  getNodeLedger,
+  getNodeHello,
+  getNodeMesh,
+  getNodePolicy,
+  getNodeReceipts,
+  getNodeResult,
+  getNodeStatus,
+  replayNodeTrace,
+  submitNodeTask,
+} from "./runtime/nodeClient.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const STUDIO_DIR = path.resolve(__dirname, "..");
@@ -439,6 +452,42 @@ const server = http.createServer(async (req, res) => {
             }
           : null,
       });
+    }
+    if (url.pathname === "/api/node/status" && req.method === "GET") {
+      return json(res, 200, await getNodeStatus());
+    }
+    if (url.pathname === "/api/node/receipts" && req.method === "GET") {
+      return json(res, 200, await getNodeReceipts());
+    }
+    if (url.pathname === "/api/node/ledger" && req.method === "GET") {
+      return json(res, 200, await getNodeLedger());
+    }
+    if (url.pathname === "/api/node/continuity" && req.method === "GET") {
+      return json(res, 200, await getNodeContinuity());
+    }
+    if (url.pathname === "/api/node/policy" && req.method === "GET") {
+      return json(res, 200, await getNodePolicy());
+    }
+    if (url.pathname === "/api/node/mesh" && req.method === "GET") {
+      return json(res, 200, await getNodeMesh());
+    }
+    if (url.pathname === "/api/node/alerts" && req.method === "GET") {
+      return json(res, 200, await getNodeAlerts());
+    }
+    if (url.pathname === "/api/node/submit" && req.method === "POST") {
+      const body = await readBody(req);
+      return json(res, 200, await submitNodeTask(body));
+    }
+    if (url.pathname === "/api/node/hello" && req.method === "POST") {
+      return json(res, 200, await getNodeHello());
+    }
+    const nodeResultMatch = url.pathname.match(/^\/api\/node\/result\/([^/]+)$/);
+    if (nodeResultMatch && req.method === "GET") {
+      return json(res, 200, await getNodeResult(decodeURIComponent(nodeResultMatch[1])));
+    }
+    const nodeReplayMatch = url.pathname.match(/^\/api\/node\/replay\/([^/]+)$/);
+    if (nodeReplayMatch && req.method === "POST") {
+      return json(res, 200, await replayNodeTrace(decodeURIComponent(nodeReplayMatch[1])));
     }
     if (url.pathname === "/api/quorum/state" && req.method === "GET") {
       const ledger = getStewardState().ledger;

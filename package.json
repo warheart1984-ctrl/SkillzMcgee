@@ -36,7 +36,7 @@
     "nova-studio:build": "npm run build --prefix nova-studio",
     "nova-studio:build:react": "npm run build:react --prefix nova-studio",
     "test:v1": "node --test --test-concurrency=1 tests/forensics.test.js tests/nova_studio.test.js tests/constitutional_audit.test.js",
-    "test:nova-studio": "node --test tests/nova_studio.test.js",
+    "test:nova-studio": "node --test tests/nova_studio.test.js tests/nova_studio_node_operator.test.js",
     "test:forensics": "node --test tests/forensics.test.js",
     "test:constitutional": "node --test tests/constitutional_audit.test.js",
     "spec:requirements": "node tools/generators/requirements-catalog.mjs",

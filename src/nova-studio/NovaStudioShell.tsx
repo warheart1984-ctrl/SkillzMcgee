@@ -49,6 +49,7 @@ export const NovaStudioShell: React.FC = () => {
           <NavItem to="/nova/studio/semantic-bridge" label="Semantic Bridge" current={loc.pathname} />
           <NavItem to="/nova/studio/communication" label="Communication" current={loc.pathname} />
           <NavItem to="/nova/studio/communication/canon" label="Comm Canon" current={loc.pathname} />
+          <NavItem to="/nova/studio/node" label="Node" current={loc.pathname} />
         </nav>
       </aside>
 

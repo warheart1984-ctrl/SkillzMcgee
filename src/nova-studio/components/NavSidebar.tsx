@@ -8,6 +8,7 @@ export const MODES = [
   { to: "/nova/studio/audit", label: "Audit" },
   { to: "/nova/studio/cor", label: "COR Suite" },
   { to: "/nova/studio/governance-dashboard", label: "Governance" },
+  { to: "/nova/studio/node", label: "Node" },
   { to: "/nova/studio/forensics", label: "Forensics" },
   { to: "/nova/studio/investigate", label: "Investigate" },
   { to: "/nova/studio/workflow-canvas", label: "Workflow Canvas" },

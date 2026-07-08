@@ -1073,3 +1073,130 @@
   padding: 0.35rem 0;
   border-bottom: 1px solid #21262d;
 }
+
+.ns-node-page {
+  max-width: 1200px;
+}
+
+.ns-node-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.ns-node-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #c9d1d9;
+}
+
+.ns-node-status-grid,
+.ns-node-dashboard-grid,
+.ns-node-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.ns-node-grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+}
+
+.ns-node-dashboard-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ns-node-metric {
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.65rem;
+  background: #16161a;
+}
+
+.ns-node-metric span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  margin-bottom: 0.25rem;
+}
+
+.ns-node-metric strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.ns-node-prompt {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.5rem;
+  background: #16161a;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #e6edf3;
+  font-family: inherit;
+}
+
+.ns-node-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.ns-node-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 0.35rem;
+  align-items: start;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #21262d;
+}
+
+.ns-continuity-graph {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: flex-end;
+  min-height: 5rem;
+}
+
+.ns-continuity-marker {
+  min-width: 4.5rem;
+  min-height: 2rem;
+  padding: 0.35rem;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  background: #16161a;
+  font-size: 0.7rem;
+  color: #c9d1d9;
+}
+
+.ns-continuity-allowed {
+  border-color: #238636;
+}
+
+.ns-continuity-blocked,
+.ns-continuity-error {
+  border-color: #da3633;
+}
+
+@media (max-width: 900px) {
+  .ns-node-header,
+  .ns-node-toggle {
+    display: block;
+  }
+
+  .ns-node-status-grid,
+  .ns-node-dashboard-grid,
+  .ns-node-grid {
+    grid-template-columns: 1fr;
+  }
+}

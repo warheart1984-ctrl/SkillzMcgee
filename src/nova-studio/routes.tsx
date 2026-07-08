@@ -15,6 +15,7 @@ import { GovernanceDashboardPage } from "./governance/GovernanceDashboardPage";
 import { SemanticBridgePage } from "./semantic-bridge/SemanticBridgePage";
 import { CommunicationStreamPage } from "./communication/CommunicationStreamPage";
 import { CommunicationCanonPage } from "./communication/CommunicationCanonPage";
+import { NodePage } from "./node/NodePage";
 
 export const novaStudioRoutes: RouteObject[] = [
   {
@@ -30,6 +31,7 @@ export const novaStudioRoutes: RouteObject[] = [
       { path: "semantic-bridge", element: <SemanticBridgePage /> },
       { path: "communication", element: <CommunicationStreamPage /> },
       { path: "communication/canon", element: <CommunicationCanonPage /> },
+      { path: "node", element: <NodePage /> },
       { path: "investigate", element: <InvestigationPage /> },
       { path: "investigation-mode", element: <InvestigationModePage /> },
       { path: "workflow-canvas", element: <WorkflowModelingCanvasPage /> },
