@@ -56,6 +56,19 @@ See [docs/USING_SKILLZMCGEE.md](./docs/USING_SKILLZMCGEE.md) for the universal
 clone/install/provider workflow, and [docs/lawful-nova-slice.md](./docs/lawful-nova-slice.md)
 for deeper receipt and slice details.
 
+## Finish Line
+
+This repo is finished when the canonical operator and governance paths can be verified from the repo root:
+
+- `python tests/test_skillzmcgee.py`
+- `npm test`
+- `npm run nova-studio:check`
+- `npm run nova-studio:build`
+- `npm run test:nova-studio`
+- `npm run test:governance-gate`
+
+The docs should only describe a surface as verified when that surface has fresh build, test, and smoke evidence. Anything else stays explicitly marked as partial, scaffold, or next milestone.
+
 ## Architecture
 
 | Layer | Module | Purpose |
